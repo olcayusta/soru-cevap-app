@@ -1,0 +1,33 @@
+<div class="page-center">
+
+  <mat-card>
+    <mat-progress-bar mode="indeterminate" value="50" *ngIf="submitted"></mat-progress-bar>
+
+    <mat-card-title>Oturum aç</mat-card-title>
+    <mat-card-subtitle>with your google account</mat-card-subtitle>
+
+    <form autocomplete="off" spellcheck="false" [formGroup]="form" (submit)="formSubmit()">
+      <div class="form-body">
+        <mat-form-field>
+          <mat-label>E-posta</mat-label>
+          <input matInput type="email" formControlName="email">
+          <mat-error *ngIf="form.get('email').hasError('required')">Bir e-posta adresi girin</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="legacy">
+          <mat-label>Şifre</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+          <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                  [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+          <mat-error *ngIf="form.get('password').hasError('required')">Bir şifre girin</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="row-actions">
+        <button type="submit" mat-raised-button color="primary">İLERİ</button>
+      </div>
+    </form>
+  </mat-card>
+</div>

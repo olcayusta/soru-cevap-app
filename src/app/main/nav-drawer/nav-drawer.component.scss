@@ -1,0 +1,80 @@
+:host {
+  display: block;
+}
+
+mat-toolbar {
+  background: transparent;
+}
+
+.toolbar-title {
+  margin-left: 24px;
+}
+
+:host ::ng-deep .mat-list-item-content {
+  // padding: 0 8px !important;
+}
+
+.active {
+  font-weight: 500;
+  background-color: #f3ebfb;
+  color: #6200ee !important;
+
+  mat-icon {
+    color: #6200ee;
+  }
+}
+
+.mat-list-item {
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.1px;
+  // width: auto !important;
+  // height: 40px !important;
+  // border-radius: 4px !important;
+  // margin: 4px 8px;
+  // padding: 0 16px !important;
+  font-weight: 500;
+  color: rgba(0, 0, 0, .6);
+
+  mat-icon {
+    margin-right: 32px;
+    // display: none;
+  }
+}
+
+.headline {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
+  margin: 0;
+  letter-spacing: 0.15px;
+}
+
+.body2 {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+
+  /* 00. On Surface / Medium Emphasis */
+
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.drawer-top {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 16px 16px 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, .12);
+
+  .drawer-top-flex {
+    margin-top: 30px;
+  }
+
+  img {
+    display: inline-flex;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+}

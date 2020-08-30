@@ -1,0 +1,6 @@
+<p>tag works!</p>
+<h1>{{tag.title}}</h1>
+
+<div class="items">
+  <qa-home-question-list-item *ngFor="let question of tag.questions" [question]="question"></qa-home-question-list-item>
+</div>

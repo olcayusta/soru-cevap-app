@@ -1,0 +1,53 @@
+:host {
+  display: block;
+}
+
+h3 {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  padding: 14px 0 0;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 34px;
+  font-weight: 400;
+  line-height: 48px;
+  margin: 32px 0;
+}
+
+.center {
+  display: grid;
+  place-items: center;
+}
+
+img {
+  width: 256px;
+  display: inline-block;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.center {
+  margin: 0 auto;
+}
+
+.example-headers-align .mat-expansion-panel-header-title,
+.example-headers-align .mat-expansion-panel-header-description {
+  flex-basis: 0;
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.example-headers-align .mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
+
+mat-expansion-panel {
+  width: 100%;
+}
+

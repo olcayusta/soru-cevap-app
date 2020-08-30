@@ -1,0 +1,21 @@
+:host {
+  display: block;
+}
+
+mat-toolbar {
+  background: transparent !important;
+
+  span {
+    flex: 1;
+  }
+}
+
+mat-radio-group {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 24px;
+}
+
+section {
+  padding: 16px;
+}

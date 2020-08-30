@@ -1,0 +1,22 @@
+<h1>{{question.title}}</h1>
+<div class="description">
+  <time [dateTime]="question.creationTime">{{question.creationTime | date}}</time>
+  <span class="bracket">-</span>
+  <span>{{question.viewCount}} görüntülenme</span>
+</div>
+
+<div class="user-row">
+  <img class="user-img" src="{{question.user.picture}}" alt="{{question.user.displayName}}">
+  <div class="user-flex">
+    <a routerLink="/user/{{question.user.id}}">
+      <div class="display-name">{{question.user.displayName}}</div>
+    </a>
+    <div class="date">Web Geliştirici</div>
+  </div>
+</div>
+
+<qa-question-content [content]="question.content"></qa-question-content>
+
+<qa-question-answers></qa-question-answers>
+
+<qa-answer-form></qa-answer-form>

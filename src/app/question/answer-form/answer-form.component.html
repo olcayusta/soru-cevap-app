@@ -1,0 +1,18 @@
+<form autocomplete="off" spellcheck="false" (submit)="formSubmit()">
+  <div class="buttons">
+    <button mat-icon-button>
+      <mat-icon>format_bold</mat-icon>
+    </button>
+    <button mat-icon-button>
+      <mat-icon>format_italic</mat-icon>
+    </button>
+  </div>
+  <mat-form-field appearance="fill">
+    <mat-label>Bir cevap yazın...</mat-label>
+    <textarea matInput cdkTextareaAutosize cdkAutosizeMinRows="16" [formControl]="answerControl"></textarea>
+  </mat-form-field>
+
+  <div class="preview-text" [innerHTML]="answerControl?.value | marked"></div>
+
+  <button mat-raised-button type="submit" color="primary">GÖNDER</button>
+</form>

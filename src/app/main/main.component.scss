@@ -1,0 +1,58 @@
+:host {
+  display: block;
+}
+
+.my-content {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding-top: 64px;
+  // padding: 64px 160px;
+  // box-sizing: content-box;
+  // height: 100vh
+}
+
+.example-sidenav-content {
+/*  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;*/
+}
+
+.fixed-fab-btn {
+  height: 48px;
+  position: fixed;
+  right: 16px;
+  bottom: 24px;
+  z-index: 1;
+  width: auto;
+  border-radius: 28px;
+  padding: 0 20px 0 12px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+
+  mat-icon {
+    margin-right: 12px;
+    color: #fff;
+  }
+
+  span {
+    font-size: 14px;
+    line-height: 16px;
+    /* identical to box height, or 114% */
+
+    letter-spacing: 1.25px;
+    text-transform: uppercase;
+  }
+}
+
+@media (max-width: 599px) {
+  .my-content {
+    padding: 56px 0 56px 0;
+  }
+}
+
+#main {
+  display: block;
+  min-height: calc(100% - 64px);
+}

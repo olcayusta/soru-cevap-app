@@ -1,0 +1,61 @@
+<!--<mat-toolbar>
+  <button mat-icon-button>
+    <mat-icon>menu</mat-icon>
+  </button>
+  &lt;!&ndash;<span class="toolbar-title">iyidev</span>&ndash;&gt;
+</mat-toolbar>-->
+<ng-container *ngIf="user">
+  <div class="drawer-top">
+    <img src="{{user?.picture}}" alt="{{user?.displayName}}">
+    <div class="drawer-top-flex">
+      <h6 class="headline">{{user?.displayName}}</h6>
+      <span class="body2">{{user?.email}}</span>
+    </div>
+  </div>
+</ng-container>
+
+<mat-nav-list>
+  <a mat-list-item routerLinkActive="active" routerLink="/" [routerLinkActiveOptions]="{exact: true}" (click)="closeDrawer.emit()">
+    <mat-icon>home</mat-icon>
+   <!-- <qa-home-icon></qa-home-icon>-->
+    <span>Ana sayfa</span>
+  </a>
+  <a mat-list-item routerLinkActive="active" routerLink="/list" (click)="closeDrawer.emit()">
+    <mat-icon>question_answer</mat-icon>
+    <span>Sorularım</span>
+  </a>
+<!--  <a mat-list-item routerLinkActive="active" routerLink="/questions" (click)="closeDrawer.emit()">
+    <mat-icon>question_answer</mat-icon>
+    <span>Sorular</span>
+  </a>-->
+<!--  <a mat-list-item routerLinkActive="active" routerLink="/users" (click)="closeDrawer.emit()">
+    <mat-icon>group</mat-icon>
+    <span>Kullanıcılar</span>
+  </a>
+  <a mat-list-item routerLinkActive="active" routerLink="/tags" (click)="closeDrawer.emit()">
+    <mat-icon>label</mat-icon>
+    <span>Etiketler</span>
+  </a>-->
+</mat-nav-list>
+<mat-divider></mat-divider>
+<mat-nav-list>
+  <a mat-list-item routerLinkActive="active" routerLink="/settings" (click)="closeDrawer.emit()">
+    <mat-icon>settings</mat-icon>
+    <span>Hesap & ayarlar</span>
+  </a>
+  <a mat-list-item routerLinkActive="active" routerLink="/help">
+    <mat-icon>help_outline</mat-icon>
+    <span>Yardım</span>
+  </a>
+  <a mat-list-item routerLinkActive="active" routerLink="/feedback">
+    <mat-icon>feedback</mat-icon>
+    <span>Geri bildirim gönder</span>
+  </a>
+</mat-nav-list>
+<mat-divider></mat-divider>
+<mat-nav-list>
+  <mat-list-item (click)="logout()">
+    <mat-icon>exit_to_app</mat-icon>
+    <span>Oturumu kapat</span>
+  </mat-list-item>
+</mat-nav-list>

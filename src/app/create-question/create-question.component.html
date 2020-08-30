@@ -1,0 +1,48 @@
+<!--<mat-toolbar class="mat-elevation-z4 fixed">
+  <button mat-icon-button>
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+  <span class="toolbar-title">Soru oluştur</span>
+</mat-toolbar>-->
+
+<div class="my-content">
+  <form autocomplete="off" spellcheck="false" [formGroup]="form" (submit)="submit()">
+    <div class="form-body">
+      <mat-form-field appearance="standard">
+        <mat-label>Başlık</mat-label>
+        <input placeholder="Be specific and imagine you’re asking a question to another person" matInput formControlName="title">
+        <mat-error *ngIf="form.get('title').hasError('required')">Bir başlık girin</mat-error>
+      </mat-form-field>
+
+      <div>
+        <div class="buttons">
+          <button type="button" mat-icon-button>
+            <mat-icon>format_bold</mat-icon>
+          </button>
+          <button type="button" mat-icon-button>
+            <mat-icon>format_italic</mat-icon>
+          </button>
+        </div>
+
+        <mat-form-field appearance="standard">
+          <mat-label>Açıklama</mat-label>
+          <textarea matInput placeholder="Include all the information someone would need to answer your question" formControlName="description" cdkTextareaAutosize [cdkAutosizeMinRows]="2"
+                    [cdkAutosizeMaxRows]="16"></textarea>
+          <mat-error *ngIf="form.get('description').hasError('required')">Bir açıklama girin</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <div class="overline-text">Önizleme</div>
+        <mat-divider></mat-divider>
+        <div innerHTML="{{description}}"></div>
+      </div>
+
+      <qa-chips-autocomplete></qa-chips-autocomplete>
+
+      <div class="form-actions">
+        <button type="submit" mat-raised-button color="primary">GÖNDER</button>
+      </div>
+    </div>
+  </form>
+</div>

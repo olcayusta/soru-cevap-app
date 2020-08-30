@@ -1,0 +1,18 @@
+<div class="header">
+  <img class="user-avatar" src="{{user.picture}}" alt="{{user.displayName}}">
+  <div>
+    <h1 class="mat-h1">{{user.displayName}}</h1>
+    <p>{{user.signupDate | date}}</p>
+  </div>
+</div>
+
+<nav mat-tab-nav-bar>
+  <a mat-tab-link *ngFor="let link of links"
+     [routerLinkActiveOptions]="{exact: true}"
+     routerLinkActive="mat-tab-label-active"
+     #rla="routerLinkActive"
+     routerLink="/user/{{user.id}}/{{link.path.toLocaleLowerCase()}}"
+     [active]="rla.isActive"> {{link.label}} </a>
+</nav>
+
+<router-outlet></router-outlet>

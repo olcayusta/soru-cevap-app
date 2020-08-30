@@ -1,0 +1,32 @@
+:host {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.user-avatar {
+  display: inline-block;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-box {
+  display: flex;
+  align-items: center;
+  grid-gap: 24px;
+}
+
+.user-title {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+}

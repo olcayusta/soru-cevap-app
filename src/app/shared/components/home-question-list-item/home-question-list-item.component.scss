@@ -1,0 +1,171 @@
+:host {
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.item {
+  display: flex;
+  grid-gap: 16px;
+  /*content-visibility: auto;
+  contain-intrinsic-size: 121px; !* Explained in the next section. *!*/
+}
+
+.question-title {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  padding-right: 16px;
+}
+
+.bracket {
+  font-size: 13px;
+  margin: 0 4px;
+}
+
+.time {
+  font-size: 13px;
+  // color: rgba(0, 0, 0, .6);
+}
+
+.username {
+  font-size: 13px;
+  font-weight: 400;
+  // color: rgba(0, 0, 0, .6);
+}
+
+.user-img {
+  display: inline-flex;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.item-right {
+  flex-grow: 1;
+}
+
+.item-right-top {
+  display: flex;
+  align-items: center;
+  line-height: 24px;
+}
+
+.master-span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  width: fit-content;
+  border-radius: 4px;
+  padding: 0 6px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #6200ee;
+  color: #6200ee;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.25px;
+  line-height: 12px;
+  text-transform: uppercase;
+  margin: 4px 0;
+}
+
+.spinner {
+  display: grid;
+  place-items: center;
+  padding: 24px 0;
+}
+
+mat-divider {
+  display: block;
+  margin: 16px 0;
+}
+
+.check-icon {
+  line-height: 1;
+  font-size: 12px;
+  width: 16px;
+  height: 16px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background: #6200ee;
+  color: #fff;
+  border-radius: 50%;
+  font-weight: 400;
+  margin: 0 4px;
+}
+
+mat-chip-list {
+  display: flex;
+  flex-direction: row;
+}
+
+.tag-list {
+  display: flex;
+  margin: 8px 4px 8px 4px;
+}
+
+.mat-basic-chip {
+  line-height: 20px;
+  // background-color: transparent;
+  margin: 0 4px 0 0;
+  // height: 24px;
+  // font-size: 12px;
+  border-radius: 34px;
+  padding: 4px 0;
+  text-transform: lowercase;
+}
+
+::ng-deep .mat-chip-selected {
+  background-color: #f3ebfb !important;
+  color: #6200ee !important;
+  border: 1px solid rgba(0, 0, 0, .12) !important;
+}
+
+@media (max-width: 599px) {
+  .item {
+    padding-left: 16px;
+  }
+
+  .filter {
+
+    mat-chip-list {
+      display: flex;
+      margin: 20px 0 0;
+      overflow: auto;
+    }
+
+    mat-chip-list a:hover {
+      text-decoration: none;
+    }
+
+    mat-chip-list a {
+      cursor: pointer;
+    }
+
+    ::ng-deep .mat-chip-list-wrapper {
+      flex-wrap: nowrap !important;
+      margin: 0 !important;
+      padding: 0 8px;
+    }
+
+    ::ng-deep .mat-chip-list::-webkit-scrollbar {
+      display: none;
+    }
+
+    mat-chip {
+      white-space: nowrap;
+    }
+  }
+}

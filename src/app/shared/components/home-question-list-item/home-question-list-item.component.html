@@ -1,0 +1,28 @@
+<div class="item">
+  <div class="item-left">
+    <img class="user-img" width="48" height="48" src="{{question.user.picture}}" alt="{{question.user.displayName}}">
+  </div>
+  <div class="item-right">
+    <div class="item-right-top">
+      <div class="username">
+        <a routerLink="user/{{question.user.id}}">{{question.user.displayName}}</a>
+      </div>
+      <span class="bracket">—</span>
+      <div class="time">{{question.creationTime | date}}</div>
+    </div>
+    <div class="question-title">
+      <a routerLink="question/{{question.id}}">{{question.title}}</a>
+      <mat-icon class="check-icon" *ngIf="question.id === 9">check</mat-icon>
+    </div>
+
+    <div class="tag-list">
+      <mat-chip-list aria-label="Fish selection">
+        <mat-chip *ngFor="let tag of question.tags" routerLink="/tag/{{tag.id}}" [selected]="tag.id === 6">{{tag.title}}</mat-chip>
+        <mat-chip *ngIf="!question.tags">test</mat-chip>
+      </mat-chip-list>
+    </div>
+
+    <!-- <div class="master-span" *ngIf="question.id === 6">CEVAPLANDI</div>-->
+    <mat-divider></mat-divider>
+  </div>
+</div>

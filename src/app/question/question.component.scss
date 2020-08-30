@@ -1,0 +1,73 @@
+:host {
+  display: block;
+}
+
+h1 {
+  // font-family: 'Roboto Mono', "Helvetica Neue", sans-serif;
+  font-size: 34px;
+  line-height: 40px;
+  font-weight: 400;
+  margin: 32px 0 0;
+}
+
+.description {
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.bracket {
+  margin: 0 8px;
+}
+
+.user-row {
+  display: flex;
+  align-items: center;
+  margin-top: 48px;
+}
+
+.user-img {
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  margin-right: 16px;
+  object-fit: cover;
+}
+
+.user-flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.display-name {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+.date {
+  font-size: 13px;
+  line-height: 16px;
+  color: rgba(0, 0, 0, .6);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 599px) {
+  :host {
+    padding: 0 24px;
+  }
+
+  h1 {
+    font-size: 24px;
+    line-height: 32px;
+    margin: 24px 0;
+  }
+}

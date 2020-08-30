@@ -1,0 +1,25 @@
+<div class="page-center">
+  <mat-card>
+    <mat-card-title>Üye ol</mat-card-title>
+    <form [formGroup]="form" (submit)="submit()">
+
+      <div class="form-body">
+        <mat-form-field>
+          <mat-label>E-posta</mat-label>
+          <input matInput formControlName="email">
+          <mat-error>Bir e-posta adresi girin</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Şifre</mat-label>
+          <input matInput type="password" formControlName="password">
+          <mat-error>Bir şifre girin</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="row-actions">
+        <button type="submit" mat-raised-button color="primary">İLERİ</button>
+      </div>
+    </form>
+  </mat-card>
+</div>

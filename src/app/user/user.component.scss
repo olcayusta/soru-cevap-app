@@ -1,0 +1,35 @@
+:host {
+  display: block;
+}
+
+.header {
+  display: flex;
+  place-content: center;
+  place-items: center;
+  grid-gap: 24px;
+  padding: 32px 0;
+}
+
+h1 {
+  margin: 8px 0;
+  margin-bottom: 0;
+}
+
+p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.user-avatar {
+  display: inline-block;
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.mat-tab-label-active {
+  color: #6200EE;
+  opacity: 1;
+}

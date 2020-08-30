@@ -1,0 +1,4 @@
+<div class="answer-item" *ngFor="let answer of answers | async">
+  <div class="answer-item-content" [innerHTML]="answer.content"></div>
+  <!--<mat-divider></mat-divider>-->
+</div>

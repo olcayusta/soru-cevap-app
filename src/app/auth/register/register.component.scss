@@ -1,0 +1,28 @@
+:host {
+  display: block;
+  height: 100%;
+  background-color: #fafafa;
+}
+
+.page-center {
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+
+mat-card {
+  width: 500px;
+  height: 550px;
+  padding: 24px;
+}
+
+.form-body {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 24px;
+}
+
+.row-actions {
+  display: flex;
+  margin-top: 24px;
+}
