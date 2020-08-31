@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
-import { ResolveEnd, ResolveStart, Router } from '@angular/router';
-import { SocketService } from './shared/services/socket.service';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import {Component} from '@angular/core';
+import {ResolveEnd, ResolveStart, Router} from '@angular/router';
+import {SocketService} from './shared/services/socket.service';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'qa-root',

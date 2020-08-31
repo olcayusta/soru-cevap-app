@@ -6,7 +6,7 @@
       [removable]="removable"
       (removed)="remove(fruit)">
       {{fruit}}
-      <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+      <qa-cancel-icon matChipRemove *ngIf="removable"></qa-cancel-icon>
     </mat-chip>
     <input
       aria-label="New fruit"

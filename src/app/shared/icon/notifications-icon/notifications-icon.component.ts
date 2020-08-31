@@ -1,16 +1,18 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import {Component, ChangeDetectionStrategy, ChangeDetectorRef} from '@angular/core';
 
 @Component({
   selector: 'qa-notifications-icon',
   templateUrl: 'notifications-24px.svg',
-  styleUrls: ['./notifications-icon.component.scss'],
+  styles: [`:host {
+    display: inline-flex;
+  }
+  `],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class NotificationsIconComponent implements OnInit {
+export class NotificationsIconComponent {
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private cd: ChangeDetectorRef) {
+    cd.detach();
   }
 
 }

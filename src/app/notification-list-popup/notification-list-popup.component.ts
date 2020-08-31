@@ -1,5 +1,7 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import {Component, OnInit, ChangeDetectionStrategy, NgModule} from '@angular/core';
 import { NotificationService } from '../shared/services/notification.service';
+import {MatCardModule} from '@angular/material/card';
+import {MatListModule} from '@angular/material/list';
 
 @Component({
   selector: 'qa-notification-list-popup',
@@ -17,3 +19,12 @@ export class NotificationListPopupComponent implements OnInit {
   }
 
 }
+
+@NgModule({
+  declarations: [NotificationListPopupComponent],
+  imports: [
+    MatCardModule,
+    MatListModule
+  ]
+})
+class NotificationListPopupModule {}

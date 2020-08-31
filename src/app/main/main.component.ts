@@ -1,9 +1,10 @@
-import { Component, OnInit, ChangeDetectionStrategy, Inject } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { MatDrawerMode } from '@angular/material/sidenav';
-import { BreakpointObserver } from '@angular/cdk/layout';
-import { DOCUMENT } from '@angular/common';
-import { SocketService } from '../shared/services/socket.service';
+import {Component, OnInit, ChangeDetectionStrategy, Inject, Type, ɵmarkDirty as markDirty} from '@angular/core';
+import {MatSnackBar} from '@angular/material/snack-bar';
+import {MatDrawerMode} from '@angular/material/sidenav';
+import {BreakpointObserver} from '@angular/cdk/layout';
+import {DOCUMENT} from '@angular/common';
+import {SocketService} from '../shared/services/socket.service';
+import {NavDrawerComponent} from './nav-drawer/nav-drawer.component';
 
 @Component({
   selector: 'qa-main',
@@ -15,6 +16,8 @@ export class MainComponent implements OnInit {
   mode: MatDrawerMode;
 
   isSmallScreen;
+
+  comp: Type<NavDrawerComponent>;
 
   constructor(
     private snackBar: MatSnackBar,
@@ -38,10 +41,10 @@ export class MainComponent implements OnInit {
 
     // this.notifyMe();
 
-   /* this.socketService.subject.subscribe(value => {
-      console.log(value);
-      this.snackBar.open('Sorunuza yanıt geldi', 'TAMAM');
-    });*/
+    /* this.socketService.subject.subscribe(value => {
+       console.log(value);
+       this.snackBar.open('Sorunuza yanıt geldi', 'TAMAM');
+     });*/
   }
 
   notifyMe(): void {
@@ -89,5 +92,11 @@ export class MainComponent implements OnInit {
 
   drawerClosedStart(): void {
     this.document.body.style.overflow = '';
+  }
+
+  async openSidenav(): Promise<void> {
+    const {NavDrawerComponent: comp} = await import('./nav-drawer/nav-drawer.component');
+    this.comp = comp;
+    markDirty(this);
   }
 }

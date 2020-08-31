@@ -16,10 +16,11 @@
 
         <mat-form-field appearance="legacy">
           <mat-label>Şifre</mat-label>
-          <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+          <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" autocomplete="current-password">
           <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
                   [attr.aria-pressed]="hide">
-            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            <qa-visibility-off-icon *ngIf="hide"></qa-visibility-off-icon>
+            <qa-visibility-icon *ngIf="!hide"></qa-visibility-icon>
           </button>
           <mat-error *ngIf="form.get('password').hasError('required')">Bir şifre girin</mat-error>
         </mat-form-field>

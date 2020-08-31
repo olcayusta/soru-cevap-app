@@ -1,16 +1,17 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import {Component, ChangeDetectionStrategy, ChangeDetectorRef} from '@angular/core';
 
 @Component({
   selector: 'qa-home-icon',
   templateUrl: 'home-24px.svg',
-  styleUrls: ['./home-icon.component.scss'],
+  styles: [`:host {
+    display: inline-flex;
+  }`],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HomeIconComponent implements OnInit {
+export class HomeIconComponent {
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private cd: ChangeDetectorRef) {
+    cd.detach();
   }
 
 }

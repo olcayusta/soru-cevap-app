@@ -1,11 +1,16 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import {Component, OnInit, ChangeDetectionStrategy, NgModule} from '@angular/core';
+import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { Observable } from 'rxjs';
 import { debounceTime, distinctUntilChanged, filter, map, startWith, switchMap } from 'rxjs/operators';
 import { SearchService } from '../shared/services/search.service';
 import { Question } from '../shared/models/question.model';
-import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
-import { Router } from '@angular/router';
+import {MatAutocompleteModule, MatAutocompleteSelectedEvent} from '@angular/material/autocomplete';
+import {Router, RouterModule} from '@angular/router';
+import {IconModule} from '../shared/icon/icon.module';
+import {MatButtonModule} from '@angular/material/button';
+import {CommonModule} from '@angular/common';
+import {SharedModule} from '../shared/shared.module';
+import {HighlightSearchPipe} from './pipes/highlight-search.pipe';
 
 @Component({
   selector: 'qa-search-form',
@@ -51,3 +56,21 @@ export class SearchFormComponent implements OnInit {
     this.router.navigateByUrl(`/questions/${q.id}`);
   }
 }
+
+@NgModule({
+  declarations: [
+    SearchFormComponent,
+    HighlightSearchPipe
+  ],
+  imports: [
+    CommonModule,
+    MatAutocompleteModule,
+    ReactiveFormsModule,
+    FormsModule,
+    IconModule,
+    MatButtonModule,
+    RouterModule,
+    SharedModule
+  ]
+})
+class SearchFormModule {}

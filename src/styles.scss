@@ -98,6 +98,10 @@ $soru-cevap-app-theme: mat-light-theme((
 // that you are using.
 // @include angular-material-theme($soru-cevap-app-theme);
 
+.mat-elevation-z1 {
+  @include mat-elevation(1);
+}
+
 .mat-elevation-z2 {
   @include mat-elevation(2);
 }
@@ -124,8 +128,14 @@ $soru-cevap-app-theme: mat-light-theme((
 @include mat-snack-bar-theme($soru-cevap-app-theme);
 @include mat-expansion-panel-theme($soru-cevap-app-theme);
 @include mat-checkbox-theme($soru-cevap-app-theme);
+@include mat-badge-theme($soru-cevap-app-theme);
+@include mat-option-theme($soru-cevap-app-theme);
 
 /* You can add global styles to this file, and also import other style files */
+
+html {
+  scroll-padding-top: 64px;
+}
 
 html, body {
   height: 100%;
@@ -134,6 +144,9 @@ html, body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeSpeed;
   background-color: #fafafa;
 }
 
@@ -186,6 +199,10 @@ mat-sidenav-content {
 
 mat-icon {
   color: rgba(0, 0, 0, 0.6);
+}
+
+svg {
+  fill: rgba(0, 0, 0, .6);
 }
 
 .mat-action-row {
@@ -248,7 +265,7 @@ mat-icon {
 }
 
 .mat-menu-panel::-webkit-scrollbar-thumb, .mat-select-panel::-webkit-scrollbar-thumb {
-  background: rgba(95,99,104,.45);
+  background: rgba(95, 99, 104, .45);
   border-radius: 10px;
 }
 
@@ -266,4 +283,8 @@ mat-icon {
   height: 32px;
   line-height: 32px;
   font-weight: 500;
+}
+
+.my-autocomplete {
+  margin-top: 8px;
 }

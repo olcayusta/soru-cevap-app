@@ -14,16 +14,6 @@ mat-toolbar {
   // padding: 0 8px !important;
 }
 
-.active {
-  font-weight: 500;
-  background-color: #f3ebfb;
-  color: #6200ee !important;
-
-  mat-icon {
-    color: #6200ee;
-  }
-}
-
 .mat-list-item {
   font-size: 14px;
   line-height: 24px;
@@ -39,6 +29,28 @@ mat-toolbar {
   mat-icon {
     margin-right: 32px;
     // display: none;
+  }
+
+  qa-settings-icon, qa-help-icon, qa-feedback-icon, qa-question-answer-icon, qa-home-icon, qa-exit-to-app-icon {
+    margin-right: 32px;
+  }
+
+  ::ng-deep svg {
+    fill: rgba(0, 0, 0, .6);
+  }
+}
+
+.active {
+  font-weight: 500;
+  background-color: #f3ebfb;
+  color: #6200ee !important;
+
+  mat-icon {
+    color: #6200ee;
+  }
+
+  ::ng-deep svg {
+    fill: #6200ee;
   }
 }
 

@@ -23,8 +23,8 @@ export class SocketService {
   }
 
   connect(): void {
-    this.subject.subscribe();
-    this.subject.next('Test!');
+   this.subject.subscribe();
+   this.subject.next('Test!');
   }
 
   disconnect(): void {

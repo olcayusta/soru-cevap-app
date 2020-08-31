@@ -1,13 +1,18 @@
 <mat-toolbar class="mat-elevation-z4 top-bar" appSticky>
   <button mat-icon-button aria-label="Example icon-button with menu icon" (click)="openDrawer.emit()">
-    <mat-icon>menu</mat-icon>
+    <qa-menu-icon></qa-menu-icon>
   </button>
   <a routerLink="/">
     <span class="toolbar-title">iyidev</span>
-    <sup>beta1</sup>
+    <!-- <sup>beta1</sup>-->
   </a>
   <span class="flex-spacer"></span>
-  <qa-search-form></qa-search-form>
+
+  <!--  <qa-search-form></qa-search-form>-->
+
+  <!-- Search Form -->
+  <ng-container [ngComponentOutlet]="searchFormComponent"></ng-container>
+
   <span class="flex-spacer"></span>
   <ng-container *ngIf="isLoggedIn$ | async; else signIn">
 
@@ -18,8 +23,8 @@
     <button mat-icon-button class="top-right-btn notification-icon" matTooltip="Bildirimler"
             #notificationElement="cdkOverlayOrigin"
             cdkOverlayOrigin
-            (click)="popupOpened = !popupOpened; popup = 'notification'">
-      <mat-icon>notifications</mat-icon>
+            (click)="openNotifications()">
+      <qa-notifications-icon matBadge="{{notificationCount | async}}" [matBadgeHidden]="(notificationCount | async) === 0"></qa-notifications-icon>
     </button>
 
     <!--<button class="avatar-button" #avatarElement="cdkOverlayOrigin" cdkOverlayOrigin
@@ -32,20 +37,20 @@
         </button>-->
 
     <button mat-icon-button class="search-icon">
-      <mat-icon>search</mat-icon>
+      <qa-search-icon></qa-search-icon>
     </button>
 
-    <button mat-icon-button matTooltip="Diğer" class="top-right-btn last-btn more-vert-icon"
+    <button mat-icon-button matTooltip="Diğer" class="top-right-btn more-vert-icon"
             [matMenuTriggerFor]="moreMenu">
-      <mat-icon>more_vert</mat-icon>
+      <qa-more-vert-icon></qa-more-vert-icon>
     </button>
 
-    <button class="avatar-button" #avatarElement="cdkOverlayOrigin" cdkOverlayOrigin
-            (click)="popupOpened = !popupOpened; popup = 'avatar'">
+    <button class="avatar-button" #avatarElement="cdkOverlayOrigin" cdkOverlayOrigin matTooltip="Wonder Woman"
+            (click)="openUsermenu()">
       <img class="avatar-img" src="{{user.picture}}">
     </button>
 
-    <mat-menu #moreMenu="matMenu">
+    <mat-menu #moreMenu="matMenu" xPosition="before">
       <button mat-menu-item class="small-menu-button-item">
         <span>Blog</span>
       </button>
@@ -69,16 +74,19 @@
     <ng-template
       cdkConnectedOverlay
       (overlayOutsideClick)="outsideClick()"
+      [cdkConnectedOverlayScrollStrategy]="blockScrollStrategy"
       [cdkConnectedOverlayOpen]="popupOpened && popup == 'notification'"
       [cdkConnectedOverlayOrigin]="notificationElement">
-      <qa-notification-list-popup></qa-notification-list-popup>
+      <ng-container [ngComponentOutlet]="compOutlet"></ng-container>
     </ng-template>
 
     <ng-template
       cdkConnectedOverlay
+      (overlayOutsideClick)="outsideClick()"
+      [cdkConnectedOverlayScrollStrategy]="blockScrollStrategy"
       [cdkConnectedOverlayOpen]="popupOpened && popup == 'avatar'"
       [cdkConnectedOverlayOrigin]="avatarElement">
-      <qa-user-menu-popup></qa-user-menu-popup>
+      <ng-container [ngComponentOutlet]="compOutlet2"></ng-container>
     </ng-template>
   </ng-container>
 </mat-toolbar>

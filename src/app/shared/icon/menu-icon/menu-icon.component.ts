@@ -1,16 +1,17 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import {Component, ChangeDetectionStrategy, ChangeDetectorRef} from '@angular/core';
 
 @Component({
   selector: 'qa-menu-icon',
   templateUrl: 'menu-24px.svg',
-  styleUrls: ['./menu-icon.component.scss'],
+  styles: [`:host {
+    display: inline-flex
+  }`],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class MenuIconComponent implements OnInit {
+export class MenuIconComponent {
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private cd: ChangeDetectorRef) {
+    cd.detach();
   }
 
 }

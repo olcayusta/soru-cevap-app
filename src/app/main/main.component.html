@@ -1,7 +1,7 @@
 <mat-sidenav-container>
   <mat-sidenav position="start" #drawer [autoFocus]="false" fixedInViewport (closedStart)="sidenavClosedStart()"
                (openedStart)="sidenavOpenedStart()">
-    <qa-nav-drawer (closeDrawer)="drawer.toggle()"></qa-nav-drawer>
+    <ng-container [ngComponentOutlet]="comp"></ng-container>
   </mat-sidenav>
   <mat-sidenav position="end" [mode]="mode" #sheet [autoFocus]="false" fixedInViewport
                (openedStart)="drawerOpenedStart()" (closedStart)="drawerClosedStart()"
@@ -9,7 +9,7 @@
     <qa-side-sheet></qa-side-sheet>
   </mat-sidenav>
 
-  <qa-top-bar (openDrawer)="drawer.toggle()" (openSheet)="sheet.toggle()"></qa-top-bar>
+  <qa-top-bar (openDrawer)="openSidenav(); drawer.toggle()" (openSheet)="sheet.toggle()"></qa-top-bar>
 <!--
   <div id="main">
     <div class="my-content example-sidenav-content">
@@ -24,10 +24,10 @@
 
   <div class="my-content example-sidenav-content">
     <router-outlet></router-outlet>
-    <!-- <a mat-fab color="primary" class="fixed-fab-btn" routerLink="/create">
-       <mat-icon>add</mat-icon>
+     <a mat-fab color="primary" class="fixed-fab-btn" routerLink="/create">
+       <qa-create-icon></qa-create-icon>
        <span>SORU SOR</span>
-     </a>-->
+     </a>
     <!--<app-bottom-bar></app-bottom-bar>-->
   </div>
 

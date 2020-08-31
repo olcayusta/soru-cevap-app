@@ -36,6 +36,14 @@
     color: #fff;
   }
 
+  qa-create-icon {
+    margin-right: 12px;
+  }
+
+  ::ng-deep svg {
+    fill: white !important;
+  }
+
   span {
     font-size: 14px;
     line-height: 16px;

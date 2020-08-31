@@ -49,7 +49,7 @@ export class LoginComponent implements OnInit {
           alert('error');
         } else {
           // Redirect the user
-          // this.router.navigate([this.authService.redirectUrl]);
+          this.router.navigate([this.authService.redirectUrl]);
         }
       });
     }

@@ -1,11 +1,13 @@
 <div class="search-form mat-elevation-z2" matAutocompleteOrigin #origin="matAutocompleteOrigin">
   <button mat-icon-button aria-label="Example icon-button with search icon">
-    <mat-icon>search</mat-icon>
+    <qa-search-icon></qa-search-icon>
   </button>
-  <input aria-label="Ara" autocomplete="off" spellcheck="false" placeholder="Ara" [formControl]="myControl" [matAutocomplete]="auto" [matAutocompleteConnectedTo]="origin">
+  <input aria-label="Ara" autocomplete="off" spellcheck="false" placeholder="Ara" [formControl]="myControl"
+         [matAutocomplete]="auto" [matAutocompleteConnectedTo]="origin">
 </div>
 
-<mat-autocomplete #auto="matAutocomplete" class="my-autocomplete mat-elevation-z2" (optionSelected)="selectedOption($event)">
+<mat-autocomplete #auto="matAutocomplete" class="my-autocomplete mat-elevation-z2"
+                  (optionSelected)="selectedOption($event)">
   <mat-optgroup label="Sorular">
     <mat-option *ngFor="let option of filteredQuestions | async" [value]="option">
       <span [innerHTML]="option.title | highlightSearch: myControl.value"></span>

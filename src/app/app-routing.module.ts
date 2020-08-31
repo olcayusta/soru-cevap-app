@@ -45,13 +45,14 @@ const routes: Routes = [
       {
         path: 'question/:questionId',
         loadChildren: () => import('./question/question.module').then(m => m.QuestionModule)
-      }
+      },
+      { path: 'edit', loadChildren: () => import('./edit/edit.module').then(m => m.EditModule) }
     ]
   },
   {path: 'login', loadChildren: () => import('./auth/login/login.module').then(m => m.LoginModule)},
   {path: 'register', loadChildren: () => import('./auth/register/register.module').then(m => m.RegisterModule)},
   { path: 'search', loadChildren: () => import('./search/search.module').then(m => m.SearchModule) }
-];
+  ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

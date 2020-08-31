@@ -10,7 +10,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { QuestionAnswersComponent } from './question-answers/question-answers.component';
 import { MatDividerModule } from '@angular/material/divider';
 import { AnswerFormComponent } from './answer-form/answer-form.component';
-import { MatIconModule } from '@angular/material/icon';
 import { SharedModule } from '../shared/shared.module';
 
 
@@ -29,7 +28,6 @@ import { SharedModule } from '../shared/shared.module';
     ReactiveFormsModule,
     FormsModule,
     MatDividerModule,
-    MatIconModule,
     SharedModule
   ]
 })

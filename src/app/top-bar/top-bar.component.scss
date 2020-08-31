@@ -14,15 +14,21 @@ sup {
   padding: 0 2px;
 }
 
+qa-more-vert-icon {
+  display: inline-flex;
+}
+
 mat-toolbar {
   background-color: #FFF;
+  contain: layout;
   position: fixed;
-  right: 0;
+  // right: 0;
   top: 0;
-  left: 0;
+  // left: 0;
   z-index: 1;
   /*  box-shadow: 0 1px 0 rgba(0, 0, 0, .05), 0 1px 3px rgba(0, 0, 0, .07), inset 0 1px 1px rgba(255, 255, 255, .45) !important;
     border-bottom: 1px solid rgba(0, 0, 0, .12);*/
+  box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.14), 0px 1px 10px rgba(0, 0, 0, 0.12), 0px 2px 4px rgba(0, 0, 0, 0.2) !important;
 }
 
 .toolbar-title {
@@ -48,11 +54,12 @@ mat-toolbar {
 }
 
 .avatar-img {
-  display: flex;
-  width: 32px;
-  height: 32px;
+  display: inline-block;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   object-fit: cover;
+  border: 1px solid #6200ee;
 }
 
 .top-right-btn {

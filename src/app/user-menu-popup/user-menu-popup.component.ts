@@ -1,7 +1,11 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { AuthService } from '../auth/auth.service';
-import { User } from '../shared/models/user.model';
-import { SocketService } from '../shared/services/socket.service';
+import {Component, OnInit, ChangeDetectionStrategy, NgModule} from '@angular/core';
+import {AuthService} from '../auth/auth.service';
+import {User} from '../shared/models/user.model';
+import {SocketService} from '../shared/services/socket.service';
+import {MatCardModule} from '@angular/material/card';
+import {MatListModule} from '@angular/material/list';
+import {IconModule} from '../shared/icon/icon.module';
+import {RouterModule} from '@angular/router';
 
 @Component({
   selector: 'qa-user-menu-popup',
@@ -23,7 +27,19 @@ export class UserMenuPopupComponent implements OnInit {
   }
 
   logout(): void {
-    this.authService.logout()
+    this.authService.logout();
     this.socketService.disconnect();
   }
+}
+
+@NgModule({
+  declarations: [UserMenuPopupComponent],
+  imports: [
+    MatCardModule,
+    MatListModule,
+    IconModule,
+    RouterModule
+  ]
+})
+class UserMenuPopupModule {
 }
