@@ -2,6 +2,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
@@ -16,6 +17,12 @@
       "es2018",
       "dom"
     ],
-    "allowSyntheticDefaultImports": true
+    "paths": {
+      "@shared/*": ["src/app/shared/*"],
+      "@material/*": ["src/app/material/*"],
+      "@environments/*": ["src/environments/*"],
+      "@auth/*": ["src/auth/*"],
+      "@icons/*": ["src/app/shared/modules/material-icon/*"]
+    }
   }
 }
