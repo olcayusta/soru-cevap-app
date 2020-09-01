@@ -27,7 +27,7 @@ export class QuestionContentComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     this.divElement.nativeElement.querySelectorAll('pre code')
       .forEach((block: HTMLElement) => {
-        const worker = new Worker('./app.worker', {type: 'module'});
+        const worker = new Worker('./highlight.worker', {type: 'module'});
 
         worker.onmessage = ({data}) => {
           const {language, value} = data;

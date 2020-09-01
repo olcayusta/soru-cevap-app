@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { SettingsService } from './services/settings.service';
-import { User } from '../shared/models/user.model';
+import { User } from '@shared/models/user.model';
 import { Observable } from 'rxjs';
 
 @Component({
