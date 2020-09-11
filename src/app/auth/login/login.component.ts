@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { catchError } from 'rxjs/operators';
 import { EMPTY } from 'rxjs';
 import { Title } from '@angular/platform-browser';
-import { environment } from '../../../environments/environment';
+import { environment } from '@environments/environment';
 
 @Component({
   selector: 'qa-login',
@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.title.setTitle(`Oturum aç - ${environment.appTitle}`);
+    this.title.setTitle(`Sign In - ${environment.appTitle}`);
   }
 
   formSubmit(): void {

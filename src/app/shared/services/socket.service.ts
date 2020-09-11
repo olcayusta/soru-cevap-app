@@ -8,23 +8,23 @@ import { AuthService } from '../../auth/auth.service';
 })
 export class SocketService {
   subject = webSocket({
-    url: 'ws://localhost:9001',
+    url: 'ws://localhost:9001/notification',
     protocol: localStorage.getItem('token')
   });
 
   constructor() {
-/*    this.subject.pipe(
-      retryWhen(errors => errors.pipe(
-        tap(err => { console.error('Got error', err);}),
-        delay(1000)
-      ))
-    ).subscribe(data => console.log(data), error => console.error(error));*/
-    // this.connect();
+    /*    this.subject.pipe(
+          retryWhen(errors => errors.pipe(
+            tap(err => { console.error('Got error', err);}),
+            delay(1000)
+          ))
+        ).subscribe(data => console.log(data), error => console.error(error));*/
+    this.connect();
   }
 
   connect(): void {
-   this.subject.subscribe();
-   this.subject.next('Test!');
+    this.subject.subscribe();
+    this.subject.next('Test!');
   }
 
   disconnect(): void {

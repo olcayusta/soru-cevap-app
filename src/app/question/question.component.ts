@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { AnswerService } from '@shared/services/answer.service';
 import { StateService } from '@shared/services/state.service';
 import { Title } from '@angular/platform-browser';
+import { environment } from '@environments/environment';
 
 @Component({
   selector: 'qa-question',
@@ -24,7 +25,7 @@ export class QuestionComponent implements OnInit {
 
   ngOnInit(): void {
     this.question = this.route.snapshot.data.question;
-    this.title.setTitle(`${this.question.title}`);
+    this.title.setTitle(`${this.question.title} - ${environment.appTitle}`);
     this.stateService.hide();
   }
 }

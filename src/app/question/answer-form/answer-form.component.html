@@ -12,7 +12,8 @@
     <textarea aria-label="Answer text" matInput cdkTextareaAutosize cdkAutosizeMinRows="16" [formControl]="answerControl"></textarea>
   </mat-form-field>
 
-  <div class="preview-text" [innerHTML]="answerControl?.value | marked"></div>
+  <!--<div class="preview-text" [innerHTML]="answerControl?.value | marked"></div>-->
+  <div class="preview-text" [innerHTML]="answerControl?.value"></div>
 
   <button mat-raised-button type="submit" color="primary">GÖNDER</button>
 </form>

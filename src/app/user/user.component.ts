@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { User } from '../shared/models/user.model';
+import { User } from '@shared/models/user.model';
 import { ActivatedRoute } from '@angular/router';
 import { Title } from '@angular/platform-browser';
-import { environment } from '../../environments/environment';
+import { environment } from '@environments/environment';
 
 @Component({
   selector: 'qa-user',
@@ -16,15 +16,15 @@ export class UserComponent implements OnInit {
   links = [
     {
       path: '/',
-      label: 'ANA SAYFA'
+      label: 'Ana sayfa'
     },
     {
       path: '/questions',
-      label: 'SORULAR'
+      label: 'Sorular'
     },
     {
       path: '/answers',
-      label: 'CEVAPLAR'
+      label: 'Cevaplar'
     }
   ];
   // activeLink = this.links[0];

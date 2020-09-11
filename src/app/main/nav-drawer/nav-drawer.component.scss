@@ -11,13 +11,12 @@ mat-toolbar {
 }
 
 :host ::ng-deep .mat-list-item-content {
-  // padding: 0 8px !important;
+  padding: 0 24px !important;
 }
 
 .mat-list-item {
   font-size: 14px;
   line-height: 24px;
-  letter-spacing: 0.1px;
   // width: auto !important;
   // height: 40px !important;
   // border-radius: 4px !important;
@@ -25,14 +24,11 @@ mat-toolbar {
   // padding: 0 16px !important;
   font-weight: 500;
   color: rgba(0, 0, 0, .6);
-
-  mat-icon {
-    margin-right: 32px;
-    // display: none;
-  }
+  font-family: 'Archivo', sans-serif;
 
   qa-settings-icon, qa-help-icon, qa-feedback-icon, qa-question-answer-icon, qa-home-icon, qa-exit-to-app-icon {
     margin-right: 32px;
+    // display: none;
   }
 
   ::ng-deep svg {
@@ -41,16 +37,11 @@ mat-toolbar {
 }
 
 .active {
-  font-weight: 500;
   background-color: #f3ebfb;
-  color: #6200ee !important;
-
-  mat-icon {
-    color: #6200ee;
-  }
+  color: #6002ee;
 
   ::ng-deep svg {
-    fill: #6200ee;
+    fill: #6002ee;
   }
 }
 

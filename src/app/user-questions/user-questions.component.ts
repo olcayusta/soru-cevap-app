@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { UserService } from '../shared/services/user.service';
-import { Question } from '../shared/models/question.model';
+import { UserService } from '@shared/services/user.service';
+import { Question } from '@shared/models/question.model';
 import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 

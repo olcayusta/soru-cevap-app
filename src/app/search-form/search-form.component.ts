@@ -1,16 +1,16 @@
-import {Component, OnInit, ChangeDetectionStrategy, NgModule} from '@angular/core';
-import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { Component, OnInit, ChangeDetectionStrategy, NgModule } from '@angular/core';
+import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { debounceTime, distinctUntilChanged, filter, map, startWith, switchMap } from 'rxjs/operators';
-import { SearchService } from '../shared/services/search.service';
-import { Question } from '../shared/models/question.model';
-import {MatAutocompleteModule, MatAutocompleteSelectedEvent} from '@angular/material/autocomplete';
-import {Router, RouterModule} from '@angular/router';
-import {IconModule} from '../shared/icon/icon.module';
-import {MatButtonModule} from '@angular/material/button';
-import {CommonModule} from '@angular/common';
-import {SharedModule} from '../shared/shared.module';
-import {HighlightSearchPipe} from './pipes/highlight-search.pipe';
+import { SearchService } from '@shared/services/search.service';
+import { Question } from '@shared/models/question.model';
+import { MatAutocompleteModule, MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
+import { Router, RouterModule } from '@angular/router';
+import { IconModule } from '@shared/icon/icon.module';
+import { MatButtonModule } from '@angular/material/button';
+import { CommonModule } from '@angular/common';
+import { SharedModule } from '@shared/shared.module';
+import { HighlightSearchPipe } from './pipes/highlight-search.pipe';
 
 @Component({
   selector: 'qa-search-form',
@@ -53,7 +53,7 @@ export class SearchFormComponent implements OnInit {
 
   selectedOption($event: MatAutocompleteSelectedEvent): void {
     const q = $event.option.value;
-    this.router.navigateByUrl(`/questions/${q.id}`);
+    this.router.navigateByUrl(`/question/${q.id}`);
   }
 }
 
@@ -73,4 +73,5 @@ export class SearchFormComponent implements OnInit {
     SharedModule
   ]
 })
-class SearchFormModule {}
+class SearchFormModule {
+}

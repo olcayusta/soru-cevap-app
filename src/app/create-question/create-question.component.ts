@@ -1,7 +1,7 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, ɵmarkDirty as markDirty, OnDestroy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { parse } from 'marked';
-import { QuestionService } from '../shared/services/question.service';
+import { QuestionService } from '@shared/services/question.service';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'qa-create-question',
@@ -14,8 +14,11 @@ export class CreateQuestionComponent implements OnInit {
 
   description;
 
+  worker: Worker;
+
   constructor(
     private fb: FormBuilder,
+    private domSanitizer: DomSanitizer,
     private questionService: QuestionService
   ) {
     this.form = fb.group({
@@ -32,9 +35,21 @@ export class CreateQuestionComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    document.querySelector('meta[name=theme-color]').setAttribute('content', '#fff');
+    // document.querySelector('meta[name=theme-color]').setAttribute('content', '#fff');
     this.form.get('description').valueChanges.subscribe(value => {
-      this.description = parse(value);
+      this.worker.postMessage(value);
     });
+  }
+
+  onBlur(): void {
+    this.worker.terminate();
+  }
+
+  onFocus(): void {
+    this.worker = new Worker('../marked.worker', {type: 'module', name: 'marked'});
+    this.worker.onmessage = ({data}) => {
+      this.description = this.domSanitizer.bypassSecurityTrustHtml(data);
+      markDirty(this);
+    };
   }
 }

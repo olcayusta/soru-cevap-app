@@ -6,7 +6,7 @@ import { distinctUntilChanged, map, pairwise, startWith } from 'rxjs/operators';
 const THRESHOLD = 56;
 
 @Directive({
-  selector: '[appSticky]'
+  selector: '[qaSticky]'
 })
 export class StickyDirective {
 

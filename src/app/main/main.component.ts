@@ -1,10 +1,10 @@
-import {Component, OnInit, ChangeDetectionStrategy, Inject, Type, ɵmarkDirty as markDirty} from '@angular/core';
-import {MatSnackBar} from '@angular/material/snack-bar';
-import {MatDrawerMode} from '@angular/material/sidenav';
-import {BreakpointObserver} from '@angular/cdk/layout';
-import {DOCUMENT} from '@angular/common';
-import {SocketService} from '../shared/services/socket.service';
-import {NavDrawerComponent} from './nav-drawer/nav-drawer.component';
+import { Component, OnInit, ChangeDetectionStrategy, Inject, Type, ɵmarkDirty as markDirty } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatDrawerMode } from '@angular/material/sidenav';
+import { BreakpointObserver } from '@angular/cdk/layout';
+import { DOCUMENT } from '@angular/common';
+import { SocketService } from '@shared/services/socket.service';
+import { NavDrawerComponent } from './nav-drawer/nav-drawer.component';
 
 @Component({
   selector: 'qa-main',

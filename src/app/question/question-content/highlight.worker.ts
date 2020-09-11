@@ -13,4 +13,5 @@ addEventListener('message', ({ data }) => {
   postMessage({
     language, value
   });
+  self.close();
 });

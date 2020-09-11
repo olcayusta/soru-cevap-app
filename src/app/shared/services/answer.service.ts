@@ -11,10 +11,11 @@ export class AnswerService {
 
   constructor(
     private http: HttpClient
-  ) { }
+  ) {
+  }
 
   getAnswers(questionId: number): Observable<Answer[]> {
-    return this.http.get<Answer[]>(`${environment.apiUrl}/${questionId}/answers`);
+    return this.http.get<Answer[]>(`${environment.apiUrl}/questions/${questionId}/answers`);
   }
 
   create(questionId: number, content: string): Observable<Answer> {

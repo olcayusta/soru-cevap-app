@@ -1,21 +1,50 @@
 :host {
   display: block;
-  width: 460px;
+  width: 496px;
+  min-height: 504px;
 }
 
-mat-card {
-  padding: 16px 0;
-  // border: 1px solid rgba(0, 0, 0, .12);
-  border-radius: 8px;
+.popup-page {
+  background-color: var(--card-background);
+  height: 100%;
+  max-height: calc(100vh - 64px);
+  display: flex;
+  flex-direction: column;
+  border-radius: 4px;
+  color: var(--text-color);
+
+  header {
+    padding: 20px 16px;
+    display: flex;
+    align-items: center;
+
+    .title {
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 500;
+    }
+  }
+
+  mat-nav-list {
+    padding-top: 0;
+  }
+
+  section {
+    overflow: auto;
+  }
 }
 
-.mat-card-header {
-
-  // border-bottom: 1px solid rgba(0, 0, 0, .12);
+// Fix menu and select panel overflow scroll bar
+section::-webkit-scrollbar, .mat-select-panel::-webkit-scrollbar {
+  width: 8px;
 }
 
-mat-card-title {
-  font-size: 16px !important;
-  font-weight: 400;
-  // margin-bottom: 0 !important;
+section::-webkit-scrollbar-thumb, .mat-select-panel::-webkit-scrollbar-thumb {
+  background: rgba(95, 99, 104, .45);
+  border-radius: 10px;
 }
+
+section::-webkit-scrollbar-track, .mat-select-panel::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+

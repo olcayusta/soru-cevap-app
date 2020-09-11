@@ -8,10 +8,11 @@ import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
   declarations: [UserComponent],
-    imports: [
-        CommonModule,
-        UserRoutingModule,
-        MatTabsModule
-    ]
+  imports: [
+    CommonModule,
+    UserRoutingModule,
+    MatTabsModule
+  ]
 })
-export class UserModule { }
+export class UserModule {
+}

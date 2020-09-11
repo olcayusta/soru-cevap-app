@@ -1,11 +1,12 @@
-<mat-card>
-  <mat-card-header>
-    <img mat-card-avatar src="{{user.picture}}" alt="{{user.displayName}}">
-    <mat-card-title>{{user.displayName}}</mat-card-title>
-    <mat-card-subtitle>{{user.email}}</mat-card-subtitle>
-  </mat-card-header>
-  <mat-divider></mat-divider>
-  <mat-card-content>
+<div class="popup-page mat-elevation-z2">
+  <header>
+    <img mat-card-avatar src="http://localhost:4200/assets/images/Avatar.jpg" alt="{{user.displayName}}">
+    <div>
+      <div class="title">{{user.displayName}}</div>
+      <div class="subtitle">{{user.email}}</div>
+    </div>
+  </header>
+  <section>
     <mat-nav-list>
       <a mat-list-item routerLink="/settings">
         <qa-settings-icon></qa-settings-icon>
@@ -16,5 +17,5 @@
         <span>Oturumu kapat</span>
       </mat-list-item>
     </mat-nav-list>
-  </mat-card-content>
-</mat-card>
+  </section>
+</div>

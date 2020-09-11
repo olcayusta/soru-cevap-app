@@ -2,14 +2,21 @@
 <html lang="tr">
 <head>
   <meta charset="utf-8">
-  <title>SoruCevapApp</title>
+  <title>Qa App</title>
   <meta name="description"
         content="Stack Overflow is the largest, most trusted online community for developers to learn, share&#x200B; &#x200B;their programming &#x200B;knowledge, and build their careers.">
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-  <link rel="preconnect" href="http://localhost:9001">
+<!--  <link rel="preconnect" href="http://localhost:9001">-->
+
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap" rel="stylesheet">
   <link
     href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
@@ -19,6 +26,22 @@
 </head>
 <body>
 <qa-root></qa-root>
+<script>
+  const darkModeEnabled = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  if (darkModeEnabled) {
+    const metaThemeColorEl = document.querySelector('meta[name=theme-color]');
+    metaThemeColorEl.setAttribute('content', '#272727');
+  }
+  const metaThemeColorEl = document.querySelector('meta[name=theme-color]');
+
+  window.matchMedia('(prefers-color-scheme: dark)').onchange = ev => {
+    if (ev.matches) {
+      metaThemeColorEl.setAttribute('content', '#272727');
+    } else {
+      metaThemeColorEl.setAttribute('content', '#fff');
+    }
+  }
+</script>
 <noscript>Please enable JavaScript to continue using this application.</noscript>
 </body>
 </html>

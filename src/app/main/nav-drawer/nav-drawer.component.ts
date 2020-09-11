@@ -6,6 +6,8 @@ import {CommonModule} from '@angular/common';
 import {MatDividerModule} from '@angular/material/divider';
 import {RouterModule} from '@angular/router';
 import {IconModule} from '../../shared/icon/icon.module';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'qa-nav-drawer',
@@ -41,7 +43,9 @@ export class NavDrawerComponent implements OnInit {
     MatListModule,
     IconModule,
     MatDividerModule,
-    RouterModule
+    RouterModule,
+    MatToolbarModule,
+    MatButtonModule
   ]
 })
 class NavDrawerModule {}

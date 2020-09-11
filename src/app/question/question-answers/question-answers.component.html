@@ -1,4 +1,12 @@
+<h1>Cevaplar</h1>
 <div class="answer-item" *ngFor="let answer of answers | async">
+  <div class="answer-item-user">
+    <img class="user-avatar" src="{{answer.user.picture}}" alt="{{answer.user.displayName}}">
+    <div class="user-info">
+      <div class="title">{{answer.user.displayName}}</div>
+      <div class="subtitle">{{answer.creationTime | date}}</div>
+    </div>
+  </div>
   <div class="answer-item-content" [innerHTML]="answer.content"></div>
   <!--<mat-divider></mat-divider>-->
 </div>

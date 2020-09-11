@@ -2,7 +2,7 @@ import {
   AfterViewInit,
   ChangeDetectionStrategy,
   Component, ElementRef,
-  Input, OnDestroy,
+  Input,
   OnInit, ViewChild,
   ViewEncapsulation
 } from '@angular/core';

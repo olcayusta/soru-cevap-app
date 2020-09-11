@@ -19,10 +19,6 @@ const routes: Routes = [
         canLoad: [AuthGuard]
       },
       {
-        path: 'questions',
-        loadChildren: () => import('./questions/questions.module').then(m => m.QuestionsModule)
-      },
-      {
         path: 'tag',
         loadChildren: () => import('./tag/tag.module').then(m => m.TagModule)
       },
@@ -30,32 +26,24 @@ const routes: Routes = [
         path: 'tags',
         loadChildren: () => import('./tags/tags.module').then(m => m.TagsModule)
       },
-      {
-        path: 'create',
-        loadChildren: () => import('./create-question/create-question.module').then(m => m.CreateQuestionModule)
-      },
-      {
-        path: 'settings',
-        loadChildren: () => import('./settings/settings.module').then(m => m.SettingsModule)
-      },
-      {
-        path: 'user',
-        loadChildren: () => import('./user/user.module').then(m => m.UserModule)
-      },
-      {
-        path: 'question/:questionId',
-        loadChildren: () => import('./question/question.module').then(m => m.QuestionModule)
-      },
-      { path: 'edit', loadChildren: () => import('./edit/edit.module').then(m => m.EditModule) }
+      {path: 'search/:searchTerm', loadChildren: () => import('./search/search.module').then(m => m.SearchModule)},
+      {path: 'create', loadChildren: () => import('./create-question/create-question.module').then(m => m.CreateQuestionModule)},
+      {path: 'settings', loadChildren: () => import('./settings/settings.module').then(m => m.SettingsModule)},
+      {path: 'user', loadChildren: () => import('./user/user.module').then(m => m.UserModule)},
+      {path: 'notifications', loadChildren: () => import('./notifications/notifications.module').then(m => m.NotificationsModule)},
+      {path: 'question/:questionId', loadChildren: () => import('./question/question.module').then(m => m.QuestionModule)},
+      {path: 'edit', loadChildren: () => import('./edit/edit.module').then(m => m.EditModule)}
     ]
   },
   {path: 'login', loadChildren: () => import('./auth/login/login.module').then(m => m.LoginModule)},
-  {path: 'register', loadChildren: () => import('./auth/register/register.module').then(m => m.RegisterModule)},
-  { path: 'search', loadChildren: () => import('./search/search.module').then(m => m.SearchModule) }
-  ];
+  {path: 'register', loadChildren: () => import('./auth/register/register.module').then(m => m.RegisterModule)}
+];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    scrollPositionRestoration: 'enabled'
+    // scrollOffset: [0, 0]
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule {

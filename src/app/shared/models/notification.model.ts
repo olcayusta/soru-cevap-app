@@ -8,4 +8,5 @@ export interface Notification {
   type: number;
   creationTime: Date;
   isRead: boolean;
+  user: User;
 }

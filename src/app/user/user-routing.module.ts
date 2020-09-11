@@ -7,8 +7,8 @@ import { UserResolverService } from './resolvers/user-resolver.service';
 const routes: Routes = [
   {
     path: ':userId',
-    resolve: {user: UserResolverService},
     component: UserComponent,
+    resolve: {user: UserResolverService},
     children: [
       {path: 'answers', loadChildren: () => import('../user-answers/user-answers.module').then(m => m.UserAnswersModule)},
       {path: 'questions', loadChildren: () => import('../user-questions/user-questions.module').then(m => m.UserQuestionsModule)}

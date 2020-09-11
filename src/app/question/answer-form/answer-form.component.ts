@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { AnswerService } from '../../shared/services/answer.service';
+import { AnswerService } from '@shared/services/answer.service';
 
 @Component({
   selector: 'qa-answer-form',

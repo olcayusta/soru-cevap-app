@@ -31,7 +31,7 @@ pre {
 pre code {
   background: transparent !important;
   border: 0;
-  font-size: 14px ;
+  font-size: 14px;
   line-height: 24px;
   margin: 0;
   padding: 0 !important;
@@ -48,12 +48,40 @@ pre {
   font-size: 14px;
   line-height: 20px;
   border-radius: 8px;
+  margin: 24px -160px !important;
+  padding: 24px 160px;
 }
 
 p {
-  font-size: 14px;
-  line-height: 20px;
-  // letter-spacing: .25px;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: .5px;
   margin-top: 0;
   margin-bottom: 16px;
+}
+
+a, :link, :visited {
+  color: #3740ff;
+}
+
+a code, td a code {
+  color: #3740ff;
+}
+
+code {
+  margin: 0 .25em;
+  padding: .125em .25em;
+}
+
+:not(pre) > code {
+  white-space: pre-wrap;
+}
+
+@media (max-width: 599px) {
+  pre {
+    margin: 0 -24px !important;
+    border-radius: 0 !important;
+    border: 0 !important;
+    padding: 24px;
+  }
 }

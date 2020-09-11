@@ -22,16 +22,21 @@
     </div>
   </div>-->
 
-  <div class="my-content example-sidenav-content">
-    <router-outlet></router-outlet>
-     <a mat-fab color="primary" class="fixed-fab-btn" routerLink="/create">
-       <qa-create-icon></qa-create-icon>
-       <span>SORU SOR</span>
-     </a>
-    <!--<app-bottom-bar></app-bottom-bar>-->
-  </div>
+  <main>
+    <div id="content">
+      <div class="my-content">
+        <router-outlet></router-outlet>
+        <div class="fixed-fab-btn">
+          <a mat-fab color="primary" routerLink="/create" class="extended-fab">
+            <qa-create-icon></qa-create-icon>
+            <span>CREATE</span>
+          </a>
+        </div>
 
-
+        <!--<qa-bottom-bar></qa-bottom-bar>-->
+      </div>
+    </div>
+  </main>
 
 
 </mat-sidenav-container>

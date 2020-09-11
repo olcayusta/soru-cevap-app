@@ -1,6 +1,6 @@
-import {Component} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {ResolveEnd, ResolveStart, Router} from '@angular/router';
-import {SocketService} from './shared/services/socket.service';
+import {SocketService} from '@shared/services/socket.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
@@ -8,7 +8,7 @@ import {MatSnackBar} from '@angular/material/snack-bar';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'soru-cevap-app';
 
   spinner = false;
@@ -27,5 +27,8 @@ export class AppComponent {
         this.spinner = false;
       }
     });
+  }
+
+  ngOnInit(): void {
   }
 }

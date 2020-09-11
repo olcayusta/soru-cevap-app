@@ -1,8 +1,8 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { UserService } from '../../shared/services/user.service';
+import { UserService } from '@shared/services/user.service';
 import { Title } from '@angular/platform-browser';
-import { environment } from '../../../environments/environment';
+import { environment } from '@environments/environment';
 
 @Component({
   selector: 'qa-register',
@@ -19,7 +19,7 @@ export class RegisterComponent implements OnInit {
     private title: Title
   ) {
     this.form = fb.group({
-      email: ['', [Validators.required, Validators.email]],
+      email: ['', [Validators.required]],
       password: ['', [Validators.required, Validators.min(8)]],
       displayName: ['Olcay Usta'],
       picture: ['https://resources.tidal.com/images/3f5fb645/46b8/44c4/9721/e60ec54c2fa1/320x320.jpg'],

@@ -1,10 +1,10 @@
-<!--<mat-toolbar>
+<mat-toolbar>
   <button mat-icon-button>
-    <mat-icon>menu</mat-icon>
+    <qa-menu-icon></qa-menu-icon>
   </button>
-  &lt;!&ndash;<span class="toolbar-title">iyidev</span>&ndash;&gt;
-</mat-toolbar>-->
-<ng-container *ngIf="user">
+  <!--<span class="toolbar-title">iyidev</span>-->
+</mat-toolbar>
+<!--<ng-container *ngIf="user">
   <div class="drawer-top">
     <img src="{{user?.picture}}" alt="{{user?.displayName}}">
     <div class="drawer-top-flex">
@@ -12,7 +12,7 @@
       <span class="body2">{{user?.email}}</span>
     </div>
   </div>
-</ng-container>
+</ng-container>-->
 
 <mat-nav-list>
   <a mat-list-item routerLinkActive="active" routerLink="/" [routerLinkActiveOptions]="{exact: true}">
@@ -52,6 +52,7 @@
     <span>Geri bildirim gönder</span>
   </a>
 </mat-nav-list>
+<!--
 <mat-divider></mat-divider>
 <mat-nav-list>
   <mat-list-item (click)="logout()">
@@ -59,3 +60,4 @@
     <span>Oturumu kapat</span>
   </mat-list-item>
 </mat-nav-list>
+-->

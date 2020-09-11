@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { environment } from '../../environments/environment';
+import { environment } from '@environments/environment';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { User } from '../shared/models/user.model';
+import { User } from '@shared/models/user.model';
 import { tap } from 'rxjs/operators';
 
 interface Account {
@@ -43,7 +43,7 @@ export class AuthService {
   }
 
   login(email: string, password: string): Observable<ILogin> {
-    return this.http.post<any>(`${environment.apiUrl}/login`, {
+    return this.http.post<any>(`${environment.apiUrl}/users/login`, {
       email, password
     }).pipe(tap((result: ILogin) => {
       const {user, token} = result;

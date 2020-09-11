@@ -1,6 +1,6 @@
 <div class="page-center">
 
-  <mat-card>
+  <mat-card class="mat-elevation-z1">
     <mat-progress-bar mode="indeterminate" value="50" *ngIf="submitted"></mat-progress-bar>
 
     <mat-card-title>Oturum aç</mat-card-title>
@@ -8,13 +8,15 @@
 
     <form autocomplete="off" spellcheck="false" [formGroup]="form" (submit)="formSubmit()">
       <div class="form-body">
-        <mat-form-field>
+
+        <!-- E-mail -->
+        <mat-form-field appearance="fill">
           <mat-label>E-posta</mat-label>
           <input matInput type="email" formControlName="email">
           <mat-error *ngIf="form.get('email').hasError('required')">Bir e-posta adresi girin</mat-error>
         </mat-form-field>
 
-        <mat-form-field appearance="legacy">
+        <mat-form-field appearance="fill">
           <mat-label>Şifre</mat-label>
           <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" autocomplete="current-password">
           <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"

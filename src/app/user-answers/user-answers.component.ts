@@ -1,4 +1,9 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import {AnswerService} from '@shared/services/answer.service';
+import {Answer} from '@shared/models/answer.model';
+import {UserService} from '@shared/services/user.service';
+import {ActivatedRoute} from '@angular/router';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'qa-user-answers',
@@ -7,10 +12,16 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class UserAnswersComponent implements OnInit {
+  answers: Observable<Answer[]>;
 
-  constructor() { }
+  constructor(
+    private userService: UserService,
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
+    const userId = this.route.snapshot.parent.parent.paramMap.get('userId');
+    this.answers = this.userService.getUserAnswers(+userId);
   }
 
 }

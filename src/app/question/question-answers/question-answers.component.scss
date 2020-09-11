@@ -2,6 +2,41 @@
   display: block;
 }
 
+h1 {
+  font-size: 24px;
+}
+
 .answer-item {
   padding: 16px 0;
+}
+
+.answer-item-user {
+  display: flex;
+  align-items: center;
+  padding: 24px 0;
+}
+
+.user-info {
+  // display: flex;
+}
+
+.title {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+.subtitle {
+  font-size: 13px;
+  line-height: 16px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.user-avatar {
+  display: inline-flex;
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 100%;
+  margin-right: 16px;
 }

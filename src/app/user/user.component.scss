@@ -4,10 +4,16 @@
 
 .header {
   display: flex;
+  flex-direction: column;
   place-content: center;
   place-items: center;
   grid-gap: 24px;
   padding: 32px 0;
+  text-align: center;
+}
+
+.mat-tab-link {
+  font-family: Archivo, sans-serif;
 }
 
 h1 {
@@ -19,13 +25,14 @@ p {
   margin: 0;
   font-size: 14px;
   line-height: 20px;
+  opacity: .6;
 }
 
 .user-avatar {
   display: inline-block;
-  width: 128px;
-  height: 128px;
-  border-radius: 50%;
+  width: 192px;
+  height: 192px;
+  border-radius: 100%;
   object-fit: cover;
 }
 
