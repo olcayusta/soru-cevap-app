@@ -4,13 +4,13 @@
   </div>
   <div class="item-right">
     <div class="item-right-top">
-      <div class="username">
+      <div class="username" matTooltip="{{question.user.displayName}}" matTooltipPosition="above">
         <a routerLink="user/{{question.user.id}}">{{question.user.displayName}}</a>
       </div>
       <span class="bracket">—</span>
-      <div class="time">{{question.creationTime | date}}</div>
+      <div class="time">{{question.creationTime | timeAgo}}</div>
     </div>
-    <div class="question-title">
+    <div class="subtitle-1">
       <a routerLink="question/{{question.id}}">{{question.title}}</a>
       <!--<mat-icon class="check-icon" *ngIf="question.id === 9">check</mat-icon>-->
     </div>

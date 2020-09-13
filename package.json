@@ -26,6 +26,7 @@
     "highlight.js": "^10.2.0",
     "marked": "^1.1.1",
     "rxjs": "~6.6.3",
+    "timeago.js": "^4.0.2",
     "tslib": "^2.0.1",
     "zone.js": "^0.11.1"
   },

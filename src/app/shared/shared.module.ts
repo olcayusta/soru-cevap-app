@@ -5,17 +5,21 @@ import {HomeQuestionListItemComponent} from './components/home-question-list-ite
 import {MatChipsModule} from '@angular/material/chips';
 import {MatDividerModule} from '@angular/material/divider';
 import {RouterModule} from '@angular/router';
+import { TimeAgoPipe } from './pipes/time-ago.pipe';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
     LazyImgDirective,
-    HomeQuestionListItemComponent
+    HomeQuestionListItemComponent,
+    TimeAgoPipe
   ],
   imports: [
     CommonModule,
     MatChipsModule,
     MatDividerModule,
-    RouterModule
+    RouterModule,
+    MatTooltipModule
   ],
   exports: [
     LazyImgDirective,

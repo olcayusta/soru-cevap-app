@@ -68,51 +68,21 @@ $mat-secondary: (
   )
 );
 
-$soru-cevap-app-primary: mat-palette($mat-deep-purple);
-$soru-cevap-app-accent: mat-palette($mat-secondary);
+$app-theme-primary: mat-palette($mat-deep-purple);
+$app-theme-accent: mat-palette($mat-secondary);
 
-$soru-cevap-app-warn: mat-palette($mat-red);
+$app-theme-warn: mat-palette($mat-red);
 
-$soru-cevap-app-theme: mat-light-theme((
+$app-theme: mat-light-theme((
   color: (
-    primary: $soru-cevap-app-primary,
-    accent: $soru-cevap-app-accent,
-    warn: $soru-cevap-app-warn,
+    primary: $app-theme-primary,
+    accent: $app-theme-accent,
+    warn: $app-theme-warn,
   )
 ));
 
-.mat-elevation-z1 {
-  @include mat-elevation(1);
-}
 
-.mat-elevation-z2 {
-  @include mat-elevation(2);
-}
-
-.mat-elevation-z4 {
-  @include mat-elevation(4);
-}
-
-@include mat-toolbar-theme($soru-cevap-app-theme);
-@include mat-sidenav-theme($soru-cevap-app-theme);
-@include mat-divider-theme($soru-cevap-app-theme);
-@include mat-button-theme($soru-cevap-app-theme);
-@include mat-chips-theme($soru-cevap-app-theme);
-@include mat-icon-theme($soru-cevap-app-theme);
-@include mat-form-field-theme($soru-cevap-app-theme);
-@include mat-card-theme($soru-cevap-app-theme);
-@include mat-list-theme($soru-cevap-app-theme);
-@include mat-progress-bar-theme($soru-cevap-app-theme);
-@include mat-progress-spinner-theme($soru-cevap-app-theme);
-@include mat-ripple-theme($soru-cevap-app-theme);
-@include mat-menu-theme($soru-cevap-app-theme);
-@include mat-autocomplete-theme($soru-cevap-app-theme);
-@include mat-tabs-theme($soru-cevap-app-theme);
-@include mat-snack-bar-theme($soru-cevap-app-theme);
-@include mat-expansion-panel-theme($soru-cevap-app-theme);
-@include mat-checkbox-theme($soru-cevap-app-theme);
-@include mat-badge-theme($soru-cevap-app-theme);
-@include mat-option-theme($soru-cevap-app-theme);
+@include angular-material-theme($app-theme);
 
 :root {
   --surface: #fafafa;

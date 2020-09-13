@@ -15,49 +15,34 @@ a:hover {
 .item {
   display: flex;
   grid-gap: 16px;
-  /*content-visibility: auto;
-  contain-intrinsic-size: 121px; !* Explained in the next section. *!*/
+  font-family: Archivo, sans-serif;
 }
 
-.question-title {
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
-  // padding-right: 16px;
+.item-right-top {
+  display: flex;
+  align-items: center;
+  line-height: 20px;
+  color: rgba(0, 0, 0, .6);
+
+  * {
+    font-size: 13px;
+  }
 }
 
 .bracket {
-  font-size: 13px;
   margin: 0 4px;
-}
-
-.time {
-  font-size: 13px;
-  // color: rgba(0, 0, 0, .6);
-}
-
-.username {
-  font-size: 13px;
-  font-weight: 400;
-  // color: rgba(0, 0, 0, .6);
 }
 
 .user-img {
   display: inline-flex;
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   object-fit: cover;
 }
 
 .item-right {
   flex-grow: 1;
-}
-
-.item-right-top {
-  display: flex;
-  align-items: center;
-  line-height: 24px;
 }
 
 .master-span {

@@ -91,9 +91,7 @@ export class TopBarComponent implements OnInit, AfterViewInit {
     markDirty(this);
   }
 
-  async openNotifications(): Promise<void> {
-    const {NotificationListPopupComponent: comp} = await import('../notification-list-popup/notification-list-popup.component');
-    this.compOutlet = comp;
+  openNotifications(): void {
     this.popupOpened = !this.popupOpened;
     this.popup = 'notification';
     markDirty(this);

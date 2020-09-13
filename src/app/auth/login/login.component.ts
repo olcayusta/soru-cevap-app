@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.title.setTitle(`Sign In - ${environment.appTitle}`);
+    this.title.setTitle(`Oturum Aç - ${environment.appTitle}`);
   }
 
   formSubmit(): void {

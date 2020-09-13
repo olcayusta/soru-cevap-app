@@ -1,12 +1,13 @@
 <mat-toolbar class="mat-elevation-z4 top-bar" qaSticky>
 
 
+
+  <mat-toolbar-row>
     <button mat-icon-button aria-label="Example icon-button with menu icon" (click)="openDrawer.emit()">
       <qa-menu-icon></qa-menu-icon>
     </button>
-
-    <a routerLink="/" class="toolbar-title">
-      <span>İyidev</span>
+    <a routerLink="/">
+     <!-- <span class="toolbar-title">App Title</span>-->
       <!--    <sup>beta</sup>-->
     </a>
 
@@ -53,7 +54,7 @@
         <qa-search-icon></qa-search-icon>
       </button>
 
-<!--      <button class="avatar-button" #avatarElement="cdkOverlayOrigin" cdkOverlayOrigin matTooltip="{{user.displayName}}"
+      <button class="avatar-button" #avatarElement="cdkOverlayOrigin" cdkOverlayOrigin matTooltip="{{user.displayName}}"
               (click)="openUsermenu()">
         <img class="avatar-img" src="assets/images/Avatar.jpg" alt="{{user.displayName}}">
       </button>
@@ -65,9 +66,17 @@
         [cdkConnectedOverlayOpen]="popupOpened && popup == 'avatar'"
         [cdkConnectedOverlayOrigin]="avatarElement">
         <ng-container [ngComponentOutlet]="compOutlet2"></ng-container>
-      </ng-template>-->
-
+      </ng-template>
     </ng-container>
+  </mat-toolbar-row>
+  <mat-toolbar-row>
+    <span class="toolbar-title">App Title</span>
+  </mat-toolbar-row>
+  <mat-toolbar-row>
+    <button mat-fab>
+      <qa-create-icon></qa-create-icon>
+    </button>
+  </mat-toolbar-row>
 
 </mat-toolbar>
 

@@ -48,6 +48,10 @@ main {
   bottom: 16px;
   z-index: 1;
 
+  .mat-fab {
+    background-color: #212121;
+  }
+
   button {
     width: auto;
     height: 48px;
@@ -73,9 +77,9 @@ main {
   line-height: 1;
   display: flex;
   align-items: center;
-  font-family: Archivo, sans-serif;
+  // font-family: Archivo, sans-serif;
 
-  qa-create-icon {
+  qa-create-icon, qa-add-icon {
     margin-right: 12px;
   }
 }

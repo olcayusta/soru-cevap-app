@@ -1,18 +1,18 @@
-<mat-toolbar>
-  <button mat-icon-button>
-    <qa-menu-icon></qa-menu-icon>
-  </button>
-  <!--<span class="toolbar-title">iyidev</span>-->
-</mat-toolbar>
-<!--<ng-container *ngIf="user">
+<!--<mat-toolbar>-->
+<!--  <button mat-icon-button>-->
+<!--    <qa-menu-icon></qa-menu-icon>-->
+<!--  </button>-->
+<!--&lt;!&ndash;  <span class="toolbar-title">İyidev</span>&ndash;&gt;-->
+<!--</mat-toolbar>-->
+<ng-container *ngIf="user">
   <div class="drawer-top">
-    <img src="{{user?.picture}}" alt="{{user?.displayName}}">
+    <img src="https://i.pinimg.com/236x/2f/32/ab/2f32ab9adb648c987489c133fede7235.jpg" alt="{{user?.displayName}}">
     <div class="drawer-top-flex">
       <h6 class="headline">{{user?.displayName}}</h6>
       <span class="body2">{{user?.email}}</span>
     </div>
   </div>
-</ng-container>-->
+</ng-container>
 
 <mat-nav-list>
   <a mat-list-item routerLinkActive="active" routerLink="/" [routerLinkActiveOptions]="{exact: true}">
@@ -39,17 +39,16 @@
 <mat-divider></mat-divider>
 <mat-nav-list>
   <a mat-list-item routerLinkActive="active" routerLink="/settings">
-  <!--  <mat-icon>settings</mat-icon>-->
     <qa-settings-icon></qa-settings-icon>
     <span>Hesap & ayarlar</span>
-  </a>
-  <a mat-list-item routerLinkActive="active" routerLink="/help">
-    <qa-help-icon></qa-help-icon>
-    <span>Yardım</span>
   </a>
   <a mat-list-item routerLinkActive="active" routerLink="/feedback">
     <qa-feedback-icon></qa-feedback-icon>
     <span>Geri bildirim gönder</span>
+  </a>
+  <a mat-list-item routerLinkActive="active" routerLink="/help">
+    <qa-help-icon></qa-help-icon>
+    <span>Yardım</span>
   </a>
 </mat-nav-list>
 <!--

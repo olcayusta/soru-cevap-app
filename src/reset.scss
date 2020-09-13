@@ -5,6 +5,39 @@
   letter-spacing: 0.1px;
 }
 
+mat-sidenav {
+  width: 304px;
+  content-visibility: layout;
+}
+
 mat-nav-list {
   padding-bottom: 8px;
 }
+
+.mat-button {
+  padding: 0 8px !important;
+}
+
+mat-chip {
+  background-color: #eee !important;
+  font-weight: 400 !important;
+  letter-spacing: .15px;
+  line-height: 16px;
+}
+
+.flex-spacer {
+  flex: 1 0 auto;
+}
+
+/*
+.mat-tooltip {
+  font-size: 12px;
+  line-height: 16px;
+  !* identical to box height, or 133% *!
+
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.4px;
+  background: rgba(0, 0, 0, 0.6);
+}
+*/

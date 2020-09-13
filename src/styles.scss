@@ -1,6 +1,5 @@
+@import "reset";
 @import "light";
-
-// @import "dark";
 
 /* You can add global styles to this file, and also import other style files */
 
@@ -16,8 +15,7 @@ html, body {
 
 body {
   margin: 0;
-  // font-family: Roboto, "Helvetica Neue", sans-serif;
-  font-family: 'Archivo', sans-serif;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeSpeed;
@@ -54,28 +52,6 @@ mat-sidenav-content {
   box-sizing: border-box;
 }
 
-mat-sidenav {
-  width: 304px;
-  content-visibility: layout;
-}
-
-  .mat-chip {
-  // font-size: 13px !important;
-  font-weight: 400;
-  background-color: #eee !important;
-  // border: 1px solid rgba(0, 0, 0, .12) !important;
-}
-
-.mat-button {
-  padding: 0 8px !important;
-  // letter-spacing: 1.25px;
-  font-family: 'Archivo', sans-serif;
-}
-
-.mat-tooltip {
-  font-family: Archivo, sans-serif;
-}
-
 .mat-drawer.mat-drawer-end {
   width: 320px !important;
   background-color: #fff;
@@ -85,28 +61,12 @@ mat-sidenav {
   background-color: rgba(0, 0, 0, .32);
 }
 
-mat-icon {
-  color: rgba(0, 0, 0, 0.6);
-}
-
 svg {
   fill: var(--icon-color);
 }
 
 .mat-action-row {
   padding: 16px 16px 16px 24px !important;
-}
-
-
-.mat-tooltip {
-  font-size: 12px;
-  line-height: 16px;
-  /* identical to box height, or 133% */
-
-  display: flex;
-  align-items: center;
-  letter-spacing: 0.4px;
-  background: rgba(0, 0, 0, 0.6);
 }
 
 .mat-drawer-container {
@@ -144,11 +104,6 @@ svg {
   color: #FFFFFF;
 }
 
-.mat-option {
-  font-family: 'Archivo', sans-serif;
-
-}
-
 // Fix menu and select panel overflow scroll bar
 .mat-menu-panel::-webkit-scrollbar, .mat-select-panel::-webkit-scrollbar {
   width: 5px;
@@ -175,7 +130,6 @@ svg {
   .mat-menu-item {
     height: 40px;
     line-height: 20px;
-    font-family: 'Archivo', sans-serif;
   }
 }
 
@@ -195,8 +149,23 @@ svg {
 }
 
 pre {
-  scrollbar-color: #80868b rgba(0,0,0,0);
+  scrollbar-color: #80868b rgba(0, 0, 0, 0);
   scrollbar-width: thin;
 }
 
-@import "reset";
+/*
+  Font
+*/
+.subtitle-1 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: .15px;
+}
+
+.subtitle-2 {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: .1px;
+}

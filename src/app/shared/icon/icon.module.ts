@@ -15,6 +15,8 @@ import {VisibilityIconComponent} from './visibility-icon/visibility-icon.compone
 import {VisibilityOffIconComponent} from './visibility-off-icon/visibility-off-icon.component';
 import {FormatBoldIconComponent} from './format-bold-icon/format-bold-icon.component';
 import {CancelIconComponent} from './cancel-icon/cancel-icon.component';
+import { AddIconComponent } from './add-icon/add-icon.component';
+import { RateReviewIconComponent } from './rate-review-icon/rate-review-icon.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import {CancelIconComponent} from './cancel-icon/cancel-icon.component';
     VisibilityIconComponent,
     VisibilityOffIconComponent,
     FormatBoldIconComponent,
-    CancelIconComponent
+    CancelIconComponent,
+    AddIconComponent,
+    RateReviewIconComponent
   ],
   exports: [
     NotificationsIconComponent,
@@ -50,7 +54,9 @@ import {CancelIconComponent} from './cancel-icon/cancel-icon.component';
     MoreVertIconComponent,
     VisibilityIconComponent,
     VisibilityOffIconComponent,
-    CancelIconComponent
+    CancelIconComponent,
+    AddIconComponent,
+    RateReviewIconComponent
   ]
 })
 export class IconModule {

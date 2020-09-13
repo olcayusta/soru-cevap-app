@@ -38,6 +38,9 @@ import { FilterComponent } from './recent-questions/filter/filter.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { SharedModule } from '@shared/shared.module';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { NotificationListPopupComponent } from './notification-list-popup/notification-list-popup.component';
+import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
 
 registerLocaleData(localeTr);
 
@@ -53,7 +56,8 @@ registerLocaleData(localeTr);
     BottomBarComponent,
     FishIconComponent,
     IsVisibleDirective,
-    FilterComponent
+    FilterComponent,
+    NotificationListPopupComponent
   ],
   imports: [
     BrowserModule,
@@ -77,7 +81,9 @@ registerLocaleData(localeTr);
     MatRippleModule,
     MatInputModule,
     MatCheckboxModule,
-    SharedModule
+    MatListModule,
+    SharedModule,
+    MatIconModule
   ],
   providers: [
     {provide: LOCALE_ID, useValue: 'tr-TR'},
