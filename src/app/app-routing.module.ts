@@ -36,7 +36,8 @@ const routes: Routes = [
     ]
   },
   {path: 'login', loadChildren: () => import('./auth/login/login.module').then(m => m.LoginModule)},
-  {path: 'register', loadChildren: () => import('./auth/register/register.module').then(m => m.RegisterModule)}
+  {path: 'register', loadChildren: () => import('./auth/register/register.module').then(m => m.RegisterModule)},
+  { path: '404', loadChildren: () => import('./page-not-found/page-not-found.module').then(m => m.PageNotFoundModule) }
 ];
 
 @NgModule({

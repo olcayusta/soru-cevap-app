@@ -37,13 +37,14 @@ import { MatInputModule } from '@angular/material/input';
 import { FilterComponent } from './recent-questions/filter/filter.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { SharedModule } from '@shared/shared.module';
-import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { NotificationListPopupComponent } from './notification-list-popup/notification-list-popup.component';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { NavDrawerComponent } from './main/nav-drawer/nav-drawer.component';
 import { SearchFormComponent } from './search-form/search-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { TopBarProfileComponent } from './top-bar-profile/top-bar-profile.component';
 
 registerLocaleData(localeTr);
 
@@ -62,7 +63,8 @@ registerLocaleData(localeTr);
     FilterComponent,
     NotificationListPopupComponent,
     NavDrawerComponent,
-    SearchFormComponent
+    SearchFormComponent,
+    TopBarProfileComponent
   ],
   imports: [
     BrowserModule,

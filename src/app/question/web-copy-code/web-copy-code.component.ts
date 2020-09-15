@@ -34,6 +34,8 @@ export class WebCopyCodeComponent implements OnInit, AfterViewInit {
   }
 
   onCopiedCode(): void {
-    this.snackBar.open('Kod kopyalandı', '');
+    /*this.snackBar.open('Kod kopyalandı', '', {
+      duration: 4000
+    });*/
   }
 }

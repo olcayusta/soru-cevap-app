@@ -7,6 +7,37 @@ a {
   text-decoration: none;
 }
 
+#start {
+  display: flex;
+  align-items: center;
+  min-width: 200px;
+}
+
+#center {
+
+}
+
+#end {
+  display: flex;
+  align-items: center;
+  min-width: 200px;
+}
+
+.toolbar-profile-container {
+  display: flex;
+  justify-content: flex-end;
+  min-width: 200px;
+}
+
+.toolbar-end {
+  display: flex;
+  align-items: center;
+}
+
+.toolbar-end button:not(:last-child) {
+  margin-right: 8px;
+}
+
 sup {
   font-size: 12px;
   font-weight: 400;
@@ -89,14 +120,6 @@ mat-toolbar-row:not(:first-child) {
   transition: all 0.15s;
 }
 
-.toolbar-end {
-  display: flex;
-  align-items: center;
-}
-
-.toolbar-end button:not(:last-child) {
-  margin-right: 8px;
-}
 
 /*
   Mobile
