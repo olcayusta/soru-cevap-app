@@ -12,8 +12,11 @@ h1 {
 
 .description {
   font-size: 14px;
-  line-height: 24px;
-  color: rgba(0, 0, 0, .6);
+  line-height: 20px;
+  color: rgba(0, 0, 0, 0.6);
+  font-family: archivo, sans-serif;
+  margin: 8px 0;
+  // letter-spacing: 0.1px;
 }
 
 .bracket {
@@ -41,12 +44,14 @@ h1 {
 }
 
 .display-name {
+  font-family: Archivo, sans-serif;
   font-size: 16px;
   line-height: 24px;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .date {
+  font-family: Archivo, sans-serif;
   font-size: 13px;
   line-height: 16px;
   color: rgba(0, 0, 0, .6);

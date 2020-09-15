@@ -17,6 +17,8 @@ import {FormatBoldIconComponent} from './format-bold-icon/format-bold-icon.compo
 import {CancelIconComponent} from './cancel-icon/cancel-icon.component';
 import { AddIconComponent } from './add-icon/add-icon.component';
 import { RateReviewIconComponent } from './rate-review-icon/rate-review-icon.component';
+import { FilterListIconComponent } from './filter-list-icon/filter-list-icon.component';
+import { ContentCopyIconComponent } from './content-copy-icon/content-copy-icon.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { RateReviewIconComponent } from './rate-review-icon/rate-review-icon.com
     FormatBoldIconComponent,
     CancelIconComponent,
     AddIconComponent,
-    RateReviewIconComponent
+    RateReviewIconComponent,
+    FilterListIconComponent,
+    ContentCopyIconComponent
   ],
   exports: [
     NotificationsIconComponent,
@@ -56,7 +60,9 @@ import { RateReviewIconComponent } from './rate-review-icon/rate-review-icon.com
     VisibilityOffIconComponent,
     CancelIconComponent,
     AddIconComponent,
-    RateReviewIconComponent
+    RateReviewIconComponent,
+    FilterListIconComponent,
+    ContentCopyIconComponent
   ]
 })
 export class IconModule {

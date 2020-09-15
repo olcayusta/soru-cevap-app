@@ -1,0 +1,7 @@
+<button mat-icon-button class="copy-code-btn" matTooltip="Kodu kopyala" [cdkCopyToClipboard]="text.textContent" (cdkCopyToClipboardCopied)="onCopiedCode()">
+  <qa-content-copy-icon></qa-content-copy-icon>
+</button>
+<div class="code-lang">{{lang}}</div>
+<pre>
+  <code class="language-{{lang}}" [innerHTML]="highlightedCode"></code>
+</pre>

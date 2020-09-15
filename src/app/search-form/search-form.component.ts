@@ -56,22 +56,3 @@ export class SearchFormComponent implements OnInit {
     this.router.navigateByUrl(`/question/${q.id}`);
   }
 }
-
-@NgModule({
-  declarations: [
-    SearchFormComponent,
-    HighlightSearchPipe
-  ],
-  imports: [
-    CommonModule,
-    MatAutocompleteModule,
-    ReactiveFormsModule,
-    FormsModule,
-    IconModule,
-    MatButtonModule,
-    RouterModule,
-    SharedModule
-  ]
-})
-class SearchFormModule {
-}

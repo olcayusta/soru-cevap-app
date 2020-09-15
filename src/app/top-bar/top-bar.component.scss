@@ -32,24 +32,35 @@ mat-toolbar-row:not(:first-child) {
   height: 48px;
 }
 
-.toolbar-title {
+.logo-link {
   font-family: 'Archivo', sans-serif;
-  font-weight: 700;
+  font-weight: 600;
   margin-left: 24px;
 }
 
-.avatar-button {
+#avatar-btn {
   background: none;
-  outline: none;
   border: none;
-  padding: 0;
-  width: 40px;
-  height: 40px;
+  outline: none;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0;
   cursor: pointer;
-  margin: 0 0 0 12px;
+  margin: 0 8px 0 16px;
+}
+
+.img-shadow {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  margin: 0 8px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.img-shadow[loaded] {
+  opacity: 1;
 }
 
 .avatar-img {
@@ -78,6 +89,15 @@ mat-toolbar-row:not(:first-child) {
   transition: all 0.15s;
 }
 
+.toolbar-end {
+  display: flex;
+  align-items: center;
+}
+
+.toolbar-end button:not(:last-child) {
+  margin-right: 8px;
+}
+
 /*
   Mobile
 */
@@ -101,14 +121,5 @@ mat-toolbar-row:not(:first-child) {
 
   .more-vert-icon {
     display: none;
-  }
-}
-
-.mat-fab {
-  background-color: #212121;
-  margin-bottom: -32px;
-
-  ::ng-deep svg {
-    fill: white;
   }
 }

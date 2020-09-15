@@ -1,14 +1,6 @@
 import {Component, EventEmitter, OnInit, ChangeDetectionStrategy, Output, NgModule} from '@angular/core';
 import { AuthService } from '../../auth/auth.service';
-import { User } from '../../shared/models/user.model';
-import {MatListModule} from '@angular/material/list';
-import {CommonModule} from '@angular/common';
-import {MatDividerModule} from '@angular/material/divider';
-import {RouterModule} from '@angular/router';
-import {IconModule} from '../../shared/icon/icon.module';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatButtonModule } from '@angular/material/button';
-
+import { User } from '@shared/models/user.model';
 @Component({
   selector: 'qa-nav-drawer',
   templateUrl: './nav-drawer.component.html',
@@ -34,18 +26,3 @@ export class NavDrawerComponent implements OnInit {
   }
 }
 
-@NgModule({
-  declarations: [
-    NavDrawerComponent
-  ],
-  imports: [
-    CommonModule,
-    MatListModule,
-    IconModule,
-    MatDividerModule,
-    RouterModule,
-    MatToolbarModule,
-    MatButtonModule
-  ]
-})
-class NavDrawerModule {}

@@ -1,34 +1,27 @@
 <mat-toolbar class="mat-elevation-z4 top-bar" qaSticky>
 
+  <button mat-icon-button aria-label="Example icon-button with menu icon" (click)="openDrawer.emit()">
+    <qa-menu-icon></qa-menu-icon>
+  </button>
 
-    <button mat-icon-button aria-label="Example icon-button with menu icon" (click)="openDrawer.emit()">
-      <qa-menu-icon></qa-menu-icon>
-    </button>
+  <a routerLink="/" class="logo-link">
+    <span>İyidev</span>
+    <!--    <sup>beta</sup>-->
+  </a>
 
-    <a routerLink="/" class="toolbar-title">
-      <span>İyidev</span>
-      <!--    <sup>beta</sup>-->
-    </a>
+  <span class="flex-spacer"></span>
 
-    <span class="flex-spacer"></span>
+  <qa-search-form></qa-search-form>
 
-    <!--  <qa-search-form></qa-search-form>-->
+  <span class="flex-spacer"></span>
+  <ng-container *ngIf="isLoggedIn$ | async; else signIn">
 
-    <!-- Search Form -->
-    <ng-container [ngComponentOutlet]="searchFormComponent"></ng-container>
+    <div class="toolbar-end">
+      <button mat-icon-button>
+        <qa-rate-review-icon></qa-rate-review-icon>
+      </button>
 
-    <span class="flex-spacer"></span>
-    <ng-container *ngIf="isLoggedIn$ | async; else signIn">
-
-      <!--    <a mat-icon-button routerLink="/notifications" *ngIf="isHandset">
-            <qa-notifications-icon></qa-notifications-icon>
-          </a>-->
-
-      <!--   <button mat-icon-button>
-           <qa-rate-review-icon></qa-rate-review-icon>
-         </button>-->
-
-      <button mat-icon-button class="top-right-btn notification-button" matTooltip="Bildirimler"
+      <button mat-icon-button class="top-right-btn notification-button" aria-label="Bildirimler" matTooltip="Bildirimler"
               #notificationElement="cdkOverlayOrigin"
               cdkOverlayOrigin
               (click)="openNotifications()">
@@ -45,17 +38,13 @@
         <qa-notification-list-popup></qa-notification-list-popup>
       </ng-template>
 
-      <!--    <button mat-icon-button class="top-right-btn" matTooltip="Filtrele" (click)="openSheet.emit()">
-            <mat-icon>filter_list</mat-icon>
-          </button>-->
+  <!--    <button mat-icon-button class="top-right-btn" matTooltip="Filtrele" (click)="openSheet.emit()">
+        <qa-filter-list-icon></qa-filter-list-icon>
+      </button>-->
 
-      <button mat-icon-button class="search-icon">
-        <qa-search-icon></qa-search-icon>
-      </button>
-
-<!--      <button class="avatar-button" #avatarElement="cdkOverlayOrigin" cdkOverlayOrigin matTooltip="{{user.displayName}}"
+      <button id="avatar-btn" aria-label="Alternatif hesapların listesini açan hesap profil fotoğrafı" #avatarElement="cdkOverlayOrigin" cdkOverlayOrigin matTooltip="{{user.displayName}}"
               (click)="openUsermenu()">
-        <img class="avatar-img" src="assets/images/Avatar.jpg" alt="{{user.displayName}}">
+        <img class="avatar-img" src="https://lh3.googleusercontent.com/MZkX0bauoQ1cOM2JFBzwlt9TSFd_vSM71aftYJwtIaVieglnrFbhYwbdiIqyBjIjbVkxEMsvo2UAchXmAxyGLd2V6HfHebYWwGlEAw" alt="{{user.displayName}}">
       </button>
 
       <ng-template
@@ -65,12 +54,12 @@
         [cdkConnectedOverlayOpen]="popupOpened && popup == 'avatar'"
         [cdkConnectedOverlayOrigin]="avatarElement">
         <ng-container [ngComponentOutlet]="compOutlet2"></ng-container>
-      </ng-template>-->
+      </ng-template>
+    </div>
 
-    </ng-container>
+  </ng-container>
 
 </mat-toolbar>
-
 
 <ng-template #signIn>
   <button mat-icon-button matTooltip="Ayarlar" class="top-right-btn more-vert-icon" [matMenuTriggerFor]="moreMenu">

@@ -1,0 +1,30 @@
+:host {
+  display: block;
+  position: relative;
+}
+
+.copy-code-btn {
+  color: #202124;
+  margin: 16px 48px;
+  opacity: 0;
+  position: absolute;
+  right: -160px;
+}
+
+.code-lang {
+  font-family: roboto mono, monospace;
+  font-size: 10px;
+  line-height: 16px;
+  text-transform: uppercase;
+  margin: 20px 0;
+  position: absolute;
+  left: 0;
+}
+
+pre {
+  padding-top: 48px;
+}
+
+:host:hover .copy-code-btn {
+  opacity: 1;
+}

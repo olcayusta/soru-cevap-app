@@ -41,6 +41,9 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { NotificationListPopupComponent } from './notification-list-popup/notification-list-popup.component';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
+import { NavDrawerComponent } from './main/nav-drawer/nav-drawer.component';
+import { SearchFormComponent } from './search-form/search-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 registerLocaleData(localeTr);
 
@@ -57,7 +60,9 @@ registerLocaleData(localeTr);
     FishIconComponent,
     IsVisibleDirective,
     FilterComponent,
-    NotificationListPopupComponent
+    NotificationListPopupComponent,
+    NavDrawerComponent,
+    SearchFormComponent
   ],
   imports: [
     BrowserModule,
@@ -83,7 +88,8 @@ registerLocaleData(localeTr);
     MatCheckboxModule,
     MatListModule,
     SharedModule,
-    MatIconModule
+    MatIconModule,
+    ReactiveFormsModule
   ],
   providers: [
     {provide: LOCALE_ID, useValue: 'tr-TR'},

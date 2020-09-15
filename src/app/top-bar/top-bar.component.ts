@@ -15,7 +15,6 @@ import { StateService } from '@shared/services/state.service';
 import { ScrollStrategy, ScrollStrategyOptions } from '@angular/cdk/overlay';
 import { NotificationListPopupComponent } from '../notification-list-popup/notification-list-popup.component';
 import { UserMenuPopupComponent } from '../user-menu-popup/user-menu-popup.component';
-import { SearchFormComponent } from '../search-form/search-form.component';
 import { NotificationService } from '@shared/services/notification.service';
 import { shareReplay } from 'rxjs/operators';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
@@ -41,7 +40,6 @@ export class TopBarComponent implements OnInit, AfterViewInit {
   topbarOpened;
   compOutlet: Type<NotificationListPopupComponent>;
   compOutlet2: Type<UserMenuPopupComponent>;
-  searchFormComponent: Type<SearchFormComponent>;
 
   notificationCount;
 
@@ -59,10 +57,7 @@ export class TopBarComponent implements OnInit, AfterViewInit {
     this.blockScrollStrategy = this.sso.block();
   }
 
-  async ngAfterViewInit(): Promise<void> {
-    const {SearchFormComponent: comp} = await import('../search-form/search-form.component');
-    this.searchFormComponent = comp;
-    markDirty(this);
+  ngAfterViewInit(): void {
   }
 
   async ngOnInit(): Promise<void> {
@@ -97,9 +92,7 @@ export class TopBarComponent implements OnInit, AfterViewInit {
     markDirty(this);
   }
 
-  async openUsermenu(): Promise<void> {
-    const {UserMenuPopupComponent: comp} = await import('../user-menu-popup/user-menu-popup.component');
-    this.compOutlet2 = comp;
+  openUsermenu(): void {
     this.popupOpened = !this.popupOpened;
     this.popup = 'avatar';
     markDirty(this);

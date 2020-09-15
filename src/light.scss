@@ -85,7 +85,7 @@ $app-theme: mat-light-theme((
 @include angular-material-theme($app-theme);
 
 :root {
-  --surface: #fafafa;
+  --surface: #fff;
   --topbar-background: #fff;
   --high-emphasis-color: black;
   --card-background: #fff;

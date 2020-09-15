@@ -113,9 +113,9 @@ mat-chip-list {
   text-transform: lowercase;
 }
 
-::ng-deep .mat-chip-selected {
-  background-color: #212121 !important;
-  // color: #6200ee !important;
+.mat-chip-selected {
+  background: #f3ebfe !important;
+  color: #6200ee !important;
   // border: 1px solid rgba(0, 0, 0, .12) !important;
 }
 

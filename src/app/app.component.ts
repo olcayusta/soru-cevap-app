@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ResolveEnd, ResolveStart, Router} from '@angular/router';
-import {SocketService} from '@shared/services/socket.service';
-import {MatSnackBar} from '@angular/material/snack-bar';
+import { ResolveEnd, ResolveStart, Router } from '@angular/router';
 
 @Component({
   selector: 'qa-root',
@@ -9,14 +7,10 @@ import {MatSnackBar} from '@angular/material/snack-bar';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'soru-cevap-app';
-
   spinner = false;
 
   constructor(
-    private router: Router,
-    private socketService: SocketService,
-    private snackBar: MatSnackBar
+    private router: Router
   ) {
     router.events.subscribe(value => {
       if (value instanceof ResolveStart) {

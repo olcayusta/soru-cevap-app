@@ -11,6 +11,10 @@ import { QuestionAnswersComponent } from './question-answers/question-answers.co
 import { MatDividerModule } from '@angular/material/divider';
 import { AnswerFormComponent } from './answer-form/answer-form.component';
 import { SharedModule } from '../shared/shared.module';
+import { WebCopyCodeComponent } from './web-copy-code/web-copy-code.component';
+import { IconModule } from '../shared/icon/icon.module';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { ClipboardModule } from '@angular/cdk/clipboard';
 
 
 @NgModule({
@@ -18,7 +22,8 @@ import { SharedModule } from '../shared/shared.module';
     QuestionComponent,
     QuestionContentComponent,
     QuestionAnswersComponent,
-    AnswerFormComponent
+    AnswerFormComponent,
+    WebCopyCodeComponent
   ],
   imports: [
     CommonModule,
@@ -28,7 +33,10 @@ import { SharedModule } from '../shared/shared.module';
     ReactiveFormsModule,
     FormsModule,
     MatDividerModule,
-    SharedModule
+    SharedModule,
+    IconModule,
+    MatTooltipModule,
+    ClipboardModule
   ]
 })
 export class QuestionModule {

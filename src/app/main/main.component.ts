@@ -17,8 +17,6 @@ export class MainComponent implements OnInit {
 
   isSmallScreen;
 
-  comp: Type<NavDrawerComponent>;
-
   constructor(
     private snackBar: MatSnackBar,
     private breakpointObserver: BreakpointObserver,
@@ -47,35 +45,6 @@ export class MainComponent implements OnInit {
      });*/
   }
 
-  notifyMe(): void {
-    // Let's check if the browser supports notifications
-    if (!('Notification' in window)) {
-      alert('This browser does not support desktop notification');
-    }
-
-    // Let's check whether notification permissions have already been granted
-    else if (Notification.permission === 'granted') {
-      // If it's okay let's create a notification
-      const notification = new Notification('Hi there!', {
-        icon: 'https://resources.tidal.com/images/3f5fb645/46b8/44c4/9721/e60ec54c2fa1/320x320.jpg',
-        body: 'My body!'
-      });
-    }
-
-    // Otherwise, we need to ask the user for permission
-    else if (Notification.permission !== 'denied') {
-      Notification.requestPermission().then((permission) => {
-        // If the user accepts, let's create a notification
-        if (permission === 'granted') {
-          const notification = new Notification('Hi there!', {
-            icon: 'https://resources.tidal.com/images/3f5fb645/46b8/44c4/9721/e60ec54c2fa1/320x320.jpg',
-            body: 'My body!'
-          });
-        }
-      });
-    }
-  }
-
   sidenavClosedStart(): void {
     this.document.body.style.overflow = '';
   }
@@ -92,11 +61,5 @@ export class MainComponent implements OnInit {
 
   drawerClosedStart(): void {
     this.document.body.style.overflow = '';
-  }
-
-  async openSidenav(): Promise<void> {
-    const {NavDrawerComponent: comp} = await import('./nav-drawer/nav-drawer.component');
-    this.comp = comp;
-    markDirty(this);
   }
 }

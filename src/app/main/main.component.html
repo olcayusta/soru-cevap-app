@@ -1,7 +1,7 @@
 <mat-sidenav-container>
   <mat-sidenav position="start" #drawer [autoFocus]="false" fixedInViewport (closedStart)="sidenavClosedStart()"
                (openedStart)="sidenavOpenedStart()">
-    <ng-container [ngComponentOutlet]="comp"></ng-container>
+    <qa-nav-drawer></qa-nav-drawer>
   </mat-sidenav>
   <mat-sidenav position="end" [mode]="mode" #sheet [autoFocus]="false" fixedInViewport
                (openedStart)="drawerOpenedStart()" (closedStart)="drawerClosedStart()"
@@ -9,7 +9,7 @@
     <qa-side-sheet></qa-side-sheet>
   </mat-sidenav>
 
-  <qa-top-bar (openDrawer)="openSidenav(); drawer.toggle()" (openSheet)="sheet.toggle()"></qa-top-bar>
+  <qa-top-bar (openDrawer)="drawer.toggle()" (openSheet)="sheet.toggle()"></qa-top-bar>
 <!--
   <div id="main">
     <div class="my-content example-sidenav-content">

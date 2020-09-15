@@ -7,12 +7,14 @@ import {MatDividerModule} from '@angular/material/divider';
 import {RouterModule} from '@angular/router';
 import { TimeAgoPipe } from './pipes/time-ago.pipe';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { HighlightSearchPipe } from '../search-form/pipes/highlight-search.pipe';
 
 @NgModule({
   declarations: [
     LazyImgDirective,
     HomeQuestionListItemComponent,
-    TimeAgoPipe
+    TimeAgoPipe,
+    HighlightSearchPipe
   ],
   imports: [
     CommonModule,
@@ -23,7 +25,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
   ],
   exports: [
     LazyImgDirective,
-    HomeQuestionListItemComponent
+    HomeQuestionListItemComponent,
+    HighlightSearchPipe
   ]
 })
 export class SharedModule {

@@ -19,11 +19,11 @@ mat-card {
 }
 
 mat-form-field {
-  font-family: Archivo, sans-serif;
+  // font-family: Archivo, sans-serif;
 }
 
 button {
-  font-family: Archivo, sans-serif;
+  // font-family: Archivo, sans-serif;
 }
 
 mat-progress-bar {
@@ -57,5 +57,46 @@ mat-progress-bar {
   .page-center {
     display: flex;
     place-items: inherit;
+  }
+}
+
+.social-login-button {
+  display: block;
+
+  text-transform: uppercase;
+  letter-spacing: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+
+  svg {
+    display: inline-flex;
+    fill: #fff;
+    margin-right: 12px;
+  }
+}
+
+.row-github {
+ /* height: 48px;
+  display: flex;
+  align-items: center;*/
+  background-color: #24292e;
+  color: #fff;
+  justify-content: center;
+
+
+  cursor: pointer;
+
+  .logo {
+    display: inline-flex;
+  }
+
+
+}
+
+.row-facebook {
+  background-color: #385499;
+  color: #fff;
+
+  svg, path {
+    fill: #fff;
   }
 }
