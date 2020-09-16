@@ -1,28 +1,35 @@
-<div class="layout-container">
-  <header>
-    <h1>{{question.title}}</h1>
-    <div class="description">
-      <time [dateTime]="question.creationTime">{{question.creationTime | date}}</time>
-      <span class="bracket">-</span>
-      <span>{{question.viewCount}} görüntülenme</span>
-    </div>
+<div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+  <div class="layout-container">
+    <header>
 
-    <div class="user-row">
-      <img class="user-img" src="{{question.user.picture}}" alt="{{question.user.displayName}}">
-      <div class="user-flex">
-        <a routerLink="/user/{{question.user.id}}">
-          <div class="display-name">{{question.user.displayName}}</div>
-        </a>
-        <div class="date">Web Geliştirici</div>
+      <h1 itemprop="name">{{question.title}}</h1>
+
+      <div itemprop="text" class="description">
+        <time itemprop="dateCreated" [dateTime]="question.creationTime">{{question.creationTime | date}}</time>
+        <span class="bracket">-</span>
+        <span>{{question.viewCount}} görüntülenme</span>
       </div>
-    </div>
-  </header>
+
+      <div itemprop="author" itemscope itemtype="https://schema.org/Person">
+        <div class="author">
+          <img itemprop="image" class="author-img" src="{{question.user.picture}}" alt="{{question.user.displayName}}">
+          <div class="author-info">
+            <a routerLink="/user/{{question.user.id}}">
+              <div itemprop="name" class="author-name">{{question.user.displayName}}</div>
+            </a>
+            <div class="author-job">Web Geliştirici</div>
+          </div>
+        </div>
+      </div>
+
+
+    </header>
+  </div>
+
+  <qa-question-content [content]="question.content"></qa-question-content>
+
+  <qa-question-answers></qa-question-answers>
+
 </div>
-
-
-
-<qa-question-content [content]="question.content"></qa-question-content>
-
-<qa-question-answers></qa-question-answers>
 
 <qa-answer-form></qa-answer-form>

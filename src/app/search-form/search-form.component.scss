@@ -68,3 +68,19 @@ input {
     display: none;
   }
 }
+
+
+
+// Fix menu and select panel overflow scroll bar
+::ng-deep .my-autocomplete::-webkit-scrollbar, .mat-select-panel::-webkit-scrollbar {
+  width: 8px;
+}
+
+::ng-deep .my-autocomplete::-webkit-scrollbar-thumb, .mat-select-panel::-webkit-scrollbar-thumb {
+  background: rgba(95, 99, 104, .45);
+  border-radius: 10px;
+}
+
+::ng-deep .my-autocomplete::-webkit-scrollbar-track, .mat-select-panel::-webkit-scrollbar-track {
+  border-radius: 10px;
+}

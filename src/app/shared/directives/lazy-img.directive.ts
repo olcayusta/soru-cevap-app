@@ -4,14 +4,14 @@ import { AfterViewInit, Directive, ElementRef, HostBinding, HostListener, Input,
   selector: '[qaLazyImg]'
 })
 export class LazyImgDirective implements OnInit, AfterViewInit {
-  // @HostBinding('attr.src') imgSrc = null;
+  // @HostBinding('attr.src') src = null;
   @Input() qaLazyImg: string;
 
   constructor({nativeElement}: ElementRef<HTMLImageElement>, private elRef: ElementRef) {
     const supports = 'loading' in HTMLImageElement.prototype;
 
     if (supports) {
-      // nativeElement.setAttribute('loading', 'lazy');
+      nativeElement.setAttribute('loading', 'lazy');
     } else {
       // fallback
     }
@@ -26,8 +26,7 @@ export class LazyImgDirective implements OnInit, AfterViewInit {
       const entry = entries[0];
       const img = entry.target as HTMLImageElement;
       if (entry.isIntersecting) {
-        console.log(this.qaLazyImg);
-        img.src = this.qaLazyImg;;
+        img.src = this.qaLazyImg;
         obs.disconnect();
       }
     });

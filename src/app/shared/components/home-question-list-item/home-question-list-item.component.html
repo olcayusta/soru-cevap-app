@@ -1,17 +1,17 @@
 <div class="item">
   <div class="item-left">
-    <img class="user-img" width="48" height="48" src="{{question.user.picture}}" alt="{{question.user.displayName}}">
+    <img qaLazyImg="{{question.user.picture}}" class="user-img" width="40" height="40" alt="{{question.user.displayName}}">
   </div>
   <div class="item-right">
     <div class="item-right-top">
       <div class="username" matTooltip="{{question.user.displayName}}" matTooltipPosition="above">
-        <a routerLink="user/{{question.user.id}}">{{question.user.displayName}}</a>
+        <a routerLink="/user/{{question.user.id}}">{{question.user.displayName}}</a>
       </div>
       <span class="bracket">—</span>
       <div class="time">{{question.creationTime | timeAgo}}</div>
     </div>
     <div class="subtitle-1">
-      <a routerLink="question/{{question.id}}">{{question.title}}</a>
+      <a routerLink="/question/{{question.id}}">{{question.title}}</a>
       <!--<mat-icon class="check-icon" *ngIf="question.id === 9">check</mat-icon>-->
     </div>
 

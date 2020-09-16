@@ -125,11 +125,16 @@ svg {
 
 .text-only-menu {
   min-width: 192px !important;
-  border-radius: 4px !important;
+  border-radius: 8px !important;
+  margin-top: 8px;
 
   .mat-menu-item {
-    height: 40px;
+    height: 32px;
     line-height: 20px;
+  }
+
+  .mat-menu-item.active {
+    background-color: #e8f0fe;
   }
 }
 

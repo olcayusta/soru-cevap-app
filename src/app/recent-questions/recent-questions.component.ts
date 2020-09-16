@@ -1,6 +1,8 @@
 import { Component, OnInit, ChangeDetectionStrategy, ɵmarkDirty as markDirty } from '@angular/core';
 import { QuestionService } from '@shared/services/question.service';
 import { Question } from '@shared/models/question.model';
+import { ActivatedRoute } from '@angular/router';
+import { FilterService } from '@shared/services/filter.service';
 
 @Component({
   selector: 'qa-recent-questions',
@@ -14,7 +16,9 @@ export class RecentQuestionsComponent implements OnInit {
   offset = 0;
 
   constructor(
-    private questionService: QuestionService
+    private questionService: QuestionService,
+    private filterService: FilterService,
+    private route: ActivatedRoute
   ) {
   }
 
@@ -22,6 +26,17 @@ export class RecentQuestionsComponent implements OnInit {
     this.questionService.getAllQuestions().subscribe(value => {
       this.questions = value;
       markDirty(this);
+    });
+
+    this.route.queryParamMap.subscribe(value => {
+      console.log('Sort value:', value.get('sort'));
+      const sort = value.get('sort');
+      if (sort) {
+        this.filterService.getQuestionsByFiltered(value.get('sort')).subscribe(value1 => {
+          this.questions = value1;
+          markDirty(this);
+        });
+      }
     });
   }
 

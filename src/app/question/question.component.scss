@@ -23,13 +23,13 @@ h1 {
   margin: 0 8px;
 }
 
-.user-row {
+.author {
   display: flex;
   align-items: center;
   margin-top: 48px;
 }
 
-.user-img {
+.author-img {
   display: inline-block;
   width: 64px;
   height: 64px;
@@ -38,19 +38,19 @@ h1 {
   object-fit: cover;
 }
 
-.user-flex {
+.author-info {
   display: flex;
   flex-direction: column;
 }
 
-.display-name {
+.author-name {
   font-family: Archivo, sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 500;
 }
 
-.date {
+.author-job {
   font-family: Archivo, sans-serif;
   font-size: 13px;
   line-height: 16px;

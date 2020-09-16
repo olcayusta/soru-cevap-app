@@ -29,6 +29,7 @@ const routes: Routes = [
       {path: 'search/:searchTerm', loadChildren: () => import('./search/search.module').then(m => m.SearchModule)},
       {path: 'create', loadChildren: () => import('./create-question/create-question.module').then(m => m.CreateQuestionModule)},
       {path: 'settings', loadChildren: () => import('./settings/settings.module').then(m => m.SettingsModule)},
+      {path: 'list', loadChildren: () => import('./list/list.module').then(m => m.ListModule)},
       {path: 'user', loadChildren: () => import('./user/user.module').then(m => m.UserModule)},
       {path: 'notifications', loadChildren: () => import('./notifications/notifications.module').then(m => m.NotificationsModule)},
       {path: 'question/:questionId', loadChildren: () => import('./question/question.module').then(m => m.QuestionModule)},
@@ -37,7 +38,7 @@ const routes: Routes = [
   },
   {path: 'login', loadChildren: () => import('./auth/login/login.module').then(m => m.LoginModule)},
   {path: 'register', loadChildren: () => import('./auth/register/register.module').then(m => m.RegisterModule)},
-  { path: '404', loadChildren: () => import('./page-not-found/page-not-found.module').then(m => m.PageNotFoundModule) }
+  {path: '404', loadChildren: () => import('./page-not-found/page-not-found.module').then(m => m.PageNotFoundModule)}
 ];
 
 @NgModule({

@@ -6,6 +6,7 @@
 h1 {
   font-family: Archivo, sans-serif;
   font-size: 20px;
+  font-weight: 500;
   line-height: 32px;
   margin-bottom: 0;
 }
@@ -35,4 +36,9 @@ mat-checkbox {
 .filter-menu-button-content {
   display: flex;
   align-items: center;
+}
+
+.mat-menu-item-highlighted {
+  background-color: rgba(98, 0, 238, 0.12) !important;
+  color: #6200ee;
 }

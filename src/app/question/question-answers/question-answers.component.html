@@ -1,12 +1,22 @@
-<h1>Cevaplar</h1>
-<div class="answer-item" *ngFor="let answer of answers | async">
-  <div class="answer-item-user">
-    <img class="user-avatar" src="{{answer.user.picture}}" alt="{{answer.user.displayName}}">
-    <div class="user-info">
-      <div class="title">{{answer.user.displayName}}</div>
-      <div class="subtitle">{{answer.creationTime | date}}</div>
+<ng-container *ngIf="answers$ | async as answers">
+  <h1 itemprop="answerCount">{{answers.length}} yanıt</h1>
+
+  <div itemprop="suggestedAnswer" itemscope itemtype="https://schema.org/Answer">
+    <div class="answer-item" *ngFor="let answer of answers">
+      <div class="answer-item-user">
+        <img class="user-avatar" src="{{answer.user.picture}}" alt="{{answer.user.displayName}}">
+        <div class="user-info">
+          <div itemprop="author" itemscope itemtype="https://schema.org/Person">
+            <div itemprop="name" class="title">{{answer.user.displayName}}</div>
+          </div>
+          <div class="subtitle">
+            <time [dateTime]="answer.creationTime">{{answer.creationTime | date}}</time>
+          </div>
+        </div>
+      </div>
+      <div itemprop="text" [innerHTML]="answer.content"></div>
+      <!--<mat-divider></mat-divider>-->
     </div>
   </div>
-  <div class="answer-item-content" [innerHTML]="answer.content"></div>
-  <!--<mat-divider></mat-divider>-->
-</div>
+
+</ng-container>

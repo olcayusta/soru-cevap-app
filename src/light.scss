@@ -85,6 +85,8 @@ $app-theme: mat-light-theme((
 @include angular-material-theme($app-theme);
 
 :root {
+  --mdc-theme-on-primary: #fff;
+  --mdc-theme-primary: #6200ee;
   --surface: #fff;
   --topbar-background: #fff;
   --high-emphasis-color: black;
