@@ -1,7 +1,7 @@
-import {Component, ChangeDetectionStrategy, ChangeDetectorRef} from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: 'qa-visibility-off-icon',
+  selector: 'id-visibility-off-icon',
   templateUrl: 'visibility_off-24px.svg',
   styles: [`:host {
     display: inline-flex
@@ -9,9 +9,4 @@ import {Component, ChangeDetectionStrategy, ChangeDetectorRef} from '@angular/co
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class VisibilityOffIconComponent {
-
-  constructor(private cd: ChangeDetectorRef) {
-    cd.detach();
-  }
-
 }

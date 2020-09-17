@@ -1,7 +1,7 @@
-import {Component, ChangeDetectionStrategy, ChangeDetectorRef} from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: 'qa-notifications-icon',
+  selector: 'id-notifications-icon',
   templateUrl: 'notifications-24px.svg',
   styles: [`:host {
     display: inline-flex;
@@ -10,9 +10,4 @@ import {Component, ChangeDetectionStrategy, ChangeDetectorRef} from '@angular/co
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NotificationsIconComponent {
-
-  constructor(private cd: ChangeDetectorRef) {
-    cd.detach();
-  }
-
 }

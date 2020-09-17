@@ -1,16 +1,12 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: 'qa-format-bold-icon',
-  templateUrl: './format-bold-icon.component.html',
-  styleUrls: ['./format-bold-icon.component.scss'],
+  selector: 'id-format-bold-icon',
+  templateUrl: 'format_bold-24px.svg',
+  styles: [`:host {
+    display: inline-flex
+  }`],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class FormatBoldIconComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class FormatBoldIconComponent {
 }

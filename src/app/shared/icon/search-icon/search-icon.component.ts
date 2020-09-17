@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'id-search-icon',
@@ -9,8 +9,4 @@ import { Component, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SearchIconComponent {
-
-  constructor(private cd: ChangeDetectorRef) {
-    cd.detach();
-  }
 }

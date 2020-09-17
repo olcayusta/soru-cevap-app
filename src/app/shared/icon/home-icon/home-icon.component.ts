@@ -1,7 +1,7 @@
-import {Component, ChangeDetectionStrategy, ChangeDetectorRef} from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: 'qa-home-icon',
+  selector: 'id-home-icon',
   templateUrl: 'home-24px.svg',
   styles: [`:host {
     display: inline-flex;
@@ -9,9 +9,4 @@ import {Component, ChangeDetectionStrategy, ChangeDetectorRef} from '@angular/co
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeIconComponent {
-
-  constructor(private cd: ChangeDetectorRef) {
-    cd.detach();
-  }
-
 }

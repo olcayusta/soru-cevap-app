@@ -2,7 +2,7 @@
 
   <div id="start">
     <button mat-icon-button aria-label="Example icon-button with menu icon" class="menu-button" (click)="openDrawer.emit()">
-      <qa-menu-icon></qa-menu-icon>
+      <id-menu-icon></id-menu-icon>
     </button>
 
     <a routerLink="/" class="logo-link">
@@ -21,7 +21,7 @@
       <div class="toolbar-end">
 
         <button mat-icon-button matTooltip="İncelemeler" hidden>
-          <qa-rate-review-icon></qa-rate-review-icon>
+          <id-rate-review-icon></id-rate-review-icon>
         </button>
 
         <button mat-icon-button class="top-right-btn notification-button" aria-label="Bildirimler" hidden
@@ -29,8 +29,8 @@
                 #notificationElement="cdkOverlayOrigin"
                 cdkOverlayOrigin
                 (click)="openNotifications()">
-          <qa-notifications-icon matBadge="{{notificationCount | async}}"
-                                 [matBadgeHidden]="(notificationCount | async) === 0"></qa-notifications-icon>
+          <id-notifications-icon matBadge="{{notificationCount | async}}"
+                                 [matBadgeHidden]="(notificationCount | async) === 0"></id-notifications-icon>
         </button>
 
         <ng-template
@@ -76,7 +76,7 @@
 <ng-template #signIn>
   <div>
     <button mat-icon-button matTooltip="Ayarlar" class="top-right-btn more-vert-icon" [matMenuTriggerFor]="moreMenu">
-      <qa-more-vert-icon></qa-more-vert-icon>
+      <id-more-vert-icon></id-more-vert-icon>
     </button>
 
     <mat-menu #moreMenu="matMenu" xPosition="before" class="text-only-menu">
