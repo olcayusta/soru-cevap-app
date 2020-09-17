@@ -4,7 +4,7 @@ import { User } from '@shared/models/user.model';
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'qa-settings',
+  selector: 'id-settings',
   templateUrl: './settings.component.html',
   styleUrls: ['./settings.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -14,7 +14,8 @@ export class SettingsComponent implements OnInit {
 
   constructor(
     private settingsService: SettingsService
-  ) { }
+  ) {
+  }
 
   ngOnInit(): void {
     this.user = this.settingsService.getAccount();

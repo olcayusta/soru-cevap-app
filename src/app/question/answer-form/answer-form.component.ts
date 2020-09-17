@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { AnswerService } from '@shared/services/answer.service';
 
 @Component({
-  selector: 'qa-answer-form',
+  selector: 'id-answer-form',
   templateUrl: './answer-form.component.html',
   styleUrls: ['./answer-form.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

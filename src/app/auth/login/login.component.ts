@@ -8,7 +8,7 @@ import { Title } from '@angular/platform-browser';
 import { environment } from '@environments/environment';
 
 @Component({
-  selector: 'qa-login',
+  selector: 'id-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
     private title: Title
   ) {
     this.form = fb.group({
-      email: ['gamze@mail.com', [Validators.required, Validators.email]],
+      email: ['selena@mail.com', [Validators.required, Validators.email]],
       password: ['123456', [Validators.required, Validators.min(8)]]
     });
   }

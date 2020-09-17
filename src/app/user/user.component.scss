@@ -2,7 +2,7 @@
   display: block;
 }
 
-.header {
+header {
   display: flex;
   flex-direction: column;
   place-content: center;
@@ -17,15 +17,19 @@
 }
 
 h1 {
-  margin: 8px 0;
-  margin-bottom: 0;
+  font-family: Archivo, sans-serif;
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 56px;
+  margin: 0;
 }
 
 p {
-  margin: 0;
+  font-family: Archivo, sans-serif;
   font-size: 14px;
   line-height: 20px;
-  opacity: .6;
+  color: var(--icon-color);
+  margin: 0;
 }
 
 .user-avatar {

@@ -3,7 +3,7 @@ import { Tag } from '@shared/models/tag.model';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
-  selector: 'qa-tag',
+  selector: 'id-tag',
   templateUrl: './tag.component.html',
   styleUrls: ['./tag.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -13,7 +13,8 @@ export class TagComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute
-  ) { }
+  ) {
+  }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params: ParamMap) => {

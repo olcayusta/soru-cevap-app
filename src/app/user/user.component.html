@@ -1,10 +1,8 @@
-<div class="header">
+<header class="header">
   <img class="user-avatar" src="{{user.picture}}" alt="{{user.displayName}}">
-  <div>
-    <h1 class="mat-h1 display-name">{{user.displayName}}</h1>
-    <p>{{user.signupDate | date}}</p>
-  </div>
-</div>
+  <h1 class="mat-h1 display-name">{{user.displayName}}</h1>
+  <p>{{user.signupDate | date}}</p>
+</header>
 
 <nav mat-tab-nav-bar>
   <a mat-tab-link *ngFor="let link of links"

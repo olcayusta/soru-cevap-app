@@ -4,7 +4,7 @@ import { SocketService } from '@shared/services/socket.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
-  selector: 'qa-root',
+  selector: 'id-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })

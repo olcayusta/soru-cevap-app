@@ -4,7 +4,7 @@ import { Notification } from '@shared/models/notification.model';
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'qa-notification-list-popup',
+  selector: 'id-notification-list-popup',
   templateUrl: './notification-list-popup.component.html',
   styleUrls: ['./notification-list-popup.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

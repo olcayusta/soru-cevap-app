@@ -1,14 +1,13 @@
 <h1>Etiketler</h1>
 <div class="items">
-  <mat-card *ngFor="let tag of tags" class="mat-elevation-z4">
-    <mat-card-header>
-      <mat-card-title>{{tag.title}}</mat-card-title>
-      <mat-card-subtitle>{{tag.description}}</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
-      <p>{{tag.questionCount}}</p>
-    </mat-card-content>
-  </mat-card>
+  <div class="item" *ngFor="let tag of tags">
+    <div class="tag-header">
+      <div class="tag-title">{{tag.title}}</div>
+    </div>
+    <div class="question-count">
+      {{tag.questionCount}} soru
+    </div>
+  </div>
 </div>
 
 

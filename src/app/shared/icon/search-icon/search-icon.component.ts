@@ -1,7 +1,7 @@
-import {Component, ChangeDetectionStrategy, ChangeDetectorRef} from '@angular/core';
+import { Component, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 
 @Component({
-  selector: 'qa-search-icon',
+  selector: 'id-search-icon',
   templateUrl: 'search-24px.svg',
   styles: [`:host {
     display: inline-flex
@@ -13,5 +13,4 @@ export class SearchIconComponent {
   constructor(private cd: ChangeDetectorRef) {
     cd.detach();
   }
-
 }

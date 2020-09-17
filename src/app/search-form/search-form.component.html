@@ -2,12 +2,12 @@
 <!--  <button mat-icon-button aria-label="Example icon-button with search icon">
     <qa-search-icon></qa-search-icon>
   </button>-->
-<!--  <qa-search-icon></qa-search-icon>-->
+<!--  <id-search-icon></id-search-icon>-->
   <input aria-label="Ara" autocomplete="off" spellcheck="false" placeholder="Ara" [formControl]="myControl"
          [matAutocomplete]="auto" [matAutocompleteConnectedTo]="origin">
 </div>
 
-<mat-autocomplete #auto="matAutocomplete" class="my-autocomplete mat-elevation-z2"
+<mat-autocomplete #auto="matAutocomplete" class="my-autocomplete mat-elevation-z2" [displayWith]="displayFn"
                   (optionSelected)="selectedOption($event)">
   <mat-optgroup label="Sorular">
     <mat-option *ngFor="let option of filteredQuestions | async" [value]="option">

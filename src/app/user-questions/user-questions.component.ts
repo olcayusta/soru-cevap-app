@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'qa-user-questions',
+  selector: 'id-user-questions',
   templateUrl: './user-questions.component.html',
   styleUrls: ['./user-questions.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

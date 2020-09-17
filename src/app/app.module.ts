@@ -45,6 +45,7 @@ import { NavDrawerComponent } from './main/nav-drawer/nav-drawer.component';
 import { SearchFormComponent } from './search-form/search-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TopBarProfileComponent } from './top-bar-profile/top-bar-profile.component';
+import { UserMenuPopupComponent } from './user-menu-popup/user-menu-popup.component';
 
 registerLocaleData(localeTr);
 
@@ -64,7 +65,8 @@ registerLocaleData(localeTr);
     NotificationListPopupComponent,
     NavDrawerComponent,
     SearchFormComponent,
-    TopBarProfileComponent
+    TopBarProfileComponent,
+    UserMenuPopupComponent
   ],
   imports: [
     BrowserModule,

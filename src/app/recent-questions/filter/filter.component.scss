@@ -1,23 +1,5 @@
 :host {
   display: block;
-  padding: 24px 0;
-  box-sizing: content-box;
-}
-
-.filter {
-  display: flex;
-  align-items: center;
-}
-
-@media (max-width: 599px) {
-  :host {
-    padding: 24px 16px 12px 16px;
-    overflow: auto;
-
-    button {
-      min-width: auto !important;
-    }
-  }
 }
 
 h1 {
@@ -28,10 +10,32 @@ h1 {
   margin-bottom: 0;
 }
 
-mat-checkbox {
-  font-family: Archivo, sans-serif;
-  font-size: 14px;
+.filter {
+  display: flex;
+  align-items: center;
+  padding: 24px 0;
+  // grid-gap: 8px;
 
+  button {
+    margin-right: 24px;
+  }
+}
+
+@media (max-width: 599px) {
+  .filter {
+    padding: 24px 16px 12px 16px;
+    overflow: auto;
+
+    button {
+      min-width: auto !important;
+    }
+  }
+}
+
+mat-checkbox {
+  font-size: 14px;
+  line-height: 20px;
+  margin-right: 24px;
 }
 
 .outlined-menu-button {
@@ -41,9 +45,7 @@ mat-checkbox {
   font-weight: 400;
   line-height: 32px;
   min-height: 32px;
-  padding-right: 25px;
   text-transform: none;
-  margin: 0 10px 0 0;
   border: 1px solid #dadce0;
   color: #3c4043;
   padding-left: 16px;

@@ -1,8 +1,8 @@
 {
-  "name": "soru-cevap-app",
-  "short_name": "soru-cevap-app",
+  "name": "Qa App",
+  "short_name": "Qa App",
   "theme_color": "#fff",
-  "background_color": "#fafafa",
+  "background_color": "#fff",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",

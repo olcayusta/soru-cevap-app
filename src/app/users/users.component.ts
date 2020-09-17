@@ -1,10 +1,10 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { User } from '../shared/models/user.model';
+import { User } from '@shared/models/user.model';
 import { ActivatedRoute } from '@angular/router';
-import { UserService } from '../shared/services/user.service';
+import { UserService } from '@shared/services/user.service';
 
 @Component({
-  selector: 'qa-users',
+  selector: 'id-users',
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

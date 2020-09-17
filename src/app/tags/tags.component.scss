@@ -9,6 +9,7 @@ h1 {
   font-weight: 500;
   line-height: 48px;
   margin: 32px 0;
+  text-align: center;
 }
 
 .items {
@@ -17,6 +18,24 @@ h1 {
   grid-gap: 24px;
 }
 
-mat-card {
+.item {
   background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, .12);
+  box-shadow: none !important;
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.tag-title {
+  font-family: Archivo, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.question-count {
+  font-size: 14px;
+  line-height: 20px;
+  margin: 8px 0;
+  color: rgba(0, 0, 0, .6);
 }

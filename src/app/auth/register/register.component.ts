@@ -5,7 +5,7 @@ import { Title } from '@angular/platform-browser';
 import { environment } from '@environments/environment';
 
 @Component({
-  selector: 'qa-register',
+  selector: 'id-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

@@ -1,7 +1,7 @@
-import {Component, ChangeDetectionStrategy, ChangeDetectorRef} from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: 'qa-cancel-icon',
+  selector: 'id-cancel-icon',
   templateUrl: 'cancel-24px.svg',
   styles: [`:host {
     display: inline-flex;
@@ -9,10 +9,4 @@ import {Component, ChangeDetectionStrategy, ChangeDetectorRef} from '@angular/co
   }`],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class CancelIconComponent {
-
-  constructor(private cd: ChangeDetectorRef) {
-    cd.detach();
-  }
-
-}
+export class CancelIconComponent {}

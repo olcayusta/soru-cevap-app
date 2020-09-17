@@ -4,7 +4,7 @@ import { FilterService } from '@shared/services/filter.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'qa-filter',
+  selector: 'id-filter',
   templateUrl: './filter.component.html',
   styleUrls: ['./filter.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

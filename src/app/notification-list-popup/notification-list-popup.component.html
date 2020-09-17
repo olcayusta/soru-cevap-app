@@ -7,7 +7,7 @@
       <a mat-list-item *ngFor="let notification of notifications$  | async">
         <img mat-list-avatar src="{{notification.user.picture}}" alt="{{notification.user.displayName}}">
         <h3 mat-line>{{notification.text}}</h3>
-        <p mat-line>{{notification.user.displayName}}</p>
+        <p mat-line class="secondary-text">{{notification.user.displayName}}}</p>
       </a>
     </mat-nav-list>
   </section>

@@ -13,7 +13,7 @@ import { SharedModule } from '@shared/shared.module';
 import { HighlightSearchPipe } from './pipes/highlight-search.pipe';
 
 @Component({
-  selector: 'qa-search-form',
+  selector: 'id-search-form',
   templateUrl: './search-form.component.html',
   styleUrls: ['./search-form.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -43,6 +43,10 @@ export class SearchFormComponent implements OnInit {
       startWith(''),
       map(value => this._filter(value))
     );
+  }
+
+  displayFn(question: Question): Question {
+    return question && question ? question : null;
   }
 
   private _filter(value: string): string[] {

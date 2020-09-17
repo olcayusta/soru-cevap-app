@@ -5,7 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { FilterService } from '@shared/services/filter.service';
 
 @Component({
-  selector: 'qa-recent-questions',
+  selector: 'id-recent-questions',
   templateUrl: './recent-questions.component.html',
   styleUrls: ['./recent-questions.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -41,13 +41,14 @@ export class RecentQuestionsComponent implements OnInit {
   }
 
   loadMore(): void {
-    console.log('load more is detect!');
-    this.questionService.getMoreQuestions(this.offset).subscribe(value => {
-      if (value) {
-        this.offset += 6;
-        this.questions = [...this.questions, ...value];
-        markDirty(this);
-      }
-    });
+    setTimeout(() => {
+      this.questionService.getMoreQuestions(this.offset).subscribe(value => {
+        if (value) {
+          this.offset += 6;
+          this.questions = [...this.questions, ...value];
+          markDirty(this);
+        }
+      });
+    }, 1000);
   }
 }

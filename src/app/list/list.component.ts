@@ -4,7 +4,7 @@ import { ListService } from '@shared/services/list.service';
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'qa-list',
+  selector: 'id-list',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -14,7 +14,8 @@ export class ListComponent implements OnInit {
 
   constructor(
     private listService: ListService
-  ) { }
+  ) {
+  }
 
   ngOnInit(): void {
     this.questions = this.listService.getMyQuestions();

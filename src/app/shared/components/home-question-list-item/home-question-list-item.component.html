@@ -1,9 +1,14 @@
 <div class="item">
+
+
   <div class="item-left">
     <div class="img-shadow">
-      <img src="{{question.user.picture}}" class="user-img" width="40" height="40" alt="{{question.user.displayName}}">
+      <a routerLink="/user/{{question.user.id}}">
+        <img src="{{question.user.picture}}" class="author-img" width="40" height="40" alt="{{question.user.displayName}}">
+      </a>
     </div>
   </div>
+
   <div class="item-right">
     <div class="item-right-top">
       <div class="username" matTooltip="{{question.user.displayName}}" matTooltipPosition="above">
@@ -16,7 +21,6 @@
     <a routerLink="/question/{{question.id}}">
       <div class="subtitle-1">{{question.title}}</div>
     </a>
-
 
     <div class="tag-list">
       <mat-chip-list aria-label="Fish selection">

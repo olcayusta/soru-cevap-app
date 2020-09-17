@@ -2,7 +2,7 @@ import { Component, OnInit, ChangeDetectionStrategy, ɵmarkDirty as markDirty, A
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
-  selector: 'qa-web-copy-code',
+  selector: 'id-web-copy-code',
   templateUrl: './web-copy-code.component.html',
   styleUrls: ['./web-copy-code.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -28,7 +28,7 @@ export class WebCopyCodeComponent implements OnInit, AfterViewInit {
       this.lang = language;
       this.highlightedCode = value;
       console.log(this.highlightedCode);
-      markDirty(this)
+      markDirty(this);
     };
     worker.postMessage(this.text.textContent);
   }

@@ -1,7 +1,7 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: 'qa-content-copy-icon',
+  selector: 'id-content-copy-icon',
   templateUrl: 'content_copy-24px.svg',
   styles: [`:host {
     display: inline-flex
@@ -9,7 +9,4 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ContentCopyIconComponent {
-
-  constructor() {
-  }
 }

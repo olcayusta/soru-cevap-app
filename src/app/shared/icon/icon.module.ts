@@ -19,6 +19,7 @@ import { AddIconComponent } from './add-icon/add-icon.component';
 import { RateReviewIconComponent } from './rate-review-icon/rate-review-icon.component';
 import { FilterListIconComponent } from './filter-list-icon/filter-list-icon.component';
 import { ContentCopyIconComponent } from './content-copy-icon/content-copy-icon.component';
+import { ArrowDropDownIconComponent } from './arrow-drop-down-icon/arrow-drop-down-icon.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { ContentCopyIconComponent } from './content-copy-icon/content-copy-icon.
     AddIconComponent,
     RateReviewIconComponent,
     FilterListIconComponent,
-    ContentCopyIconComponent
+    ContentCopyIconComponent,
+    ArrowDropDownIconComponent
   ],
   exports: [
     NotificationsIconComponent,
@@ -62,7 +64,8 @@ import { ContentCopyIconComponent } from './content-copy-icon/content-copy-icon.
     AddIconComponent,
     RateReviewIconComponent,
     FilterListIconComponent,
-    ContentCopyIconComponent
+    ContentCopyIconComponent,
+    ArrowDropDownIconComponent
   ]
 })
 export class IconModule {

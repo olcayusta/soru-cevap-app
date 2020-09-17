@@ -9,7 +9,7 @@ import {
 import { WebCopyCodeComponent } from '../web-copy-code/web-copy-code.component';
 
 @Component({
-  selector: 'qa-question-content',
+  selector: 'id-question-content',
   templateUrl: './question-content.component.html',
   styleUrls: ['./question-content.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -40,14 +40,14 @@ export class QuestionContentComponent implements OnInit, AfterViewInit {
         const hostView = compRef.hostView as EmbeddedViewRef<any>;
         block.replaceWith(hostView.rootNodes[0]);
 
-      /*  const worker = new Worker('./highlight.worker', {type: 'module'});
+        /*  const worker = new Worker('./highlight.worker', {type: 'module'});
 
-        worker.onmessage = ({data}) => {
-          const {language, value} = data;
-          block.classList.add('hljs', language);
-          block.innerHTML = value;
-        };
-        worker.postMessage(block.textContent);*/
+          worker.onmessage = ({data}) => {
+            const {language, value} = data;
+            block.classList.add('hljs', language);
+            block.innerHTML = value;
+          };
+          worker.postMessage(block.textContent);*/
 
       });
   }

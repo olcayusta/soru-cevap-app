@@ -1,7 +1,7 @@
 import { AfterViewInit, Directive, ElementRef, EventEmitter, Output } from '@angular/core';
 
 @Directive({
-  selector: '[appIsVisible]'
+  selector: '[idIsVisible]'
 })
 export class IsVisibleDirective implements AfterViewInit {
   @Output() isVisible = new EventEmitter();

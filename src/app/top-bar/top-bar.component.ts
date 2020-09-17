@@ -13,14 +13,13 @@ import { AuthService } from '../auth/auth.service';
 import { Observable } from 'rxjs';
 import { StateService } from '@shared/services/state.service';
 import { ScrollStrategy, ScrollStrategyOptions } from '@angular/cdk/overlay';
-import { NotificationListPopupComponent } from '../notification-list-popup/notification-list-popup.component';
 import { UserMenuPopupComponent } from '../user-menu-popup/user-menu-popup.component';
 import { NotificationService } from '@shared/services/notification.service';
 import { shareReplay } from 'rxjs/operators';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 
 @Component({
-  selector: 'qa-top-bar',
+  selector: 'id-top-bar',
   templateUrl: './top-bar.component.html',
   styleUrls: ['./top-bar.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -38,7 +37,6 @@ export class TopBarComponent implements OnInit, AfterViewInit {
   blockScrollStrategy: ScrollStrategy;
 
   topbarOpened;
-  compOutlet: Type<NotificationListPopupComponent>;
   compOutlet2: Type<UserMenuPopupComponent>;
 
   notificationCount;

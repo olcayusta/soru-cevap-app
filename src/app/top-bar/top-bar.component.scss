@@ -50,6 +50,8 @@ sup {
 }
 
 mat-toolbar {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   background-color: var(--topbar-background) !important;
   contain: layout;
   position: fixed;

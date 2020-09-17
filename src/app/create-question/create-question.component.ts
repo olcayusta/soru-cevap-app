@@ -1,10 +1,10 @@
-import { Component, OnInit, ChangeDetectionStrategy, ɵmarkDirty as markDirty, OnDestroy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, ɵmarkDirty as markDirty } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { QuestionService } from '@shared/services/question.service';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
-  selector: 'qa-create-question',
+  selector: 'id-create-question',
   templateUrl: './create-question.component.html',
   styleUrls: ['./create-question.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

@@ -5,7 +5,7 @@ import { Title } from '@angular/platform-browser';
 import { environment } from '@environments/environment';
 
 @Component({
-  selector: 'qa-user',
+  selector: 'id-user',
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

@@ -2,7 +2,7 @@ import {Component, EventEmitter, OnInit, ChangeDetectionStrategy, Output, NgModu
 import { AuthService } from '../../auth/auth.service';
 import { User } from '@shared/models/user.model';
 @Component({
-  selector: 'qa-nav-drawer',
+  selector: 'id-nav-drawer',
   templateUrl: './nav-drawer.component.html',
   styleUrls: ['./nav-drawer.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
