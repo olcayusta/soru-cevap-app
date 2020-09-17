@@ -1,7 +1,7 @@
 :host {
   display: block;
   // min-height: 100%;
-  background-color: #fafafa;
+  // background-color: #fafafa;
   font-family: Archivo, sans-serif;
 }
 
@@ -11,11 +11,20 @@
   place-items: center;
 }
 
-mat-card {
-  width: 500px;
-  height: 550px;
-  padding: 24px;
+.my-card {
+  width: 550px;
+  height: 600px;
+  padding: 40px 48px;
   overflow: hidden;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, .12);
+  border-radius: 8px;
+}
+
+.social-login-info {
+  display: grid;
+  margin: 24px 0;
+  grid-gap: 4px;
 }
 
 mat-form-field {
@@ -40,8 +49,21 @@ mat-progress-bar {
   margin-top: 24px;
 }
 
-.mat-card-title {
+h4 {
   font-family: Archivo, sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+  margin: 0;
+  text-align: center;
+}
+
+p {
+  font-size: 16px;
+  line-height: 24px;
+  color: rgba(0, 0, 0, .6);
+  margin: 0;
+  text-align: center;
 }
 
 .row-actions {
@@ -60,6 +82,17 @@ mat-progress-bar {
   }
 }
 
+.social-login-info {
+  display: grid;
+  grid-gap: 8px;
+
+  button {
+    height: 48px;
+    border: 1px solid rgba(0, 0, 0, .12);
+    border-radius: 24px;
+  }
+}
+
 .social-login-button {
   display: block;
 
@@ -69,34 +102,30 @@ mat-progress-bar {
 
   svg {
     display: inline-flex;
-    fill: #fff;
+    fill: #000000;
     margin-right: 12px;
   }
 }
 
 .row-github {
- /* height: 48px;
-  display: flex;
-  align-items: center;*/
-  background-color: #24292e;
-  color: #fff;
+  /* height: 48px;
+   display: flex;
+   align-items: center;*/
+  // background-color: #24292e;
+  // color: #fff;
   justify-content: center;
-
-
   cursor: pointer;
 
   .logo {
     display: inline-flex;
   }
 
-
 }
 
 .row-facebook {
-  background-color: #385499;
-  color: #fff;
+
 
   svg, path {
-    fill: #fff;
+    fill: #000000;
   }
 }

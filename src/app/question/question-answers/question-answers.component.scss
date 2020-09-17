@@ -4,6 +4,8 @@
 
 h1 {
   font-size: 24px;
+  font-weight: 400;
+  font-family: Archivo, sans-serif;
 }
 
 .answer-item {
@@ -27,12 +29,14 @@ h1 {
 .title {
   font-family: Archivo, sans-serif;
   font-size: 16px;
-  font-weight: 500;
-  line-height: 24px;
+  font-weight: 400;
+  line-height: 20px;
 }
 
 .subtitle {
+  font-family: Archivo, sans-serif;
   font-size: 13px;
+  font-weight: 400;
   line-height: 16px;
   color: rgba(0, 0, 0, 0.6);
 }

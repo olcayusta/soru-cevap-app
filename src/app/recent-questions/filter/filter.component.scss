@@ -1,6 +1,23 @@
 :host {
   display: block;
   padding: 24px 0;
+  box-sizing: content-box;
+}
+
+.filter {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 599px) {
+  :host {
+    padding: 24px 16px 12px 16px;
+    overflow: auto;
+
+    button {
+      min-width: auto !important;
+    }
+  }
 }
 
 h1 {
@@ -14,7 +31,7 @@ h1 {
 mat-checkbox {
   font-family: Archivo, sans-serif;
   font-size: 14px;
-  font-weight: 500;
+
 }
 
 .outlined-menu-button {

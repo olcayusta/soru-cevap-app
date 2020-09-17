@@ -2,6 +2,7 @@
   display: block;
   // min-height: 100vh;
   // height: calc(100vh - 64px);
+  padding: 24px 0;
 }
 
 a {
@@ -34,10 +35,18 @@ a:hover {
 }
 
 h1 {
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 24px;
-  margin: 24px 0;
+  font-family: Archivo, sans-serif;
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 48px;
+  margin: 0 0 12px 0;
+}
+
+p {
+  font-family: Archivo, sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  margin: 0;
 }
 
 h3 {

@@ -10,7 +10,6 @@ a {
 #start {
   display: flex;
   align-items: center;
-  min-width: 200px;
 }
 
 .logo-link {
@@ -28,13 +27,11 @@ sup {
 }
 
 #center {
-
 }
 
 #end {
   display: flex;
   align-items: center;
-  min-width: 200px;
 }
 
 .toolbar-profile-container {
@@ -58,6 +55,7 @@ mat-toolbar {
   position: fixed;
   top: 0;
   z-index: 1;
+  // box-shadow: 0px 2px 2px rgba(0, 0, 0, .12);
 }
 
 mat-toolbar-row:not(:first-child) {
@@ -115,16 +113,31 @@ mat-toolbar-row:not(:first-child) {
   transition: all 0.15s;
 }
 
+.mobile-show {
+  display: none;
+}
 
 /*
   Mobile
 */
 @media (max-width: 599px) {
+  .menu-button {
+    // margin-left: -8px;
+  }
+
+  button[hidden] {
+    display: none;
+  }
+
+  .mobile-show {
+    display: block;
+  }
+
   qa-search-form {
     display: none;
   }
 
-  .toolbar-title {
+  .logo-link {
     margin-left: 16px;
   }
 

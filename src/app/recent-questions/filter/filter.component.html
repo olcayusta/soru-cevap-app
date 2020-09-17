@@ -1,14 +1,21 @@
-<button mat-button class="outlined-menu-button" [matMenuTriggerFor]="sortMenu">
-  <span>Sort by: Trending</span>
- <!-- <mat-icon>arrow_drop_up</mat-icon>-->
-</button>
+<div class="filter">
+  <button mat-button class="outlined-menu-button" aria-label="Open sort by order interactions menu" [matMenuTriggerFor]="sortMenu">
+    <span>Sıralama ölçütü: {{items[selectedIndex].label}}</span>
+    <!-- <mat-icon>arrow_drop_up</mat-icon>-->
+  </button>
+
+  <mat-checkbox color="primary" checked="true">Cevap bekleyen sorular</mat-checkbox>
+</div>
+<!--<mat-checkbox color="primary">No accepted answer</mat-checkbox>-->
+<!--
 <mat-checkbox color="primary">Yalnızca cevapsız soruları göster</mat-checkbox>
+-->
 
 <mat-menu #sortMenu="matMenu" class="text-only-menu">
   <button mat-menu-item  *ngFor="let item of items; let index = index" #menuItem (click)="onItemClick(menuItem, index)">{{item.label}}</button>
 </mat-menu>
 
-<button mat-button class="outlined-menu-button" [matMenuTriggerFor]="languageMenu">
+<!--<button mat-button class="outlined-menu-button" [matMenuTriggerFor]="languageMenu">
   <span>Language</span>
 </button>
 
@@ -16,7 +23,6 @@
   <div *ngFor="let item of languageItems">
     <mat-checkbox>{{item.label}}</mat-checkbox>
   </div>
-<!--  <button mat-menu-item  *ngFor="let item of languageItems; let index = index" #menuItem (click)="onLanguageMenuItemClicked(menuItem, index)">{{item.label}}</button>-->
-</mat-menu>
+&lt;!&ndash;  <button mat-menu-item  *ngFor="let item of languageItems; let index = index" #menuItem (click)="onLanguageMenuItemClicked(menuItem, index)">{{item.label}}</button>&ndash;&gt;
+</mat-menu>-->
 
-<!--<H1>Son sorular</H1>-->

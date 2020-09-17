@@ -45,11 +45,11 @@ main {
 .fixed-fab-btn {
   position: fixed;
   right: 16px;
-  bottom: 24px;
+  bottom: 16px;
   z-index: 1;
 
   .mat-fab {
-    background-color: #6200ee;
+    background-color: #212121;
   }
 
   button {
@@ -65,8 +65,9 @@ main {
   span {
     font-size: 14px;
     line-height: 16px;
-    text-transform: uppercase;
-    letter-spacing: 1.25px;
+    // text-transform: uppercase;
+    // letter-spacing: 1.25px;
+    font-family: Archivo, sans-serif;
   }
 }
 

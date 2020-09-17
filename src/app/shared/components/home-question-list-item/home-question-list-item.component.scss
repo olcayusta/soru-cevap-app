@@ -21,8 +21,8 @@ a:hover {
 .item-right-top {
   display: flex;
   align-items: center;
-  line-height: 20px;
-  color: rgba(0, 0, 0, .6);
+  line-height: 24px;
+  color: rgba(0, 0, 0, .72);
 
   * {
     font-size: 13px;
@@ -31,6 +31,14 @@ a:hover {
 
 .bracket {
   margin: 0 4px;
+}
+
+.img-shadow {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #eee;
 }
 
 .user-img {
@@ -99,7 +107,17 @@ mat-chip-list {
 
 .tag-list {
   display: flex;
-  margin: 8px 4px 8px 4px;
+  margin: 8px 0 8px 0;
+}
+
+mat-chip {
+  // min-height: 28px;
+  // padding: 7px 10px;
+  background-color: #fff !important;
+  border: 1px solid rgba(0, 0, 0, .12);
+  // font-size: 13px;
+  // letter-spacing: 0;
+  border: 1px solid rgba(32,33,36,0.16);
 }
 
 .mat-basic-chip {
@@ -157,10 +175,10 @@ mat-chip-list {
 }
 
 mat-chip {
-  background-color: #fff !important;
-  border: 1px solid rgba(0, 0, 0, .12);
-/*  font-size: 10px;
-  text-transform: uppercase;
-  min-height: 24px;
-  padding: 7px 8px;*/
+  // background-color: #fff !important;
+  // border: 1px solid rgba(0, 0, 0, .12);
+  /*  font-size: 10px;
+    text-transform: uppercase;
+    min-height: 24px;
+    padding: 7px 8px;*/
 }

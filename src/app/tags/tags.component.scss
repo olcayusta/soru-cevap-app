@@ -4,8 +4,9 @@
 }
 
 h1 {
+  font-family: Archivo, sans-serif;
   font-size: 34px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 48px;
   margin: 32px 0;
 }
@@ -14,4 +15,8 @@ h1 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 24px;
+}
+
+mat-card {
+  background-color: #fff;
 }

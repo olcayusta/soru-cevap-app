@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ResolveEnd, ResolveStart, Router } from '@angular/router';
 import { SocketService } from '@shared/services/socket.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'qa-root',
@@ -12,7 +13,8 @@ export class AppComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private socketService: SocketService
+    private socketService: SocketService,
+    private snackBar: MatSnackBar
   ) {
     router.events.subscribe(value => {
       if (value instanceof ResolveStart) {
@@ -28,6 +30,7 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.socketService.on('new answer').subscribe(value => {
       console.log('Sorunuza, yeni ber cevap geldi.');
+      this.snackBar.open('One line text string.');
     });
   }
 }

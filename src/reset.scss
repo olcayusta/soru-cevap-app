@@ -14,9 +14,17 @@ mat-nav-list {
   padding-bottom: 8px;
 }
 
+.mat-checkbox-inner-container {
+  margin-right: 12px !important;
+}
+
 .mat-button {
   padding: 0 8px !important;
   letter-spacing: 1.25px;
+}
+
+.outlined-menu-button {
+  padding: 0 16px !important;
 }
 
 .mat-option {
@@ -44,5 +52,13 @@ mat-chip {
   align-items: center;
   letter-spacing: 0.4px;
   background: rgba(0, 0, 0, 0.6);
+}
+*/
+
+/*
+@media (prefers-color-scheme: dark) {
+  mat-sidenav {
+    background-color: #353535 !important;
+  }
 }
 */

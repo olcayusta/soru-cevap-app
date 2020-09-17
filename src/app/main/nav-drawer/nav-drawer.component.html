@@ -1,13 +1,6 @@
-<!--<mat-toolbar>-->
-<!--  <button mat-icon-button>-->
-<!--    <qa-menu-icon></qa-menu-icon>-->
-<!--  </button>-->
-<!--&lt;!&ndash;  <span class="toolbar-title">İyidev</span>&ndash;&gt;-->
-<!--</mat-toolbar>-->
 <ng-container *ngIf="user">
-  <div class="drawer-top">
-<!--    <img src="https://i.pinimg.com/236x/2f/32/ab/2f32ab9adb648c987489c133fede7235.jpg" alt="{{user?.displayName}}">-->
-    <img src="https://lh3.googleusercontent.com/MZkX0bauoQ1cOM2JFBzwlt9TSFd_vSM71aftYJwtIaVieglnrFbhYwbdiIqyBjIjbVkxEMsvo2UAchXmAxyGLd2V6HfHebYWwGlEAw" alt="..">
+  <div class="drawer-header">
+    <img src="{{user.picture}}" alt="{{user.displayName}}">
     <div class="drawer-top-flex">
       <h6 class="headline">{{user?.displayName}}</h6>
       <span class="body2">{{user?.email}}</span>
@@ -24,18 +17,6 @@
     <qa-question-answer-icon></qa-question-answer-icon>
     <span>Sorularım</span>
   </a>
-<!--  <a mat-list-item routerLinkActive="active" routerLink="/questions" (click)="closeDrawer.emit()">
-    <mat-icon>question_answer</mat-icon>
-    <span>Sorular</span>
-  </a>-->
-<!--  <a mat-list-item routerLinkActive="active" routerLink="/users" (click)="closeDrawer.emit()">
-    <mat-icon>group</mat-icon>
-    <span>Kullanıcılar</span>
-  </a>
-  <a mat-list-item routerLinkActive="active" routerLink="/tags" (click)="closeDrawer.emit()">
-    <mat-icon>label</mat-icon>
-    <span>Etiketler</span>
-  </a>-->
 </mat-nav-list>
 <mat-divider></mat-divider>
 <mat-nav-list>

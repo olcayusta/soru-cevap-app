@@ -11,7 +11,8 @@ export class QuestionService {
 
   constructor(
     private http: HttpClient
-  ) { }
+  ) {
+  }
 
   getAllQuestions(): Observable<Question[]> {
     return this.http.get<Question[]>(`${environment.apiUrl}/questions`);

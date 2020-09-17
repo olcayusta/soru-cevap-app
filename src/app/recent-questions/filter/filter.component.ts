@@ -16,9 +16,9 @@ export class FilterComponent implements OnInit, AfterViewInit {
   @ViewChild('languageMenu') languageMenu: MatMenu;
 
   items = [
-    {sort: '', label: 'Trending'},
-    {sort: 'popularity', label: 'Most popular'},
-    {sort: 'date', label: 'Newest'},
+    {sort: '', label: 'Trendler'},
+    {sort: 'popularity', label: 'En popüler'},
+    {sort: 'date', label: 'En yeni'},
     {sort: 'alpha', label: 'Name'},
     {sort: 'alpha', label: 'Recent activity'},
   ];
@@ -49,22 +49,12 @@ export class FilterComponent implements OnInit, AfterViewInit {
     this.menuItemList.toArray()[this.selectedIndex]._highlighted = false;
     this.selectedIndex = index;
     menuItem._highlighted = true;
-    console.log(menuItem.getLabel());
-    if (menuItem.getLabel() === 'Newest') {
-      this.router.navigate(['/'], {
-        queryParams: {
-          sort: 'date'
-        }
-      });
-    }
 
-    if (menuItem.getLabel() === 'Most popular') {
-      this.router.navigate(['/'], {
-        queryParams: {
-          sort: 'popularity'
-        }
-      });
-    }
+    this.router.navigate(['/'], {
+      queryParams: {
+        sort: this.items[this.selectedIndex].sort
+      }
+    });
   }
 
   onLanguageMenuItemClicked(menuItem: MatMenuItem, index: number): void {

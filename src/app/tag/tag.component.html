@@ -1,5 +1,7 @@
-<p>tag works!</p>
-<h1>{{tag.title}}</h1>
+<header>
+  <h1>{{tag.title}}</h1>
+  <p>Our latest news, updates, and stories about {{tag.title}}.</p>
+</header>
 
 <div class="items">
   <qa-home-question-list-item *ngFor="let question of tag.questions" [question]="question"></qa-home-question-list-item>

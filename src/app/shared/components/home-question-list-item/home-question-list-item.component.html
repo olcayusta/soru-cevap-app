@@ -1,6 +1,8 @@
 <div class="item">
   <div class="item-left">
-    <img qaLazyImg="{{question.user.picture}}" class="user-img" width="40" height="40" alt="{{question.user.displayName}}">
+    <div class="img-shadow">
+      <img src="{{question.user.picture}}" class="user-img" width="40" height="40" alt="{{question.user.displayName}}">
+    </div>
   </div>
   <div class="item-right">
     <div class="item-right-top">
@@ -10,14 +12,16 @@
       <span class="bracket">—</span>
       <div class="time">{{question.creationTime | timeAgo}}</div>
     </div>
-    <div class="subtitle-1">
-      <a routerLink="/question/{{question.id}}">{{question.title}}</a>
-      <!--<mat-icon class="check-icon" *ngIf="question.id === 9">check</mat-icon>-->
-    </div>
+
+    <a routerLink="/question/{{question.id}}">
+      <div class="subtitle-1">{{question.title}}</div>
+    </a>
+
 
     <div class="tag-list">
       <mat-chip-list aria-label="Fish selection">
-        <mat-chip *ngFor="let tag of question.tags" routerLink="/tag/{{tag.id}}" [selected]="tag.id === 6">{{tag.title}}</mat-chip>
+        <mat-chip *ngFor="let tag of question.tags" routerLink="/tag/{{tag.id}}"
+                  [selected]="tag.id === 6">{{tag.title}}</mat-chip>
         <mat-chip *ngIf="!question.tags">test</mat-chip>
       </mat-chip-list>
     </div>
