@@ -32,6 +32,7 @@ sup {
 #end {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
 }
 
 .toolbar-profile-container {
@@ -40,12 +41,7 @@ sup {
   min-width: 200px;
 }
 
-.toolbar-end {
-  display: flex;
-  align-items: center;
-}
-
-.toolbar-end button:not(:last-child) {
+#end button:not(:last-child) {
   margin-right: 8px;
 }
 
@@ -143,9 +139,13 @@ mat-toolbar-row:not(:first-child) {
     margin-left: 16px;
   }
 
+  #avatar-btn {
+    margin-right: 8px;
+  }
+
   .avatar-img {
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
   }
 
   .search-icon {

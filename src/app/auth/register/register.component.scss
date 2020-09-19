@@ -1,7 +1,33 @@
 :host {
   display: block;
   height: 100%;
-  background-color: #fafafa;
+  background-color: #fff;
+}
+
+.register-form {
+  width: 960px;
+  height: 550px;
+  border: 1px solid rgba(0, 0, 0, .12);
+  background-color: #fff;
+  padding: 48px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+h1 {
+  font-family: Archivo, sans-serif;
+  font-size: 34px;
+  font-weight: 500;
+  line-height: 48px;
+  margin: 0;
+}
+
+.form-body {
+  margin-top: 24px;
+}
+
+mat-form-field {
+  font-family: Archivo, sans-serif;
 }
 
 .page-center {

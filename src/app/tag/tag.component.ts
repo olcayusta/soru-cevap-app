@@ -1,6 +1,8 @@
-import { Component, OnInit, ChangeDetectionStrategy, ɵmarkDirty as markDirty } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Tag } from '@shared/models/tag.model';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'id-tag',
@@ -9,7 +11,7 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TagComponent implements OnInit {
-  tag: Tag;
+  tag$: Observable<Tag>;
 
   constructor(
     private route: ActivatedRoute
@@ -17,10 +19,9 @@ export class TagComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe((params: ParamMap) => {
-      this.tag = this.route.snapshot.data.tag;
-      markDirty(this);
-    });
+    this.tag$ = this.route.data.pipe(map(res => {
+      return res.tag;
+    }));
   }
 
 }

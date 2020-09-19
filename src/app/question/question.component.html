@@ -6,7 +6,7 @@
 
       <div itemprop="text" class="description">
         <time itemprop="dateCreated" [dateTime]="question.creationTime">{{question.creationTime | date}}</time>
-        <span class="bracket">-</span>
+        <span class="bracket">—</span>
         <span>{{question.viewCount}} görüntülenme</span>
       </div>
 
@@ -22,11 +22,12 @@
         </div>
       </div>
 
-
     </header>
   </div>
 
   <id-question-content [content]="question.content"></id-question-content>
+
+  <id-question-comment-list></id-question-comment-list>
 
   <id-question-answers></id-question-answers>
 

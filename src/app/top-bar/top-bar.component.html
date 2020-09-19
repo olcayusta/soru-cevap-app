@@ -1,7 +1,8 @@
 <mat-toolbar class="mat-elevation-z4 top-bar" idSticky>
 
   <div id="start">
-    <button mat-icon-button aria-label="Example icon-button with menu icon" class="menu-button" (click)="openDrawer.emit()">
+    <button mat-icon-button aria-label="Example icon-button with menu icon" class="menu-button"
+            (click)="openDrawer.emit()">
       <id-menu-icon></id-menu-icon>
     </button>
 
@@ -15,87 +16,81 @@
     <id-search-form></id-search-form>
   </div>
 
-  <ng-container *ngIf="isLoggedIn$ | async; else signIn">
+  <div id="end" *ngIf="isLoggedIn$ | async; else signIn">
 
-    <div class="toolbar-profile-container">
-      <div class="toolbar-end">
+    <button mat-icon-button matTooltip="İncelemeler" hidden>
+      <id-rate-review-icon></id-rate-review-icon>
+    </button>
 
-        <button mat-icon-button matTooltip="İncelemeler" hidden>
-          <id-rate-review-icon></id-rate-review-icon>
-        </button>
+    <button mat-icon-button class="top-right-btn notification-button" aria-label="Bildirimler" hidden
+            matTooltip="Bildirimler"
+            #notificationElement="cdkOverlayOrigin"
+            cdkOverlayOrigin
+            (click)="openNotifications()">
+      <id-notifications-icon matBadge="{{notificationCount | async}}"
+                             [matBadgeHidden]="(notificationCount | async) === 0"></id-notifications-icon>
+    </button>
 
-        <button mat-icon-button class="top-right-btn notification-button" aria-label="Bildirimler" hidden
-                matTooltip="Bildirimler"
-                #notificationElement="cdkOverlayOrigin"
-                cdkOverlayOrigin
-                (click)="openNotifications()">
-          <id-notifications-icon matBadge="{{notificationCount | async}}"
-                                 [matBadgeHidden]="(notificationCount | async) === 0"></id-notifications-icon>
-        </button>
+    <ng-template
+      cdkConnectedOverlay
+      (overlayOutsideClick)="outsideClick()"
+      [cdkConnectedOverlayScrollStrategy]="blockScrollStrategy"
+      [cdkConnectedOverlayOpen]="popupOpened && popup == 'notification'"
+      [cdkConnectedOverlayOrigin]="notificationElement">
+      <id-notification-list-popup></id-notification-list-popup>
+    </ng-template>
 
-        <ng-template
-          cdkConnectedOverlay
-          (overlayOutsideClick)="outsideClick()"
-          [cdkConnectedOverlayScrollStrategy]="blockScrollStrategy"
-          [cdkConnectedOverlayOpen]="popupOpened && popup == 'notification'"
-          [cdkConnectedOverlayOrigin]="notificationElement">
-          <id-notification-list-popup></id-notification-list-popup>
-        </ng-template>
+    <button mat-icon-button class="mobile-show">
+      <id-search-icon></id-search-icon>
+    </button>
 
     <!--     <button mat-icon-button class="top-right-btn" matTooltip="Filtrele" (click)="openSheet.emit()">
-           <qa-filter-list-icon></qa-filter-list-icon>
-         </button>-->
+       <qa-filter-list-icon></qa-filter-list-icon>
+     </button>-->
 
-        <button mat-icon-button class="mobile-show">
-          <id-search-icon></id-search-icon>
-        </button>
+    <button id="avatar-btn" aria-label="Alternatif hesapların listesini açan hesap profil fotoğrafı"
+            #avatarElement="cdkOverlayOrigin" cdkOverlayOrigin
+            (click)="openUsermenu()">
+      <img class="avatar-img"
+           src="{{user.picture}}"
+           alt="{{user.displayName}}">
+    </button>
 
-        <button id="avatar-btn" aria-label="Alternatif hesapların listesini açan hesap profil fotoğrafı"
-                #avatarElement="cdkOverlayOrigin" cdkOverlayOrigin
-                (click)="openUsermenu()">
-          <img class="avatar-img"
-               src="{{user.picture}}"
-               alt="{{user.displayName}}">
-        </button>
+    <ng-template
+      cdkConnectedOverlay
+      (overlayOutsideClick)="outsideClick()"
+      [cdkConnectedOverlayScrollStrategy]="blockScrollStrategy"
+      [cdkConnectedOverlayOpen]="popupOpened && popup == 'avatar'"
+      [cdkConnectedOverlayOrigin]="avatarElement">
+      <ng-container [ngComponentOutlet]="compOutlet2"></ng-container>
+    </ng-template>
 
-        <ng-template
-          cdkConnectedOverlay
-          (overlayOutsideClick)="outsideClick()"
-          [cdkConnectedOverlayScrollStrategy]="blockScrollStrategy"
-          [cdkConnectedOverlayOpen]="popupOpened && popup == 'avatar'"
-          [cdkConnectedOverlayOrigin]="avatarElement">
-          <ng-container [ngComponentOutlet]="compOutlet2"></ng-container>
-        </ng-template>
-      </div>
-    </div>
 
-  </ng-container>
+  </div>
 
 </mat-toolbar>
 
 <ng-template #signIn>
-  <div>
-    <button mat-icon-button matTooltip="Ayarlar" class="top-right-btn more-vert-icon" [matMenuTriggerFor]="moreMenu">
-      <id-more-vert-icon></id-more-vert-icon>
-    </button>
+  <button mat-icon-button matTooltip="Ayarlar" class="top-right-btn more-vert-icon" [matMenuTriggerFor]="moreMenu">
+    <id-more-vert-icon></id-more-vert-icon>
+  </button>
 
-    <mat-menu #moreMenu="matMenu" xPosition="before" class="text-only-menu">
-      <ng-template matMenuContent>
-        <button mat-menu-item>
-          <span>Blog</span>
-        </button>
-        <button mat-menu-item>
-          <span>Chat <sup>beta</sup></span>
-        </button>
-        <button mat-menu-item>
-          <span>Hesap & ayarlar</span>
-        </button>
-        <button mat-menu-item>
-          <span>Yardım</span>
-        </button>
-      </ng-template>
-    </mat-menu>
-    <a mat-button routerLink="/login">OTURUM AÇ</a>
-  </div>
+  <mat-menu #moreMenu="matMenu" xPosition="before" class="text-only-menu">
+    <ng-template matMenuContent>
+      <button mat-menu-item>
+        <span>Blog</span>
+      </button>
+      <button mat-menu-item>
+        <span>Chat <sup>beta</sup></span>
+      </button>
+      <button mat-menu-item>
+        <span>Hesap & ayarlar</span>
+      </button>
+      <button mat-menu-item>
+        <span>Yardım</span>
+      </button>
+    </ng-template>
+  </mat-menu>
+  <a mat-button routerLink="/login">OTURUM AÇ</a>
 </ng-template>
 

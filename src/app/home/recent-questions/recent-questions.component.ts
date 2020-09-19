@@ -23,17 +23,16 @@ export class RecentQuestionsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.questionService.getAllQuestions().subscribe(value => {
-      this.questions = value;
-      markDirty(this);
-    });
-
     this.route.queryParamMap.subscribe(value => {
-      console.log('Sort value:', value.get('sort'));
       const sort = value.get('sort');
       if (sort) {
         this.filterService.getQuestionsByFiltered(value.get('sort')).subscribe(value1 => {
           this.questions = value1;
+          markDirty(this);
+        });
+      } else {
+        this.questionService.getAllQuestions().subscribe((value2) => {
+          this.questions = value2;
           markDirty(this);
         });
       }

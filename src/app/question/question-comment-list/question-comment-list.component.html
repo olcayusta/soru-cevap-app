@@ -1,0 +1,13 @@
+<ng-container *ngIf="comments$ | async as comments">
+  <mat-divider></mat-divider>
+  <div class="comment-list">
+    <div class="item" *ngFor="let comment of comments">
+      <img class="author-img" src="{{comment.user.picture}}" alt="{{comment.user.displayName}}">
+      <div>
+        <div class="author-info">{{comment.user.displayName}} — {{comment.creationTime | date}}</div>
+        <div class="comment">{{comment.content}}</div>
+      </div>
+    </div>
+  </div>
+</ng-container>
+

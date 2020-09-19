@@ -1,18 +1,18 @@
 <div class="page-center">
-  <mat-card>
-    <mat-card-title>Üye ol</mat-card-title>
+  <div class="register-form">
+    <h1 class="title">Üye ol</h1>
     <form [formGroup]="form" (submit)="submit()">
 
       <div class="form-body">
         <mat-form-field>
           <mat-label>E-posta</mat-label>
-          <input matInput formControlName="email">
+          <input aria-label="E-posta" matInput formControlName="email">
           <mat-error>Bir e-posta adresi girin</mat-error>
         </mat-form-field>
 
         <mat-form-field>
           <mat-label>Şifre</mat-label>
-          <input matInput type="password" formControlName="password" autocomplete="new-password">
+          <input aria-label="Şifre" matInput type="password" formControlName="password" autocomplete="new-password">
           <mat-error>Bir şifre girin</mat-error>
         </mat-form-field>
       </div>
@@ -21,5 +21,5 @@
         <button type="submit" mat-raised-button color="primary">İLERİ</button>
       </div>
     </form>
-  </mat-card>
+  </div>
 </div>

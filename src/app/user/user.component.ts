@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { User } from '@shared/models/user.model';
 import { ActivatedRoute } from '@angular/router';
 import { Title } from '@angular/platform-browser';
@@ -37,7 +37,7 @@ export class UserComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = this.route.snapshot.data.user;
-    this.title.setTitle(`${this.user.displayName} - ${environment.appTitle}`)
+    this.title.setTitle(`${this.user.displayName} - ${environment.appTitle}`);
   }
 
 }

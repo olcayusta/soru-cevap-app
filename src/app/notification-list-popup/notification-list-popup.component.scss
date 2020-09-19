@@ -35,6 +35,30 @@
   }
 }
 
+:host ::ng-deep .mat-list-item-content {
+  align-items: flex-start !important;
+  padding: 16px !important;
+}
+
+h3 {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.secondary-text {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.time {
+  font-size: 13px !important;
+}
+
+:host ::ng-deep   .mat-list-avatar {
+  width: 48px !important;
+  height: 48px !important;
+}
+
 // Fix menu and select panel overflow scroll bar
 section::-webkit-scrollbar, .mat-select-panel::-webkit-scrollbar {
   width: 8px;
@@ -50,5 +74,6 @@ section::-webkit-scrollbar-track, .mat-select-panel::-webkit-scrollbar-track {
 }
 
 .secondary-text {
+  font-size: 13px;
   color: var(--icon-color);
 }

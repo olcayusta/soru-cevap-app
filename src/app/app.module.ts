@@ -9,11 +9,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { MatButtonModule } from '@angular/material/button';
-import { HomeComponent } from './main/home/home.component';
-import { RecentQuestionsComponent } from './recent-questions/recent-questions.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { OverlayModule } from '@angular/cdk/overlay';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { registerLocaleData } from '@angular/common';
 import localeTr from '@angular/common/locales/tr';
@@ -32,9 +29,7 @@ import { BottomBarComponent } from './bottom-bar/bottom-bar.component';
 import { MatRippleModule } from '@angular/material/core';
 import { FishIconComponent } from './top-bar/fish-icon/fish-icon.component';
 import { JwtInterceptor } from './auth/interceptors/jwt.interceptor';
-import { IsVisibleDirective } from './recent-questions/is-visible.directive';
 import { MatInputModule } from '@angular/material/input';
-import { FilterComponent } from './recent-questions/filter/filter.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { SharedModule } from '@shared/shared.module';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
@@ -54,14 +49,10 @@ registerLocaleData(localeTr);
     AppComponent,
     MainComponent,
     TopBarComponent,
-    HomeComponent,
-    RecentQuestionsComponent,
     SideSheetComponent,
     StickyDirective,
     BottomBarComponent,
     FishIconComponent,
-    IsVisibleDirective,
-    FilterComponent,
     NotificationListPopupComponent,
     NavDrawerComponent,
     SearchFormComponent,
@@ -77,7 +68,6 @@ registerLocaleData(localeTr);
     MatSidenavModule,
     MatButtonModule,
     OverlayModule,
-    MatProgressSpinnerModule,
     MatProgressBarModule,
     MatTooltipModule,
     ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production}),
@@ -89,7 +79,6 @@ registerLocaleData(localeTr);
     MatAutocompleteModule,
     MatRippleModule,
     MatInputModule,
-    MatCheckboxModule,
     MatListModule,
     SharedModule,
     MatIconModule,

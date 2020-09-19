@@ -15,6 +15,7 @@ import { WebCopyCodeComponent } from './web-copy-code/web-copy-code.component';
 import { IconModule } from '../shared/icon/icon.module';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { ClipboardModule } from '@angular/cdk/clipboard';
+import { QuestionCommentListComponent } from './question-comment-list/question-comment-list.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { ClipboardModule } from '@angular/cdk/clipboard';
     QuestionContentComponent,
     QuestionAnswersComponent,
     AnswerFormComponent,
-    WebCopyCodeComponent
+    WebCopyCodeComponent,
+    QuestionCommentListComponent
   ],
   imports: [
     CommonModule,

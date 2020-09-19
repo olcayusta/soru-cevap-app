@@ -23,8 +23,16 @@ h1 {
 
 @media (max-width: 599px) {
   .filter {
-    padding: 24px 16px 12px 16px;
+    padding: 24px 0 12px 0;
     overflow: auto;
+
+    .outlined-menu-button {
+      margin-left: 16px;
+    }
+
+    .last-child {
+      padding-right: 16px;
+    }
 
     button {
       min-width: auto !important;
@@ -48,7 +56,6 @@ mat-checkbox {
   text-transform: none;
   border: 1px solid #dadce0;
   color: #3c4043;
-  padding-left: 16px;
   letter-spacing: 0;
 }
 

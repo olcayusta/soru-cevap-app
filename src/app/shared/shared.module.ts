@@ -26,7 +26,8 @@ import { HighlightSearchPipe } from '../search-form/pipes/highlight-search.pipe'
   exports: [
     LazyImgDirective,
     HomeQuestionListItemComponent,
-    HighlightSearchPipe
+    HighlightSearchPipe,
+    TimeAgoPipe
   ]
 })
 export class SharedModule {

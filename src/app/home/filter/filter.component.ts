@@ -1,7 +1,7 @@
-import { Component, OnInit, ChangeDetectionStrategy, ViewChild, AfterViewInit, ViewChildren, QueryList } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { MatMenu, MatMenuItem } from '@angular/material/menu';
-import { FilterService } from '@shared/services/filter.service';
-import { Router } from '@angular/router';
+import { FilterService } from '../../shared/services/filter.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'id-filter',
@@ -19,8 +19,7 @@ export class FilterComponent implements OnInit, AfterViewInit {
     {sort: '', label: 'Trendler'},
     {sort: 'popularity', label: 'En popüler'},
     {sort: 'date', label: 'En yeni'},
-    {sort: 'alpha', label: 'Name'},
-    {sort: 'alpha', label: 'Recent activity'},
+    {sort: 'activity', label: 'Recent activity'},
   ];
 
   languageItems = [
@@ -33,11 +32,16 @@ export class FilterComponent implements OnInit, AfterViewInit {
 
   constructor(
     private filterService: FilterService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
   ) {
   }
 
   ngOnInit(): void {
+    const sort = this.route.snapshot.queryParamMap.get('sort');
+    if (sort) {
+      this.selectedIndex = this.items.findIndex(value => value.sort === sort);
+    }
   }
 
   ngAfterViewInit(): void {

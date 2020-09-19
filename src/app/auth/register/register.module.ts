@@ -6,22 +6,23 @@ import { RegisterComponent } from './register.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 
 
 @NgModule({
-  declarations: [RegisterComponent],
+  declarations: [
+    RegisterComponent
+  ],
   imports: [
     CommonModule,
     RegisterRoutingModule,
     ReactiveFormsModule,
     MatInputModule,
-    MatButtonModule,
-    MatCardModule
+    MatButtonModule
   ],
   providers: [
-    {provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' }}
+    {provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'standard'}}
   ]
 })
-export class RegisterModule { }
+export class RegisterModule {
+}
