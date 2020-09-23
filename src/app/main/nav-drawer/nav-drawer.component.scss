@@ -16,9 +16,15 @@ mat-toolbar {
   font-weight: 500;
   color: var(--icon-color);
 
-  id-settings-icon, id-help-icon, id-feedback-icon, id-question-answer-icon, id-home-icon, id-exit-to-app-icon {
-    margin-right: 32px;
-    // display: none;
+  /*
+  ::ng-deep svg {
+    display: none;
+  }
+  */
+
+  span {
+    margin-left: 32px;
+    // font-family: Archivo, sans-serif;
   }
 }
 
@@ -47,7 +53,7 @@ mat-toolbar {
 
   /* 00. On Surface / Medium Emphasis */
 
-  color: rgba(0, 0, 0, 0.6);
+  color: var(--medium-emphasis-color);
 }
 
 .drawer-header {

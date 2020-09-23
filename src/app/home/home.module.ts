@@ -12,9 +12,17 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { IconModule } from '../shared/icon/icon.module';
 import { IsVisibleDirective } from './is-visible.directive';
 import { MatButtonModule } from '@angular/material/button';
+import { BannerComponent } from './banner/banner.component';
+import { MatDividerModule } from '@angular/material/divider';
 
 @NgModule({
-  declarations: [HomeComponent, RecentQuestionsComponent, FilterComponent, IsVisibleDirective],
+  declarations: [
+    HomeComponent,
+    BannerComponent,
+    RecentQuestionsComponent,
+    FilterComponent,
+    IsVisibleDirective
+  ],
   imports: [
     CommonModule,
     HomeRoutingModule,
@@ -23,7 +31,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatProgressSpinnerModule,
     MatMenuModule,
     MatCheckboxModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDividerModule
   ]
 })
 export class HomeModule {

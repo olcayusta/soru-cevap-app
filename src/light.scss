@@ -81,13 +81,39 @@ $app-theme: mat-light-theme((
   )
 ));
 
+$black-theme-primary: mat-palette($mat-gray, 900);
+$black-theme-accent: mat-palette($mat-secondary);
+
+$black-theme: mat-light-theme((
+  color: (
+    primary: $black-theme-primary,
+    accent: $black-theme-accent,
+    warn: $app-theme-warn
+  )
+));
 
 @include angular-material-theme($app-theme);
+/*@include mat-button-theme($black-theme);
+@include mat-progress-spinner-theme($black-theme);
+@include mat-checkbox-theme($black-theme);
+@include mat-badge-theme($black-theme);*/
+
+// Define a custom typography config that overrides the font-family as well as the
+// `headlines` and `body-1` levels.
+$custom-typography: mat-typography-config(
+  $font-family: 'Roboto, sans-serif',
+  $headline: mat-typography-level(32px, 48px, 700), // $body-1: mat-typography-level(16px, 24px, 500)
+);
+
+// Override typography for all Angular Material, including mat-base-typography and all components.
+@include angular-material-typography($custom-typography);
 
 :root {
+  --color: rgba(0, 0, 0, .87);
   --mdc-theme-on-primary: #fff;
   --mdc-theme-primary: #6200ee;
   --primary-color: #6200EE;
+  --medium-emphasis-color: rgba(0, 0, 0, 0.74);
   --surface: #fff;
   --topbar-background: #fff;
   --high-emphasis-color: black;
@@ -95,7 +121,9 @@ $app-theme: mat-light-theme((
   --fab-icon-color: #fff;
   --text-color: rgba(0, 0, 0, .87);
   --icon-color: rgba(0, 0, 0, .6);
-  --list-active-background: rgba(98, 0, 238, 0.08);;
+  --list-active-background: rgba(98, 0, 238, 0.08);
+  // --list-active-background: rgba(0, 0, 0, 0.08);
+  --drawer-background: #fff;
 }
 
 .mat-progress-bar-background {

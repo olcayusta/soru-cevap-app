@@ -8,7 +8,7 @@
 
     <a routerLink="/" class="logo-link">
       <span>İyidev</span>
-      <sup>beta 1</sup>
+    <!--  <sup>beta 1</sup>-->
     </a>
   </div>
 
@@ -16,64 +16,69 @@
     <id-search-form></id-search-form>
   </div>
 
-  <div id="end" *ngIf="isLoggedIn$ | async; else signIn">
+  <div id="end">
+    <ng-container *ngIf="isLoggedIn$ | async; else signIn">
+      <button mat-icon-button matTooltip="İncelemeler" hidden>
+        <id-rate-review-icon></id-rate-review-icon>
+      </button>
 
-    <button mat-icon-button matTooltip="İncelemeler" hidden>
-      <id-rate-review-icon></id-rate-review-icon>
-    </button>
+      <button mat-icon-button class="top-right-btn notification-button" aria-label="Bildirimler" hidden
+              matTooltip="Bildirimler"
+              #notificationElement="cdkOverlayOrigin"
+              cdkOverlayOrigin
+              (click)="openNotifications()">
+        <id-notifications-icon matBadge="{{notificationCount | async}}"
+                               [matBadgeHidden]="(notificationCount | async) === 0"></id-notifications-icon>
+      </button>
 
-    <button mat-icon-button class="top-right-btn notification-button" aria-label="Bildirimler" hidden
-            matTooltip="Bildirimler"
-            #notificationElement="cdkOverlayOrigin"
-            cdkOverlayOrigin
-            (click)="openNotifications()">
-      <id-notifications-icon matBadge="{{notificationCount | async}}"
-                             [matBadgeHidden]="(notificationCount | async) === 0"></id-notifications-icon>
-    </button>
+      <ng-template
+        cdkConnectedOverlay
+        (overlayOutsideClick)="outsideClick()"
+        [cdkConnectedOverlayScrollStrategy]="blockScrollStrategy"
+        [cdkConnectedOverlayOpen]="popupOpened && popup == 'notification'"
+        [cdkConnectedOverlayOrigin]="notificationElement">
+        <id-notification-list-popup></id-notification-list-popup>
+      </ng-template>
 
-    <ng-template
-      cdkConnectedOverlay
-      (overlayOutsideClick)="outsideClick()"
-      [cdkConnectedOverlayScrollStrategy]="blockScrollStrategy"
-      [cdkConnectedOverlayOpen]="popupOpened && popup == 'notification'"
-      [cdkConnectedOverlayOrigin]="notificationElement">
-      <id-notification-list-popup></id-notification-list-popup>
-    </ng-template>
+      <a mat-icon-button class="mobile-show" routerLink="/mobile-search">
+        <id-search-icon></id-search-icon>
+      </a>
 
-    <button mat-icon-button class="mobile-show">
-      <id-search-icon></id-search-icon>
-    </button>
+      <!--     <button mat-icon-button class="top-right-btn" matTooltip="Filtrele" (click)="openSheet.emit()">
+         <qa-filter-list-icon></qa-filter-list-icon>
+       </button>-->
 
-    <!--     <button mat-icon-button class="top-right-btn" matTooltip="Filtrele" (click)="openSheet.emit()">
-       <qa-filter-list-icon></qa-filter-list-icon>
-     </button>-->
+      <button id="avatar-btn" aria-label="Alternatif hesapların listesini açan hesap profil fotoğrafı"
+              #avatarElement="cdkOverlayOrigin" cdkOverlayOrigin
+              (click)="openUsermenu()">
+        <img class="avatar-img"
+             src="{{user.picture}}"
+             alt="{{user.displayName}}">
+      </button>
 
-    <button id="avatar-btn" aria-label="Alternatif hesapların listesini açan hesap profil fotoğrafı"
-            #avatarElement="cdkOverlayOrigin" cdkOverlayOrigin
-            (click)="openUsermenu()">
-      <img class="avatar-img"
-           src="{{user.picture}}"
-           alt="{{user.displayName}}">
-    </button>
-
-    <ng-template
-      cdkConnectedOverlay
-      (overlayOutsideClick)="outsideClick()"
-      [cdkConnectedOverlayScrollStrategy]="blockScrollStrategy"
-      [cdkConnectedOverlayOpen]="popupOpened && popup == 'avatar'"
-      [cdkConnectedOverlayOrigin]="avatarElement">
-      <ng-container [ngComponentOutlet]="compOutlet2"></ng-container>
-    </ng-template>
-
-
+      <ng-template
+        cdkConnectedOverlay
+        (overlayOutsideClick)="outsideClick()"
+        [cdkConnectedOverlayScrollStrategy]="blockScrollStrategy"
+        [cdkConnectedOverlayOpen]="popupOpened && popup == 'avatar'"
+        [cdkConnectedOverlayOrigin]="avatarElement">
+        <id-user-menu-popup></id-user-menu-popup>
+      </ng-template>
+    </ng-container>
   </div>
+
+  <!--<mat-progress-bar mode="indeterminate" *ngIf="spinner$ | async"></mat-progress-bar>-->
 
 </mat-toolbar>
 
 <ng-template #signIn>
-  <button mat-icon-button matTooltip="Ayarlar" class="top-right-btn more-vert-icon" [matMenuTriggerFor]="moreMenu">
+  <button mat-icon-button aria-label="More apps" matTooltip="Ayarlar" class="top-right-btn more-vert-icon" [matMenuTriggerFor]="moreMenu">
     <id-more-vert-icon></id-more-vert-icon>
   </button>
+
+  <a mat-icon-button class="mobile-show search-btn" routerLink="/mobile-search">
+    <id-search-icon></id-search-icon>
+  </a>
 
   <mat-menu #moreMenu="matMenu" xPosition="before" class="text-only-menu">
     <ng-template matMenuContent>
@@ -92,5 +97,8 @@
     </ng-template>
   </mat-menu>
   <a mat-button routerLink="/login">OTURUM AÇ</a>
+<!--  <a mat-icon-button class="mobile-login-btn">
+    <id-fish-icon></id-fish-icon>
+  </a>-->
 </ng-template>
 

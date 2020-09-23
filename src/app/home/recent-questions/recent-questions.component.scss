@@ -13,24 +13,10 @@ a:hover {
   text-decoration: underline;
 }
 
-.filter {
-  margin: 32px 0 0;
-
-  mat-chip {
-    background-color: #eee;
-  }
-
-  .mat-chip.mat-standard-chip.mat-chip-selected.mat-primary {
-    background-color: rgb(98 0 238 / .12);
-    color: #6200ee;
-  }
-}
-
 .items {
   display: flex;
   flex-direction: column;
   grid-gap: 32px;
-  padding: 24px 0;
 }
 
 .load-more {

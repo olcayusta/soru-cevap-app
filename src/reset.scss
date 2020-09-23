@@ -25,10 +25,11 @@ mat-nav-list {
 
 .outlined-menu-button {
   padding: 0 16px !important;
+  letter-spacing: .25px;
 }
 
 .mat-option {
-  font-family: Archivo, sans-serif !important;
+
 }
 
 mat-chip {
@@ -36,6 +37,9 @@ mat-chip {
   font-weight: 400 !important;
   letter-spacing: .15px;
   line-height: 16px;
+}
+
+.mat-badge-content {
 }
 
 .flex-spacer {

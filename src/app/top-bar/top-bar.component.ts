@@ -17,6 +17,7 @@ import { UserMenuPopupComponent } from '../user-menu-popup/user-menu-popup.compo
 import { NotificationService } from '@shared/services/notification.service';
 import { shareReplay } from 'rxjs/operators';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
+import { SpinnerService } from '@shared/services/spinner.service';
 
 @Component({
   selector: 'id-top-bar',
@@ -45,12 +46,15 @@ export class TopBarComponent implements OnInit, AfterViewInit {
 
   isHandset: boolean;
 
+  spinner$: Observable<boolean>;
+
   constructor(
     private authService: AuthService,
     private stateService: StateService,
     private sso: ScrollStrategyOptions,
     private notificationService: NotificationService,
-    private breakpointObserver: BreakpointObserver
+    private breakpointObserver: BreakpointObserver,
+    private spinnerService: SpinnerService
   ) {
     this.blockScrollStrategy = this.sso.block();
   }
@@ -59,20 +63,25 @@ export class TopBarComponent implements OnInit, AfterViewInit {
   }
 
   async ngOnInit(): Promise<void> {
+    this.spinner$ = this.spinnerService.subject$;
     this.breakpointObserver.observe(Breakpoints.Handset).subscribe((value: BreakpointState) => {
       this.isHandset = value.matches;
+
+      // Mobile phone
+      if (value.matches) {
+        this.stateService.subject.subscribe(state => {
+          this.topbarOpened = state;
+          console.log(state);
+          markDirty(this);
+        });
+      }
+
       markDirty(this);
     });
     this.isLoggedIn$ = this.authService.isLoggedIn$;
     this.user = this.authService.userValue;
 
     this.getNotificationCount();
-
-    this.stateService.topbarDisplay.subscribe(value => {
-      this.topbarOpened = value;
-      // console.log(this.topbarOpened);
-      markDirty(this);
-    });
   }
 
   getNotificationCount(): void {

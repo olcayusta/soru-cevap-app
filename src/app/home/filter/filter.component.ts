@@ -54,11 +54,15 @@ export class FilterComponent implements OnInit, AfterViewInit {
     this.selectedIndex = index;
     menuItem._highlighted = true;
 
-    this.router.navigate(['/'], {
-      queryParams: {
-        sort: this.items[this.selectedIndex].sort
-      }
-    });
+    if (this.items[this.selectedIndex].sort) {
+      this.router.navigate(['/'], {
+        queryParams: {
+          sort: this.items[this.selectedIndex].sort
+        }
+      });
+    } else {
+      this.router.navigate(['/']);
+    }
   }
 
   onLanguageMenuItemClicked(menuItem: MatMenuItem, index: number): void {

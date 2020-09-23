@@ -3,7 +3,6 @@
 }
 
 h1 {
-  font-family: Archivo, sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 32px;
@@ -17,13 +16,17 @@ h1 {
   // grid-gap: 8px;
 
   button {
-    margin-right: 24px;
+    margin-right: 16px;
   }
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 @media (max-width: 599px) {
   .filter {
-    padding: 24px 0 12px 0;
+    // padding: 24px 0 12px 0;
     overflow: auto;
 
     .outlined-menu-button {
@@ -47,16 +50,18 @@ mat-checkbox {
 }
 
 .outlined-menu-button {
-  border-radius: 20px;
   display: inline-flex;
-  font-family: Roboto,Helvetica Neue,sans-serif;
+  height: 32px;
   font-weight: 400;
   line-height: 32px;
-  min-height: 32px;
   text-transform: none;
-  border: 1px solid #dadce0;
-  color: #3c4043;
-  letter-spacing: 0;
+  padding: 0 8px !important;
+  margin-left: -8px;
+  letter-spacing: .25px;
+
+  id-arrow-drop-down-icon {
+    margin-right: -8px;
+  }
 }
 
 .filter-menu-button-content {
@@ -64,7 +69,16 @@ mat-checkbox {
   align-items: center;
 }
 
-.mat-menu-item-highlighted {
-  background-color: rgba(98, 0, 238, 0.12) !important;
-  color: #6200ee;
+@media (prefers-color-scheme: light) {
+  .mat-menu-item-highlighted {
+    background-color: rgba(98, 0, 238, 0.12) !important;
+    color: #6200EE;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .mat-menu-item-highlighted {
+    background-color: rgba(255, 255, 255, 0.12) !important;
+    color: #ffffff;
+  }
 }

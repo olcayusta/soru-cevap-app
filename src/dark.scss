@@ -81,11 +81,11 @@ $app-theme: mat-dark-theme((
   )
 ));
 
-.unicorn-dark-theme {
-  @include angular-material-theme($app-theme);
-}
 
-:root {
+@include angular-material-theme($app-theme);
+
+
+/*:root {
   --primary-color: #BB86FC;
   --surface: #121212;
   --topbar-background: #272727;
@@ -95,4 +95,43 @@ $app-theme: mat-dark-theme((
   --text-color: #fff;
   --icon-color: rgba(255, 255, 255, 0.6);
   --list-active-background: rgba(187, 134, 252, 0.08);
+}*/
+
+:root {
+  --color: #fff;
+  --primary-color: #BB86FC;
+  --medium-emphasis-color: rgba(255, 255, 255, 0.6);
+  --surface: #121212;
+  --topbar-background: #272727;
+  --high-emphasis-color: rgba(255, 255, 255, 0.6);
+  --card-background: #1e1e1e;
+  --fab-icon-color: black;
+  --text-color: #fff;
+  --icon-color: rgba(255, 255, 255, 0.6);
+  --list-active-background: rgba(187, 134, 252, 0.08);
+  --drawer-background: #353535;
 }
+
+/*
+!* width *!
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+!* Track *!
+::-webkit-scrollbar-track {
+  background: #212121;
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+!* Handle *!
+::-webkit-scrollbar-thumb {
+  background: rgb(255 255 255 / 12%);
+  // border-radius: 24px;
+}
+
+!* Handle on hover *!
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+*/

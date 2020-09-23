@@ -1,22 +1,22 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class StateService {
-  topbarDisplay$ = new BehaviorSubject<boolean>(true);
-  topbarDisplay = this.topbarDisplay$.asObservable();
+  subject = new Subject<boolean>();
+  subject$ = this.subject.asObservable();
 
   constructor() {
   }
 
-  show() {
-    this.topbarDisplay$.next(true);
+  show(): void {
+    this.subject.next(true);
   }
 
-  hide() {
-    this.topbarDisplay$.next(false);
+  hide(): void {
+    this.subject.next(false);
   }
 
 }

@@ -42,48 +42,87 @@ main {
   }
 }
 
-.fixed-fab-btn {
-  position: fixed;
-  right: 16px;
-  bottom: 16px;
-  z-index: 1;
+@media (prefers-color-scheme: light) {
+  .fixed-fab-btn {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    z-index: 1;
 
-  .mat-fab {
-    background-color: #212121;
+    .mat-fab {
+      background-color: #6200EE;
+      letter-spacing: 1.25px;
+    }
+
+    button {
+      width: auto;
+      height: 48px;
+    }
+
+    ::ng-deep svg {
+      fill: var(--fab-icon-color);
+    }
+
+    span {
+      font-size: 14px;
+      line-height: 16px;
+      // text-transform: uppercase;
+      // letter-spacing: 1.25px
+    }
   }
+}
 
-  button {
-    width: auto;
-    height: 48px;
-    font-family: 'Archivo', sans-serif;
-  }
+@media (prefers-color-scheme: dark) {
+  .fixed-fab-btn {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    z-index: 1;
 
-  ::ng-deep svg {
-    fill: var(--fab-icon-color);
-  }
+    .mat-fab {
+      background-color: #BB86FC;
+      letter-spacing: 1.25px;
+      color: black;
+    }
 
-  span {
-    font-size: 14px;
-    line-height: 16px;
-    // text-transform: uppercase;
-    // letter-spacing: 1.25px;
-    font-family: Archivo, sans-serif;
+    button {
+      width: auto;
+      height: 48px;
+    }
+
+    ::ng-deep svg {
+      fill: var(--fab-icon-color);
+    }
+
+    span {
+      font-size: 14px;
+      line-height: 16px;
+      // text-transform: uppercase;
+      // letter-spacing: 1.25px
+    }
   }
 }
 
 .extended-fab {
   width: auto;
+  max-width: 200px;
   height: 48px;
   padding: 0 20px 0 12px;
   border-radius: 28px;
   line-height: 1;
   display: flex;
   align-items: center;
-  // font-family: Archivo, sans-serif;
+  transition: max-width 0.5s ease-out;
+  overflow: hidden;
 
   id-create-icon, id-add-icon {
     margin-right: 12px;
   }
+}
+
+.mini-fab {
+  max-width: 48px;
+  transition: max-width 0.25s ease-in;
 }
 
 

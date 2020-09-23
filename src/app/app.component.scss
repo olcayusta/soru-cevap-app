@@ -6,3 +6,11 @@ mat-progress-bar {
   left: 0;
   z-index: 2;
 }
+
+[hidden] {
+  opacity: 0;
+}
+
+.hidden {
+  display: none;
+}

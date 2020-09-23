@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { MainComponent } from './main/main.component';
 import { RecentQuestionsComponent } from './home/recent-questions/recent-questions.component';
 import { AuthGuard } from './auth/auth.guard';
+import { BaseGuard } from './base.guard';
 
 const routes: Routes = [
   {
@@ -17,7 +18,10 @@ const routes: Routes = [
       {
         path: 'users',
         loadChildren: () => import('./users/users.module').then(m => m.UsersModule),
-        canLoad: [AuthGuard]
+        canLoad: [AuthGuard],
+        data: {
+          title: 'BATMAN'
+        }
       },
       {
         path: 'tags',
@@ -63,12 +67,14 @@ const routes: Routes = [
   },
   {path: 'login', loadChildren: () => import('./auth/login/login.module').then(m => m.LoginModule)},
   {path: 'register', loadChildren: () => import('./auth/register/register.module').then(m => m.RegisterModule)},
-  {path: '404', loadChildren: () => import('./page-not-found/page-not-found.module').then(m => m.PageNotFoundModule)}
+  {path: '404', loadChildren: () => import('./page-not-found/page-not-found.module').then(m => m.PageNotFoundModule)},
+  {path: 'mobile-search', loadChildren: () => import('./mobile-search/mobile-search.module').then(m => m.MobileSearchModule)}
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, {
-    scrollPositionRestoration: 'enabled'
+    scrollPositionRestoration: 'enabled',
+    enableTracing: false
     // scrollOffset: [0, 0]
   })],
   exports: [RouterModule]

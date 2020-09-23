@@ -20,6 +20,11 @@ import { RateReviewIconComponent } from './rate-review-icon/rate-review-icon.com
 import { FilterListIconComponent } from './filter-list-icon/filter-list-icon.component';
 import { ContentCopyIconComponent } from './content-copy-icon/content-copy-icon.component';
 import { ArrowDropDownIconComponent } from './arrow-drop-down-icon/arrow-drop-down-icon.component';
+import { FavoriteIconComponent } from './favorite-icon/favorite-icon.component';
+import { ThumbUpIconComponent } from './thumb-up-icon/thumb-up-icon.component';
+import { ArrowBackIconComponent } from './arrow-back-icon/arrow-back-icon.component';
+import { CloseIconComponent } from './close-icon/close-icon.component';
+import { WifiOffIconComponent } from './wifi-off-icon/wifi-off-icon.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +48,12 @@ import { ArrowDropDownIconComponent } from './arrow-drop-down-icon/arrow-drop-do
     RateReviewIconComponent,
     FilterListIconComponent,
     ContentCopyIconComponent,
-    ArrowDropDownIconComponent
+    ArrowDropDownIconComponent,
+    FavoriteIconComponent,
+    ThumbUpIconComponent,
+    ArrowBackIconComponent,
+    CloseIconComponent,
+    WifiOffIconComponent
   ],
   exports: [
     NotificationsIconComponent,
@@ -65,7 +75,12 @@ import { ArrowDropDownIconComponent } from './arrow-drop-down-icon/arrow-drop-do
     RateReviewIconComponent,
     FilterListIconComponent,
     ContentCopyIconComponent,
-    ArrowDropDownIconComponent
+    ArrowDropDownIconComponent,
+    FavoriteIconComponent,
+    ThumbUpIconComponent,
+    ArrowBackIconComponent,
+    CloseIconComponent,
+    WifiOffIconComponent
   ]
 })
 export class IconModule {

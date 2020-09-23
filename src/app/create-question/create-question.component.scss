@@ -48,7 +48,6 @@ textarea {
 
 mat-form-field {
   width: 100%;
-  font-family: Archivo, sans-serif;
 }
 
 ::ng-deep .mat-form-field-appearance-standard .mat-form-field-underline {
@@ -60,4 +59,7 @@ mat-form-field {
   font-weight: 500;
   letter-spacing: 1.5px;
   text-transform: uppercase;
+}
+
+.description-preview {
 }

@@ -16,6 +16,8 @@
       </div>
       <span class="bracket">—</span>
       <div class="time">{{question.creationTime | timeAgo}}</div>
+      
+<!--      <div class="master-span" *ngIf="question.id === 20">CEVAPLANDI</div>-->
     </div>
 
     <a routerLink="/question/{{question.id}}">
@@ -30,7 +32,7 @@
       </mat-chip-list>
     </div>
 
-    <!-- <div class="master-span" *ngIf="question.id === 6">CEVAPLANDI</div>-->
+
     <mat-divider></mat-divider>
   </div>
 </div>

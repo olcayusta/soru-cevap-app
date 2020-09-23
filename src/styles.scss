@@ -6,7 +6,7 @@
 html {
   // scroll-padding-top: 64px;
   // overflow-x: hidden;
-  // overflow-y: scroll;
+ // overflow-y: scroll;
 }
 
 html, body {
@@ -20,6 +20,11 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeSpeed;
   background-color: var(--surface);
+  color: var(--color);
+}
+
+mat-sidenav {
+  background-color: var(--drawer-background) !important;
 }
 
 mat-sidenav-container, mat-sidenav-content, mat-sidenav {
@@ -116,14 +121,21 @@ svg {
 
 .text-only-menu {
   min-width: 192px !important;
-  border-radius: 8px !important;
+    border-radius: 8px !important;
   margin-top: 8px;
 
   .mat-menu-item {
     height: 32px;
     line-height: 20px;
+    padding-left: 8px;
   }
 
+/*  .mat-menu-item.active {
+    background-color: #e8f0fe;
+  }*/
+}
+
+@media (prefers-color-scheme: light) {
   .mat-menu-item.active {
     background-color: #e8f0fe;
   }
@@ -137,8 +149,8 @@ svg {
 }
 
 .my-autocomplete {
-  margin-top: 8px;
-  border-radius: 4px !important;
+  // margin-top: 8px;
+  // border-radius: 4px !important;
 }
 
 .mat-optgroup .mat-option:not(.mat-option-multiple) {
@@ -153,8 +165,15 @@ pre {
 /*
   Font
 */
+.headline-4 {
+  font-size: 34px;
+  font-weight: 400;
+  line-height: 48px;
+  letter-spacing: .25px;
+  margin: 0;
+}
+
 .subtitle-1 {
-  font-family: Archivo, sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
@@ -170,8 +189,15 @@ pre {
 
 .body-1 {
   font-size: 16px;
+  line-height: 24px;
   font-weight: 400;
   letter-spacing: 0.5px;
+}
+
+.body-2 {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.25px;
 }
 
 pre::-webkit-scrollbar, pre[class*='language-']::-webkit-scrollbar {
@@ -188,4 +214,12 @@ pre::-webkit-scrollbar-thumb, pre[class*='language-']::-webkit-scrollbar-thumb {
 
 pre::-webkit-scrollbar-track, pre[class*='language-']::-webkit-scrollbar-track {
   background: rgba(0,0,0,0);
+}
+
+.mat-tooltip {
+  // font-size: 12px;
+ /* line-height: 16px;
+  letter-spacing: .4px;
+  color: #fff !important;
+  background: rgba(0, 0, 0, 0.6) !important;*/
 }

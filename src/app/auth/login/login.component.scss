@@ -9,7 +9,6 @@ input.custom-autofill {
   display: block;
   // min-height: 100%;
   // background-color: #fafafa;
-  font-family: Archivo, sans-serif;
 }
 
 .page-center {
@@ -21,25 +20,18 @@ input.custom-autofill {
 .my-card {
   width: 550px;
   height: 600px;
-  padding: 40px 48px;
+  padding: 40px 32px;
   overflow: hidden;
-  background-color: #fff;
-  border: 1px solid rgba(0, 0, 0, .12);
-  border-radius: 8px;
+  background-color: var(--card-background);
+  // border: 1px solid rgba(0, 0, 0, .12);
+  border-radius: 4px;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.12), 0px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .social-login-info {
   display: grid;
   margin: 24px 0;
   grid-gap: 4px;
-}
-
-mat-form-field {
-  // font-family: Archivo, sans-serif;
-}
-
-button {
-  // font-family: Archivo, sans-serif;
 }
 
 mat-progress-bar {
@@ -57,9 +49,8 @@ mat-progress-bar {
 }
 
 h4 {
-  font-family: Archivo, sans-serif;
   font-size: 34px;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 48px;
   margin: 0;
   // text-align: center;
@@ -71,10 +62,6 @@ p {
   color: rgba(0, 0, 0, .6);
   margin: 0;
   // text-align: center;
-}
-
-mat-form-field {
-  font-family: Archivo, sans-serif;
 }
 
 .row-actions {

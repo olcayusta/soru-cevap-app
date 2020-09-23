@@ -1,5 +1,4 @@
 import { Component, OnInit, ChangeDetectionStrategy, ɵmarkDirty as markDirty, AfterViewInit } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'id-web-copy-code',
@@ -12,9 +11,7 @@ export class WebCopyCodeComponent implements OnInit, AfterViewInit {
   lang: string;
   highlightedCode;
 
-  constructor(
-    private snackBar: MatSnackBar
-  ) {
+  constructor() {
   }
 
   ngOnInit(): void {
@@ -27,15 +24,8 @@ export class WebCopyCodeComponent implements OnInit, AfterViewInit {
       const {language, value} = data;
       this.lang = language;
       this.highlightedCode = value;
-      console.log(this.highlightedCode);
       markDirty(this);
     };
     worker.postMessage(this.text.textContent);
-  }
-
-  onCopiedCode(): void {
-    /*this.snackBar.open('Kod kopyalandı', '', {
-      duration: 4000
-    });*/
   }
 }

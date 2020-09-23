@@ -1,12 +1,12 @@
 <div class="filter">
   <button mat-button class="outlined-menu-button" aria-label="Open sort by order interactions menu" [matMenuTriggerFor]="sortMenu">
     <span>Sıralama ölçütü: {{items[selectedIndex].label}}</span>
-    <!-- <mat-icon>arrow_drop_up</mat-icon>-->
     <id-arrow-drop-down-icon></id-arrow-drop-down-icon>
   </button>
 
   <mat-checkbox color="primary" checked="true">Cevapsız</mat-checkbox>
-  <mat-checkbox color="primary" checked="true" class="last-child">Doğru cevap almamış</mat-checkbox>
+  <mat-checkbox color="primary">Doğru cevap almamış</mat-checkbox>
+  <mat-checkbox color="primary" class="last-child">Çözülmüş</mat-checkbox>
 </div>
 
 <!--<mat-checkbox color="primary">No accepted answer</mat-checkbox>-->

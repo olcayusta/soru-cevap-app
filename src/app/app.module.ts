@@ -30,7 +30,6 @@ import { MatRippleModule } from '@angular/material/core';
 import { FishIconComponent } from './top-bar/fish-icon/fish-icon.component';
 import { JwtInterceptor } from './auth/interceptors/jwt.interceptor';
 import { MatInputModule } from '@angular/material/input';
-import { MatCheckboxModule } from '@angular/material/checkbox';
 import { SharedModule } from '@shared/shared.module';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { NotificationListPopupComponent } from './notification-list-popup/notification-list-popup.component';
@@ -41,6 +40,7 @@ import { SearchFormComponent } from './search-form/search-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TopBarProfileComponent } from './top-bar-profile/top-bar-profile.component';
 import { UserMenuPopupComponent } from './user-menu-popup/user-menu-popup.component';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 registerLocaleData(localeTr);
 
@@ -82,6 +82,7 @@ registerLocaleData(localeTr);
     MatListModule,
     SharedModule,
     MatIconModule,
+    MatSlideToggleModule,
     ReactiveFormsModule
   ],
   providers: [
