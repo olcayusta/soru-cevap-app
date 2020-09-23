@@ -2,8 +2,6 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
-import { catchError } from 'rxjs/operators';
-import { EMPTY } from 'rxjs';
 import { Title } from '@angular/platform-browser';
 import { environment } from '@environments/environment';
 

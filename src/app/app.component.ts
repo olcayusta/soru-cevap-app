@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ɵmarkDirty as markDirty } from '@angular/core';
 import { ActivatedRoute, NavigationError, NavigationStart, ResolveEnd, ResolveStart, Router } from '@angular/router';
 import { SocketService } from '@shared/services/socket.service';
 import { MatSnackBar } from '@angular/material/snack-bar';

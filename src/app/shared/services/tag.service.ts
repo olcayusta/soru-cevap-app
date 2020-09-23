@@ -21,4 +21,8 @@ export class TagService {
   getTag(tagId: number): Observable<Tag> {
     return this.http.get<Tag>(`${environment.apiUrl}/tags/${tagId}`);
   }
+
+  searchTag(searchTerm: string): Observable<Tag[]> {
+    return this.http.get<Tag[]>(`${this.apiUrl}/search/${searchTerm}`);
+  }
 }

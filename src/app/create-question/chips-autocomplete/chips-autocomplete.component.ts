@@ -3,13 +3,13 @@ import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { MatAutocomplete, MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
-import { map, startWith } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, map, startWith, switchMap } from 'rxjs/operators';
 import { MatChipInputEvent } from '@angular/material/chips';
 import { TagService } from '../../shared/services/tag.service';
 import { Tag } from '../../shared/models/tag.model';
 
 @Component({
-  selector: 'qa-chips-autocomplete',
+  selector: 'id-chips-autocomplete',
   templateUrl: './chips-autocomplete.component.html',
   styleUrls: ['./chips-autocomplete.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -35,18 +35,17 @@ export class ChipsAutocompleteComponent implements OnInit {
       startWith(''),
       map((fruit: string | null) => fruit ? this._filter(fruit) : this.allFruits.slice()));*/
 
-    this.filteredFruits = this.tagService.getAllTags();
+    // this.filteredFruits = this.tagService.getAllTags();
   }
 
   ngOnInit(): void {
-
-    this.fruitCtrl.valueChanges.subscribe(value => {
-      this.tagService.getAllTags().subscribe(value1 => {
-        this.allTags = value1;
-      });
-    });
-
+    this.filteredFruits = this.fruitCtrl.valueChanges.pipe(
+      debounceTime(200),
+      distinctUntilChanged(),
+      switchMap(value => this.tagService.searchTag(value))
+    );
   }
+
 
   add(event: MatChipInputEvent): void {
     const input = event.input;

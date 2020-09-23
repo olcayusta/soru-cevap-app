@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { TimeAgoPipe } from './pipes/time-ago.pipe';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { HighlightSearchPipe } from '../search-form/pipes/highlight-search.pipe';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { HighlightSearchPipe } from '../search-form/pipes/highlight-search.pipe'
     MatChipsModule,
     MatDividerModule,
     RouterModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatIconModule
   ],
   exports: [
     LazyImgDirective,
