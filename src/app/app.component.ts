@@ -1,5 +1,5 @@
-import { Component, OnInit, ɵmarkDirty as markDirty } from '@angular/core';
-import { ActivatedRoute, NavigationError, NavigationStart, ResolveEnd, ResolveStart, Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, NavigationCancel, NavigationError, ResolveEnd, ResolveStart, Router } from '@angular/router';
 import { SocketService } from '@shared/services/socket.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { SpinnerService } from '@shared/services/spinner.service';
@@ -48,7 +48,6 @@ export class AppComponent implements OnInit {
     private swPush: SwPush,
     private pushService: PushNotificationService
   ) {
-
     // Sw Push
     if (swPush.isEnabled) {
       swPush.requestSubscription({
@@ -66,6 +65,11 @@ export class AppComponent implements OnInit {
       }
 
       if (value instanceof ResolveEnd) {
+        this.spinner = false;
+        this.spinnerService.removeSpinner();
+      }
+
+      if (value instanceof NavigationCancel || NavigationError) {
         this.spinner = false;
         this.spinnerService.removeSpinner();
       }

@@ -1,9 +1,9 @@
 <div class="search-form" matAutocompleteOrigin #origin="matAutocompleteOrigin">
-<!--  <button mat-icon-button aria-label="Example icon-button with search icon">
-    <qa-search-icon></qa-search-icon>
-  </button>-->
-<!--  <id-search-icon></id-search-icon>-->
-  <input aria-label="Ara" autocomplete="off" spellcheck="false" placeholder="Ara" [formControl]="myControl"
+  <!--  <button mat-icon-button aria-label="Example icon-button with search icon">
+      <qa-search-icon></qa-search-icon>
+    </button>-->
+  <!--  <id-search-icon></id-search-icon>-->
+  <input aria-label="Ara" autocomplete="off" spellcheck="false" placeholder="Ara" [formControl]="myControl" (focusin)="origin.elementRef.nativeElement.style.width = '684px'"
          [matAutocomplete]="auto" [matAutocompleteConnectedTo]="origin">
 </div>
 
@@ -34,6 +34,7 @@
   </ng-container>
 
   <div class="autocomplete-action-row">
-    <a mat-button color="primary" routerLink="/search/{{myControl.value}}">"{{myControl.value}}" İÇİN TÜM SONUÇLARI GÖSTER</a>
+    <a mat-button color="primary" routerLink="/search/{{myControl.value}}">"{{myControl.value}}" İÇİN TÜM SONUÇLARI
+      GÖSTER</a>
   </div>
 </mat-autocomplete>

@@ -25,6 +25,7 @@ import { ThumbUpIconComponent } from './thumb-up-icon/thumb-up-icon.component';
 import { ArrowBackIconComponent } from './arrow-back-icon/arrow-back-icon.component';
 import { CloseIconComponent } from './close-icon/close-icon.component';
 import { WifiOffIconComponent } from './wifi-off-icon/wifi-off-icon.component';
+import { WidgetIconComponent } from './widget-icon/widget-icon.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { WifiOffIconComponent } from './wifi-off-icon/wifi-off-icon.component';
     ThumbUpIconComponent,
     ArrowBackIconComponent,
     CloseIconComponent,
-    WifiOffIconComponent
+    WifiOffIconComponent,
+    WidgetIconComponent
   ],
   exports: [
     NotificationsIconComponent,
@@ -80,7 +82,8 @@ import { WifiOffIconComponent } from './wifi-off-icon/wifi-off-icon.component';
     ThumbUpIconComponent,
     ArrowBackIconComponent,
     CloseIconComponent,
-    WifiOffIconComponent
+    WifiOffIconComponent,
+    WidgetIconComponent
   ]
 })
 export class IconModule {

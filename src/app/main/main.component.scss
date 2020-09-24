@@ -42,6 +42,16 @@ main {
   }
 }
 
+.fixed-chip {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 64px;
+  display: flex;
+  justify-content: center;
+  margin: 16px 0;
+}
+
 @media (prefers-color-scheme: light) {
   .fixed-fab-btn {
     position: fixed;
@@ -51,7 +61,7 @@ main {
 
     .mat-fab {
       background-color: #6200EE;
-      letter-spacing: 1.25px;
+      // letter-spacing: 1.25px;
     }
 
     button {

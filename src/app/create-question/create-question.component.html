@@ -10,7 +10,7 @@
     <div class="form-body">
       <mat-form-field appearance="standard">
         <mat-label>Başlık</mat-label>
-        <input placeholder="Be specific and imagine you’re asking a question to another person" matInput formControlName="title">
+        <input aria-label="Başlık" placeholder="Be specific and imagine you’re asking a question to another person" matInput formControlName="title">
         <mat-error *ngIf="form.get('title').hasError('required')">Bir başlık girin</mat-error>
       </mat-form-field>
 

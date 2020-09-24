@@ -36,10 +36,6 @@ const routes: Routes = [
         loadChildren: () => import('./search/search.module').then(m => m.SearchModule)
       },
       {
-        path: 'create',
-        loadChildren: () => import('./create-question/create-question.module').then(m => m.CreateQuestionModule)
-      },
-      {
         path: 'settings',
         loadChildren: () => import('./settings/settings.module').then(m => m.SettingsModule)
       },
@@ -68,7 +64,11 @@ const routes: Routes = [
   {path: 'login', loadChildren: () => import('./auth/login/login.module').then(m => m.LoginModule)},
   {path: 'register', loadChildren: () => import('./auth/register/register.module').then(m => m.RegisterModule)},
   {path: '404', loadChildren: () => import('./page-not-found/page-not-found.module').then(m => m.PageNotFoundModule)},
-  {path: 'mobile-search', loadChildren: () => import('./mobile-search/mobile-search.module').then(m => m.MobileSearchModule)}
+  {path: 'mobile-search', loadChildren: () => import('./mobile-search/mobile-search.module').then(m => m.MobileSearchModule)},
+  {
+    path: 'create',
+    loadChildren: () => import('./create-question/create-question.module').then(m => m.CreateQuestionModule)
+  },
 ];
 
 @NgModule({

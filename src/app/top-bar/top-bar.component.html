@@ -8,7 +8,7 @@
 
     <a routerLink="/" class="logo-link">
       <span>İyidev</span>
-    <!--  <sup>beta 1</sup>-->
+      <sup>beta</sup>
     </a>
   </div>
 
@@ -72,6 +72,10 @@
 </mat-toolbar>
 
 <ng-template #signIn>
+  <button mat-icon-button matTooltip="YouTube uygulamaları">
+    <id-widget-icon></id-widget-icon>
+  </button>
+
   <button mat-icon-button aria-label="More apps" matTooltip="Ayarlar" class="top-right-btn more-vert-icon" [matMenuTriggerFor]="moreMenu">
     <id-more-vert-icon></id-more-vert-icon>
   </button>

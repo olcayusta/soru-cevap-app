@@ -16,15 +16,8 @@ mat-toolbar {
   font-weight: 500;
   color: var(--icon-color);
 
-  /*
-  ::ng-deep svg {
-    display: none;
-  }
-  */
-
   span {
     margin-left: 32px;
-    // font-family: Archivo, sans-serif;
   }
 }
 
@@ -38,21 +31,17 @@ mat-toolbar {
 }
 
 .headline {
-  // font-family: Archivo, sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 24px;
   margin: 0;
-  letter-spacing: 0.15px;
+  // letter-spacing: 0.15px;
 }
 
 .body2 {
   font-size: 14px;
   line-height: 20px;
-  letter-spacing: 0.25px;
-
-  /* 00. On Surface / Medium Emphasis */
-
+  // letter-spacing: 0.25px;
   color: var(--medium-emphasis-color);
 }
 
@@ -73,4 +62,12 @@ mat-toolbar {
     border-radius: 50%;
     object-fit: cover;
   }
+}
+
+p {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.4px;
+  color: var(--medium-emphasis-color);
+  padding-left: 16px;
 }

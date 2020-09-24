@@ -41,6 +41,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { TopBarProfileComponent } from './top-bar-profile/top-bar-profile.component';
 import { UserMenuPopupComponent } from './user-menu-popup/user-menu-popup.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatChipsModule } from '@angular/material/chips';
 
 registerLocaleData(localeTr);
 
@@ -83,7 +84,8 @@ registerLocaleData(localeTr);
     SharedModule,
     MatIconModule,
     MatSlideToggleModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatChipsModule
   ],
   providers: [
     {provide: LOCALE_ID, useValue: 'tr-TR'},
