@@ -16,24 +16,27 @@ import { BannerComponent } from './banner/banner.component';
 import { MatDividerModule } from '@angular/material/divider';
 
 @NgModule({
-  declarations: [
-    HomeComponent,
-    BannerComponent,
-    RecentQuestionsComponent,
-    FilterComponent,
-    IsVisibleDirective
-  ],
-  imports: [
-    CommonModule,
-    HomeRoutingModule,
-    SharedModule,
-    IconModule,
-    MatProgressSpinnerModule,
-    MatMenuModule,
-    MatCheckboxModule,
-    MatButtonModule,
-    MatDividerModule
-  ]
+    declarations: [
+        HomeComponent,
+        BannerComponent,
+        RecentQuestionsComponent,
+        FilterComponent,
+        IsVisibleDirective
+    ],
+    exports: [
+        HomeComponent
+    ],
+    imports: [
+        CommonModule,
+        HomeRoutingModule,
+        SharedModule,
+        IconModule,
+        MatProgressSpinnerModule,
+        MatMenuModule,
+        MatCheckboxModule,
+        MatButtonModule,
+        MatDividerModule
+    ]
 })
 export class HomeModule {
 }

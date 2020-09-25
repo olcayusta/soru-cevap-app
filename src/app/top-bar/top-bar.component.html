@@ -7,8 +7,8 @@
     </button>
 
     <a routerLink="/" class="logo-link">
-      <span>İyidev</span>
-      <sup>beta</sup>
+      <span>uzman.dev</span>
+      <!--<sup>beta</sup>-->
     </a>
   </div>
 
@@ -44,9 +44,9 @@
         <id-search-icon></id-search-icon>
       </a>
 
-      <!--     <button mat-icon-button class="top-right-btn" matTooltip="Filtrele" (click)="openSheet.emit()">
-         <qa-filter-list-icon></qa-filter-list-icon>
-       </button>-->
+ <!--     <button mat-icon-button class="top-right-btn" matTooltip="Filtrele" (click)="openSheet.emit()">
+        <id-filter-list-icon></id-filter-list-icon>
+      </button>-->
 
       <button id="avatar-btn" aria-label="Alternatif hesapların listesini açan hesap profil fotoğrafı"
               #avatarElement="cdkOverlayOrigin" cdkOverlayOrigin
@@ -67,7 +67,7 @@
     </ng-container>
   </div>
 
-<!--  <mat-progress-bar mode="indeterminate" *ngIf="spinner$ | async"></mat-progress-bar>-->
+  <!--  <mat-progress-bar mode="indeterminate" *ngIf="spinner$ | async"></mat-progress-bar>-->
 
 </mat-toolbar>
 
@@ -76,7 +76,8 @@
     <id-widget-icon></id-widget-icon>
   </button>
 
-  <button mat-icon-button aria-label="More apps" matTooltip="Ayarlar" class="top-right-btn more-vert-icon" [matMenuTriggerFor]="moreMenu">
+  <button mat-icon-button aria-label="More apps" matTooltip="Ayarlar" class="top-right-btn more-vert-icon"
+          [matMenuTriggerFor]="moreMenu">
     <id-more-vert-icon></id-more-vert-icon>
   </button>
 
@@ -101,8 +102,8 @@
     </ng-template>
   </mat-menu>
   <a mat-button routerLink="/login">OTURUM AÇ</a>
-<!--  <a mat-icon-button class="mobile-login-btn">
-    <id-fish-icon></id-fish-icon>
-  </a>-->
+  <!--  <a mat-icon-button class="mobile-login-btn">
+      <id-fish-icon></id-fish-icon>
+    </a>-->
 </ng-template>
 

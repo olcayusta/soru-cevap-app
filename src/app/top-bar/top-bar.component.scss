@@ -81,7 +81,7 @@ mat-toolbar-row:not(:first-child) {
   align-items: center;
   padding: 0;
   cursor: pointer;
-  margin: 0 0 0 16px;
+  margin: 0 8px 0 16px;
 }
 
 .img-shadow {
@@ -160,7 +160,7 @@ mat-toolbar-row:not(:first-child) {
   }
 
   #avatar-btn {
-    // margin-right: 4px;
+    margin-right: 8px;
   }
 
   .avatar-img {

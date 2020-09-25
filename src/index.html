@@ -12,15 +12,11 @@
   <link rel="dns-prefetch" href="http://localhost:9001">
   <link rel="preconnect" href="https://i.pinimg.com">
   <link rel="preconnect" href="http://192.168.1.2:9001">
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
+  <link rel="stylesheet" href="/dark.css" media="(prefers-color-scheme: dark)">
+  <link rel="stylesheet" href="/light.css" media="(prefers-color-scheme: light)">
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -36,7 +32,7 @@
   const darkModeEnabled = window.matchMedia('(prefers-color-scheme: dark)').matches;
   if (darkModeEnabled) {
     const metaThemeColorEl = document.querySelector('meta[name=theme-color]');
-    metaThemeColorEl.setAttribute('content', '#272727');
+    metaThemeColorEl.setAttribute('content', '#000');
   }
   const metaThemeColorEl = document.querySelector('meta[name=theme-color]');
 

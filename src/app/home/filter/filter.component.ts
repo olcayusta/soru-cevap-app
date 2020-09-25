@@ -19,7 +19,7 @@ export class FilterComponent implements OnInit, AfterViewInit {
     {sort: '', label: 'Trendler'},
     {sort: 'popularity', label: 'En popüler'},
     {sort: 'date', label: 'En yeni'},
-    {sort: 'activity', label: 'Recent activity'},
+    {sort: 'activity', label: 'Son etkinlik (en yeni)'},
   ];
 
   languageItems = [

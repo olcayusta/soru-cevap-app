@@ -1,8 +1,10 @@
-/*
-  Letter spacing
-*/
+// letter spacing fixed
 .mat-list-item span {
-  // letter-spacing: 0.1px;
+  letter-spacing: 0.1px;
+}
+
+.extended-fab {
+  letter-spacing: 1.25px;
 }
 
 mat-sidenav {
