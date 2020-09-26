@@ -34,9 +34,9 @@ export class QuestionService {
     return this.http.get<Question[]>(`${environment.apiUrl}/questions/loadmore/${offset}`);
   }
 
-  saveQuestion(title, content, rawContent): Observable<Question> {
+  saveQuestion(title, content, rawContent, tags): Observable<Question> {
     return this.http.post<Question>(`${environment.apiUrl}/questions`, {
-      title, content, rawContent
+      title, content, rawContent, tags
     });
   }
 }

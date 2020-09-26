@@ -1,8 +1,8 @@
-import { Component, OnInit, ChangeDetectionStrategy, ɵmarkDirty as markDirty } from '@angular/core';
-import { QuestionService } from '@shared/services/question.service';
-import { Question } from '@shared/models/question.model';
-import { ActivatedRoute } from '@angular/router';
-import { FilterService } from '@shared/services/filter.service';
+import {Component, OnInit, ChangeDetectionStrategy, ɵmarkDirty as markDirty} from '@angular/core';
+import {QuestionService} from '@shared/services/question.service';
+import {Question} from '@shared/models/question.model';
+import {ActivatedRoute} from '@angular/router';
+import {FilterService} from '@shared/services/filter.service';
 
 @Component({
   selector: 'id-recent-questions',
@@ -25,17 +25,10 @@ export class RecentQuestionsComponent implements OnInit {
   ngOnInit(): void {
     this.route.queryParamMap.subscribe(value => {
       const sort = value.get('sort');
-      if (sort) {
-        this.filterService.getQuestionsByFiltered(value.get('sort')).subscribe(value1 => {
-          this.questions = value1;
-          markDirty(this);
-        });
-      } else {
-        this.questionService.getAllQuestions().subscribe((value2) => {
-          this.questions = value2;
-          markDirty(this);
-        });
-      }
+      this.filterService.getQuestionsByFiltered(sort).subscribe(value1 => {
+        this.questions = value1;
+        markDirty(this);
+      });
     });
   }
 
@@ -48,6 +41,6 @@ export class RecentQuestionsComponent implements OnInit {
           markDirty(this);
         }
       });
-    }, 1000);
+    }, 400);
   }
 }

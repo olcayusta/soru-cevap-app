@@ -1,6 +1,6 @@
-import {Component, ChangeDetectionStrategy, ViewChild, ViewChildren, QueryList, AfterViewInit} from '@angular/core';
+import {Component, ChangeDetectionStrategy, ViewChild, ViewChildren, QueryList, AfterViewInit, OnInit} from '@angular/core';
 import {MatMenu, MatMenuItem} from '@angular/material/menu';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'id-sort-by',
@@ -8,7 +8,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./sort-by.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SortByComponent implements AfterViewInit {
+export class SortByComponent implements OnInit, AfterViewInit {
   @ViewChild('menu') menu: MatMenu;
   @ViewChildren('menuItem') menuItemList: QueryList<MatMenuItem>;
 
@@ -24,8 +24,16 @@ export class SortByComponent implements AfterViewInit {
   selectedIndex = 0;
 
   constructor(
+    private route: ActivatedRoute,
     private router: Router
   ) {
+  }
+
+  ngOnInit(): void {
+    const sort = this.route.snapshot.queryParamMap.get('sort');
+    if (sort) {
+      this.selectedIndex = this.items.findIndex(value => value.sort === sort);
+    }
   }
 
   ngAfterViewInit(): void {

@@ -69,7 +69,7 @@ export class AppComponent implements OnInit {
         this.spinnerService.removeSpinner();
       }
 
-      if (value instanceof NavigationCancel || NavigationError) {
+      if (value instanceof (NavigationCancel || NavigationError)) {
         this.spinner = false;
         this.spinnerService.removeSpinner();
       }

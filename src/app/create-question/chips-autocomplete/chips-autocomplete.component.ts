@@ -25,6 +25,8 @@ export class ChipsAutocompleteComponent implements OnInit {
   allFruits: Tag[];
   allTags: Tag[];
 
+  tags: number[] = [];
+
   @ViewChild('fruitInput') fruitInput: ElementRef<HTMLInputElement>;
   @ViewChild('auto') matAutocomplete: MatAutocomplete;
 
@@ -46,7 +48,6 @@ export class ChipsAutocompleteComponent implements OnInit {
     );
   }
 
-
   add(event: MatChipInputEvent): void {
     const input = event.input;
     const value = event.value;
@@ -54,6 +55,7 @@ export class ChipsAutocompleteComponent implements OnInit {
     // Add our fruit
     if ((value || '').trim()) {
       this.fruits.push(value.trim());
+
     }
 
     // Reset the input value
@@ -76,6 +78,10 @@ export class ChipsAutocompleteComponent implements OnInit {
     this.fruits.push(event.option.viewValue);
     this.fruitInput.nativeElement.value = '';
     this.fruitCtrl.setValue(null);
+
+    const tag = event.option.value as Tag;
+    this.tags.push(tag.id);
+    console.log(this.tags);
   }
 
 /*  private _filter(value: string): string[] {

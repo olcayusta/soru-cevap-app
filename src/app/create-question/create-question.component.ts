@@ -1,7 +1,8 @@
-import { Component, OnInit, ChangeDetectionStrategy, ɵmarkDirty as markDirty } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { QuestionService } from '@shared/services/question.service';
-import { DomSanitizer } from '@angular/platform-browser';
+import {Component, OnInit, ChangeDetectionStrategy, ɵmarkDirty as markDirty, ViewChild} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {QuestionService} from '@shared/services/question.service';
+import {DomSanitizer} from '@angular/platform-browser';
+import {ChipsAutocompleteComponent} from './chips-autocomplete/chips-autocomplete.component';
 
 @Component({
   selector: 'id-create-question',
@@ -16,6 +17,8 @@ export class CreateQuestionComponent implements OnInit {
 
   worker: Worker;
 
+  @ViewChild(ChipsAutocompleteComponent) chipComponent: ChipsAutocompleteComponent;
+
   constructor(
     private fb: FormBuilder,
     private domSanitizer: DomSanitizer,
@@ -29,7 +32,8 @@ export class CreateQuestionComponent implements OnInit {
 
   submit(): void {
     const {title, description} = this.form.value;
-    this.questionService.saveQuestion(title, description, description).subscribe(value => {
+    const tags = this.chipComponent.tags;
+    this.questionService.saveQuestion(title, description, description, tags).subscribe(value => {
       console.log(value);
     });
   }

@@ -1,8 +1,10 @@
 :host {
-  display: block;
+  display: flex;
+  align-items: center;
+  padding: 24px 0;
 }
 
-::-webkit-scrollbar {
+:host::-webkit-scrollbar {
   display: none;
 }
 
@@ -39,9 +41,11 @@ mat-checkbox {
 }
 
 @media (max-width: 599px) {
-  .filter {
+  :host {
     // padding: 24px 0 12px 0;
     overflow: auto;
+    padding-left: 24px;
+    padding-right: 24px;
 
     .outlined-menu-button {
       margin-left: 16px;

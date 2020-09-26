@@ -2,7 +2,7 @@
 
   <div class="item-left">
     <div class="img-shadow">
-      <a routerLink="/user/{{question.user.id}}">
+      <a class="avatar-link" title="{{question.user.displayName}}" routerLink="/user/{{question.user.id}}">
         <img src="{{question.user.picture}}" class="author-img" width="40" height="40" alt="{{question.user.displayName}}">
       </a>
     </div>
