@@ -23,7 +23,7 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { MatMenuModule } from '@angular/material/menu';
 import { SideSheetComponent } from './main/side-sheet/side-sheet.component';
 import { MatRadioModule } from '@angular/material/radio';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {MAT_SNACK_BAR_DEFAULT_OPTIONS, MatSnackBarModule} from '@angular/material/snack-bar';
 import { StickyDirective } from './top-bar/directives/sticky.directive';
 import { BottomBarComponent } from './bottom-bar/bottom-bar.component';
 import { MatRippleModule } from '@angular/material/core';
@@ -89,7 +89,8 @@ registerLocaleData(localeTr);
   ],
   providers: [
     {provide: LOCALE_ID, useValue: 'tr-TR'},
-    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
+    {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: { horizontalPosition: 'center' }}
   ],
   bootstrap: [AppComponent]
 })

@@ -24,9 +24,10 @@ a:hover {
   color: var(--medium-emphasis-color);
 
   * {
-    font-size: 13px;
+    font-size: 14px;
     line-height: 20px;
     // letter-spacing: 0.25px;
+    margin-top: 2px;
   }
 }
 
@@ -86,6 +87,17 @@ mat-divider {
   margin: 16px 0;
 }
 
+.check-title {
+  font-size: 10px;
+  line-height: 16px;
+  font-weight: 700;
+  border-radius: 8px;
+  padding: 0 4px;
+  margin: 0 8px;
+  background: #6200EE;
+  color: #fff;
+}
+
 .check-icon {
   line-height: 1;
   font-size: 12px;
@@ -94,7 +106,7 @@ mat-divider {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  background: #6200ee;
+  background: #6200EE;
   color: #fff;
   border-radius: 50%;
   font-weight: 400;

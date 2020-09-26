@@ -18,7 +18,7 @@ export class FilterComponent implements OnInit, AfterViewInit {
   items = [
     {sort: '', label: 'Trendler'},
     {sort: 'popularity', label: 'En popüler'},
-    {sort: 'date', label: 'En yeni'},
+    {sort: 'date', label: 'Eklenme tarihi (en yeni)'},
     {sort: 'activity', label: 'Son etkinlik (en yeni)'},
   ];
 
@@ -45,30 +45,20 @@ export class FilterComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.menuItemList.toArray()[this.selectedIndex]._highlighted = true;
+    // this.menuItemList.toArray()[this.selectedIndex]._highlighted = true;
     // this.languageMenu._allItems.toArray()[0]._highlighted = true;
   }
 
-  onItemClick(menuItem: MatMenuItem, index: number): void {
-    this.menuItemList.toArray()[this.selectedIndex]._highlighted = false;
-    this.selectedIndex = index;
-    menuItem._highlighted = true;
 
-    if (this.items[this.selectedIndex].sort) {
-      this.router.navigate(['/'], {
-        queryParams: {
-          sort: this.items[this.selectedIndex].sort
-        }
-      });
-    } else {
-      this.router.navigate(['/']);
-    }
-  }
 
   onLanguageMenuItemClicked(menuItem: MatMenuItem, index: number): void {
     this.languageMenu._allItems.toArray().forEach(value => {
       value._highlighted = false;
     });
     menuItem._highlighted = true;
+  }
+
+  onClicked($event: MouseEvent) {
+    $event.stopPropagation();
   }
 }

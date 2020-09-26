@@ -1,22 +1,32 @@
 <div class="filter">
-  <button mat-button class="outlined-menu-button" aria-label="Open sort by order interactions menu" [matMenuTriggerFor]="sortMenu">
-    <span>Sıralama ölçütü: {{items[selectedIndex].label}}</span>
-    <id-arrow-drop-down-icon></id-arrow-drop-down-icon>
-  </button>
+  <id-sort-by></id-sort-by>
 
-  <mat-checkbox color="primary" checked="true">Cevapsız</mat-checkbox>
-  <mat-checkbox color="primary">Doğru cevap almamış</mat-checkbox>
-  <mat-checkbox color="primary" class="last-child">Çözülmüş</mat-checkbox>
+<!--  <mat-chip-list>
+    <mat-chip color="primary">CEVAPSIZ</mat-chip>
+  </mat-chip-list>-->
+
+<!--  <button class="outlined-menu-button" mat-button [matMenuTriggerFor]="typeMenu">-->
+<!--    <span>Filtre: Hepsi</span>-->
+<!--    <id-arrow-drop-down-icon></id-arrow-drop-down-icon>-->
+<!--  </button>-->
+
+  <mat-menu #typeMenu="matMenu" class="text-only-menu mat-elevation-z2 filtre-menu">
+    <div class="checkbox-item" (click)="onClicked($event)">
+      <mat-checkbox color="primary" checked="true">Cevapsız</mat-checkbox>
+    </div>
+    <div class="checkbox-item" (click)="onClicked($event)">
+      <mat-checkbox color="primary">Doğru cevap almamış</mat-checkbox>
+    </div>
+    <div class="checkbox-item" (click)="onClicked($event)">
+      <mat-checkbox color="primary" class="last-child">Çözülmüş</mat-checkbox>
+    </div>
+  </mat-menu>
+
+  <mat-checkbox color="primary" checked="true">Yalnızca cevap almayan soruları göster</mat-checkbox>
+<!--  <mat-checkbox color="primary">Doğru cevap almamış</mat-checkbox>-->
+<!--  <mat-checkbox color="primary" class="last-child">Çözülmüş</mat-checkbox>-->
 </div>
 
-<!--<mat-checkbox color="primary">No accepted answer</mat-checkbox>-->
-<!--
-<mat-checkbox color="primary">Yalnızca cevapsız soruları göster</mat-checkbox>
--->
-
-<mat-menu #sortMenu="matMenu" class="text-only-menu">
-  <button mat-menu-item  *ngFor="let item of items; let index = index" #menuItem (click)="onItemClick(menuItem, index)">{{item.label}}</button>
-</mat-menu>
 
 <!--<button mat-button class="outlined-menu-button" [matMenuTriggerFor]="languageMenu">
   <span>Language</span>

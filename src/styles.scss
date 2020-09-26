@@ -84,21 +84,6 @@ svg {
   // background-color: #fff !important;
 }
 
-.mat-snack-bar-container {
-  color: #FFFFFF;
-  background-color: #121212;
-}
-
-.mat-simple-snackbar {
-  font-size: 14px;
-  line-height: 20px;
-  /* identical to box height, or 143% */
-  letter-spacing: 0.25px;
-
-  /* 03. On Primary / High Emphasis */
-  color: #FFFFFF;
-}
-
 // Fix menu and select panel overflow scroll bar
 .mat-menu-panel::-webkit-scrollbar, .mat-select-panel::-webkit-scrollbar {
   width: 5px;
@@ -118,14 +103,29 @@ svg {
   // border-radius: 8px !important;
 }
 
+.filtre-menu .checkbox-item {
+  display: flex;
+  align-items: center;
+  height: 32px;
+  padding: 0 16px;
+}
+
 .text-only-menu {
-  min-width: 192px !important;
-  border-radius: 8px !important;
+  min-width: calc(100% + 24px) !important;
+  border-radius: 0 !important;
   margin-top: 8px;
 
+  /* surface */
+  background: #FFFFFF;
+  // box-shadow: 0 8px 10px rgba(0, 0, 0, 0.14), 0 3px 14px rgba(0, 0, 0, 0.12), 0 5px 5px rgba(0, 0, 0, 0.2);
+  // border-radius: 4px;
+
+  // box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.14), 0px 3px 14px rgba(0, 0, 0, 0.12), 0px 5px 5px rgba(0, 0, 0, 0.2);
+
   .mat-menu-item {
-    height: 32px;
+    // height: 32px;
     line-height: 20px;
+    // letter-spacing: .25px;
     // padding-left: 8px;
   }
 

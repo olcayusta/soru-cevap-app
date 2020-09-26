@@ -1,3 +1,23 @@
+/*
+  SnackBar
+*/
+@media (prefers-color-scheme: light) {
+  .mat-snack-bar-container {
+    color: #FFFFFF;
+    background-color: #121212;
+  }
+
+  .mat-simple-snackbar {
+    color: #FFFFFF;
+  }
+}
+
+.mat-simple-snackbar {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+}
+
 // letter spacing fixed
 .mat-list-item span {
   letter-spacing: 0.1px;

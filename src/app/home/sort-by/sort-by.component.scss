@@ -1,0 +1,42 @@
+:host {
+  display: block;
+}
+
+button {
+  margin-right: 16px;
+}
+
+.outlined-menu-button {
+  display: inline-flex;
+  height: 36px;
+  font-weight: 400;
+  line-height: 36px;
+  text-transform: none;
+  padding: 0 8px !important;
+  margin-left: -8px;
+  // letter-spacing: .25px;
+
+  id-arrow-drop-down-icon {
+    margin-right: -8px;
+
+    ::ng-deep svg {
+      fill: #6200EE;
+    }
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .mat-menu-item-highlighted {
+    background-color: rgba(98, 0, 238, 0.12) !important;
+    // background-color: rgba(0, 0, 0, 0.12) !important;
+    color: #6200EE;
+    // color: black;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .mat-menu-item-highlighted {
+    background-color: rgba(255, 255, 255, 0.12) !important;
+    color: #ffffff;
+  }
+}

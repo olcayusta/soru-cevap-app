@@ -10,29 +10,36 @@
   max-height: calc(100vh - 64px);
   display: flex;
   flex-direction: column;
-  border-radius: 4px;
+  // border-radius: 4px;
   color: var(--text-color);
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.12), 0px 1px 3px rgba(0, 0, 0, 0.2);
+  // border: 1px solid rgba(0, 0, 0, 0.12);
+}
 
-  header {
-    padding: 20px 16px;
-    display: flex;
-    align-items: center;
-  }
+//.popup-inner-border {
+//  height: 100%;
+//  border: 1px solid rgba(0, 0, 0, 0.12);
+//  border-radius: 8px;
+//}
 
-  .header-title {
-    font-size: 16px;
-    line-height: 24px;
-    font-weight: 400;
-  }
+header {
+  padding: 20px 16px;
+  display: flex;
+  align-items: center;
+}
 
-  mat-nav-list {
-    padding-top: 0;
-  }
+.header-title {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+}
 
-  section {
-    overflow: auto;
-  }
+mat-nav-list {
+  padding-top: 0;
+}
+
+section {
+  overflow: auto;
 }
 
 :host ::ng-deep .mat-list-item-content {

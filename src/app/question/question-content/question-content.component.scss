@@ -17,12 +17,11 @@ code {
   // border: 1px solid rgb(0 0 0 / .04);
 }
 
-
 pre {
   display: flex;
   max-height: 512px;
   font-family: Roboto Mono, monospace;
-  padding: 16px 4px;
+  padding: 16px 8px;
   background-color: #fff;
   // border: 1px solid #dadce0;
   font-size: 14px;
@@ -46,11 +45,6 @@ a, :link, :visited {
 
 a code, td a code {
   color: #3740ff;
-}
-
-code {
-  margin: 0 .25em;
-  padding: .125em .25em;
 }
 
 :not(pre) > code {
