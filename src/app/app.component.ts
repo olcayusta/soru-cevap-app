@@ -1,13 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, NavigationCancel, NavigationError, ResolveEnd, ResolveStart, Router } from '@angular/router';
-import { SocketService } from '@shared/services/socket.service';
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { SpinnerService } from '@shared/services/spinner.service';
-import { animate, state, style, transition, trigger } from '@angular/animations';
-import { SwPush } from '@angular/service-worker';
-import { PushNotificationService } from '@shared/services/push-notification.service';
-
-const VAPID_PUBLIC = 'BBuui5T3pIWV_ZyyZel8ynOQLlJO5juM6knPoBzg9shZjkmcqaFm0okyCbWOw2pxSSdEo2p9kiSQYn0V8A-GOjE';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, NavigationCancel, NavigationError, ResolveEnd, ResolveStart, Router} from '@angular/router';
+import {SocketService} from '@shared/services/socket.service';
+import {MatSnackBar} from '@angular/material/snack-bar';
+import {SpinnerService} from '@shared/services/spinner.service';
+import {animate, state, style, transition, trigger} from '@angular/animations';
+import {SwPush} from '@angular/service-worker';
+import {PushNotificationService} from '@shared/services/push-notification.service';
+import {environment} from '@environments/environment';
 
 @Component({
   selector: 'id-root',
@@ -48,10 +47,9 @@ export class AppComponent implements OnInit {
     private swPush: SwPush,
     private pushService: PushNotificationService
   ) {
-    // Sw Push
     if (swPush.isEnabled) {
       swPush.requestSubscription({
-        serverPublicKey: VAPID_PUBLIC
+        serverPublicKey: environment.vapidPublic
       }).then(subscription => {
         this.pushService.sendSubscriptionToTheServer(subscription).subscribe();
       }).catch(console.error);
