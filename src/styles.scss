@@ -106,8 +106,16 @@ svg {
 .filtre-menu .checkbox-item {
   display: flex;
   align-items: center;
-  height: 32px;
+  height: 48px;
   padding: 0 16px;
+}
+
+.more-menu {
+  width: 256px;
+}
+
+.empty {
+  padding-left: 40px;
 }
 
 .text-only-menu {
@@ -115,8 +123,6 @@ svg {
   border-radius: 0 !important;
   margin-top: 8px;
 
-  /* surface */
-  background: #FFFFFF;
   // box-shadow: 0 8px 10px rgba(0, 0, 0, 0.14), 0 3px 14px rgba(0, 0, 0, 0.12), 0 5px 5px rgba(0, 0, 0, 0.2);
   // border-radius: 4px;
 

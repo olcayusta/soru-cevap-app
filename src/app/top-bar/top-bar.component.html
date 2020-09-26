@@ -7,8 +7,7 @@
     </button>
 
     <a routerLink="/" class="logo-link">
-      <span>İyidev</span>
-     <!-- <sup>beta</sup>-->
+      <span>dev.to</span>
     </a>
   </div>
 
@@ -48,9 +47,9 @@
         <id-search-icon></id-search-icon>
       </a>
 
- <!--     <button mat-icon-button class="top-right-btn" matTooltip="Filtrele" (click)="openSheet.emit()">
-        <id-filter-list-icon></id-filter-list-icon>
-      </button>-->
+      <!--     <button mat-icon-button class="top-right-btn" matTooltip="Filtrele" (click)="openSheet.emit()">
+             <id-filter-list-icon></id-filter-list-icon>
+           </button>-->
 
       <button id="avatar-btn" aria-label="Alternatif hesapların listesini açan hesap profil fotoğrafı"
               #avatarElement="cdkOverlayOrigin" cdkOverlayOrigin
@@ -76,38 +75,45 @@
 </mat-toolbar>
 
 <ng-template #signIn>
-  <button mat-icon-button matTooltip="YouTube uygulamaları">
-    <id-widget-icon></id-widget-icon>
-  </button>
+  <!--  <button mat-icon-button matTooltip="YouTube uygulamaları">-->
+  <!--    <mat-icon>apps</mat-icon>-->
+  <!--  </button>-->
 
-  <button mat-icon-button aria-label="More apps" matTooltip="Ayarlar" class="top-right-btn more-vert-icon"
+  <!-- More things -->
+  <button mat-icon-button aria-label="More apps" matTooltip="Diğer şeyler" class="top-right-btn more-vert-icon"
           [matMenuTriggerFor]="moreMenu">
     <id-more-vert-icon></id-more-vert-icon>
   </button>
-
-  <a mat-icon-button class="mobile-show search-btn" routerLink="/mobile-search">
-    <id-search-icon></id-search-icon>
-  </a>
-
-  <mat-menu #moreMenu="matMenu" xPosition="before" class="text-only-menu">
+  <mat-menu #moreMenu="matMenu" xPosition="before" class="text-only-menu mat-elevation-z2 more-menu">
     <ng-template matMenuContent>
       <button mat-menu-item>
         <span>Blog</span>
       </button>
       <button mat-menu-item>
-        <span>Chat <sup>beta</sup></span>
+        <span>Sohbetler</span>
       </button>
       <button mat-menu-item>
-        <span>Hesap & ayarlar</span>
+        <span>Sözlük</span>
       </button>
       <button mat-menu-item>
         <span>Yardım</span>
       </button>
     </ng-template>
   </mat-menu>
-  <a mat-button routerLink="/login">OTURUM AÇ</a>
-  <!--  <a mat-icon-button class="mobile-login-btn">
-      <id-fish-icon></id-fish-icon>
-    </a>-->
+
+  <!-- Search button -->
+  <a mat-icon-button class="mobile-show search-btn" routerLink="/mobile-search">
+    <id-search-icon></id-search-icon>
+  </a>
+
+  <ng-container *ngIf="isHandset">
+    <a mat-icon-button routerLink="/login">
+      <mat-icon>account_circle</mat-icon>
+    </a>
+  </ng-container>
+
+  <ng-container *ngIf="!isHandset">
+    <a mat-button routerLink="/login">OTURUM AÇ</a>
+  </ng-container>
 </ng-template>
 

@@ -11,11 +11,7 @@ import { Component, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/
       width: 32px;
       height: 32px;
     }
-  `],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  `]
 })
 export class FishIconComponent {
-  constructor(private cd: ChangeDetectorRef) {
-    cd.detach();
-  }
 }

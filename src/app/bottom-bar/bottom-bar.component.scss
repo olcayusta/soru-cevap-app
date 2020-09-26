@@ -33,3 +33,11 @@ a {
 span {
   font-size: 12px;
 }
+
+.active {
+  color: #6200EE;
+
+  ::ng-deep svg {
+    fill: #6200EE;
+  }
+}

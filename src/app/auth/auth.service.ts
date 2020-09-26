@@ -57,9 +57,7 @@ export class AuthService {
     }));
   }
 
-  /**
-   * Exit to app.
-   */
+  // Exit to app
   logout(): void {
     localStorage.clear();
     this.isLoggedInSubject.next(null);

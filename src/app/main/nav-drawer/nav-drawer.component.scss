@@ -70,3 +70,27 @@ p {
   color: var(--medium-emphasis-color);
   padding-left: 16px;
 }
+
+.mat-list-base .mat-subheader {
+  margin-top: 0;
+  font-weight: 400;
+ /* height: auto;
+  line-height: 20px;
+  margin: 0;
+  padding: 8px 16px;*/
+  color: var(--medium-emphasis-color);
+}
+
+// Fix menu and select panel overflow scroll bar
+::ng-deep .mat-drawer-inner-container::-webkit-scrollbar, .mat-select-panel::-webkit-scrollbar {
+  width: 8px;
+}
+
+::ng-deep .mat-drawer-inner-container::-webkit-scrollbar-thumb, .mat-select-panel::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.12);
+  // border-radius: 10px;
+}
+
+::ng-deep .mat-drawer-inner-container::-webkit-scrollbar-track, .mat-select-panel::-webkit-scrollbar-track {
+  border-radius: 10px;
+}

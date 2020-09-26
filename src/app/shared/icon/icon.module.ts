@@ -26,6 +26,8 @@ import { ArrowBackIconComponent } from './arrow-back-icon/arrow-back-icon.compon
 import { CloseIconComponent } from './close-icon/close-icon.component';
 import { WifiOffIconComponent } from './wifi-off-icon/wifi-off-icon.component';
 import { WidgetIconComponent } from './widget-icon/widget-icon.component';
+import { LabelIconComponent } from './label-icon/label-icon.component';
+import { GroupIconComponent } from './group-icon/group-icon.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +57,9 @@ import { WidgetIconComponent } from './widget-icon/widget-icon.component';
     ArrowBackIconComponent,
     CloseIconComponent,
     WifiOffIconComponent,
-    WidgetIconComponent
+    WidgetIconComponent,
+    LabelIconComponent,
+    GroupIconComponent
   ],
   exports: [
     NotificationsIconComponent,

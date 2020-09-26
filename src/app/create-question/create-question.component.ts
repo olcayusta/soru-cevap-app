@@ -39,7 +39,7 @@ export class CreateQuestionComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // document.querySelector('meta[name=theme-color]').setAttribute('content', '#fff');
+    document.querySelector('meta[name=theme-color]').setAttribute('content', '#6200EE');
     this.form.get('description').valueChanges.subscribe(value => {
       this.worker.postMessage(value);
     });
