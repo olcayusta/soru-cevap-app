@@ -1,5 +1,3 @@
-```
-I read on the React tutorials page that ES6 will use constructor functions to initialize state like this.
 
     export class Counter extends React.Component {
       constructor(props) {
@@ -20,8 +18,6 @@ I read on the React tutorials page that ES6 will use constructor functions to in
     Counter.propTypes = { initialCount: React.PropTypes.number };
     Counter.defaultProps = { initialCount: 0 };
 
-Then it continues, using ES7 syntax to achieve the same thing.
-
     // Future Version
     export class Counter extends React.Component {
       static propTypes = { initialCount: React.PropTypes.number };
@@ -39,7 +35,3 @@ Then it continues, using ES7 syntax to achieve the same thing.
       }
     }
 
-Why is ES7 better then ES6 version or ES5 version.
-
-Thanks
-```
