@@ -1,74 +1,12 @@
-<!--<h1>FİLTRE</h1>-->
-
-<!--<div class="filter">
-  <mat-chip-list>
-    <mat-chip *ngFor="let item of chips" #chip="matChip"
-              (click)="chip.select()">{{item}}</mat-chip>
-  </mat-chip-list>
-  &lt;!&ndash;<mat-divider></mat-divider>&ndash;&gt;
-
-  &lt;!&ndash;  <mat-form-field class="example-chip-list">
-      <mat-chip-list #chipList aria-label="Fruit selection">
-        <mat-chip *ngFor="let fruit of fruits" [selectable]="selectable"
-                  [removable]="removable" (removed)="remove(fruit)">
-          {{fruit.name}}
-          <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
-        </mat-chip>
-        <input placeholder="New fruit..."
-               [matChipInputFor]="chipList"
-               [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-               [matChipInputAddOnBlur]="addOnBlur"
-               (matChipInputTokenEnd)="add($event)">
-      </mat-chip-list>
-    </mat-form-field>&ndash;&gt;
-</div>-->
-
-
-
-<ng-container *ngIf="questions">
-  <!-- <div class="row">
-     <span class="row-title">Sorular</span>
-     <button mat-button>
-       <span>Sort by: Trending</span>
-       <mat-icon>arrow_drop_down</mat-icon>
-     </button>
-   </div>-->
+<ng-container *ngIf="questions$ | async as questions; else spinner">
   <div class="items">
     <qa-home-question-list-item *ngFor="let question of questions" [question]="question"></qa-home-question-list-item>
-   <!-- <div class="item" *ngFor="let question of questions">
-      <div class="item-left">
-        <img class="user-img" width="48" height="48" src="{{question.user.picture}}"
-             alt="{{question.user.displayName}}">
-      </div>
-      <div class="item-right">
-        <div class="item-right-top">
-          <div class="username">
-            <a routerLink="user/{{question.user.id}}">{{question.user.displayName}}</a>
-          </div>
-          <span class="bracket">—</span>
-          <div class="time">{{question.creationTime | date}}</div>
-        </div>
-        <div class="question-title">
-          <a routerLink="question/{{question.id}}">{{question.title}}</a>
-          <mat-icon class="check-icon" *ngIf="question.id === 9">check</mat-icon>
-        </div>
-
-        <div class="tag-list">
-          <mat-chip-list aria-label="Fish selection">
-            <mat-chip *ngFor="let tag of question.tags" routerLink="/tag/{{tag.id}}">{{tag.title}}</mat-chip>
-            <mat-chip *ngIf="!question.tags">HTML</mat-chip>
-          </mat-chip-list>
-        </div>
-
-        &lt;!&ndash; <div class="master-span" *ngIf="question.id === 6">CEVAPLANDI</div>&ndash;&gt;
-        <mat-divider></mat-divider>
-      </div>
-    </div>-->
   </div>
-    <div class="spinner load-more" idIsVisible (isVisible)="loadMore()">
-      <mat-spinner diameter="32"></mat-spinner>
-    </div>
+  <div class="spinner load-more" idIsVisible (isVisible)="loadMore()">
+    <mat-spinner diameter="32"></mat-spinner>
+  </div>
 </ng-container>
 
-
-
+<ng-template #spinner>
+  <mat-spinner></mat-spinner>
+</ng-template>

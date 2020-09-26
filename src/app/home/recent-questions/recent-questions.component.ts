@@ -3,6 +3,8 @@ import {QuestionService} from '@shared/services/question.service';
 import {Question} from '@shared/models/question.model';
 import {ActivatedRoute} from '@angular/router';
 import {FilterService} from '@shared/services/filter.service';
+import {Observable} from 'rxjs';
+import {switchMap} from 'rxjs/operators';
 
 @Component({
   selector: 'id-recent-questions',
@@ -12,6 +14,7 @@ import {FilterService} from '@shared/services/filter.service';
 })
 export class RecentQuestionsComponent implements OnInit {
   questions: Question[];
+  questions$: Observable<Question[]>;
 
   offset = 0;
 
@@ -23,13 +26,9 @@ export class RecentQuestionsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.route.queryParamMap.subscribe(value => {
-      const sort = value.get('sort');
-      this.filterService.getQuestionsByFiltered(sort).subscribe(value1 => {
-        this.questions = value1;
-        markDirty(this);
-      });
-    });
+    this.questions$ = this.route.queryParamMap.pipe(
+      switchMap(value => this.filterService.getQuestionsByFiltered(value.get('sort'))),
+    );
   }
 
   loadMore(): void {
