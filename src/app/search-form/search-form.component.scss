@@ -91,6 +91,10 @@ input {
   align-items: center;
 }
 
+.user-option {
+  height: 48px;
+}
+
 .option-user-img {
   display: flex;
   width: 32px;
@@ -98,9 +102,4 @@ input {
   border-radius: 50%;
   object-fit: cover;
   margin-right: 16px;
-
-}
-
-.user-option {
-  height: 48px;
 }

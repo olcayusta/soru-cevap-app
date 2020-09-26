@@ -27,9 +27,6 @@ import {MatChipsModule} from '@angular/material/chips';
     IsVisibleDirective,
     SortByComponent
   ],
-  exports: [
-    HomeComponent
-  ],
   imports: [
     CommonModule,
     HomeRoutingModule,
