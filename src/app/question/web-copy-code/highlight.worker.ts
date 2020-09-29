@@ -8,15 +8,23 @@ import css from 'highlight.js/lib/languages/css';
 import sql from 'highlight.js/lib/languages/sql';
 
 hljs.registerLanguage('javascript', javascript);
-// hljs.registerLanguage('typescript', typescript);
+hljs.registerLanguage('typescript', typescript);
 hljs.registerLanguage('css', css);
 hljs.registerLanguage('sql', sql);
 
 addEventListener('message', ({ data }) => {
-  const {language, value} = hljs.highlightAuto(data);
-  console.log(language);
-  postMessage({
-    language, value
-  });
+  const {text, lang} = data;
+  if (lang) {
+    const {language, value} = hljs.highlight(lang, text);
+    postMessage({
+      language, value
+    });
+  } else {
+    const {language, value} = hljs.highlightAuto(text);
+    postMessage({
+      language, value
+    });
+  }
+
   self.close();
 });

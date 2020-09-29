@@ -26,9 +26,12 @@ export class RecentQuestionsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.questions$ = this.route.queryParamMap.pipe(
+    this.route.queryParamMap.pipe(
       switchMap(value => this.filterService.getQuestionsByFiltered(value.get('sort'))),
-    );
+    ).subscribe(value => {
+      this.questions = value;
+      markDirty(this);
+    });
   }
 
   loadMore(): void {
@@ -40,6 +43,6 @@ export class RecentQuestionsComponent implements OnInit {
           markDirty(this);
         }
       });
-    }, 400);
+    }, 500);
   }
 }

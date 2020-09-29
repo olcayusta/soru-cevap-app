@@ -9,20 +9,19 @@
   position: absolute;
   right: 0;
   margin-right: 16px;
-  margin-top: 12px;
+  margin-top: 24px;
 }
 
 .code-lang {
-  font-size: 14px;
-  line-height: 16px;
-  letter-spacing: 0.4px;
+  font-size: 10px;
+  line-height: 12px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
   position: absolute;
-  right: 0;
-  bottom: 0;
-  padding: 24px;
-  opacity: .6;
-  font-family: Roboto Mono, monospace;
+  left: 0;
+  top: 0;
+  padding: 24px 8px;
+  color: var(--medium-emphasis-color);
 }
 
 :host:hover .copy-code-btn {

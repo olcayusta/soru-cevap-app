@@ -5,47 +5,6 @@
 h1 {
   font-size: 24px;
   font-weight: 400;
-  font-family: Archivo, sans-serif;
 }
 
-.answer-item {
-  padding: 16px 0;
-}
 
-.text {
-  font-family: Archivo, sans-serif;
-}
-
-.answer-item-user {
-  display: flex;
-  align-items: center;
-  padding: 24px 0;
-}
-
-.user-info {
-  // display: flex;
-}
-
-.title {
-  font-family: Archivo, sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 20px;
-}
-
-.subtitle {
-  font-family: Archivo, sans-serif;
-  font-size: 13px;
-  font-weight: 400;
-  line-height: 16px;
-  color: rgba(0, 0, 0, 0.6);
-}
-
-.user-avatar {
-  display: inline-flex;
-  width: 64px;
-  height: 64px;
-  object-fit: cover;
-  border-radius: 100%;
-  margin-right: 16px;
-}

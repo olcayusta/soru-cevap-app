@@ -110,6 +110,7 @@ $app-theme: mat-dark-theme((
   --list-active-background: rgba(187, 134, 252, 0.08);
   --drawer-background: #353535;
   --search-background: rgba(255, 255, 255, 0.04);
+  --code-background: #1e1e1e;
 }
 
 /* width */
@@ -132,4 +133,12 @@ $app-theme: mat-dark-theme((
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+.mat-progress-bar-background {
+  fill: #BB86FC;
+}
+
+.mat-progress-bar-buffer {
+  background-color: #4c3f5b;
 }

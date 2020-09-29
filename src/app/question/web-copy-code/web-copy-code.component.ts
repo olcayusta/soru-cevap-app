@@ -26,6 +26,10 @@ export class WebCopyCodeComponent implements OnInit, AfterViewInit {
       this.highlightedCode = value;
       markDirty(this);
     };
-    worker.postMessage(this.text.textContent);
+    const codeClassName = this.text.querySelector('code').className;
+    worker.postMessage({
+      text: this.text.textContent,
+      lang: codeClassName.split('-')[1]
+    });
   }
 }

@@ -1,4 +1,13 @@
-import {Component, ChangeDetectionStrategy, ViewChild, ViewChildren, QueryList, AfterViewInit, OnInit} from '@angular/core';
+import {
+  Component,
+  ChangeDetectionStrategy,
+  ViewChild,
+  ViewChildren,
+  QueryList,
+  AfterViewInit,
+  OnInit,
+  ChangeDetectorRef
+} from '@angular/core';
 import {MatMenu, MatMenuItem} from '@angular/material/menu';
 import {ActivatedRoute, Router} from '@angular/router';
 
@@ -21,11 +30,21 @@ export class SortByComponent implements OnInit, AfterViewInit {
     {sort: 'activity', label: 'Son aktivite tarihi (en yeni)'},
   ];
 
+/*
+  items = [
+    {sort: '', label: 'Body 2'},
+    {sort: 'popularity', label: 'Body 2'},
+    {sort: 'date', label: 'Body 2'},
+    {sort: 'activity', label: 'Body 2'},
+  ];
+*/
+
   selectedIndex = 0;
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    public cdr: ChangeDetectorRef
   ) {
   }
 

@@ -1,8 +1,7 @@
-<ng-container *ngIf="questions$ | async as questions">
-  <div class="items">
-    <qa-home-question-list-item *ngFor="let question of questions" [question]="question"></qa-home-question-list-item>
-  </div>
-  <div class="spinner load-more" idIsVisible (isVisible)="loadMore()">
-    <mat-spinner diameter="32"></mat-spinner>
-  </div>
-</ng-container>
+<div class="items">
+  <qa-home-question-list-item *ngFor="let question of questions" [question]="question"></qa-home-question-list-item>
+</div>
+<div class="spinner load-more" idIsVisible (isVisible)="loadMore()">
+  <mat-spinner diameter="32"></mat-spinner>
+</div>
+

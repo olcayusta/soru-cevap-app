@@ -32,6 +32,8 @@ export class QuestionContentComponent implements OnInit, AfterViewInit {
     this.divElement.nativeElement.querySelectorAll('pre')
       .forEach((block: HTMLElement) => {
 
+        const code = block.querySelector('code');
+
         const factory = this.resolver.resolveComponentFactory(WebCopyCodeComponent);
 
         const compRef = this.vcr.createComponent<WebCopyCodeComponent>(factory);

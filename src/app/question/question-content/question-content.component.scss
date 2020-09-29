@@ -6,7 +6,15 @@
   margin: 64px 0 0 0;
 }
 
-@import "~highlight.js/scss/github";
+
+
+@media (prefers-color-scheme: light) {
+  @import "~highlight.js/scss/github";
+}
+
+@media (prefers-color-scheme: dark) {
+  @import "~highlight.js/scss/dark";
+}
 
 code, pre {
   font-family: "Roboto Mono", monospace;
@@ -21,8 +29,8 @@ pre {
   display: flex;
   max-height: 512px;
   font-family: Roboto Mono, monospace;
-  padding: 16px 8px;
-  background-color: #fff;
+  padding: 48px 8px 16px 8px;
+  background-color: var(--code-background);
   // border: 1px solid #dadce0;
   font-size: 14px;
   line-height: 24px;

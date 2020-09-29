@@ -16,6 +16,7 @@ import { IconModule } from '../shared/icon/icon.module';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { ClipboardModule } from '@angular/cdk/clipboard';
 import { QuestionCommentListComponent } from './question-comment-list/question-comment-list.component';
+import { QuestionAnswerItemComponent } from './question-answer-item/question-answer-item.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { QuestionCommentListComponent } from './question-comment-list/question-c
     QuestionAnswersComponent,
     AnswerFormComponent,
     WebCopyCodeComponent,
-    QuestionCommentListComponent
+    QuestionCommentListComponent,
+    QuestionAnswerItemComponent
   ],
   imports: [
     CommonModule,

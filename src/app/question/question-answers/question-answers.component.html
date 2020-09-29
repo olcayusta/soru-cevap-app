@@ -1,24 +1,4 @@
 <ng-container *ngIf="answers$ | async as answers">
   <h1 itemprop="answerCount">{{answers.length}} yanıt</h1>
-
-  <div itemprop="suggestedAnswer" itemscope itemtype="https://schema.org/Answer">
-    <div class="answer-item" *ngFor="let answer of answers">
-      <div class="answer-item-user">
-        <img class="user-avatar" src="{{answer.user.picture}}" alt="{{answer.user.displayName}}">
-        <div class="user-info">
-          <div itemprop="author" itemscope itemtype="https://schema.org/Person">
-            <a routerLink="/user/{{answer.user.id}}">
-              <div itemprop="name" class="title">{{answer.user.displayName}}</div>
-            </a>
-          </div>
-          <div class="subtitle">
-            <time [dateTime]="answer.creationTime">{{answer.creationTime | date}}</time>
-          </div>
-        </div>
-      </div>
-      <div itemprop="text" [innerHTML]="answer.content"></div>
-      <!--<mat-divider></mat-divider>-->
-    </div>
-  </div>
-
+  <id-question-answer-item *ngFor="let answer of answers" [answer]="answer"></id-question-answer-item>
 </ng-container>

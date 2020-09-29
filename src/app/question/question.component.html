@@ -1,11 +1,11 @@
-  <ng-container *ngIf="question$ | async as question">
+<ng-container *ngIf="question$ | async as question">
   <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
     <div class="layout-container">
       <header>
 
-        <h1 itemprop="name">{{question.title}}</h1>
+        <h1 itemprop="name" class="headline-4">{{question.title}}</h1>
 
-        <div itemprop="text" class="description">
+        <div itemprop="text" class="body-2 description">
           <time itemprop="dateCreated" [dateTime]="question.creationTime">{{question.creationTime | date}}</time>
           <span class="bracket">—</span>
           <span>{{question.viewCount}} görüntülenme</span>
@@ -13,7 +13,8 @@
 
         <div itemprop="author" itemscope itemtype="https://schema.org/Person">
           <div class="author">
-            <img itemprop="image" class="author-img" src="{{question.user.picture}}" alt="{{question.user.displayName}}">
+            <img itemprop="image" class="author-img" src="{{question.user.picture}}"
+                 alt="{{question.user.displayName}}">
             <div class="author-info">
               <a routerLink="/user/{{question.user.id}}">
                 <div itemprop="name" class="author-name">{{question.user.displayName}}</div>
@@ -28,8 +29,10 @@
 
     <id-question-content [content]="question.content"></id-question-content>
 
+    <!-- Comments -->
     <id-question-comment-list></id-question-comment-list>
 
+    <!-- Answers -->
     <id-question-answers></id-question-answers>
 
   </div>

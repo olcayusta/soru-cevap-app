@@ -31,7 +31,6 @@ a:hover {
     font-size: 14px;
     line-height: 20px;
     letter-spacing: 0.25px;
-    margin-top: 2px;
   }
 }
 
@@ -39,13 +38,7 @@ a:hover {
   margin: 0 4px;
 }
 
-.img-shadow {
-  display: flex;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: #eee;
-}
+
 
 .author-img {
   display: inline-flex;
@@ -125,7 +118,7 @@ mat-chip-list {
 .tag-list {
   display: flex;
   padding-right: 4px;
-  margin-top: 8px;
+  margin-top: 12px;
   //margin-left: -4px;
 }
 

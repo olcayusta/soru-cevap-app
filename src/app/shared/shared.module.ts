@@ -9,13 +9,15 @@ import { TimeAgoPipe } from './pipes/time-ago.pipe';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { HighlightSearchPipe } from '../search-form/pipes/highlight-search.pipe';
 import { MatIconModule } from '@angular/material/icon';
+import { ImgShadowComponent } from './components/img-shadow/img-shadow.component';
 
 @NgModule({
   declarations: [
     LazyImgDirective,
     HomeQuestionListItemComponent,
     TimeAgoPipe,
-    HighlightSearchPipe
+    HighlightSearchPipe,
+    ImgShadowComponent
   ],
   imports: [
     CommonModule,

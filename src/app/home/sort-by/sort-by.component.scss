@@ -18,10 +18,6 @@ button {
 
   id-arrow-drop-down-icon {
     margin-right: -8px;
-
-    ::ng-deep svg {
-      fill: #6200EE;
-    }
   }
 }
 
@@ -38,5 +34,9 @@ button {
   .mat-menu-item-highlighted {
     background-color: rgba(255, 255, 255, 0.12) !important;
     color: #ffffff;
+  }
+
+  id-arrow-drop-down-icon ::ng-deep svg {
+    fill: var(--medium-emphasis-color);
   }
 }

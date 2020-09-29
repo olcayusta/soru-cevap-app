@@ -7,7 +7,7 @@
     </button>
 
     <a routerLink="/" class="logo-link">
-      <span>dev.to</span>
+      <span>İyidev</span>
     </a>
   </div>
 
@@ -17,10 +17,10 @@
 
   <div id="end">
     <ng-container *ngIf="isLoggedIn$ | async; else signIn">
- <!--     <button mat-icon-button routerLink="/create" matTooltip="Oluştur">
-        <mat-icon>add</mat-icon>
-      </button>
--->
+      <!--     <button mat-icon-button routerLink="/create" matTooltip="Oluştur">
+             <mat-icon>add</mat-icon>
+           </button>
+     -->
       <button mat-icon-button matTooltip="İncelemeler" hidden>
         <id-rate-review-icon></id-rate-review-icon>
       </button>
@@ -51,12 +51,15 @@
              <id-filter-list-icon></id-filter-list-icon>
            </button>-->
 
-      <button id="avatar-btn" aria-label="Alternatif hesapların listesini açan hesap profil fotoğrafı"
+      <button id="avatar-btn" aria-haspopup="true"
+              aria-label="Alternatif hesapların listesini açan hesap profil fotoğrafı"
               #avatarElement="cdkOverlayOrigin" cdkOverlayOrigin
               (click)="openUsermenu()">
-        <img class="avatar-img"
-             src="{{user.picture}}"
-             alt="{{user.displayName}}">
+        <span class="img-shadow">
+          <img class="avatar-img"
+               src="{{user.picture}}"
+               alt="{{user.displayName}}">
+        </span>
       </button>
 
       <ng-template
