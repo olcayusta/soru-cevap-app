@@ -32,7 +32,7 @@
     <div class="tag-list">
       <mat-chip-list aria-label="Fish selection">
         <mat-chip *ngFor="let tag of question.tags" routerLink="/tag/{{tag.id}}"
-                  [selected]="tag.id === 6">{{tag.title}}</mat-chip>
+                  [selected]="tag.id === 8">{{tag.title}}</mat-chip>
         <mat-chip *ngIf="!question.tags">test</mat-chip>
       </mat-chip-list>
     </div>

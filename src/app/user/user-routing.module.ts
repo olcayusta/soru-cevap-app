@@ -10,8 +10,8 @@ const routes: Routes = [
     component: UserComponent,
     resolve: {user: UserResolverService},
     children: [
-      {path: 'answers', loadChildren: () => import('../user-answers/user-answers.module').then(m => m.UserAnswersModule)},
-      {path: 'questions', loadChildren: () => import('../user-questions/user-questions.module').then(m => m.UserQuestionsModule)}
+      {path: 'answers', loadChildren: () => import('./user-answers/user-answers.module').then(m => m.UserAnswersModule)},
+      {path: 'questions', loadChildren: () => import('./user-questions/user-questions.module').then(m => m.UserQuestionsModule)}
     ]
   }
 ];
