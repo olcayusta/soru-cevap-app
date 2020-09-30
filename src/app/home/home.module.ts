@@ -7,7 +7,7 @@ import {RecentQuestionsComponent} from './recent-questions/recent-questions.comp
 import {SharedModule} from '../shared/shared.module';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {FilterComponent} from './filter/filter.component';
-import {MatMenuModule} from '@angular/material/menu';
+import {MAT_MENU_SCROLL_STRATEGY, MatMenuModule} from '@angular/material/menu';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {IconModule} from '../shared/icon/icon.module';
 import {IsVisibleDirective} from './is-visible.directive';
@@ -18,6 +18,11 @@ import {SortByComponent} from './sort-by/sort-by.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatChipsModule} from '@angular/material/chips';
 import {ModeComponent} from './mode/mode.component';
+import {CloseScrollStrategy, Overlay} from '@angular/cdk/overlay';
+
+export function scrolLFactory(overlay: Overlay): () => CloseScrollStrategy {
+  return () => overlay.scrollStrategies.close();
+}
 
 @NgModule({
   declarations: [
@@ -41,6 +46,9 @@ import {ModeComponent} from './mode/mode.component';
     MatDividerModule,
     MatIconModule,
     MatChipsModule
+  ],
+  providers: [
+    {provide: MAT_MENU_SCROLL_STRATEGY, useFactory: scrolLFactory, deps: [Overlay]}
   ]
 })
 export class HomeModule {

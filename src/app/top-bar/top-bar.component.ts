@@ -20,7 +20,7 @@ import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/l
 import { SpinnerService } from '@shared/services/spinner.service';
 
 @Component({
-  selector: 'id-top-bar',
+  selector: 'app-top-bar',
   templateUrl: './top-bar.component.html',
   styleUrls: ['./top-bar.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -38,7 +38,6 @@ export class TopBarComponent implements OnInit, AfterViewInit {
   blockScrollStrategy: ScrollStrategy;
 
   topbarOpened;
-  compOutlet2: Type<UserMenuPopupComponent>;
 
   notificationCount;
 
@@ -90,12 +89,6 @@ export class TopBarComponent implements OnInit, AfterViewInit {
 
   outsideClick(): void {
     this.popupOpened = false;
-    markDirty(this);
-  }
-
-  openNotifications(): void {
-    this.popupOpened = !this.popupOpened;
-    this.popup = 'notification';
     markDirty(this);
   }
 

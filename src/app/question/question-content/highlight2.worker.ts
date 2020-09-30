@@ -20,19 +20,11 @@ addEventListener('message', ({ data }) => {
       language, value
     });
   } else {
-    const {language, value} = hljs.highlightAuto(text);
-    if (language) {
-      postMessage({
-        language, value
-      });
-    } else {
-      const {language: lang2, value: val} = hljs.highlight('javascript', text);
-      console.log(val);
-      postMessage({
-        language: lang2, value: val
-      });
-    }
-
+    const {language, value} = hljs.highlightAuto(data, ['javascript', 'typescript']);
+    console.log(language)
+    postMessage({
+      language, value
+    });
   }
 
   self.close();

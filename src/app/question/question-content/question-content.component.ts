@@ -1,12 +1,18 @@
 import {
   AfterViewInit,
-  ChangeDetectionStrategy,
+  ChangeDetectionStrategy, ChangeDetectorRef,
   Component, ComponentFactoryResolver, ElementRef, EmbeddedViewRef,
   Input,
   OnInit, ViewChild, ViewContainerRef,
   ViewEncapsulation
 } from '@angular/core';
-import { WebCopyCodeComponent } from '../web-copy-code/web-copy-code.component';
+import {WebCopyCodeComponent} from '../web-copy-code/web-copy-code.component';
+
+import hljs from 'highlight.js';
+
+hljs.configure({
+  languages: ['javascript', 'typescript', 'sql']
+});
 
 @Component({
   selector: 'id-question-content',
@@ -21,7 +27,8 @@ export class QuestionContentComponent implements OnInit, AfterViewInit {
 
   constructor(
     private resolver: ComponentFactoryResolver,
-    private vcr: ViewContainerRef
+    private vcr: ViewContainerRef,
+    private cdr: ChangeDetectorRef
   ) {
   }
 
@@ -32,15 +39,15 @@ export class QuestionContentComponent implements OnInit, AfterViewInit {
     this.divElement.nativeElement.querySelectorAll('pre')
       .forEach((block: HTMLElement) => {
 
-        const code = block.querySelector('code');
-
         const factory = this.resolver.resolveComponentFactory(WebCopyCodeComponent);
-
         const compRef = this.vcr.createComponent<WebCopyCodeComponent>(factory);
-        compRef.instance.text = block;
 
         const hostView = compRef.hostView as EmbeddedViewRef<any>;
+        const el = hostView.rootNodes[0];
+
         block.replaceWith(hostView.rootNodes[0]);
+
+        compRef.instance.text = block;
 
         /*  const worker = new Worker('./highlight.worker', {type: 'module'});
 

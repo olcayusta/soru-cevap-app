@@ -1,7 +1,14 @@
-<button mat-icon-button class="copy-code-btn" matTooltip="Kodu kopyala" [cdkCopyToClipboard]="text.textContent">
+<!--<button mat-icon-button class="copy-code-btn" matTooltip="Kodu kopyala" [cdkCopyToClipboard]="text.textContent">
   <id-content-copy-icon></id-content-copy-icon>
 </button>
 <div class="code-lang">{{lang}}</div>
 <pre>
-  <code class="language-{{lang}}" [innerHTML]="highlightedCode"></code>
-</pre>
+  <code [innerHTML]="highlightedCode"></code>
+</pre>-->
+
+<!--<pre [innerHTML]="text.innerHTML"></pre>-->
+
+<button mat-icon-button class="copy-code-btn" matTooltip="Kodu kopyala" [cdkCopyToClipboard]="text.textContent">
+  <id-content-copy-icon></id-content-copy-icon>
+</button>
+<pre [innerHTML]="text.innerHTML" idHighlight></pre>

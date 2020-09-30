@@ -33,14 +33,14 @@
       <div class="form-body">
 
         <!-- E-mail -->
-        <mat-form-field appearance="standard">
+        <mat-form-field appearance="outline">
           <mat-label>E-posta</mat-label>
           <input aria-label="E-posta" matInput type="email" formControlName="email">
           <mat-error *ngIf="form.get('email').hasError('required')">Bir e-posta adresi girin</mat-error>
         </mat-form-field>
 
         <!-- Password -->
-        <mat-form-field appearance="standard">
+        <!--<mat-form-field appearance="standard">
           <mat-label>Şifre</mat-label>
           <input aria-label="Şifre" matInput [type]="hide ? 'password' : 'text'" formControlName="password"
                  autocomplete="current-password">
@@ -50,7 +50,7 @@
             <id-visibility-icon *ngIf="!hide"></id-visibility-icon>
           </button>
           <mat-error *ngIf="form.get('password').hasError('required')">Bir şifre girin</mat-error>
-        </mat-form-field>
+        </mat-form-field>-->
 
       </div>
 

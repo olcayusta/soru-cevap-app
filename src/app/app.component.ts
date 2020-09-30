@@ -60,13 +60,13 @@ export class AppComponent implements OnInit {
       if (value instanceof ResolveStart) {
         this.spinner = true;
         this.spinnerService.addSpinner();
-        console.log('RESOLVE START');
+        // console.log('RESOLVE START');
       }
 
       if (value instanceof ResolveEnd) {
         this.spinner = false;
         this.spinnerService.removeSpinner();
-        console.log('RESOLVE END');
+        // console.log('RESOLVE END');
       }
 
       if (value instanceof (NavigationCancel || NavigationError)) {

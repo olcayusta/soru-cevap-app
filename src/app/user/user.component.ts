@@ -16,15 +16,15 @@ export class UserComponent implements OnInit {
   links = [
     {
       path: '/',
-      label: 'Ana sayfa'
+      label: 'ANA SAYFA'
     },
     {
       path: '/questions',
-      label: 'Sorular'
+      label: 'SORULAR'
     },
     {
       path: '/answers',
-      label: 'Cevaplar'
+      label: 'CEVAPLAR'
     }
   ];
   // activeLink = this.links[0];

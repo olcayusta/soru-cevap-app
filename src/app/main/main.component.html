@@ -1,7 +1,7 @@
 <mat-sidenav-container>
   <mat-sidenav position="start" #drawer [autoFocus]="false" fixedInViewport (closedStart)="sidenavClosedStart()"
                (openedStart)="sidenavOpenedStart()">
-    <id-nav-drawer></id-nav-drawer>
+    <app-nav-drawer></app-nav-drawer>
   </mat-sidenav>
   <mat-sidenav position="end" [mode]="mode" #sheet [autoFocus]="false" fixedInViewport
                (openedStart)="drawerOpenedStart()" (closedStart)="drawerClosedStart()"
@@ -9,7 +9,7 @@
     <id-side-sheet></id-side-sheet>
   </mat-sidenav>
 
-  <id-top-bar (openDrawer)="drawer.toggle()" (openSheet)="sheet.toggle()"></id-top-bar>
+  <app-top-bar (openDrawer)="drawer.toggle()" (openSheet)="sheet.toggle()"></app-top-bar>
 <!--
   <div id="main">
     <div class="my-content example-sidenav-content">

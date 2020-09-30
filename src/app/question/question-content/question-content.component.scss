@@ -6,14 +6,12 @@
   margin: 64px 0 0 0;
 }
 
-
-
 @media (prefers-color-scheme: light) {
   @import "~highlight.js/scss/github";
 }
 
 @media (prefers-color-scheme: dark) {
-  @import "~highlight.js/scss/dark";
+  @import "~highlight.js/scss/darcula";
 }
 
 code, pre {
@@ -26,15 +24,16 @@ code {
 }
 
 pre {
-  display: flex;
+  display: flex !important;
   max-height: 512px;
   font-family: Roboto Mono, monospace;
-  padding: 48px 8px 16px 8px;
-  background-color: var(--code-background);
+  // padding: 48px 8px 16px 8px !important;
+  padding: 16px 8px 16px 8px !important;
+  background-color: var(--code-background) !important;
   // border: 1px solid #dadce0;
   font-size: 14px;
   line-height: 24px;
-  border-radius: 8px;
+  border-radius: 8px !important;
   overflow: auto;
   margin: 24px 0;
 }
@@ -47,15 +46,19 @@ p {
   // letter-spacing: .5px;
 }
 
-a, :link, :visited {
-  color: #3740ff;
-}
+:host {
+  a, :link, :visited {
+    color: #3740ff;
+  }
 
-a code, td a code {
-  color: #3740ff;
+  a code, td a code {
+    color: #3740ff;
+  }
 }
 
 :not(pre) > code {
+  font-size: 13px;
+  line-height: 16px;
   white-space: pre-wrap;
   padding: 2px 4px;
   background-color: #e4e6e8;

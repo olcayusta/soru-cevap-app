@@ -17,6 +17,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { ClipboardModule } from '@angular/cdk/clipboard';
 import { QuestionCommentListComponent } from './question-comment-list/question-comment-list.component';
 import { QuestionAnswerItemComponent } from './question-answer-item/question-answer-item.component';
+import { HighlightDirective } from './highlight.directive';
+import { QuestionAnswerItemContentComponent } from './question-answer-item/question-answer-item-content/question-answer-item-content.component';
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import { QuestionAnswerItemComponent } from './question-answer-item/question-ans
     AnswerFormComponent,
     WebCopyCodeComponent,
     QuestionCommentListComponent,
-    QuestionAnswerItemComponent
+    QuestionAnswerItemComponent,
+    HighlightDirective,
+    QuestionAnswerItemContentComponent
   ],
   imports: [
     CommonModule,

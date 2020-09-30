@@ -43,6 +43,7 @@ import { UserMenuPopupComponent } from './user-menu-popup/user-menu-popup.compon
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatChipsModule } from '@angular/material/chips';
 import { ImgShadowComponent } from './top-bar/img-shadow/img-shadow.component';
+import { NotificationButtonComponent } from './top-bar/notification-button/notification-button.component';
 
 registerLocaleData(localeTr);
 
@@ -60,7 +61,8 @@ registerLocaleData(localeTr);
     SearchFormComponent,
     TopBarProfileComponent,
     UserMenuPopupComponent,
-    ImgShadowComponent
+    ImgShadowComponent,
+    NotificationButtonComponent
   ],
   imports: [
     BrowserModule,

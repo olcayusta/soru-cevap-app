@@ -25,23 +25,7 @@
         <id-rate-review-icon></id-rate-review-icon>
       </button>
 
-      <button mat-icon-button class="top-right-btn notification-button" aria-label="Bildirimler" hidden
-              matTooltip="Bildirimler"
-              #notificationElement="cdkOverlayOrigin"
-              cdkOverlayOrigin
-              (click)="openNotifications()">
-        <id-notifications-icon matBadge="{{notificationCount | async}}"
-                               [matBadgeHidden]="(notificationCount | async) === 0"></id-notifications-icon>
-      </button>
-
-      <ng-template
-        cdkConnectedOverlay
-        (overlayOutsideClick)="outsideClick()"
-        [cdkConnectedOverlayScrollStrategy]="blockScrollStrategy"
-        [cdkConnectedOverlayOpen]="popupOpened && popup == 'notification'"
-        [cdkConnectedOverlayOrigin]="notificationElement">
-        <id-notification-list-popup></id-notification-list-popup>
-      </ng-template>
+      <app-notification-button></app-notification-button>
 
       <a mat-icon-button class="mobile-show" routerLink="/mobile-search">
         <id-search-icon></id-search-icon>
@@ -55,11 +39,7 @@
               aria-label="Alternatif hesapların listesini açan hesap profil fotoğrafı"
               #avatarElement="cdkOverlayOrigin" cdkOverlayOrigin
               (click)="openUsermenu()">
-        <span class="img-shadow">
-          <img class="avatar-img"
-               src="{{user.picture}}"
-               alt="{{user.displayName}}">
-        </span>
+        <img class="avatar-img" src="{{user.picture}}" alt="{{user.displayName}}">
       </button>
 
       <ng-template
