@@ -9,7 +9,7 @@ import {
   ChangeDetectorRef
 } from '@angular/core';
 import {MatMenu, MatMenuItem} from '@angular/material/menu';
-import {ActivatedRoute, Router} from '@angular/router';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'id-sort-by',
@@ -26,24 +26,14 @@ export class SortByComponent implements OnInit, AfterViewInit {
   items = [
     {sort: '', label: 'Trendler'},
     {sort: 'popularity', label: 'En popüler'},
-    {sort: 'date', label: 'Eklenme tarihi (en yeni)'},
-    {sort: 'activity', label: 'Son aktivite tarihi (en yeni)'},
+    {sort: 'date', label: 'Eklenme tarihi'},
+    {sort: 'activity', label: 'Son aktivite tarihi'},
   ];
-
-/*
-  items = [
-    {sort: '', label: 'Body 2'},
-    {sort: 'popularity', label: 'Body 2'},
-    {sort: 'date', label: 'Body 2'},
-    {sort: 'activity', label: 'Body 2'},
-  ];
-*/
 
   selectedIndex = 0;
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router,
     public cdr: ChangeDetectorRef
   ) {
   }
@@ -60,7 +50,7 @@ export class SortByComponent implements OnInit, AfterViewInit {
     this.menuItems[this.selectedIndex]._highlighted = true;
   }
 
-  onItemClick(menuItem: MatMenuItem, index: number): void {
+  async onItemClick(menuItem: MatMenuItem, index: number): Promise<void> {
     // remove highlight
     this.menuItems[this.selectedIndex]._highlighted = false;
 
@@ -69,16 +59,6 @@ export class SortByComponent implements OnInit, AfterViewInit {
 
     // add highlight
     menuItem._highlighted = true;
-
-    if (this.items[this.selectedIndex].sort) {
-      this.router.navigate(['/'], {
-        queryParams: {
-          sort: this.items[this.selectedIndex].sort
-        }
-      });
-    } else {
-      this.router.navigate(['/']);
-    }
   }
 
 }

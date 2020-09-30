@@ -1,4 +1,13 @@
-import {Component, OnInit, ChangeDetectionStrategy, Input} from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ChangeDetectionStrategy,
+  Input,
+  AfterViewInit,
+  ɵmarkDirty as markDirty,
+  ViewChild,
+  ElementRef
+} from '@angular/core';
 
 @Component({
   selector: 'id-img-shadow',
@@ -9,10 +18,23 @@ import {Component, OnInit, ChangeDetectionStrategy, Input} from '@angular/core';
 export class ImgShadowComponent implements OnInit {
   @Input() picture: string;
   @Input() displayName: string;
+  @ViewChild('imageElement') imageElement: ElementRef<HTMLImageElement>;
 
-  constructor() { }
+  imgURL: string;
+
+  constructor(
+    private elRef: ElementRef
+  ) {
+  }
 
   ngOnInit(): void {
+    const img = new Image();
+    img.src = this.picture;
+    img.onload = (ev) => {
+      this.imgURL = this.picture;
+      this.elRef.nativeElement.setAttribute('loaded', '');
+      markDirty(this);
+    };
   }
 
 }

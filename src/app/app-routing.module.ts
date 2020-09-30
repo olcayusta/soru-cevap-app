@@ -1,9 +1,7 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { MainComponent } from './main/main.component';
-import { RecentQuestionsComponent } from './home/recent-questions/recent-questions.component';
-import { AuthGuard } from './auth/auth.guard';
-import { BaseGuard } from './base.guard';
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
+import {MainComponent} from './main/main.component';
+import {AuthGuard} from './auth/auth.guard';
 
 const routes: Routes = [
   {
@@ -12,7 +10,6 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        pathMatch: 'full',
         loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
       },
       {

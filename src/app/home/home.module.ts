@@ -14,9 +14,10 @@ import {IsVisibleDirective} from './is-visible.directive';
 import {MatButtonModule} from '@angular/material/button';
 import {BannerComponent} from './banner/banner.component';
 import {MatDividerModule} from '@angular/material/divider';
-import { SortByComponent } from './sort-by/sort-by.component';
+import {SortByComponent} from './sort-by/sort-by.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatChipsModule} from '@angular/material/chips';
+import {ModeComponent} from './mode/mode.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import {MatChipsModule} from '@angular/material/chips';
     RecentQuestionsComponent,
     FilterComponent,
     IsVisibleDirective,
-    SortByComponent
+    SortByComponent,
+    ModeComponent
   ],
   imports: [
     CommonModule,
