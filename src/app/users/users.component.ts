@@ -3,7 +3,7 @@ import { User } from '@shared/models/user.model';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'id-users',
+  selector: 'app-users',
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
