@@ -1,7 +1,7 @@
-import { AfterViewInit, Directive, ElementRef, EventEmitter, Output } from '@angular/core';
+import {AfterViewInit, Directive, ElementRef, EventEmitter, Output} from '@angular/core';
 
 @Directive({
-  selector: '[idIsVisible]'
+  selector: '[appIsVisible]'
 })
 export class IsVisibleDirective implements AfterViewInit {
   @Output() isVisible = new EventEmitter();
@@ -14,7 +14,7 @@ export class IsVisibleDirective implements AfterViewInit {
   ngAfterViewInit(): void {
     const obs = new IntersectionObserver((entries, observer) => {
       if (entries[0].isIntersecting) {
-         this.isVisible.emit();
+        this.isVisible.emit();
       }
     });
     obs.observe(this.elementRef.nativeElement);

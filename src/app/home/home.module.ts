@@ -17,7 +17,6 @@ import {MatDividerModule} from '@angular/material/divider';
 import {SortByComponent} from './sort-by/sort-by.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatChipsModule} from '@angular/material/chips';
-import {ModeComponent} from './mode/mode.component';
 import {CloseScrollStrategy, Overlay} from '@angular/cdk/overlay';
 
 export function scrolLFactory(overlay: Overlay): () => CloseScrollStrategy {
@@ -32,7 +31,6 @@ export function scrolLFactory(overlay: Overlay): () => CloseScrollStrategy {
     FilterComponent,
     IsVisibleDirective,
     SortByComponent,
-    ModeComponent
   ],
   imports: [
     CommonModule,

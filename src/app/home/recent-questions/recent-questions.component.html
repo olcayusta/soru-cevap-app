@@ -1,7 +1,7 @@
 <div class="items">
   <qa-home-question-list-item *ngFor="let question of questions" [question]="question"></qa-home-question-list-item>
 </div>
-<div class="spinner load-more" idIsVisible (isVisible)="loadMore()">
+<div class="spinner load-more" appIsVisible (isVisible)="loadMore()">
   <mat-spinner diameter="32"></mat-spinner>
 </div>
 

@@ -3,7 +3,7 @@ import { Tag } from '@shared/models/tag.model';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'id-tags',
+  selector: 'app-tags',
   templateUrl: './tags.component.html',
   styleUrls: ['./tags.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

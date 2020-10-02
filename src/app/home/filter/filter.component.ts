@@ -1,8 +1,8 @@
 import {ChangeDetectionStrategy, Component, ViewChild} from '@angular/core';
-import {MatMenu, MatMenuItem} from '@angular/material/menu';;
+import {MatMenu, MatMenuItem} from '@angular/material/menu';
 
 @Component({
-  selector: 'id-filter',
+  selector: 'app-filter',
   templateUrl: './filter.component.html',
   styleUrls: ['./filter.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

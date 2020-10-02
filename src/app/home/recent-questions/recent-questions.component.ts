@@ -7,7 +7,7 @@ import {Observable} from 'rxjs';
 import {switchMap} from 'rxjs/operators';
 
 @Component({
-  selector: 'id-recent-questions',
+  selector: 'app-recent-questions',
   templateUrl: './recent-questions.component.html',
   styleUrls: ['./recent-questions.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -16,7 +16,7 @@ export class RecentQuestionsComponent implements OnInit {
   questions: Question[];
   questions$: Observable<Question[]>;
 
-  offset = 0;
+  offset = 12;
 
   constructor(
     private questionService: QuestionService,
@@ -37,10 +37,12 @@ export class RecentQuestionsComponent implements OnInit {
   loadMore(): void {
     setTimeout(() => {
       this.questionService.getMoreQuestions(this.offset).subscribe(value => {
-        if (value) {
+        if (value.length > 0) {
           this.offset += 6;
           this.questions = [...this.questions, ...value];
           markDirty(this);
+        } else {
+
         }
       });
     }, 500);

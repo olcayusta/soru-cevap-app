@@ -1,8 +1,8 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
 
-import { TagsComponent } from './tags.component';
-import { TagListResolverService } from './resolvers/tag-list-resolver.service';
+import {TagsComponent} from './tags.component';
+import {TagListResolverService} from './resolvers/tag-list-resolver.service';
 
 const routes: Routes = [
   {

@@ -3,7 +3,7 @@ import { fromEvent, merge, Observable, of } from 'rxjs';
 import { mapTo } from 'rxjs/operators';
 
 @Component({
-  selector: 'id-banner',
+  selector: 'app-banner',
   templateUrl: './banner.component.html',
   styleUrls: ['./banner.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
