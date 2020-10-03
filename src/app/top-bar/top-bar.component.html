@@ -35,21 +35,8 @@
              <id-filter-list-icon></id-filter-list-icon>
            </button>-->
 
-      <button id="avatar-btn" aria-haspopup="true"
-              aria-label="Alternatif hesapların listesini açan hesap profil fotoğrafı"
-              #avatarElement="cdkOverlayOrigin" cdkOverlayOrigin
-              (click)="openUsermenu()">
-        <img class="avatar-img" src="{{user.picture}}" alt="{{user.displayName}}">
-      </button>
+      <app-avatar-button></app-avatar-button>
 
-      <ng-template
-        cdkConnectedOverlay
-        (overlayOutsideClick)="outsideClick()"
-        [cdkConnectedOverlayScrollStrategy]="blockScrollStrategy"
-        [cdkConnectedOverlayOpen]="popupOpened && popup == 'avatar'"
-        [cdkConnectedOverlayOrigin]="avatarElement">
-        <id-user-menu-popup></id-user-menu-popup>
-      </ng-template>
     </ng-container>
   </div>
 

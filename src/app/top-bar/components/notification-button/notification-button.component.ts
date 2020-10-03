@@ -11,7 +11,7 @@ import {ScrollStrategy, ScrollStrategyOptions} from '@angular/cdk/overlay';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NotificationButtonComponent implements OnInit {
-  notificationCount: Observable<number>;
+  notificationCount$: Observable<number>;
 
   popupOpened = false;
   blockScrollStrategy: ScrollStrategy;
@@ -24,7 +24,7 @@ export class NotificationButtonComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.notificationCount = this.notificationService.getUnseenCount().pipe(shareReplay());
+    this.notificationCount$ = this.notificationService.getUnseenCount().pipe(shareReplay());
   }
 
   openNotifications(): void {
@@ -35,6 +35,4 @@ export class NotificationButtonComponent implements OnInit {
     this.popupOpened = false;
     markDirty(this);
   }
-
-
 }

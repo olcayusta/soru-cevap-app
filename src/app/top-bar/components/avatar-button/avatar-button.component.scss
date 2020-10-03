@@ -1,0 +1,48 @@
+:host {
+  display: block;
+}
+
+#avatar-btn {
+  background: none;
+  border: none;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  cursor: pointer;
+  margin: 0 8px 0 16px;
+}
+
+.img-shadow {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  margin: 0 8px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #1e1e1e;
+}
+
+.img-shadow[loaded] {
+  opacity: 1;
+}
+
+.avatar-img {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+@media (max-width: 599px) {
+  #avatar-btn {
+    margin-right: 8px;
+  }
+
+  .avatar-img {
+    width: 24px;
+    height: 24px;
+  }
+}

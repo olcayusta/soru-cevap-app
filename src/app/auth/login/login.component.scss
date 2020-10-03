@@ -18,14 +18,13 @@ input.custom-autofill {
 }
 
 .my-card {
-  width: 500px;
+  width: 550px;
   height: 600px;
-  padding: 40px;
+  padding: 48px;
   overflow: hidden;
   background-color: var(--card-background);
   border: 1px solid rgba(0, 0, 0, .12);
   border-radius: 8px;
-  text-align: center;
 }
 
 .social-login-info {
@@ -44,16 +43,16 @@ mat-progress-bar {
 .form-body {
   display: flex;
   flex-direction: column;
-  grid-gap: 24px;
-  margin-top: 24px;
+  margin-top: 48px;
 }
 
 h4 {
-  font-size: 24px;
-  font-weight: 500;
-  line-height: 32px;
+  font-size: 34px;
+  font-weight: 400;
+  line-height: 48px;
   margin: 0;
   // text-align: center;
+  text-align: center;
 }
 
 p {
@@ -62,11 +61,12 @@ p {
   color: rgba(0, 0, 0, .6);
   margin: 0;
   // text-align: center;
+  text-align: center;
 }
 
 .row-actions {
   display: flex;
-  margin-top: 24px;
+  margin-top: 48px;
 }
 
 .social-login-info {
@@ -128,4 +128,11 @@ p {
 
 .mat-form-field-appearance-standard .mat-form-field-underline {
   background-color: rgba(0, 0, 0, .12);
+}
+
+.button-link-row {
+  .mat-button {
+    margin-left: -8px;
+    letter-spacing: 1.25px;
+  }
 }
