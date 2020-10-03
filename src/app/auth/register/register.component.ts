@@ -1,11 +1,11 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { UserService } from '@shared/services/user.service';
-import { Title } from '@angular/platform-browser';
-import { environment } from '@environments/environment';
+import {Component, OnInit, ChangeDetectionStrategy} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {UserService} from '@shared/services/user.service';
+import {Title} from '@angular/platform-browser';
+import {environment} from '@environments/environment';
 
 @Component({
-  selector: 'id-register',
+  selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

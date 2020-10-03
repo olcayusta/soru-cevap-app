@@ -1,15 +1,15 @@
-import { Component, OnInit, ChangeDetectionStrategy, ViewChild, ElementRef } from '@angular/core';
-import { COMMA, ENTER } from '@angular/cdk/keycodes';
-import { FormControl } from '@angular/forms';
-import { Observable } from 'rxjs';
-import { MatAutocomplete, MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
-import { debounceTime, distinctUntilChanged, map, startWith, switchMap } from 'rxjs/operators';
-import { MatChipInputEvent } from '@angular/material/chips';
-import { TagService } from '../../shared/services/tag.service';
-import { Tag } from '../../shared/models/tag.model';
+import {Component, OnInit, ChangeDetectionStrategy, ViewChild, ElementRef} from '@angular/core';
+import {COMMA, ENTER} from '@angular/cdk/keycodes';
+import {FormControl} from '@angular/forms';
+import {Observable} from 'rxjs';
+import {MatAutocomplete, MatAutocompleteSelectedEvent} from '@angular/material/autocomplete';
+import {debounceTime, distinctUntilChanged, map, startWith, switchMap} from 'rxjs/operators';
+import {MatChipInputEvent} from '@angular/material/chips';
+import {TagService} from '../../shared/services/tag.service';
+import {Tag} from '../../shared/models/tag.model';
 
 @Component({
-  selector: 'id-chips-autocomplete',
+  selector: 'app-chips-autocomplete',
   templateUrl: './chips-autocomplete.component.html',
   styleUrls: ['./chips-autocomplete.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -33,11 +33,6 @@ export class ChipsAutocompleteComponent implements OnInit {
   constructor(
     private tagService: TagService
   ) {
-  /*  this.filteredFruits = this.fruitCtrl.valueChanges.pipe(
-      startWith(''),
-      map((fruit: string | null) => fruit ? this._filter(fruit) : this.allFruits.slice()));*/
-
-    // this.filteredFruits = this.tagService.getAllTags();
   }
 
   ngOnInit(): void {
@@ -84,10 +79,10 @@ export class ChipsAutocompleteComponent implements OnInit {
     console.log(this.tags);
   }
 
-/*  private _filter(value: string): string[] {
-    const filterValue = value.toLowerCase();
+  /*  private _filter(value: string): string[] {
+      const filterValue = value.toLowerCase();
 
-    return this.allFruits.filter(fruit => fruit.toLowerCase().indexOf(filterValue) === 0);
-  }*/
+      return this.allFruits.filter(fruit => fruit.toLowerCase().indexOf(filterValue) === 0);
+    }*/
 
 }

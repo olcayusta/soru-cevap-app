@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: 'id-question-description',
+  selector: 'app-question-description',
   templateUrl: './question-description.component.html',
   styleUrls: ['./question-description.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

@@ -1,12 +1,12 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from '../auth.service';
-import { Router } from '@angular/router';
-import { Title } from '@angular/platform-browser';
-import { environment } from '@environments/environment';
+import {Component, OnInit, ChangeDetectionStrategy} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {AuthService} from '../auth.service';
+import {Router} from '@angular/router';
+import {Title} from '@angular/platform-browser';
+import {environment} from '@environments/environment';
 
 @Component({
-  selector: 'id-login',
+  selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

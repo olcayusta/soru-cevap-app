@@ -5,7 +5,7 @@ import {DomSanitizer} from '@angular/platform-browser';
 import {ChipsAutocompleteComponent} from './chips-autocomplete/chips-autocomplete.component';
 
 @Component({
-  selector: 'id-create-question',
+  selector: 'app-create-question',
   templateUrl: './create-question.component.html',
   styleUrls: ['./create-question.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

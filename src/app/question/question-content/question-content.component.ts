@@ -15,7 +15,7 @@ hljs.configure({
 });
 
 @Component({
-  selector: 'id-question-content',
+  selector: 'app-question-content',
   templateUrl: './question-content.component.html',
   styleUrls: ['./question-content.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -24,40 +24,36 @@ hljs.configure({
 export class QuestionContentComponent implements OnInit, AfterViewInit {
   @Input() content: string;
   @ViewChild('divElement') divElement: ElementRef<HTMLDivElement>;
+  @ViewChild('divElement2', {read: ElementRef}) divElement2: ElementRef<HTMLDivElement>;
+
+  div: HTMLDivElement;
 
   constructor(
     private resolver: ComponentFactoryResolver,
-    private vcr: ViewContainerRef,
-    private cdr: ChangeDetectorRef
+    private vcr: ViewContainerRef
   ) {
   }
 
   ngOnInit(): void {
+    this.div = document.createElement('div');
+    this.div.innerHTML = this.content;
   }
 
   ngAfterViewInit(): void {
-    this.divElement.nativeElement.querySelectorAll('pre')
+    this.div.querySelectorAll('pre')
       .forEach((block: HTMLElement) => {
-
         const factory = this.resolver.resolveComponentFactory(WebCopyCodeComponent);
         const compRef = this.vcr.createComponent<WebCopyCodeComponent>(factory);
 
         const hostView = compRef.hostView as EmbeddedViewRef<any>;
-        const el = hostView.rootNodes[0];
-
-        block.replaceWith(hostView.rootNodes[0]);
 
         compRef.instance.text = block;
 
-        /*  const worker = new Worker('./highlight.worker', {type: 'module'});
+        block.replaceWith(hostView.rootNodes[0]);
+        hostView.rootNodes[0].appendChild(compRef.instance.text);
 
-          worker.onmessage = ({data}) => {
-            const {language, value} = data;
-            block.classList.add('hljs', language);
-            block.innerHTML = value;
-          };
-          worker.postMessage(block.textContent);*/
-
+        hljs.highlightBlock(block);
       });
+    this.divElement2.nativeElement.appendChild(this.div);
   }
 }

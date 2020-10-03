@@ -4,7 +4,7 @@ import {environment} from '../../environments/environment';
 import {StateService} from '../shared/services/state.service';
 
 @Component({
-  selector: 'id-home',
+  selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
