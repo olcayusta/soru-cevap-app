@@ -53,6 +53,9 @@ export class QuestionContentComponent implements OnInit, AfterViewInit {
         hostView.rootNodes[0].appendChild(compRef.instance.text);
 
         hljs.highlightBlock(block);
+
+        const x = block.className.split(' ')[1];
+        compRef.instance.lang = x;
       });
     this.divElement2.nativeElement.appendChild(this.div);
   }

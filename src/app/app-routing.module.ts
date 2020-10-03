@@ -66,6 +66,7 @@ const routes: Routes = [
     path: 'create',
     loadChildren: () => import('./create-question/create-question.module').then(m => m.CreateQuestionModule)
   },
+  {path: '**', loadChildren: () => import('./page-not-found/page-not-found.module').then(m => m.PageNotFoundModule)}
 ];
 
 @NgModule({

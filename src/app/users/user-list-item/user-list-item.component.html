@@ -1,6 +1,13 @@
 <div class="user-box">
-  <img class="user-avatar" src="{{user.picture}}" alt="{{user.displayName}}">
-  <a routerLink="/user/{{user.id}}">
-    <h3 class="user-title">{{user.displayName}}</h3>
-  </a>
+  <div class="img-shadow">
+    <img class="user-avatar" src="{{user.picture}}" alt="{{user.displayName}}">
+  </div>
+  <div class="user-info">
+    <a routerLink="/user/{{user.id}}">
+      <div class="user-title">{{user.displayName}}</div>
+    </a>
+    <button mat-stroked-button>TAKİP ET</button>
+    <!--<mat-divider></mat-divider>-->
+  </div>
 </div>
+

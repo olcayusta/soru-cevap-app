@@ -1,14 +1,14 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { FormControl } from '@angular/forms';
-import { Observable } from 'rxjs';
-import { debounceTime, distinctUntilChanged, filter, map, startWith, switchMap } from 'rxjs/operators';
-import { SearchResultI, SearchService } from '@shared/services/search.service';
-import { Question } from '@shared/models/question.model';
-import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
-import { Router } from '@angular/router';
+import {Component, OnInit, ChangeDetectionStrategy} from '@angular/core';
+import {FormControl} from '@angular/forms';
+import {Observable} from 'rxjs';
+import {debounceTime, distinctUntilChanged, filter, map, startWith, switchMap} from 'rxjs/operators';
+import {SearchResultI, SearchService} from '@shared/services/search.service';
+import {Question} from '@shared/models/question.model';
+import {MatAutocompleteSelectedEvent} from '@angular/material/autocomplete';
+import {Router} from '@angular/router';
 
 @Component({
-  selector: 'id-search-form',
+  selector: 'app-search-form',
   templateUrl: './search-form.component.html',
   styleUrls: ['./search-form.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

@@ -1,16 +1,16 @@
 <div class="page-center">
   <div class="register-form">
-    <h1 class="title">Üye ol</h1>
+    <h1 class="title">Hesap oluştur</h1>
     <form [formGroup]="form" (submit)="submit()">
 
       <div class="form-body">
-        <mat-form-field>
+        <mat-form-field appearance="fill">
           <mat-label>E-posta</mat-label>
           <input aria-label="E-posta" matInput formControlName="email">
           <mat-error>Bir e-posta adresi girin</mat-error>
         </mat-form-field>
 
-        <mat-form-field>
+        <mat-form-field appearance="fill">
           <mat-label>Şifre</mat-label>
           <input aria-label="Şifre" matInput type="password" formControlName="password" autocomplete="new-password">
           <mat-error>Bir şifre girin</mat-error>

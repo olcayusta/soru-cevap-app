@@ -19,7 +19,7 @@ export class WebCopyCodeComponent implements OnInit, AfterViewInit {
 
   copyCode(): void {
     this.clipboard.copy(this.text.textContent);
-    this.cdr.detectChanges();
+    // this.cdr.detectChanges();
   }
 
   ngOnInit(): void {

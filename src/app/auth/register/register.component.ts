@@ -21,7 +21,7 @@ export class RegisterComponent implements OnInit {
     this.form = fb.group({
       email: ['', [Validators.required]],
       password: ['', [Validators.required, Validators.min(8)]],
-      displayName: ['Olcay Usta'],
+      displayName: [''],
       picture: ['https://resources.tidal.com/images/3f5fb645/46b8/44c4/9721/e60ec54c2fa1/320x320.jpg'],
     });
   }

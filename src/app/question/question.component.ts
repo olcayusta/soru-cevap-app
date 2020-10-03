@@ -4,7 +4,6 @@ import {ActivatedRoute} from '@angular/router';
 import {AnswerService} from '@shared/services/answer.service';
 import {StateService} from '@shared/services/state.service';
 import {Title} from '@angular/platform-browser';
-import {environment} from '@environments/environment';
 import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 
@@ -30,7 +29,6 @@ export class QuestionComponent implements OnInit {
       return value.question;
     }));
     markDirty(this);
-
 
     // this.title.setTitle(`${this.question.title} - ${environment.appTitle}`);
     this.stateService.hide();

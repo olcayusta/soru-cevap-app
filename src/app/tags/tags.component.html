@@ -1,12 +1,10 @@
 <h1>Etiketler</h1>
 <div class="items">
-  <div class="item" *ngFor="let tag of tags">
+  <div class="item mat-elevation-z4" *ngFor="let tag of tags">
     <div class="tag-header">
-      <div class="tag-title">{{tag.title}}</div>
+      <div class="conversion-text">{{tag.title}}</div>
     </div>
-    <div class="question-count">
-      {{tag.questionCount}} soru
-    </div>
+    <div class="count-text">{{tag.questionCount}}</div>
   </div>
 </div>
 

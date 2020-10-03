@@ -115,7 +115,7 @@ $app-theme: mat-dark-theme((
 
 /* width */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 12px;
 }
 
 /* Track */
@@ -127,7 +127,7 @@ $app-theme: mat-dark-theme((
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: rgb(255 255 255 / 12%);
-  border-radius: 24px;
+  // border-radius: 24px;
 }
 
 /* Handle on hover */

@@ -1,11 +1,11 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { User } from '@shared/models/user.model';
-import { ActivatedRoute } from '@angular/router';
-import { Title } from '@angular/platform-browser';
-import { environment } from '@environments/environment';
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+import {User} from '@shared/models/user.model';
+import {ActivatedRoute} from '@angular/router';
+import {Title} from '@angular/platform-browser';
+import {environment} from '@environments/environment';
 
 @Component({
-  selector: 'id-user',
+  selector: 'app-user',
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -27,6 +27,7 @@ export class UserComponent implements OnInit {
       label: 'CEVAPLAR'
     }
   ];
+
   // activeLink = this.links[0];
 
   constructor(
