@@ -8,7 +8,7 @@
 
 <!--<pre [innerHTML]="text.innerHTML"></pre>-->
 
-<button mat-icon-button class="copy-code-btn" matTooltip="Kodu kopyala" [cdkCopyToClipboard]="text.textContent">
-  <id-content-copy-icon></id-content-copy-icon>
+<button mat-icon-button class="copy-code-btn" matTooltip="Kodu kopyala" aria-label="Kodu kopyala" (click)="copyCode()">
+  <app-content-copy-icon></app-content-copy-icon>
 </button>
-<pre [innerHTML]="text.innerHTML" idHighlight></pre>
+<!--<pre [innerHTML]="text.innerHTML" idHighlight></pre>-->

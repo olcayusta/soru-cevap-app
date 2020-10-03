@@ -47,6 +47,17 @@
 }
 
 pre {
+  display: flex !important;
+  max-height: 512px;
+  font-family: Roboto Mono, monospace;
+  // padding: 48px 8px 16px 8px !important;
+  padding: 16px 8px 16px 8px !important;
+  background-color: var(--code-background) !important;
+  // border: 1px solid #dadce0;
+  font-size: 14px;
+  line-height: 24px;
+  border-radius: 8px !important;
+  overflow: auto;
+  margin: 24px 0;
   border: 1px solid rgba(0, 0, 0, .12);
-  border-radius: 4px;
 }

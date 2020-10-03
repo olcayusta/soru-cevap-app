@@ -1,23 +1,31 @@
 import {Component, OnInit, ChangeDetectionStrategy, AfterViewInit, ChangeDetectorRef, OnChanges, SimpleChanges} from '@angular/core';
+import {Clipboard} from '@angular/cdk/clipboard';
 
 @Component({
-  selector: 'id-web-copy-code',
+  selector: 'app-web-copy-code',
   templateUrl: './web-copy-code.component.html',
   styleUrls: ['./web-copy-code.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class WebCopyCodeComponent implements OnInit, AfterViewInit, OnChanges {
-  text: HTMLPreElement | HTMLElement = null;
+  text: HTMLElement;
   lang: string;
 
-  constructor(private cdr: ChangeDetectorRef) {
+  constructor(
+    private cdr: ChangeDetectorRef,
+    private clipboard: Clipboard
+  ) {
+  }
+
+  copyCode(): void {
+    this.clipboard.copy(this.text.textContent);
+    this.cdr.detectChanges();
   }
 
   ngOnInit(): void {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-
   }
 
   ngAfterViewInit(): void {
