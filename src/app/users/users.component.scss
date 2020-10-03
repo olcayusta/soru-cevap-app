@@ -3,11 +3,11 @@
 }
 
 .headline-3 {
-  font-family: Archivo, sans-serif;
-  font-size: 34px;
-  font-weight: 500;
-  line-height: 48px;
+  font-size: 60px;
+  font-weight: 300;
+  line-height: 72px;
   text-align: center;
+  letter-spacing: -0.5px;
 }
 
 h1 {
@@ -18,7 +18,8 @@ h1 {
 }
 
 .items {
-  display: flex;
+  display: grid;
   flex-direction: column;
-  grid-gap: 48px 24px;
+  grid-gap: 64px 24px;
+  grid-template-columns: repeat(6, 1fr);
 }
