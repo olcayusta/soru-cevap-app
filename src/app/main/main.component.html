@@ -6,7 +6,7 @@
   <mat-sidenav position="end" [mode]="mode" #sheet [autoFocus]="false" fixedInViewport
                (openedStart)="drawerOpenedStart()" (closedStart)="drawerClosedStart()"
                [fixedTopGap]="mode == 'side' ? 64 : 0">
-    <id-side-sheet></id-side-sheet>
+    <app-side-sheet></app-side-sheet>
   </mat-sidenav>
 
   <app-top-bar (openDrawer)="drawer.toggle()" (openSheet)="sheet.toggle()"></app-top-bar>

@@ -67,11 +67,14 @@ mat-nav-list {
 
 }
 
+/*
+  mat-chip
+*/
 mat-chip {
-  background-color: #eee !important;
   font-weight: 400 !important;
-  // letter-spacing: .15px;
   line-height: 16px;
+  letter-spacing: .15px;
+  background-color: #eee !important;
 }
 
 .mat-badge-content {

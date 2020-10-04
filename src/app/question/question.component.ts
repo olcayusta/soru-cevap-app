@@ -6,6 +6,7 @@ import {StateService} from '@shared/services/state.service';
 import {Title} from '@angular/platform-browser';
 import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
+import {FavoriteService} from '../shared/services/favorite.service';
 
 @Component({
   selector: 'app-question',
@@ -20,6 +21,7 @@ export class QuestionComponent implements OnInit {
     private route: ActivatedRoute,
     private answerService: AnswerService,
     private stateService: StateService,
+    private favoriteService: FavoriteService,
     private title: Title
   ) {
   }
@@ -32,5 +34,11 @@ export class QuestionComponent implements OnInit {
 
     // this.title.setTitle(`${this.question.title} - ${environment.appTitle}`);
     this.stateService.hide();
+  }
+
+  addToFavorite(questionId: number): void {
+    this.favoriteService.addToFavorite(questionId).subscribe(value => {
+      console.log(value);
+    });
   }
 }

@@ -1,9 +1,9 @@
-import {Component, OnInit, ChangeDetectionStrategy, ɵmarkDirty as markDirty} from '@angular/core';
+import {Component, OnInit, ChangeDetectionStrategy, ɵmarkDirty as markDirty, OnDestroy} from '@angular/core';
 import {QuestionService} from '@shared/services/question.service';
 import {Question} from '@shared/models/question.model';
 import {ActivatedRoute} from '@angular/router';
 import {FilterService} from '@shared/services/filter.service';
-import {Observable} from 'rxjs';
+import {Observable, Subscription} from 'rxjs';
 import {switchMap} from 'rxjs/operators';
 
 @Component({
@@ -12,11 +12,13 @@ import {switchMap} from 'rxjs/operators';
   styleUrls: ['./recent-questions.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class RecentQuestionsComponent implements OnInit {
+export class RecentQuestionsComponent implements OnInit, OnDestroy {
   questions: Question[];
   questions$: Observable<Question[]>;
 
   offset = 12;
+
+  subscription: Subscription;
 
   constructor(
     private questionService: QuestionService,
@@ -26,12 +28,18 @@ export class RecentQuestionsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.route.queryParamMap.pipe(
+    this.subscription = this.route.queryParamMap.pipe(
       switchMap(value => this.filterService.getQuestionsByFiltered(value.get('sort'))),
     ).subscribe(value => {
       this.questions = value;
       markDirty(this);
     });
+  }
+
+  ngOnDestroy(): void {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
   }
 
   loadMore(): void {

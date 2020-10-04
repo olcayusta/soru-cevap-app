@@ -17,6 +17,7 @@ addEventListener('message', ({ data }) => {
   if (lang) {
     const {language, value} = hljs.highlight(lang, text);
     postMessage({
+
       language, value
     });
   } else {

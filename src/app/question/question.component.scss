@@ -4,7 +4,7 @@
 
 .description {
   color: var(--medium-emphasis-color);
-  margin: 0;
+  margin: 8px 0;
 }
 
 .bracket {
@@ -61,5 +61,17 @@ a:hover {
    // font-size: 24px;
    //  line-height: 32px;
     // margin: 24px 0;
+  }
+}
+
+.add-to-favorite {
+  padding-top: 16px;
+
+  svg {
+    margin-right: 12px;
+  }
+
+  .mat-button {
+    letter-spacing: 1.25px;
   }
 }

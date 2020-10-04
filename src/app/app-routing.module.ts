@@ -41,7 +41,7 @@ const routes: Routes = [
         loadChildren: () => import('./list/list.module').then(m => m.ListModule)
       },
       {
-        path: 'user',
+        path: 'user/:userId',
         loadChildren: () => import('./user/user.module').then(m => m.UserModule)
       },
       {
@@ -55,7 +55,8 @@ const routes: Routes = [
       {
         path: 'edit',
         loadChildren: () => import('./edit/edit.module').then(m => m.EditModule)
-      }
+      },
+      {path: 'favorites', loadChildren: () => import('./favorites/favorites.module').then(m => m.FavoritesModule)}
     ]
   },
   {path: 'login', loadChildren: () => import('./auth/login/login.module').then(m => m.LoginModule)},

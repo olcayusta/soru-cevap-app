@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: 'id-side-sheet',
+  selector: 'app-side-sheet',
   templateUrl: './side-sheet.component.html',
   styleUrls: ['./side-sheet.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
