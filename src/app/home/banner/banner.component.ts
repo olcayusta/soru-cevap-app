@@ -1,6 +1,6 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { fromEvent, merge, Observable, of } from 'rxjs';
-import { mapTo } from 'rxjs/operators';
+import {Component, OnInit, ChangeDetectionStrategy} from '@angular/core';
+import {fromEvent, merge, Observable, of} from 'rxjs';
+import {mapTo} from 'rxjs/operators';
 
 @Component({
   selector: 'app-banner',

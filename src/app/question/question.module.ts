@@ -19,7 +19,6 @@ import {QuestionCommentListComponent} from './question-comment-list/question-com
 import {QuestionAnswerItemComponent} from './question-answer-item/question-answer-item.component';
 import {QuestionAnswerItemContentComponent} from './question-answer-item/question-answer-item-content/question-answer-item-content.component';
 
-
 @NgModule({
   declarations: [
     QuestionComponent,
