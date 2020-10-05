@@ -1,16 +1,21 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { FormControl } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
-import { AnswerService } from '@shared/services/answer.service';
+import {Component, OnInit, ChangeDetectionStrategy, ɵmarkDirty as markDirty, AfterViewInit} from '@angular/core';
+import {FormControl, Validators} from '@angular/forms';
+import {ActivatedRoute} from '@angular/router';
+import {AnswerService} from '@shared/services/answer.service';
 
 @Component({
-  selector: 'id-answer-form',
+  selector: 'app-answer-form',
   templateUrl: './answer-form.component.html',
   styleUrls: ['./answer-form.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AnswerFormComponent implements OnInit {
-  answerControl = new FormControl('');
+export class AnswerFormComponent implements OnInit, AfterViewInit {
+  answerControl: FormControl = new FormControl('', {
+    validators: [
+      Validators.required,
+      Validators.minLength(24)
+    ]
+  });
 
   constructor(
     private route: ActivatedRoute,
@@ -19,6 +24,10 @@ export class AnswerFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  ngAfterViewInit(): void {
+    markDirty(this);
   }
 
   formSubmit(): void {

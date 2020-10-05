@@ -21,12 +21,12 @@
 
        <!-- <mat-divider></mat-divider>-->
 
-        <div class="add-to-favorite">
+<!--        <div class="add-to-favorite">
           <button mat-icon-button matTooltip="Favorilere ekle" (click)="addToFavorite(question.id)">
             <ng-container [ngTemplateOutlet]="favoriteIcon"></ng-container>
-            <!--<span>FAVORİLERE EKLE</span>-->
+            &lt;!&ndash;<span>FAVORİLERE EKLE</span>&ndash;&gt;
           </button>
-        </div>
+        </div>-->
 
         <div itemprop="author" itemscope itemtype="https://schema.org/Person">
           <div class="author">
@@ -48,12 +48,12 @@
     <app-question-content [content]="question.content"></app-question-content>
 
     <!-- Comments -->
-    <id-question-comment-list></id-question-comment-list>
+    <app-question-comment-list></app-question-comment-list>
 
     <!-- Answers -->
-    <id-question-answers></id-question-answers>
+    <app-question-answers></app-question-answers>
 
   </div>
 
-  <!--<id-answer-form></id-answer-form>-->
+  <app-answer-form></app-answer-form>
 </ng-container>

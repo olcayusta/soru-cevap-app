@@ -9,7 +9,7 @@ import {PushNotificationService} from '@shared/services/push-notification.servic
 import {environment} from '@environments/environment';
 
 @Component({
-  selector: 'id-root',
+  selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   animations: [
@@ -81,14 +81,5 @@ export class AppComponent implements OnInit {
       console.log('Sorunuza, yeni ber cevap geldi.');
       this.snackBar.open('One line text string.');
     });
-  }
-
-  animationEnd(): void {
-    console.log('Animation end');
-
-  }
-
-  animationStart(): void {
-    console.log('Animation start');
   }
 }

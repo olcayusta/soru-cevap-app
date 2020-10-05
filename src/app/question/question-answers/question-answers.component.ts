@@ -5,7 +5,7 @@ import {Answer} from '@shared/models/answer.model';
 import {ActivatedRoute} from '@angular/router';
 
 @Component({
-  selector: 'id-question-answers',
+  selector: 'app-question-answers',
   templateUrl: './question-answers.component.html',
   styleUrls: ['./question-answers.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

@@ -31,6 +31,7 @@ input {
 ::ng-deep .my-autocomplete {
   padding: 8px 0 0;
   max-height: calc(100vh - 64px) !important;
+  background-color: var(--autocomplete-background);
 
   .mat-option {
     height: 40px !important;

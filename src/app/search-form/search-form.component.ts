@@ -1,7 +1,7 @@
 import {Component, OnInit, ChangeDetectionStrategy} from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {Observable} from 'rxjs';
-import {debounceTime, distinctUntilChanged, filter, map, startWith, switchMap} from 'rxjs/operators';
+import {debounceTime, distinctUntilChanged, filter, switchMap} from 'rxjs/operators';
 import {SearchResultI, SearchService} from '@shared/services/search.service';
 import {Question} from '@shared/models/question.model';
 import {MatAutocompleteSelectedEvent} from '@angular/material/autocomplete';

@@ -1,9 +1,14 @@
 import {
   AfterViewInit,
-  ChangeDetectionStrategy, ChangeDetectorRef,
-  Component, ComponentFactoryResolver, ElementRef, EmbeddedViewRef,
+  ChangeDetectionStrategy,
+  Component,
+  ComponentFactoryResolver,
+  ElementRef,
+  EmbeddedViewRef,
   Input,
-  OnInit, ViewChild, ViewContainerRef,
+  OnInit,
+  ViewChild,
+  ViewContainerRef,
   ViewEncapsulation
 } from '@angular/core';
 import {WebCopyCodeComponent} from '../web-copy-code/web-copy-code.component';
@@ -54,8 +59,7 @@ export class QuestionContentComponent implements OnInit, AfterViewInit {
 
         hljs.highlightBlock(block);
 
-        const x = block.className.split(' ')[1];
-        compRef.instance.lang = x;
+        compRef.instance.lang = block.className.split(' ')[1];
       });
     this.divElement2.nativeElement.appendChild(this.div);
   }

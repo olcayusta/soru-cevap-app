@@ -1,10 +1,10 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { SettingsService } from './services/settings.service';
-import { User } from '@shared/models/user.model';
-import { Observable } from 'rxjs';
+import {Component, OnInit, ChangeDetectionStrategy} from '@angular/core';
+import {SettingsService} from './services/settings.service';
+import {User} from '@shared/models/user.model';
+import {Observable} from 'rxjs';
 
 @Component({
-  selector: 'id-settings',
+  selector: 'app-settings',
   templateUrl: './settings.component.html',
   styleUrls: ['./settings.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

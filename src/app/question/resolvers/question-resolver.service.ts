@@ -1,8 +1,8 @@
-import { Injectable } from '@angular/core';
-import { QuestionService } from '../../shared/services/question.service';
-import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
-import { Question } from '../../shared/models/question.model';
-import { Observable } from 'rxjs';
+import {Injectable} from '@angular/core';
+import {QuestionService} from '../../shared/services/question.service';
+import {ActivatedRouteSnapshot, Resolve, RouterStateSnapshot} from '@angular/router';
+import {Question} from '../../shared/models/question.model';
+import {Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'

@@ -12,7 +12,7 @@ import {Answer} from '../../shared/models/answer.model';
 import {WebCopyCodeComponent} from '../web-copy-code/web-copy-code.component';
 
 @Component({
-  selector: 'id-question-answer-item',
+  selector: 'app-question-answer-item',
   templateUrl: './question-answer-item.component.html',
   styleUrls: ['./question-answer-item.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -29,7 +29,7 @@ export class QuestionAnswerItemComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.divElement.nativeElement.querySelectorAll('pre')
+ /*   this.divElement.nativeElement.querySelectorAll('pre')
       .forEach((block: HTMLElement) => {
         const factory = this.resolver.resolveComponentFactory(WebCopyCodeComponent);
         const compRef = this.vcr.createComponent<WebCopyCodeComponent>(factory);
@@ -40,14 +40,12 @@ export class QuestionAnswerItemComponent implements OnInit, AfterViewInit {
         block.replaceWith(hostView.rootNodes[0]);
 
 
-
         compRef.changeDetectorRef.detectChanges();
 
-      });
+      });*/
   }
 
   ngOnInit(): void {
-
   }
 
 }

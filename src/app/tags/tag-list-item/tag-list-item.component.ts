@@ -10,7 +10,8 @@ import {Tag} from '../../shared/models/tag.model';
 export class TagListItemComponent implements OnInit {
   @Input() tag: Tag;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

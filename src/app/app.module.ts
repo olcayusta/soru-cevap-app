@@ -32,14 +32,13 @@ import {JwtInterceptor} from './auth/interceptors/jwt.interceptor';
 import {MatInputModule} from '@angular/material/input';
 import {SharedModule} from '@shared/shared.module';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
-import {NotificationListPopupComponent} from './notification-list-popup/notification-list-popup.component';
+import {NotificationListPopupComponent} from './top-bar/components/notification-list-popup/notification-list-popup.component';
 import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
 import {NavDrawerComponent} from './main/nav-drawer/nav-drawer.component';
 import {SearchFormComponent} from './search-form/search-form.component';
 import {ReactiveFormsModule} from '@angular/forms';
-import {TopBarProfileComponent} from './top-bar-profile/top-bar-profile.component';
-import {UserMenuPopupComponent} from './user-menu-popup/user-menu-popup.component';
+import {UserMenuPopupComponent} from './top-bar/components/user-menu-popup/user-menu-popup.component';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatChipsModule} from '@angular/material/chips';
 import {ImgShadowComponent} from './top-bar/img-shadow/img-shadow.component';
@@ -60,7 +59,6 @@ registerLocaleData(localeTr);
     NotificationListPopupComponent,
     NavDrawerComponent,
     SearchFormComponent,
-    TopBarProfileComponent,
     UserMenuPopupComponent,
     ImgShadowComponent,
     NotificationButtonComponent,

@@ -5,7 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'id-question-comment-list',
+  selector: 'app-question-comment-list',
   templateUrl: './question-comment-list.component.html',
   styleUrls: ['./question-comment-list.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
