@@ -6,9 +6,10 @@
   display: flex;
   align-items: center;
   width: 684px;
-  height: 44px;
+  height: 48px;
   background-color: var(--search-background);
   padding-left: 16px;
+  border-radius: 8px;
 }
 
 input {
@@ -32,6 +33,7 @@ input {
   padding: 8px 0 0;
   max-height: calc(100vh - 64px) !important;
   background-color: var(--autocomplete-background);
+  margin-top: 4px;
 
   .mat-option {
     height: 40px !important;

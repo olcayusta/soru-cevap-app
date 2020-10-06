@@ -1,9 +1,10 @@
-import {Component, OnInit, ChangeDetectionStrategy} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {AuthService} from '../auth.service';
-import {Router} from '@angular/router';
-import {Title} from '@angular/platform-browser';
-import {environment} from '@environments/environment';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
+import { Title } from '@angular/platform-browser';
+import { environment } from '@environments/environment';
+import { TagService } from '../../shared/services/tag.service';
 
 @Component({
   selector: 'app-login',
@@ -21,11 +22,12 @@ export class LoginComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
+    private tagService: TagService,
     private router: Router,
     private title: Title
   ) {
     this.form = fb.group({
-      email: ['arabella@mail.com', [Validators.required, Validators.email]],
+      email: ['', [Validators.required, Validators.email]],
       password: ['123456', [Validators.required, Validators.min(8)]]
     });
   }
@@ -47,7 +49,11 @@ export class LoginComponent implements OnInit {
           alert('error');
         } else {
           // Redirect the user
-          this.router.navigate([this.authService.redirectUrl]);
+          this.router.navigate([this.authService.redirectUrl]).then(value1 => {
+            this.tagService.getFavoriteTags().subscribe(value2 => {
+              localStorage.setItem('watchedTags', JSON.stringify(value2));
+            });
+          });
         }
       });
     }

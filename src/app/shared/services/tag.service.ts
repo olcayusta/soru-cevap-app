@@ -12,7 +12,12 @@ export class TagService {
 
   constructor(
     private http: HttpClient
-  ) { }
+  ) {
+  }
+
+  getFavoriteTags(): Observable<Tag[]> {
+    return this.http.get<Tag[]>(`${environment.apiUrl}/watched-tags`)
+  }
 
   getAllTags(): Observable<Tag[]> {
     return this.http.get<Tag[]>(this.apiUrl);

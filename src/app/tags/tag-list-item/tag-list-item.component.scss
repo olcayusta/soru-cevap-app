@@ -4,11 +4,11 @@
 
 .item {
   position: relative;
-  background-color: #1e1e1e;
+  background-color: var(--card-background);
   // border: 1px solid rgba(0, 0, 0, .12);
   border-radius: 4px;
   padding: 16px;
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.12), 0px 1px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.14), 0 2px 1px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .tag-title {
@@ -21,7 +21,7 @@
   font-size: 14px;
   line-height: 20px;
   margin: 8px 0;
-  color: rgba(0, 0, 0, .6);
+  color: var(--medium-emphasis-color);
 }
 
 .conversion-text {
@@ -42,7 +42,7 @@
   font-size: 14px;
   line-height: 20px;
   letter-spacing: 0.25px;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--medium-emphasis-color);
 }
 
 button {
@@ -51,15 +51,31 @@ button {
 }
 
 .following {
-  background: rgba(187, 134, 252, 0.08);
+  background-color: rgba(98, 0, 238, 0.08);
 }
 
 .mat-icon {
-  background-color: #BB86FC;
-  color: black;
+  background-color: #6200EE;
+  color: #fff;
   border-radius: 50%;
   position: absolute;
   top: 0;
   right: 0;
   margin: 16px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .mat-icon {
+    background-color: #BB86FC;
+    color: black;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 16px;
+  }
+
+  .following {
+    background: rgba(187, 134, 252, 0.08);
+  }
 }

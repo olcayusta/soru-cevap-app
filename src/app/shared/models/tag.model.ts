@@ -8,4 +8,5 @@ export interface Tag {
   creationTime: Date;
   questionCount: number;
   questions: Question[];
+  selected?: boolean;
 }

@@ -1,8 +1,9 @@
-import {Injectable} from '@angular/core';
-import {QuestionService} from '../../shared/services/question.service';
-import {ActivatedRouteSnapshot, Resolve, RouterStateSnapshot} from '@angular/router';
-import {Question} from '../../shared/models/question.model';
-import {Observable} from 'rxjs';
+import { Injectable } from '@angular/core';
+import { QuestionService } from '../../shared/services/question.service';
+import { ActivatedRouteSnapshot, Resolve, Router, RouterStateSnapshot } from '@angular/router';
+import { Question } from '../../shared/models/question.model';
+import { EMPTY, Observable } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -10,11 +11,18 @@ import {Observable} from 'rxjs';
 export class QuestionResolverService implements Resolve<Question> {
 
   constructor(
-    private questionService: QuestionService
+    private questionService: QuestionService,
+    private router: Router
   ) {
   }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Question> | Promise<Question> | Question {
-    return this.questionService.getQuestion(+route.paramMap.get('questionId'));
+    return this.questionService.getQuestion(+route.paramMap.get('questionId'))
+      .pipe(
+        catchError((err, caught) => {
+          this.router.navigateByUrl('/404');
+          return EMPTY;
+        })
+      );
   }
 }

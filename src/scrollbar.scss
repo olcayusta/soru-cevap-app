@@ -1,0 +1,23 @@
+@media (prefers-color-scheme: dark) {
+  /* width */
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #212121;
+    border-left: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(255 255 255 / 12%);
+    // border-radius: 24px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+}

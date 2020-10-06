@@ -1,13 +1,5 @@
 @import "reset";
 
-/* You can add global styles to this file, and also import other style files */
-
-html {
-   scroll-padding-top: 64px;
-  // overflow-x: hidden;
- // overflow-y: scroll;
-}
-
 html, body {
   height: 100%;
 }
@@ -20,7 +12,6 @@ body {
   text-rendering: optimizeSpeed;
   background-color: var(--surface);
   color: var(--color);
-  // overflow-y: auto;
 }
 
 mat-sidenav {
