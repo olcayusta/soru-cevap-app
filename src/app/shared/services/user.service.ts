@@ -20,6 +20,10 @@ export class UserService {
     return this.http.get<User[]>(`${environment.apiUrl}/users`);
   }
 
+  /**
+   * REST API uzerinden ilgili kullanicinin, tum bilgilerini getirir.
+   * @param userId
+   */
   getUser(userId: number): Observable<User> {
     return this.http.get<User>(`${environment.apiUrl}/users/${userId}`);
   }

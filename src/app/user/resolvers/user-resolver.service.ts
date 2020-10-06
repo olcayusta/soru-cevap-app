@@ -1,9 +1,9 @@
-import {Injectable} from '@angular/core';
-import {ActivatedRouteSnapshot, Resolve, Router, RouterStateSnapshot} from '@angular/router';
-import {User} from '../../shared/models/user.model';
-import {EMPTY, Observable} from 'rxjs';
-import {UserService} from '../../shared/services/user.service';
-import {catchError} from 'rxjs/operators';
+import { Injectable } from '@angular/core';
+import { ActivatedRouteSnapshot, Resolve, Router, RouterStateSnapshot } from '@angular/router';
+import { User } from '../../shared/models/user.model';
+import { EMPTY, Observable } from 'rxjs';
+import { UserService } from '../../shared/services/user.service';
+import { catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'

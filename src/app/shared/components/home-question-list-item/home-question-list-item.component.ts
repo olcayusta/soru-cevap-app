@@ -17,13 +17,15 @@ export class HomeQuestionListItemComponent implements OnInit {
 
   ngOnInit(): void {
     const tags = JSON.parse(localStorage.getItem('watchedTags'));
-    this.selectedTagIds = tags.map(value => {
-      return value.id;
-    });
-    this.question?.tags?.forEach(tag => {
-      this.selectedTagIds.forEach(selectedTagId => {
-        if (tag.id === selectedTagId) tag.selected = true;
+    if (tags) {
+      this.selectedTagIds = tags.map(value => {
+        return value.id;
       });
-    });
+      this.question?.tags?.forEach(tag => {
+        this.selectedTagIds.forEach(selectedTagId => {
+          if (tag.id === selectedTagId) tag.selected = true;
+        });
+      });
+    }
   }
 }

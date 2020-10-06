@@ -36,14 +36,16 @@ input.custom-autofill {
 }
 
 .my-card {
+  position: relative;
   width: 550px;
   height: 600px;
   padding: 48px;
   overflow: hidden;
   // background-color: var(--card-background);
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
+  // border: 1px solid var(--border-color);
+  border-radius: 4px;
   background-color: transparent;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.14), 0 2px 1px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .social-login-info {
@@ -66,19 +68,25 @@ mat-progress-bar {
 }
 
 h4 {
-  font-size: 34px;
-  font-weight: 400;
-  line-height: 36px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
   margin: 0;
-  // text-align: center;
+  text-align: center;
 }
 
 p {
-  font-size: 16px;
+  font-size: 14px;
   line-height: 24px;
   color: var(--medium-emphasis-color);
   margin: 0;
- // text-align: center;
+  text-align: center;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  /* identical to box height, or 171% */
+
+  letter-spacing: 0.1px;
 }
 
 .or {
@@ -100,7 +108,13 @@ p {
 
 .row-actions {
   display: flex;
+  justify-content: space-between;
   margin-top: 48px;
+
+  button {
+    margin-left: -8px;
+    letter-spacing: 1.25px;
+  }
 }
 
 .social-login-info {

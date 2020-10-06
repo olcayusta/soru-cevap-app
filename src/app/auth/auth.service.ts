@@ -1,9 +1,9 @@
-import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {environment} from '@environments/environment';
-import {BehaviorSubject, Observable} from 'rxjs';
-import {User} from '@shared/models/user.model';
-import {tap} from 'rxjs/operators';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { environment } from '@environments/environment';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { User } from '@shared/models/user.model';
+import { tap } from 'rxjs/operators';
 
 interface Account {
   email: string;
@@ -45,19 +45,33 @@ export class AuthService {
   login(email: string, password: string): Observable<ILogin> {
     return this.http.post<any>(`${environment.apiUrl}/users/login`, {
       email, password
-    }).pipe(tap((result: ILogin) => {
-      const {user, token} = result;
-
-      if (token) {
-        localStorage.setItem('user', JSON.stringify(user));
-        localStorage.setItem('token', token);
-        this.isLoggedInSubject.next(true);
-        this.userSubject.next(user);
-      }
-    }));
+    }).pipe(
+      tap((result: ILogin) => {
+        const {user, token} = result;
+        if (token) {
+          this.saveUserToLocalStorage(user, token);
+        }
+      })
+    );
   }
 
-  // Exit to app
+  /**
+   * Kullanicinin bilgilerini localStorage veritabanina kaydediyoruz.
+   * Kullanicinin login bilgisini bildiriyoruz.
+   * Sayfa yenilendikce, verilerimiz kaybolmayacak.
+   * @param user
+   * @param token
+   */
+  saveUserToLocalStorage(user: User, token: string) {
+    localStorage.setItem('user', JSON.stringify(user));
+    localStorage.setItem('token', token);
+    this.isLoggedInSubject.next(true);
+    this.userSubject.next(user);
+  }
+
+  /**
+   * LocalStorage'den kullanici verilerini sil ve aktif state'i null hale getir.
+   */
   logout(): void {
     localStorage.clear();
     this.isLoggedInSubject.next(null);

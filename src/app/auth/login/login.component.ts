@@ -36,13 +36,12 @@ export class LoginComponent implements OnInit {
     this.title.setTitle(`Oturum Aç - ${environment.appTitle}`);
   }
 
-  formSubmit(): void {
+  submit(): void {
     this.submitted = true;
     if (this.form.valid) {
       const {email, password} = this.form.value;
 
       this.authService.login(email, password).subscribe(value => {
-        console.log(value);
         this.submitted = false;
         // @ts-ignore
         if (value.error) {
@@ -51,7 +50,9 @@ export class LoginComponent implements OnInit {
           // Redirect the user
           this.router.navigate([this.authService.redirectUrl]).then(value1 => {
             this.tagService.getFavoriteTags().subscribe(value2 => {
-              localStorage.setItem('watchedTags', JSON.stringify(value2));
+              if (value2) {
+                localStorage.setItem('watchedTags', JSON.stringify(value2));
+              }
             });
           });
         }

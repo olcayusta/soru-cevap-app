@@ -22,9 +22,9 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.title.setTitle(`${environment.appTitle}`);
     this.stateService.show();
-    this.tagService.getFavoriteTags().subscribe(value2 => {
+   /* this.tagService.getFavoriteTags().subscribe(value2 => {
       localStorage.setItem('watchedTags', JSON.stringify(value2));
-    });
+    });*/
   }
 
 }

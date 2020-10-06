@@ -32,6 +32,7 @@ mat-sidenav-container, mat-sidenav-content, mat-sidenav {
 
 mat-sidenav-container {
   background-color: var(--surface) !important;
+  min-height: 100vh;
   // min-height: 100vh;
   // height: auto !important;
 }

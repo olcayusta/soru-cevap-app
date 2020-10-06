@@ -1,7 +1,7 @@
 <button mat-button class="outlined-menu-button" aria-label="Open sort by order interactions menu"
         [matMenuTriggerFor]="sortMenu" (menuClosed)="cdr.markForCheck()">
   <span>Sıralama ölçütü: {{items[selectedIndex].label}}</span>
-  <id-arrow-drop-down-icon></id-arrow-drop-down-icon>
+  <app-arrow-drop-down-icon></app-arrow-drop-down-icon>
 </button>
 
 <mat-menu #sortMenu="matMenu" class="text-only-menu">

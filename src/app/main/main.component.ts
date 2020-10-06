@@ -1,9 +1,9 @@
-import {Component, OnInit, ChangeDetectionStrategy, Inject, ViewChild, AfterViewInit} from '@angular/core';
-import {MatSnackBar} from '@angular/material/snack-bar';
-import {MatDrawerMode} from '@angular/material/sidenav';
-import {BreakpointObserver} from '@angular/cdk/layout';
-import {DOCUMENT} from '@angular/common';
-import {SocketService} from '@shared/services/socket.service';
+import { Component, OnInit, ChangeDetectionStrategy, Inject, ViewChild, AfterViewInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatDrawerMode } from '@angular/material/sidenav';
+import { BreakpointObserver } from '@angular/cdk/layout';
+import { DOCUMENT } from '@angular/common';
+import { SocketService } from '@shared/services/socket.service';
 
 @Component({
   selector: 'app-main',
@@ -16,7 +16,6 @@ export class MainComponent implements OnInit {
 
   isSmallScreen;
 
-
   constructor(
     private snackBar: MatSnackBar,
     private breakpointObserver: BreakpointObserver,
@@ -25,23 +24,24 @@ export class MainComponent implements OnInit {
   ) {
   }
 
+  fabButtonMakeWidthOnScroll(): void {
+    let prevScrollpos = window.pageYOffset;
+    window.onscroll = () => {
+      const currentScrollPos = window.pageYOffset;
+      if (prevScrollpos > currentScrollPos) {
+        // document.getElementById('navbar').style.top = '0';
+        console.log('yukari kaydir');
+        document.getElementById('extended-fab').classList.remove('mini-fab');
+      } else {
+        // document.getElementById('navbar').style.top = '-50px';
+        console.log('asagi kaydir');
+        document.getElementById('extended-fab').classList.add('mini-fab');
+      }
+      prevScrollpos = currentScrollPos;
+    };
+  }
+
   ngOnInit(): void {
-    /*    let prevScrollpos = window.pageYOffset;
-        window.onscroll = () => {
-          const currentScrollPos = window.pageYOffset;
-          if (prevScrollpos > currentScrollPos) {
-            // document.getElementById('navbar').style.top = '0';
-            console.log('yukari kaydir');
-            document.getElementById('extended-fab').classList.remove('mini-fab');
-          } else {
-            // document.getElementById('navbar').style.top = '-50px';
-            console.log('asagi kaydir');
-            document.getElementById('extended-fab').classList.add('mini-fab');
-          }
-          prevScrollpos = currentScrollPos;
-        };*/
-
-
     const isSmallScreen = this.breakpointObserver.isMatched('(max-width: 599px)');
     this.isSmallScreen = this.breakpointObserver.isMatched('(max-width: 599px)');
     if (isSmallScreen) {
@@ -59,11 +59,11 @@ export class MainComponent implements OnInit {
      });*/
   }
 
-  sidenavClosedStart(): void {
+  makeOverflowAuto(): void {
     this.document.body.style.overflow = '';
   }
 
-  sidenavOpenedStart(): void {
+  makeOverflowHidden(): void {
     this.document.body.style.overflow = 'hidden';
   }
 
