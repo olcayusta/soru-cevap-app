@@ -22,9 +22,10 @@ input.custom-autofill {
   height: 600px;
   padding: 48px;
   overflow: hidden;
-  background-color: var(--card-background);
-  border: 1px solid rgba(0, 0, 0, .12);
+  // background-color: var(--card-background);
+  border: 1px solid var(--border-color);
   border-radius: 8px;
+  background-color: transparent;
 }
 
 .social-login-info {

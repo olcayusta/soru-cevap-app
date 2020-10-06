@@ -53,6 +53,6 @@ export class RecentQuestionsComponent implements OnInit, OnDestroy {
 
         }
       });
-    }, 500);
+    }, 400);
   }
 }

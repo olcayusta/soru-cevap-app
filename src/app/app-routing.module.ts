@@ -72,7 +72,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, {
-    scrollPositionRestoration: 'enabled',
+    urlUpdateStrategy: 'eager',
     enableTracing: false
     // scrollOffset: [0, 0]
   })],

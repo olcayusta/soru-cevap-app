@@ -11,10 +11,9 @@ main {
   max-width: 1600px;
   margin: 0 auto;
   padding: 0 160px;
-  box-sizing: content-box;
   // padding: 64px 160px;
-  // box-sizing: content-box;
-  // height: 100vh
+  box-sizing: content-box;
+  // height: calc(100vh - 64px);
 }
 
 #content:before {

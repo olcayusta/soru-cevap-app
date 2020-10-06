@@ -1,4 +1,4 @@
-import {Component, OnInit, ChangeDetectionStrategy, Inject} from '@angular/core';
+import {Component, OnInit, ChangeDetectionStrategy, Inject, ViewChild, AfterViewInit} from '@angular/core';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {MatDrawerMode} from '@angular/material/sidenav';
 import {BreakpointObserver} from '@angular/cdk/layout';
@@ -6,7 +6,7 @@ import {DOCUMENT} from '@angular/common';
 import {SocketService} from '@shared/services/socket.service';
 
 @Component({
-  selector: 'id-main',
+  selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -15,6 +15,7 @@ export class MainComponent implements OnInit {
   mode: MatDrawerMode;
 
   isSmallScreen;
+
 
   constructor(
     private snackBar: MatSnackBar,
@@ -51,8 +52,6 @@ export class MainComponent implements OnInit {
     /*this.snackBar.open('Sorunuza yanıt geldi', 'TAMAM', {
       horizontalPosition: 'start'
     });*/
-
-    // this.notifyMe();
 
     /* this.socketService.subject.subscribe(value => {
        console.log(value);

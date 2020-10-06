@@ -34,7 +34,16 @@ p {
   object-fit: cover;
 }
 
-.mat-tab-label-active {
-  color: #6200EE;
-  opacity: 1;
+@media (prefers-color-scheme: light) {
+  .mat-tab-label-active {
+    color: #6200EE;
+    opacity: 1;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .mat-tab-label-active {
+    color: #BB86FC;
+    opacity: 1;
+  }
 }
