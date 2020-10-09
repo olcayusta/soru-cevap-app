@@ -1,7 +1,7 @@
-import {Component, OnInit, ChangeDetectionStrategy, ɵmarkDirty as markDirty, AfterViewInit} from '@angular/core';
-import {FormControl, Validators} from '@angular/forms';
-import {ActivatedRoute} from '@angular/router';
-import {AnswerService} from '@shared/services/answer.service';
+import { Component, OnInit, ChangeDetectionStrategy, ɵmarkDirty as markDirty, AfterViewInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { AnswerService } from '@shared/services/answer.service';
 
 @Component({
   selector: 'app-answer-form',

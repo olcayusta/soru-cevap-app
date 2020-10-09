@@ -1,8 +1,8 @@
-import {NgModule} from '@angular/core';
-import {Routes, RouterModule} from '@angular/router';
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
 
-import {UsersComponent} from './users.component';
-import {UserListResolverService} from './resolvers/user-list-resolver.service';
+import { UsersComponent } from './users.component';
+import { UserListResolverService } from './resolvers/user-list-resolver.service';
 
 const routes: Routes = [
   {

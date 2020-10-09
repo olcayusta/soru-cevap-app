@@ -8,8 +8,8 @@ import {
   ElementRef,
   ComponentFactoryResolver, ViewContainerRef, AfterViewInit, ɵmarkDirty as markDirty
 } from '@angular/core';
-import {Answer} from '../../shared/models/answer.model';
-import {WebCopyCodeComponent} from '../web-copy-code/web-copy-code.component';
+import { Answer } from '../../shared/models/answer.model';
+import { WebCopyCodeComponent } from '../web-copy-code/web-copy-code.component';
 
 @Component({
   selector: 'app-question-answer-item',
@@ -29,20 +29,20 @@ export class QuestionAnswerItemComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
- /*   this.divElement.nativeElement.querySelectorAll('pre')
-      .forEach((block: HTMLElement) => {
-        const factory = this.resolver.resolveComponentFactory(WebCopyCodeComponent);
-        const compRef = this.vcr.createComponent<WebCopyCodeComponent>(factory);
-        compRef.instance.text = block;
+    /*   this.divElement.nativeElement.querySelectorAll('pre')
+         .forEach((block: HTMLElement) => {
+           const factory = this.resolver.resolveComponentFactory(WebCopyCodeComponent);
+           const compRef = this.vcr.createComponent<WebCopyCodeComponent>(factory);
+           compRef.instance.text = block;
 
-        const hostView = compRef.hostView as EmbeddedViewRef<any>;
+           const hostView = compRef.hostView as EmbeddedViewRef<any>;
 
-        block.replaceWith(hostView.rootNodes[0]);
+           block.replaceWith(hostView.rootNodes[0]);
 
 
-        compRef.changeDetectorRef.detectChanges();
+           compRef.changeDetectorRef.detectChanges();
 
-      });*/
+         });*/
   }
 
   ngOnInit(): void {

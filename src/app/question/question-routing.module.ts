@@ -1,8 +1,8 @@
-import {NgModule} from '@angular/core';
-import {Routes, RouterModule} from '@angular/router';
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
 
-import {QuestionComponent} from './question.component';
-import {QuestionResolverService} from './resolvers/question-resolver.service';
+import { QuestionComponent } from './question.component';
+import { QuestionResolverService } from './resolvers/question-resolver.service';
 
 const routes: Routes = [
   {

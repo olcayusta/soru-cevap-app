@@ -1,7 +1,7 @@
-import {Component, OnInit, ChangeDetectionStrategy, ɵdetectChanges as detectChanges} from '@angular/core';
-import {ScrollStrategy, ScrollStrategyOptions} from '@angular/cdk/overlay';
-import {User} from '@shared/models/user.model';
-import {AuthService} from '../../../auth/auth.service';
+import { Component, OnInit, ChangeDetectionStrategy, ɵdetectChanges as detectChanges } from '@angular/core';
+import { ScrollStrategy, ScrollStrategyOptions } from '@angular/cdk/overlay';
+import { User } from '@shared/models/user.model';
+import { AuthService } from '../../../auth/auth.service';
 
 @Component({
   selector: 'app-avatar-button',

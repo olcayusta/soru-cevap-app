@@ -1,8 +1,8 @@
-import {Component, OnInit, ChangeDetectionStrategy} from '@angular/core';
-import {Tag} from '@shared/models/tag.model';
-import {ActivatedRoute} from '@angular/router';
-import {Observable} from 'rxjs';
-import {map} from 'rxjs/operators';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Tag } from '@shared/models/tag.model';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-tag',

@@ -1,12 +1,12 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, NavigationCancel, NavigationError, ResolveEnd, ResolveStart, Router} from '@angular/router';
-import {SocketService} from '@shared/services/socket.service';
-import {MatSnackBar} from '@angular/material/snack-bar';
-import {SpinnerService} from '@shared/services/spinner.service';
-import {animate, state, style, transition, trigger} from '@angular/animations';
-import {SwPush} from '@angular/service-worker';
-import {PushNotificationService} from '@shared/services/push-notification.service';
-import {environment} from '@environments/environment';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, NavigationCancel, NavigationError, ResolveEnd, ResolveStart, Router } from '@angular/router';
+import { SocketService } from '@shared/services/socket.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { SpinnerService } from '@shared/services/spinner.service';
+import { animate, state, style, transition, trigger } from '@angular/animations';
+import { SwPush } from '@angular/service-worker';
+import { PushNotificationService } from '@shared/services/push-notification.service';
+import { environment } from '@environments/environment';
 
 @Component({
   selector: 'app-root',

@@ -3,7 +3,6 @@ import {
   OnInit,
   ChangeDetectionStrategy,
   Input,
-  AfterViewInit,
   ɵmarkDirty as markDirty,
   ViewChild,
   ElementRef

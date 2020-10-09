@@ -3,10 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { UserAnswersComponent } from './user-answers.component';
 
-const routes: Routes = [{ path: '', component: UserAnswersComponent }];
+const routes: Routes = [
+  {path: '', component: UserAnswersComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class UserAnswersRoutingModule { }
+export class UserAnswersRoutingModule {
+}

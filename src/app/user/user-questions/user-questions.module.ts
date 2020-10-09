@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { UserQuestionsRoutingModule } from './user-questions-routing.module';
 import { UserQuestionsComponent } from './user-questions.component';
 
-
 @NgModule({
   declarations: [UserQuestionsComponent],
   imports: [
