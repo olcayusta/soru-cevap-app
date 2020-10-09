@@ -1,5 +1,7 @@
 @import 'node_modules/@angular/material/theming';
 
+@import "scrollbar";
+
 @include mat-core();
 
 $mat-deep-purple: (
@@ -110,7 +112,7 @@ $app-theme: mat-dark-theme((
   --list-active-background: rgba(187, 134, 252, 0.08);
   --drawer-background: #353535;
   --autocomplete-background: #2f2f2f;
-  --search-background: rgba(255, 255, 255, 0.04);
+  --search-background: rgba(0, 0, 0, 0.24);
   --code-background: #1e1e1e;
   --border-color: rgba(255, 255, 255, 0.12);
 }

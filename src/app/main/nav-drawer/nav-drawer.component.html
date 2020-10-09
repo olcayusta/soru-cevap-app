@@ -8,7 +8,6 @@
   </div>
   <mat-divider></mat-divider>
 </ng-container>
-
 <ng-container *ngIf="!user">
   <div class="drawer-header">
     <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"
@@ -30,10 +29,12 @@
     </div>
   </div>
 </ng-container>
+
 <!--<mat-toolbar>
-  <button mat-icon-button>
-    <id-close-icon></id-close-icon>
+  <button mat-icon-button class="menu-icon">
+    <app-menu-icon></app-menu-icon>
   </button>
+  <span class="toolbar-title">web.dev</span>
 </mat-toolbar>-->
 
 <div class="overflow-container" cdkScrollable>

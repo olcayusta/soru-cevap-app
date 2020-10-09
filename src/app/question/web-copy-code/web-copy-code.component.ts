@@ -1,5 +1,5 @@
-import {Component, OnInit, ChangeDetectionStrategy, AfterViewInit, ChangeDetectorRef, ɵmarkDirty as markDirty} from '@angular/core';
-import {Clipboard} from '@angular/cdk/clipboard';
+import { Component, OnInit, ChangeDetectionStrategy, AfterViewInit, ChangeDetectorRef, ɵmarkDirty as markDirty } from '@angular/core';
+import { Clipboard } from '@angular/cdk/clipboard';
 
 @Component({
   selector: 'app-web-copy-code',

@@ -5,6 +5,9 @@ import { Router } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 import { environment } from '@environments/environment';
 import { TagService } from '../../shared/services/tag.service';
+import { catchError } from 'rxjs/operators';
+import { EMPTY } from 'rxjs';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-login',
@@ -24,10 +27,11 @@ export class LoginComponent implements OnInit {
     private authService: AuthService,
     private tagService: TagService,
     private router: Router,
-    private title: Title
+    private title: Title,
+    private snackBar: MatSnackBar
   ) {
     this.form = fb.group({
-      email: ['', [Validators.required, Validators.email]],
+      email: ['yonca2@mail.com', [Validators.required, Validators.email]],
       password: ['123456', [Validators.required, Validators.min(8)]]
     });
   }
@@ -41,7 +45,13 @@ export class LoginComponent implements OnInit {
     if (this.form.valid) {
       const {email, password} = this.form.value;
 
-      this.authService.login(email, password).subscribe(value => {
+      this.authService.login(email, password)
+        .pipe(
+          catchError((err, caught) => {
+            this.snackBar.open('Beklenmedik bir sorun yasandi!', 'RETRY');
+            return EMPTY;
+          })
+        ).subscribe(value => {
         this.submitted = false;
         // @ts-ignore
         if (value.error) {

@@ -9,7 +9,7 @@
   height: 48px;
   background-color: var(--search-background);
   padding-left: 16px;
-  border-radius: 8px;
+  // border-radius: 8px;
 }
 
 input {
@@ -64,6 +64,14 @@ input {
 ::ng-deep mark {
   background-color: transparent;
   font-weight: 500;
+}
+
+@media (prefers-color-scheme: dark) {
+  ::ng-deep mark {
+    background-color: transparent;
+    font-weight: 500;
+    color: #fff;
+  }
 }
 
 @media (max-width: 599px) {

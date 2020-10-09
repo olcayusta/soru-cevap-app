@@ -1,10 +1,18 @@
-<button mat-button class="outlined-menu-button" aria-label="Open sort by order interactions menu"
+<!--<button mat-button class="outlined-menu-button" aria-label="Open sort by order interactions menu"
         [matMenuTriggerFor]="sortMenu" (menuClosed)="cdr.markForCheck()">
   <span>Sıralama ölçütü: {{items[selectedIndex].label}}</span>
   <app-arrow-drop-down-icon></app-arrow-drop-down-icon>
+</button>-->
+
+<span class="sort-by-text">Sıralama ölçütü: </span>
+<button mat-button class="outlined-menu-button" aria-label="Open sort by order interactions menu"
+        [matMenuTriggerFor]="sortMenu" (menuClosed)="cdr.markForCheck()">
+  <span>{{items[selectedIndex].label}}</span>
+  <app-arrow-drop-down-icon></app-arrow-drop-down-icon>
 </button>
 
-<mat-menu #sortMenu="matMenu" class="text-only-menu">
+
+<mat-menu #sortMenu="matMenu" class="sort-menu">
   <a mat-menu-item routerLink="/" [queryParams]="{sort: item.sort ? item.sort : null}" *ngFor="let item of items; let index = index"
      #menuItem (click)="onItemClick(menuItem, index)">{{item.label}}</a>
 </mat-menu>

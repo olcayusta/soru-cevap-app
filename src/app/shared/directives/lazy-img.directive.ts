@@ -12,6 +12,7 @@ export class LazyImgDirective implements OnInit, AfterViewInit {
 
     if (supports) {
       nativeElement.setAttribute('loading', 'lazy');
+      console.log('Support!');
     } else {
       // fallback
     }

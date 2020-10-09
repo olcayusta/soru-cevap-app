@@ -25,6 +25,14 @@ export class UserComponent implements OnInit {
     {
       path: '/answers',
       label: 'CEVAPLAR'
+    },
+    {
+      path: '/tags',
+      label: 'ETİKETLER'
+    },
+    {
+      path: '/tags',
+      label: 'BOOKMARKS'
     }
   ];
 

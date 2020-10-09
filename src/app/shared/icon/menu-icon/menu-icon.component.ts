@@ -1,7 +1,7 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: 'id-menu-icon',
+  selector: 'app-menu-icon',
   templateUrl: 'menu-24px.svg',
   styles: [`:host {
     display: inline-flex

@@ -6,7 +6,6 @@ import { MobileSearchComponent } from './mobile-search.component';
 import { IconModule } from '../shared/icon/icon.module';
 import { MatButtonModule } from '@angular/material/button';
 
-
 @NgModule({
   declarations: [MobileSearchComponent],
   imports: [
