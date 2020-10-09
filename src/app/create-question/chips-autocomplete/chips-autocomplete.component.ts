@@ -1,12 +1,12 @@
-import {Component, OnInit, ChangeDetectionStrategy, ViewChild, ElementRef} from '@angular/core';
-import {COMMA, ENTER} from '@angular/cdk/keycodes';
-import {FormControl} from '@angular/forms';
-import {Observable} from 'rxjs';
-import {MatAutocomplete, MatAutocompleteSelectedEvent} from '@angular/material/autocomplete';
-import {debounceTime, distinctUntilChanged, map, startWith, switchMap} from 'rxjs/operators';
-import {MatChipInputEvent} from '@angular/material/chips';
-import {TagService} from '../../shared/services/tag.service';
-import {Tag} from '../../shared/models/tag.model';
+import { Component, OnInit, ChangeDetectionStrategy, ViewChild, ElementRef } from '@angular/core';
+import { COMMA, ENTER } from '@angular/cdk/keycodes';
+import { FormControl } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { MatAutocomplete, MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
+import { debounceTime, distinctUntilChanged, map, startWith, switchMap } from 'rxjs/operators';
+import { MatChipInputEvent } from '@angular/material/chips';
+import { TagService } from '../../shared/services/tag.service';
+import { Tag } from '../../shared/models/tag.model';
 
 @Component({
   selector: 'app-chips-autocomplete',
@@ -22,8 +22,6 @@ export class ChipsAutocompleteComponent implements OnInit {
   fruitCtrl = new FormControl();
   filteredFruits: Observable<Tag[]>;
   fruits: string[] = ['Lemon'];
-  allFruits: Tag[];
-  allTags: Tag[];
 
   tags: number[] = [];
 
@@ -78,11 +76,5 @@ export class ChipsAutocompleteComponent implements OnInit {
     this.tags.push(tag.id);
     console.log(this.tags);
   }
-
-  /*  private _filter(value: string): string[] {
-      const filterValue = value.toLowerCase();
-
-      return this.allFruits.filter(fruit => fruit.toLowerCase().indexOf(filterValue) === 0);
-    }*/
 
 }

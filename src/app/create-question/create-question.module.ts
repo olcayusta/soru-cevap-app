@@ -15,7 +15,6 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatDividerModule } from '@angular/material/divider';
 import { IconModule } from '../shared/icon/icon.module';
 
-
 @NgModule({
   declarations: [
     CreateQuestionComponent,

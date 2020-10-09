@@ -1,7 +1,7 @@
-import {Component, OnInit, ChangeDetectionStrategy} from '@angular/core';
-import {FavoriteService} from '../shared/services/favorite.service';
-import {Observable} from 'rxjs';
-import {Question} from '../shared/models/question.model';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { FavoriteService } from '../shared/services/favorite.service';
+import { Observable } from 'rxjs';
+import { Question } from '../shared/models/question.model';
 
 @Component({
   selector: 'app-favorites',
