@@ -1,15 +1,18 @@
 <app-sort-by></app-sort-by>
 
-<span class="sort-by-text">Filtre: </span>
+<div class="filter-by">
+  <span class="filter-text">Filtre: </span>
 
-<button class="outlined-menu-button" mat-button [matMenuTriggerFor]="typeMenu">
-  <span>Hepsi</span>
-  <app-arrow-drop-down-icon></app-arrow-drop-down-icon>
-</button>
+  <button class="outlined-menu-button" mat-button [matMenuTriggerFor]="typeMenu">
+    <span>{{items[selectedItemIndex].label}}</span>
+    <app-arrow-drop-down-icon></app-arrow-drop-down-icon>
+  </button>
+</div>
 
 <mat-menu #typeMenu="matMenu" class="text-only-menu mat-elevation-z2 filtre-menu">
-  <div class="checkbox-item" routerLink="/" [queryParams]="{filters: item.sort ? item.sort : null}" queryParamsHandling="merge" (click)="checkboxClicked($event)" *ngFor="let item of items" >
-    <mat-checkbox color="primary" checked="true">{{item.label}}</mat-checkbox>
+  <div class="checkbox-item" routerLink="/" [queryParams]="{filters: item.sort ? item.sort : null}"
+       queryParamsHandling="merge" (click)="checkboxClicked($event, i)" *ngFor="let item of items; let i = index">
+    <mat-checkbox color="primary" [checked]="item.checked">{{item.label}}</mat-checkbox>
   </div>
 </mat-menu>
 

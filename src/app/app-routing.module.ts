@@ -8,7 +8,9 @@ const routes: Routes = [
     path: '',
     component: MainComponent,
     children: [
-      {path: '', loadChildren: () => import('./home/home.module').then(m => m.HomeModule)},
+      {
+        path: '', loadChildren: async () => (await import('./home/home.module')).HomeModule
+      },
       {
         path: 'users',
         loadChildren: () => import('./users/users.module').then(m => m.UsersModule),
@@ -17,24 +19,72 @@ const routes: Routes = [
           title: 'BATMAN'
         }
       },
-      {path: 'tags', loadChildren: () => import('./tags/tags.module').then(m => m.TagsModule)},
-      {path: 'tag', loadChildren: () => import('./tag/tag.module').then(m => m.TagModule)},
-      {path: 'search/:searchTerm', loadChildren: () => import('./search/search.module').then(m => m.SearchModule)},
-      {path: 'settings', loadChildren: () => import('./settings/settings.module').then(m => m.SettingsModule)},
-      {path: 'list', loadChildren: () => import('./list/list.module').then(m => m.ListModule)},
-      {path: 'user/:userId', loadChildren: () => import('./user/user.module').then(m => m.UserModule)},
-      {path: 'notifications', loadChildren: () => import('./notifications/notifications.module').then(m => m.NotificationsModule)},
-      {path: 'question/:questionId', loadChildren: () => import('./question/question.module').then(m => m.QuestionModule)},
-      {path: 'edit', loadChildren: () => import('./edit/edit.module').then(m => m.EditModule)},
-      {path: 'favorites', loadChildren: () => import('./favorites/favorites.module').then(m => m.FavoritesModule)}
+      {
+        path: 'tags',
+        loadChildren: async () => (await import('./tags/tags.module')).TagsModule
+      },
+      {
+        path: 'tag',
+        loadChildren: async () => (await import('./tag/tag.module')).TagModule
+      },
+      {
+        path: 'search/:searchTerm',
+        loadChildren: async () => (await import('./search/search.module')).SearchModule
+      },
+      {
+        path: 'settings',
+        loadChildren: async () => (await import('./settings/settings.module')).SettingsModule
+      },
+      {
+        path: 'list',
+        loadChildren: async () => (await import('./list/list.module')).ListModule
+      },
+      {
+        path: 'user/:userId',
+        loadChildren: async () => (await import('./user/user.module')).UserModule
+      },
+      {
+        path: 'notifications',
+        loadChildren: async () => (await import('./notifications/notifications.module')).NotificationsModule
+      },
+      {
+        path: 'question/:questionId',
+        loadChildren: async () => (await import('./question/question.module')).QuestionModule
+      },
+      {
+        path: 'edit',
+        loadChildren: async () => (await import('./edit/edit.module')).EditModule
+      },
+      {
+        path: 'favorites',
+        loadChildren: async () => (await import('./favorites/favorites.module')).FavoritesModule
+      }
     ]
   },
-  {path: 'login', loadChildren: () => import('./auth/login/login.module').then(m => m.LoginModule)},
-  {path: 'register', loadChildren: () => import('./auth/register/register.module').then(m => m.RegisterModule)},
-  {path: '404', loadChildren: () => import('./page-not-found/page-not-found.module').then(m => m.PageNotFoundModule)},
-  {path: 'mobile-search', loadChildren: () => import('./mobile-search/mobile-search.module').then(m => m.MobileSearchModule)},
-  {path: 'create', loadChildren: () => import('./create-question/create-question.module').then(m => m.CreateQuestionModule)},
-  {path: '**', loadChildren: () => import('./page-not-found/page-not-found.module').then(m => m.PageNotFoundModule)}
+  {
+    path: 'login',
+    loadChildren: async () => (await import('./auth/login/login.module')).LoginModule
+  },
+  {
+    path: 'register',
+    loadChildren: async () => (await import('./auth/register/register.module')).RegisterModule
+  },
+  {
+    path: '404',
+    loadChildren: async () => (await import('./page-not-found/page-not-found.module')).PageNotFoundModule
+  },
+  {
+    path: 'mobile-search',
+    loadChildren: async () => (await import('./mobile-search/mobile-search.module')).MobileSearchModule
+  },
+  {
+    path: 'create',
+    loadChildren: async () => (await import('./create-question/create-question.module')).CreateQuestionModule
+  },
+  {
+    path: '**',
+    loadChildren: async () => (await import('./page-not-found/page-not-found.module')).PageNotFoundModule
+  }
 ];
 
 @NgModule({

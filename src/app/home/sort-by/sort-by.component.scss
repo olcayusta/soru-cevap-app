@@ -1,5 +1,6 @@
 :host {
-  display: block;
+  display: flex;
+  align-items: center;
 }
 
 button {
@@ -9,10 +10,20 @@ button {
 .sort-by-text {
   font-size: 14px;
   line-height: 20px;
+  margin-right: 8px;
 }
 
 ::ng-deep .sort-menu {
-  // margin-top: -2px;
+  margin-top: -2px;
+
+  .mat-menu-item {
+    height: 32px;
+    line-height: 32px;
+  }
+}
+
+app-arrow-drop-down-icon {
+  margin-left: 8px;
 }
 
 button[aria-expanded=true] {
@@ -35,7 +46,7 @@ button[aria-expanded=true] {
   // letter-spacing: .25px;
   letter-spacing: 0;
 
-  min-width: 112px;
+  // min-width: 200px;
 
   span {
     // margin-right: 12px;

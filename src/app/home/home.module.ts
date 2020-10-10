@@ -19,7 +19,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatChipsModule} from '@angular/material/chips';
 import {CloseScrollStrategy, Overlay} from '@angular/cdk/overlay';
 
-export function scrolLFactory(overlay: Overlay): () => CloseScrollStrategy {
+function scrollFactory(overlay: Overlay): () => CloseScrollStrategy {
   return () => overlay.scrollStrategies.close();
 }
 
@@ -46,7 +46,7 @@ export function scrolLFactory(overlay: Overlay): () => CloseScrollStrategy {
     MatChipsModule
   ],
   providers: [
-    {provide: MAT_MENU_SCROLL_STRATEGY, useFactory: scrolLFactory, deps: [Overlay]}
+    {provide: MAT_MENU_SCROLL_STRATEGY, useFactory: scrollFactory, deps: [Overlay]}
   ]
 })
 export class HomeModule {

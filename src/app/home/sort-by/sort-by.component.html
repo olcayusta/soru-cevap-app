@@ -11,7 +11,6 @@
   <app-arrow-drop-down-icon></app-arrow-drop-down-icon>
 </button>
 
-
 <mat-menu #sortMenu="matMenu" class="sort-menu">
   <a mat-menu-item routerLink="/" [queryParams]="{sort: item.sort ? item.sort : null}" *ngFor="let item of items; let index = index"
      #menuItem (click)="onItemClick(menuItem, index)">{{item.label}}</a>

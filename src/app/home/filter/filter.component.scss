@@ -6,6 +6,17 @@
   margin-bottom: 24px;*/
 }
 
+.filter-by {
+  display: flex;
+  align-items: center;
+}
+
+.filter-text {
+  font-size: 14px;
+  line-height: 20px;
+  margin-right: 8px;
+}
+
 :host::-webkit-scrollbar {
   display: none;
 }
@@ -61,6 +72,8 @@ mat-checkbox {
     }
   }
 }
+
+ap
 
 @media (max-width: 599px) {
   :host {

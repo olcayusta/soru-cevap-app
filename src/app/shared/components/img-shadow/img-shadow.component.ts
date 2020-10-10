@@ -27,13 +27,13 @@ export class ImgShadowComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const img = new Image();
-    img.src = this.picture;
-    img.onload = (ev) => {
-      this.imgURL = this.picture;
-      this.elRef.nativeElement.setAttribute('loaded', '');
-      markDirty(this);
-    };
+    // const img = new Image();
+    // img.src = this.picture;
+    // img.onload = (ev) => {
+    //   this.imgURL = this.picture;
+    //   this.elRef.nativeElement.setAttribute('loaded', '');
+    //   markDirty(this);
+    // };
   }
 
 }

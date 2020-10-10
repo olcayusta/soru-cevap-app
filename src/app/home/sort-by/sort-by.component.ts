@@ -8,8 +8,8 @@ import {
   OnInit,
   ChangeDetectorRef
 } from '@angular/core';
-import {MatMenu, MatMenuItem} from '@angular/material/menu';
-import {ActivatedRoute} from '@angular/router';
+import { MatMenu, MatMenuItem } from '@angular/material/menu';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-sort-by',
@@ -23,21 +23,21 @@ export class SortByComponent implements OnInit, AfterViewInit {
 
   menuItems;
 
-/*
-  items = [
-    {sort: '', label: 'Trendler'},
-    {sort: 'popularity', label: 'En popüler'},
-    {sort: 'date', label: 'Eklenme tarihi'},
-    {sort: 'activity', label: 'Son aktivite tarihi'},
-  ];
-*/
+  /*
+    items = [
+      {sort: '', label: 'Trendler'},
+      {sort: 'popularity', label: 'En popüler'},
+      {sort: 'date', label: 'Eklenme tarihi'},
+      {sort: 'activity', label: 'Son aktivite tarihi'},
+    ];
+  */
 
-/*  items = [
-    {sort: '', label: 'Item 1'},
-    {sort: 'popularity', label: 'Item 2'},
-    {sort: 'date', label: 'Item 3'},
-    {sort: 'activity', label: 'Item 4'},
-  ];*/
+  /*  items = [
+      {sort: '', label: 'Item 1'},
+      {sort: 'popularity', label: 'Item 2'},
+      {sort: 'date', label: 'Item 3'},
+      {sort: 'activity', label: 'Item 4'},
+    ];*/
 
   items = [
     {sort: '', label: 'Newest'},

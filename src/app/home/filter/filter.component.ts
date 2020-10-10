@@ -1,5 +1,5 @@
-import {ChangeDetectionStrategy, Component, ViewChild} from '@angular/core';
-import {MatMenu, MatMenuItem} from '@angular/material/menu';
+import { ChangeDetectionStrategy, Component, ViewChild } from '@angular/core';
+import { MatMenu, MatMenuItem } from '@angular/material/menu';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,10 +12,24 @@ export class FilterComponent {
   @ViewChild('languageMenu') languageMenu: MatMenu;
 
   items = [
-    {sort: 'a', label: 'No answers'},
-    {sort: 'b', label: 'No accepted answer'},
-    {sort: 'c', label: 'Has bounty'}
+    {
+      sort: 'a',
+      label: 'No answers',
+      checked: true
+    },
+    {
+      sort: 'b',
+      label: 'No accepted answer',
+      checked: true
+    },
+    {
+      sort: 'c',
+      label: 'Has bounty',
+      checked: false
+    }
   ];
+
+  selectedItemIndex = 0;
 
   constructor(
     private router: Router
@@ -29,7 +43,8 @@ export class FilterComponent {
     menuItem._highlighted = true;
   }
 
-  checkboxClicked($event: MouseEvent) {
+  checkboxClicked($event: MouseEvent, index: number) {
     $event.stopPropagation();
+    this.selectedItemIndex = index;
   }
 }
