@@ -35,11 +35,6 @@ import { MatInputModule } from '@angular/material/input';
     MatDialogModule,
     MatInputModule
   ],
-  exports: [
-    LazyImgDirective,
-    HomeQuestionListItemComponent,
-    HighlightSearchPipe,
-    TimeAgoPipe
-  ]
+  exports: [LazyImgDirective, HomeQuestionListItemComponent, HighlightSearchPipe, TimeAgoPipe]
 })
 export class SharedModule {}

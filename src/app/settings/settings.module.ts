@@ -7,15 +7,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
-  declarations: [
-    SettingsComponent
-  ],
-  imports: [
-    CommonModule,
-    SettingsRoutingModule,
-    MatExpansionModule,
-    MatInputModule
-  ]
+  declarations: [SettingsComponent],
+  imports: [CommonModule, SettingsRoutingModule, MatExpansionModule, MatInputModule]
 })
-export class SettingsModule {
-}
+export class SettingsModule {}

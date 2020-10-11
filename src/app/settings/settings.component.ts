@@ -12,13 +12,9 @@ import { Observable } from 'rxjs';
 export class SettingsComponent implements OnInit {
   user: Observable<User>;
 
-  constructor(
-    private settingsService: SettingsService
-  ) {
-  }
+  constructor(private settingsService: SettingsService) {}
 
   ngOnInit(): void {
     this.user = this.settingsService.getAccount();
   }
-
 }

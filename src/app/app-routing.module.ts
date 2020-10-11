@@ -9,11 +9,12 @@ const routes: Routes = [
     component: MainComponent,
     children: [
       {
-        path: '', loadChildren: async () => (await import('./home/home.module')).HomeModule
+        path: '',
+        loadChildren: async () => (await import('./home/home.module')).HomeModule
       },
       {
         path: 'users',
-        loadChildren: () => import('./users/users.module').then(m => m.UsersModule),
+        loadChildren: () => import('./users/users.module').then((m) => m.UsersModule),
         canLoad: [AuthGuard],
         data: {
           title: 'BATMAN'
@@ -88,12 +89,13 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {
-    urlUpdateStrategy: 'eager',
-    enableTracing: false
-    // scrollOffset: [0, 0]
-  })],
+  imports: [
+    RouterModule.forRoot(routes, {
+      urlUpdateStrategy: 'eager',
+      enableTracing: false
+      // scrollOffset: [0, 0]
+    })
+  ],
   exports: [RouterModule]
 })
-export class AppRoutingModule {
-}
+export class AppRoutingModule {}

@@ -7,7 +7,7 @@ import { QuestionResolverService } from './resolvers/question-resolver.service';
 const routes: Routes = [
   {
     path: '',
-    resolve: {question: QuestionResolverService},
+    resolve: { question: QuestionResolverService },
     component: QuestionComponent
   }
 ];
@@ -16,5 +16,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class QuestionRoutingModule {
-}
+export class QuestionRoutingModule {}

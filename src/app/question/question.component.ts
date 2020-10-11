@@ -1,9 +1,4 @@
-import {
-  Component,
-  OnInit,
-  ChangeDetectionStrategy,
-  ɵmarkDirty as markDirty
-} from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, ɵmarkDirty as markDirty } from '@angular/core';
 import { Question } from '@shared/models/question.model';
 import { ActivatedRoute } from '@angular/router';
 import { AnswerService } from '@shared/services/answer.service';
@@ -37,9 +32,7 @@ export class QuestionComponent implements OnInit {
   ngOnInit(): void {
     this.question$ = this.route.data.pipe(
       map((value) => {
-        this.title.setTitle(
-          `${value.question.title} - ${environment.appTitle}`
-        );
+        this.title.setTitle(`${value.question.title} - ${environment.appTitle}`);
         return value.question;
       })
     );

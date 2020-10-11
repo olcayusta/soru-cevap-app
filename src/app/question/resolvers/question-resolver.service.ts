@@ -9,20 +9,14 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class QuestionResolverService implements Resolve<Question> {
-
-  constructor(
-    private questionService: QuestionService,
-    private router: Router
-  ) {
-  }
+  constructor(private questionService: QuestionService, private router: Router) {}
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Question> | Promise<Question> | Question {
-    return this.questionService.getQuestion(+route.paramMap.get('questionId'))
-      .pipe(
-        catchError((err, caught) => {
-          this.router.navigateByUrl('/404');
-          return EMPTY;
-        })
-      );
+    return this.questionService.getQuestion(+route.paramMap.get('questionId')).pipe(
+      catchError((err, caught) => {
+        this.router.navigateByUrl('/404');
+        return EMPTY;
+      })
+    );
   }
 }

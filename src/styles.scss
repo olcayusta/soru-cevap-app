@@ -53,7 +53,7 @@ mat-sidenav-container {
 }
 
 mat-sidenav-content {
-   z-index: 2 !important;
+  z-index: 2 !important;
   // overflow: unset !important;
 }
 
@@ -144,9 +144,9 @@ svg {
     align-items: center;
   }
 
-/*  .mat-menu-item.active {
-    background-color: #e8f0fe;
-  }*/
+  /*  .mat-menu-item.active {
+      background-color: #e8f0fe;
+    }*/
 }
 
 @media (prefers-color-scheme: light) {
@@ -214,18 +214,18 @@ pre::-webkit-scrollbar, pre[class*='language-']::-webkit-scrollbar {
 pre::-webkit-scrollbar-thumb, pre[class*='language-']::-webkit-scrollbar-thumb {
   background: #80868b;
   background-clip: padding-box;
-  border: 2.5px solid rgba(0,0,0,0);
+  border: 2.5px solid rgba(0, 0, 0, 0);
   border-radius: 5px;
 }
 
 pre::-webkit-scrollbar-track, pre[class*='language-']::-webkit-scrollbar-track {
-  background: rgba(0,0,0,0);
+  background: rgba(0, 0, 0, 0);
 }
 
 .mat-tooltip {
   // font-size: 12px;
- /* line-height: 16px;
-  letter-spacing: .4px;
-  color: #fff !important;
-  background: rgba(0, 0, 0, 0.6) !important;*/
+  /* line-height: 16px;
+   letter-spacing: .4px;
+   color: #fff !important;
+   background: rgba(0, 0, 0, 0.6) !important;*/
 }
