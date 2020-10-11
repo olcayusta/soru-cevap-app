@@ -14,7 +14,7 @@ const routes: Routes = [
       },
       {
         path: 'users',
-        loadChildren: () => import('./users/users.module').then((m) => m.UsersModule),
+        loadChildren: async () => (await import('./users/users.module')).UsersModule,
         canLoad: [AuthGuard],
         data: {
           title: 'BATMAN'

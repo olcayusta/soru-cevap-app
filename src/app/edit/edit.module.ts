@@ -7,11 +7,6 @@ import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [EditComponent],
-  imports: [
-    CommonModule,
-    EditRoutingModule,
-    MatInputModule
-  ]
+  imports: [CommonModule, EditRoutingModule, MatInputModule]
 })
-export class EditModule {
-}
+export class EditModule {}
