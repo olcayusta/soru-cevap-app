@@ -19,7 +19,6 @@ export class UserResolverService implements Resolve<User> {
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<User> | Promise<User> | User {
     return this.userService.getUser(+route.paramMap.get('userId')).pipe(
       catchError(err => {
-        console.log(err);
         this.router.navigate(['/404'], {replaceUrl: true});
         return EMPTY;
       })

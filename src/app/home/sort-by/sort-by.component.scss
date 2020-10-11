@@ -9,6 +9,7 @@ button {
 
 .sort-by-text {
   font-size: 14px;
+  font-weight: 500;
   line-height: 20px;
   margin-right: 8px;
 }
@@ -27,8 +28,8 @@ app-arrow-drop-down-icon {
 }
 
 button[aria-expanded=true] {
-  background-color: rgba(98, 0, 238, 0.08);
-  color: #6200EE;
+  background-color: rgba(0, 0, 0, 0.08);
+  // color: #6200EE;
 
   app-arrow-drop-down-icon ::ng-deep svg {
     transform: rotate(180deg);
@@ -53,17 +54,10 @@ button[aria-expanded=true] {
   }
 
   app-arrow-drop-down-icon {
-    // margin-right: -8px;
-
-    /*
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 8px;
-    */
 
     ::ng-deep svg {
-      fill: #6200EE !important;
+      // fill: #6200EE !important;
+      fill: var(--medium-emphasis-color);
     }
   }
 }

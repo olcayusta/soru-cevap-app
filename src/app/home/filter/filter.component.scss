@@ -13,6 +13,7 @@
 
 .filter-text {
   font-size: 14px;
+  font-weight: 500;
   line-height: 20px;
   margin-right: 8px;
 }
@@ -59,21 +60,13 @@ mat-checkbox {
   span {
     margin-right: 12px;
   }
-
-  app-arrow-drop-down-icon {
-    // margin-right: -8px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 8px;
-
-    ::ng-deep svg {
-      fill: #6200EE !important;
-    }
-  }
 }
 
-ap
+app-arrow-drop-down-icon {
+  ::ng-deep svg {
+    fill: #6200EE !important;
+  }
+}
 
 @media (max-width: 599px) {
   :host {

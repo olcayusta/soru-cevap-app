@@ -2,9 +2,34 @@
   display: block;
 }
 
+.header-one {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+  border-bottom: 1px solid rgba(0, 0, 0, .12);
+  margin-top: 8px;
+
+  button {
+    margin-left: 16px;
+  }
+
+  mat-icon {
+    color: var(--medium-emphasis-color);
+  }
+}
+
 .description {
   color: var(--medium-emphasis-color);
   margin: 8px 0;
+}
+
+.mat-button {
+  letter-spacing: 1.25px;
+
+  mat-icon {
+    margin-right: 12px;
+  }
 }
 
 .bracket {
@@ -55,12 +80,6 @@ a:hover {
 @media (max-width: 599px) {
   :host {
     padding: 0 24px;
-  }
-
-  h1 {
-   // font-size: 24px;
-   //  line-height: 32px;
-    // margin: 24px 0;
   }
 }
 

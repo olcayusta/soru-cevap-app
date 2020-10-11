@@ -18,6 +18,8 @@ import { ClipboardModule } from '@angular/cdk/clipboard';
 import { QuestionCommentListComponent } from './question-comment-list/question-comment-list.component';
 import { QuestionAnswerItemComponent } from './question-answer-item/question-answer-item.component';
 import { QuestionAnswerItemContentComponent } from './question-answer-item/question-answer-item-content/question-answer-item-content.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -30,19 +32,21 @@ import { QuestionAnswerItemContentComponent } from './question-answer-item/quest
     QuestionAnswerItemComponent,
     QuestionAnswerItemContentComponent
   ],
-  imports: [
-    CommonModule,
-    QuestionRoutingModule,
-    MatInputModule,
-    MatButtonModule,
-    ReactiveFormsModule,
-    FormsModule,
-    MatDividerModule,
-    SharedModule,
-    IconModule,
-    MatTooltipModule,
-    ClipboardModule
-  ]
+    imports: [
+        CommonModule,
+        QuestionRoutingModule,
+        MatInputModule,
+        MatButtonModule,
+        ReactiveFormsModule,
+        FormsModule,
+        MatDividerModule,
+        SharedModule,
+        IconModule,
+        MatTooltipModule,
+        ClipboardModule,
+        MatIconModule,
+        MatMenuModule
+    ]
 })
 export class QuestionModule {
 }
