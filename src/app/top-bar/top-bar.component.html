@@ -3,7 +3,7 @@
   <div id="start">
     <button mat-icon-button aria-label="Example icon-button with menu icon" class="menu-button"
             (click)="openDrawer.emit()">
-      <app-menu-icon></app-menu-icon>
+      <mat-icon fontSet="material-icons-outlined">menu</mat-icon>
     </button>
 
     <a routerLink="/" class="logo-link">
@@ -18,11 +18,11 @@
   <div id="end">
     <ng-container *ngIf="isLoggedIn$ | async; else signIn">
       <button mat-icon-button routerLink="/create" matTooltip="Oluştur">
-        <mat-icon>add</mat-icon>
+        <mat-icon fontSet="material-icons-outlined">add</mat-icon>
       </button>
 
       <button mat-icon-button matTooltip="İncelemeler" hidden>
-        <rate-review-icon></rate-review-icon>
+        <mat-icon fontSet="material-icons-outlined">rate_review</mat-icon>
       </button>
 
       <app-notification-button></app-notification-button>

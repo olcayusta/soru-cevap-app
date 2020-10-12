@@ -93,7 +93,7 @@ mat-progress-bar {
 }
 
 mat-icon {
-  color: rgba(0, 0, 0, .6);
+  color: var(--medium-emphasis-color);
 }
 
 @media (max-width: 599px) {

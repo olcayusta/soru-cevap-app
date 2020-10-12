@@ -1,4 +1,9 @@
-import { Component, OnInit, ChangeDetectionStrategy, ɵmarkDirty as markDirty } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ChangeDetectionStrategy,
+  ɵmarkDirty as markDirty,
+} from '@angular/core';
 import { shareReplay } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { NotificationService } from '@shared/services/notification.service';
@@ -8,7 +13,7 @@ import { ScrollStrategy, ScrollStrategyOptions } from '@angular/cdk/overlay';
   selector: 'app-notification-button',
   templateUrl: './notification-button.component.html',
   styleUrls: ['./notification-button.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NotificationButtonComponent implements OnInit {
   notificationCount$: Observable<number>;
@@ -24,7 +29,9 @@ export class NotificationButtonComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.notificationCount$ = this.notificationService.getUnseenCount().pipe(shareReplay());
+    this.notificationCount$ = this.notificationService
+      .getUnseenCount()
+      .pipe(shareReplay());
   }
 
   openNotifications(): void {

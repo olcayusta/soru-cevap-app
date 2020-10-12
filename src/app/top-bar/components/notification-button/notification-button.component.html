@@ -3,8 +3,9 @@
         #notificationElement="cdkOverlayOrigin"
         cdkOverlayOrigin
         (click)="openNotifications()">
-  <id-notifications-icon matBadge="{{notificationCount$ | async}}"
-                         [matBadgeHidden]="(notificationCount$ | async) === 0"></id-notifications-icon>
+  <mat-icon fontSet="material-icons-outlined" matBadge="{{notificationCount$ | async}}"
+            [matBadgeHidden]="(notificationCount$ | async) === 0">notifications
+  </mat-icon>
 </button>
 
 <ng-template

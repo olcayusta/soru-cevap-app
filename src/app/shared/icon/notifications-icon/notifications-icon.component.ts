@@ -1,13 +1,15 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: 'id-notifications-icon',
+  selector: 'app-notifications-icon',
   templateUrl: 'notifications-24px.svg',
-  styles: [`:host {
-    display: inline-flex;
-  }
-  `],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styles: [
+    `
+      :host {
+        display: inline-flex;
+      }
+    `,
+  ],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class NotificationsIconComponent {
-}
+export class NotificationsIconComponent {}

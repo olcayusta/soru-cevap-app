@@ -8,5 +8,14 @@ if (environment.production) {
   enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.error(err));
+platformBrowserDynamic()
+  .bootstrapModule(AppModule)
+  .catch((err) => console.error(err));
+
+/*
+"prettier": {
+  "singleQuote": true,
+    "trailingComma": "none",
+    "arrowParens": "always",
+    "printWidth": 128
+}*/

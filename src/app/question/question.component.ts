@@ -1,4 +1,9 @@
-import { Component, OnInit, ChangeDetectionStrategy, ɵmarkDirty as markDirty } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ChangeDetectionStrategy,
+  ɵmarkDirty as markDirty,
+} from '@angular/core';
 import { Question } from '@shared/models/question.model';
 import { ActivatedRoute } from '@angular/router';
 import { AnswerService } from '@shared/services/answer.service';
@@ -15,7 +20,7 @@ import { ShareDialogComponent } from '../shared/components/share-dialog/share-di
   selector: 'app-question',
   templateUrl: './question.component.html',
   styleUrls: ['./question.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class QuestionComponent implements OnInit {
   question$: Observable<Question>;
@@ -32,8 +37,9 @@ export class QuestionComponent implements OnInit {
   ngOnInit(): void {
     this.question$ = this.route.data.pipe(
       map((value) => {
-        this.title.setTitle(`${value.question.title} - ${environment.appTitle}`);
-        return value.question;
+        const question: Question = value.question;
+        this.title.setTitle(`${question.title} - ${environment.appTitle}`);
+        return question;
       })
     );
     this.stateService.hide();
@@ -51,7 +57,7 @@ export class QuestionComponent implements OnInit {
   openDialog() {
     this.dialog.open(ShareDialogComponent, {
       autoFocus: false,
-      minWidth: 512
+      minWidth: 512,
     });
   }
 }

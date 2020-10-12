@@ -1,10 +1,9 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'highlightSearch'
+  name: 'highlightSearch',
 })
 export class HighlightSearchPipe implements PipeTransform {
-
   transform(value: any, ...args: any): unknown {
     if (!args) {
       return value;
@@ -13,5 +12,4 @@ export class HighlightSearchPipe implements PipeTransform {
       return value.replace(re, `<mark>$&</mark>`);
     }
   }
-
 }

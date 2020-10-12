@@ -14,9 +14,14 @@ export class AnswerFormComponent implements OnInit, AfterViewInit {
     validators: [Validators.required, Validators.minLength(24)]
   });
 
-  constructor(private route: ActivatedRoute, private answerService: AnswerService) {}
+  constructor(
+    private route: ActivatedRoute,
+    private answerService: AnswerService
+  ) {
+  }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
   ngAfterViewInit(): void {
     markDirty(this);

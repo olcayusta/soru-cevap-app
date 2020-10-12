@@ -1,4 +1,11 @@
-import { Component, OnInit, ChangeDetectionStrategy, AfterViewInit, ChangeDetectorRef, ɵmarkDirty as markDirty } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ChangeDetectionStrategy,
+  AfterViewInit,
+  ChangeDetectorRef,
+  ɵmarkDirty as markDirty
+} from '@angular/core';
 import { Clipboard } from '@angular/cdk/clipboard';
 
 @Component({
@@ -11,18 +18,13 @@ export class WebCopyCodeComponent implements OnInit, AfterViewInit {
   text: HTMLElement;
   lang: string;
 
-  constructor(
-    private cdr: ChangeDetectorRef,
-    private clipboard: Clipboard
-  ) {
-  }
+  constructor(private cdr: ChangeDetectorRef, private clipboard: Clipboard) {}
 
   copyCode(): void {
     this.clipboard.copy(this.text.textContent);
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   ngAfterViewInit(): void {
     markDirty(this);

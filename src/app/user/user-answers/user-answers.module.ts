@@ -6,9 +6,6 @@ import { UserAnswersComponent } from './user-answers.component';
 
 @NgModule({
   declarations: [UserAnswersComponent],
-  imports: [
-    CommonModule,
-    UserAnswersRoutingModule
-  ]
+  imports: [CommonModule, UserAnswersRoutingModule],
 })
-export class UserAnswersModule { }
+export class UserAnswersModule {}

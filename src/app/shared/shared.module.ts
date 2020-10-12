@@ -14,6 +14,7 @@ import { MarkedPipe } from '@shared/pipes/marked.pipe';
 import { ShareDialogComponent } from './components/share-dialog/share-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { MatInputModule } from '@angular/material/input';
     HighlightSearchPipe,
     ImgShadowComponent,
     MarkedPipe,
-    ShareDialogComponent
+    ShareDialogComponent,
   ],
   imports: [
     CommonModule,
@@ -33,8 +34,14 @@ import { MatInputModule } from '@angular/material/input';
     MatTooltipModule,
     MatIconModule,
     MatDialogModule,
-    MatInputModule
+    MatInputModule,
+    MatButtonModule,
   ],
-  exports: [LazyImgDirective, HomeQuestionListItemComponent, HighlightSearchPipe, TimeAgoPipe]
+  exports: [
+    LazyImgDirective,
+    HomeQuestionListItemComponent,
+    HighlightSearchPipe,
+    TimeAgoPipe,
+  ],
 })
 export class SharedModule {}

@@ -5,10 +5,10 @@ import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'id-user-questions',
+  selector: 'app-user-questions',
   templateUrl: './user-questions.component.html',
   styleUrls: ['./user-questions.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UserQuestionsComponent implements OnInit {
   questions: Observable<Question[]>;
@@ -16,12 +16,10 @@ export class UserQuestionsComponent implements OnInit {
   constructor(
     private userService: UserService,
     private route: ActivatedRoute
-  ) {
-  }
+  ) {}
 
   ngOnInit(): void {
     const userId = this.route.snapshot.parent.parent.paramMap.get('userId');
     this.questions = this.userService.getUserQuestions(+userId);
   }
-
 }

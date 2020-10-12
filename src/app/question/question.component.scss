@@ -6,9 +6,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 72px;
-  border-bottom: 1px solid rgba(0, 0, 0, .12);
-  margin-top: 8px;
+  // height: 72px;
+  // border-bottom: 1px solid rgba(0, 0, 0, .12);
+  // margin-top: 8px;
+  margin-top: 24px;
 
   button {
     margin-left: 16px;
@@ -16,6 +17,15 @@
 
   mat-icon {
     color: var(--medium-emphasis-color);
+  }
+
+  .mat-button {
+
+    mat-icon {
+      width: 18px;
+      height: 18px;
+      font-size: 18px;
+    }
   }
 }
 
@@ -25,10 +35,10 @@
 }
 
 .mat-button {
-  letter-spacing: 1.25px;
+  letter-spacing: 0;
 
   mat-icon {
-    margin-right: 12px;
+    margin-right: 8px;
   }
 }
 

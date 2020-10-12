@@ -1,24 +1,9 @@
 <app-sort-by></app-sort-by>
 
-<div class="filter-by">
-  <span class="filter-text">Filtre: </span>
+<app-filter-by></app-filter-by>
 
-  <button class="outlined-menu-button" mat-button [matMenuTriggerFor]="typeMenu">
-    <span>{{items[selectedItemIndex].label}}</span>
-    <app-arrow-drop-down-icon></app-arrow-drop-down-icon>
-  </button>
-</div>
-
-<mat-menu #typeMenu="matMenu" class="text-only-menu mat-elevation-z2 filtre-menu">
-  <div class="checkbox-item" routerLink="/" [queryParams]="{filters: item.sort ? item.sort : null}"
-       queryParamsHandling="merge" (click)="checkboxClicked($event, i)" *ngFor="let item of items; let i = index">
-    <mat-checkbox color="primary" [checked]="item.checked">{{item.label}}</mat-checkbox>
-  </div>
-</mat-menu>
-
-<!--<span>Tagged with: </span>-->
-<!--<mat-checkbox color="primary" checked="true">Cevapsız soruları göster</mat-checkbox>-->
-<!--<mat-checkbox color="primary">Doğru cevapsız soruları göster</mat-checkbox>-->
+<span class="info-text">Tagged with: </span>
+<mat-checkbox color="primary" checked="true">My watched tags</mat-checkbox>
 
 <!--<button mat-button class="outlined-menu-button" [matMenuTriggerFor]="languageMenu">
   <span>Language</span>

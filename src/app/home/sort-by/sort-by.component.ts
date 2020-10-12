@@ -6,7 +6,7 @@ import {
   QueryList,
   AfterViewInit,
   OnInit,
-  ChangeDetectorRef
+  ChangeDetectorRef,
 } from '@angular/core';
 import { MatMenu, MatMenuItem } from '@angular/material/menu';
 import { ActivatedRoute } from '@angular/router';
@@ -15,7 +15,7 @@ import { ActivatedRoute } from '@angular/router';
   selector: 'app-sort-by',
   templateUrl: './sort-by.component.html',
   styleUrls: ['./sort-by.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SortByComponent implements OnInit, AfterViewInit {
   @ViewChild('menu') menu: MatMenu;
@@ -40,25 +40,21 @@ export class SortByComponent implements OnInit, AfterViewInit {
     ];*/
 
   items = [
-    {sort: '', label: 'Newest'},
-    {sort: 'popularity', label: 'Recent activity'},
-    {sort: 'date', label: 'Most votes'},
-    {sort: 'date', label: 'Most frequent'},
-    {sort: 'activity', label: 'Bounty ending soon'},
+    { sort: '', label: 'En yeni' },
+    { sort: 'popularity', label: 'Son aktivite tarihi' },
+    { sort: 'date', label: 'Most votes' },
+    { sort: 'date', label: 'Most frequent' },
+    { sort: 'activity', label: 'Bounty ending soon' },
   ];
 
   selectedIndex = 0;
 
-  constructor(
-    private route: ActivatedRoute,
-    public cdr: ChangeDetectorRef
-  ) {
-  }
+  constructor(private route: ActivatedRoute, public cdr: ChangeDetectorRef) {}
 
   ngOnInit(): void {
     const sort = this.route.snapshot.queryParamMap.get('sort');
     if (sort) {
-      this.selectedIndex = this.items.findIndex(value => value.sort === sort);
+      this.selectedIndex = this.items.findIndex((value) => value.sort === sort);
     }
   }
 
@@ -77,5 +73,4 @@ export class SortByComponent implements OnInit, AfterViewInit {
     // add highlight
     menuItem._highlighted = true;
   }
-
 }

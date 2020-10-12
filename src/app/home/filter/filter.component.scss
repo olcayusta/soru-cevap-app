@@ -6,66 +6,23 @@
   margin-bottom: 24px;*/
 }
 
-.filter-by {
-  display: flex;
-  align-items: center;
-}
-
-.filter-text {
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 20px;
-  margin-right: 8px;
-}
-
 :host::-webkit-scrollbar {
   display: none;
+}
+
+button[aria-expanded=true] {
+  background-color: rgba(98, 0, 238, 0.12);
+  color: #6200EE;
+
+  mat-icon {
+    transform: rotate(180deg);
+  }
 }
 
 .filter {
   display: flex;
   align-items: center;
   padding: 24px 0;
-}
-
-mat-checkbox {
-  font-size: 14px;
-  line-height: 20px;
-  margin-right: 24px;
-}
-
-.filter-menu-button-content {
-  display: flex;
-  align-items: center;
-}
-
-.sort-by-text {
-  font-size: 14px;
-  line-height: 20px;
-}
-
-.outlined-menu-button {
-  display: inline-flex;
-  // height: 32px;
-  font-weight: 400;
-  // line-height: 32px;
-  text-transform: none;
-  padding: 0 16px !important;
-  // margin-left: -8px;
-  // letter-spacing: .25px;
-  letter-spacing: 0;
-
-  min-width: 112px;
-
-  span {
-    margin-right: 12px;
-  }
-}
-
-app-arrow-drop-down-icon {
-  ::ng-deep svg {
-    fill: #6200EE !important;
-  }
 }
 
 @media (max-width: 599px) {
@@ -89,4 +46,18 @@ app-arrow-drop-down-icon {
       padding-right: 24px;
     }
   }
+}
+
+app-sort-by {
+  margin-right: 16px;
+}
+
+app-filter-by {
+  margin-right: 16px;
+}
+
+.info-text {
+  font-size: 14px;
+  line-height: 20px;
+  margin-right: 8px;
 }

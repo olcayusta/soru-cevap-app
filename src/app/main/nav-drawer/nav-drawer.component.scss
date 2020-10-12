@@ -75,10 +75,10 @@ p {
 .mat-list-base .mat-subheader {
   margin-top: 0;
   font-weight: 500;
- /* height: auto;
-  line-height: 20px;
-  margin: 0;
-  padding: 8px 16px;*/
+  /* height: auto;
+   line-height: 20px;
+   margin: 0;
+   padding: 8px 16px;*/
   color: var(--medium-emphasis-color);
 }
 
@@ -97,7 +97,7 @@ p {
 
 // Fix menu and select panel overflow scroll bar
 ::ng-deep .mat-select-panel::-webkit-scrollbar {
-  width: 8px;
+  width: 12px;
 }
 
 ::ng-deep .mat-select-panel::-webkit-scrollbar-thumb {
@@ -113,9 +113,13 @@ p {
   margin-left: -8px;
 }
 
+/**
+  Scrollbar
+ */
+
 /* width */
 ::ng-deep .overflow-container::-webkit-scrollbar {
-  width: 6px;
+  width: 10px;
   display: none;
 }
 
@@ -131,7 +135,8 @@ p {
 
 /* Handle */
 ::ng-deep .overflow-container::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, .38);
+  background: rgba(0, 0, 0, 0.24);
+  border-left: 1px solid rgba(0, 0, 0, .12);
   // border-radius: 24px;
 }
 

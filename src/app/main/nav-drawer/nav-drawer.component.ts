@@ -15,11 +15,7 @@ export class NavDrawerComponent implements OnInit {
 
   user: User;
 
-  constructor(
-    private authService: AuthService,
-    private dialog: MatDialog
-  ) {
-  }
+  constructor(private authService: AuthService, private dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.user = this.authService.userValue;
@@ -29,6 +25,9 @@ export class NavDrawerComponent implements OnInit {
     this.authService.logout();
   }
 
+  /*
+   * Open settings dialog
+   * */
   openSettingsDialog() {
     this.closeDrawer.emit();
     this.dialog.open(SettingsDialogComponent, {
@@ -37,4 +36,3 @@ export class NavDrawerComponent implements OnInit {
     });
   }
 }
-

@@ -21,8 +21,7 @@ export class MainComponent implements OnInit {
     private breakpointObserver: BreakpointObserver,
     @Inject(DOCUMENT) private document: Document,
     private socketService: SocketService
-  ) {
-  }
+  ) {}
 
   fabButtonMakeWidthOnScroll(): void {
     let prevScrollpos = window.pageYOffset;

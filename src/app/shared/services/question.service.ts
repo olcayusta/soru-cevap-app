@@ -8,11 +8,7 @@ import { environment } from '../../../environments/environment';
   providedIn: 'root'
 })
 export class QuestionService {
-
-  constructor(
-    private http: HttpClient
-  ) {
-  }
+  constructor(private http: HttpClient) {}
 
   getAllQuestions(): Observable<Question[]> {
     return this.http.get<Question[]>(`${environment.apiUrl}/questions`);
@@ -36,7 +32,10 @@ export class QuestionService {
 
   saveQuestion(title, content, rawContent, tags): Observable<Question> {
     return this.http.post<Question>(`${environment.apiUrl}/questions`, {
-      title, content, rawContent, tags
+      title,
+      content,
+      rawContent,
+      tags
     });
   }
 }
