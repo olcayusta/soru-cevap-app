@@ -3,13 +3,10 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { FavoritesComponent } from './favorites.component';
 
-const routes: Routes = [
-  {path: '', component: FavoritesComponent}
-];
+const routes: Routes = [{ path: '', component: FavoritesComponent }];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class FavoritesRoutingModule {
-}
+export class FavoritesRoutingModule {}

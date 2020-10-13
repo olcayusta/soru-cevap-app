@@ -6,18 +6,15 @@ import { ActivatedRoute } from '@angular/router';
   selector: 'app-users',
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UsersComponent implements OnInit {
   users: User[];
 
-  constructor(
-    private route: ActivatedRoute
-  ) {
-  }
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    const {users} = this.route.snapshot.data;
+    const { users } = this.route.snapshot.data;
     this.users = users;
   }
 }

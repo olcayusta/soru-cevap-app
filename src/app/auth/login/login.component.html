@@ -1,6 +1,6 @@
 <div class="page-center">
   <div class="my-card">
-    <mat-progress-bar mode="indeterminate" value="50" *ngIf="submitted"></mat-progress-bar>
+    <mat-progress-bar mode="indeterminate" *ngIf="submitted"></mat-progress-bar>
 
    <!-- <div class="buttons">
       <button mat-icon-button class="sign-in-button" matTooltip="GOOGLE ile devam et">
@@ -67,7 +67,7 @@
     <form autocomplete="off" spellcheck="false" [formGroup]="form" (submit)="submit()">
       <div class="form-body">
 
-        <!-- E-mail -->
+        <!-- E-posta -->
         <mat-form-field appearance="outline">
           <mat-label>E-posta</mat-label>
           <input aria-label="E-posta" matInput type="email" formControlName="email">
@@ -78,7 +78,7 @@
           <a mat-button color="primary">ŞİFREMİ UNUTTUM</a>
         </div>
 
-        <!-- Password -->
+        <!-- Şifre -->
         <!--<mat-form-field appearance="standard">
           <mat-label>Şifre</mat-label>
           <input aria-label="Şifre" matInput [type]="hide ? 'password' : 'text'" formControlName="password"

@@ -4,10 +4,14 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   selector: 'app-share-dialog',
   templateUrl: './share-dialog.component.html',
   styleUrls: ['./share-dialog.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ShareDialogComponent implements OnInit {
+  url;
+
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.url = window.location.href;
+  }
 }

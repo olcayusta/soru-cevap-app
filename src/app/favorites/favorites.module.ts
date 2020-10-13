@@ -12,8 +12,7 @@ import { MatIconModule } from '@angular/material/icon';
     CommonModule,
     FavoritesRoutingModule,
     MatButtonModule,
-    MatIconModule
-  ]
+    MatIconModule,
+  ],
 })
-export class FavoritesModule {
-}
+export class FavoritesModule {}

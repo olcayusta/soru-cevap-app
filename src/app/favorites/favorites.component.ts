@@ -7,18 +7,14 @@ import { Question } from '../shared/models/question.model';
   selector: 'app-favorites',
   templateUrl: './favorites.component.html',
   styleUrls: ['./favorites.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FavoritesComponent implements OnInit {
   questions$: Observable<Question[]>;
 
-  constructor(
-    private favoriteService: FavoriteService
-  ) {
-  }
+  constructor(private favoriteService: FavoriteService) {}
 
   ngOnInit(): void {
     this.questions$ = this.favoriteService.getFavoriteQuestions();
   }
-
 }

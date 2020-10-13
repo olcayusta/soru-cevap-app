@@ -15,6 +15,7 @@ import { FavoriteService } from '../shared/services/favorite.service';
 import { environment } from '../../environments/environment';
 import { MatDialog } from '@angular/material/dialog';
 import { ShareDialogComponent } from '../shared/components/share-dialog/share-dialog.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-question',
@@ -31,6 +32,7 @@ export class QuestionComponent implements OnInit {
     private stateService: StateService,
     private favoriteService: FavoriteService,
     private dialog: MatDialog,
+    private snackBar: MatSnackBar,
     private title: Title
   ) {}
 
@@ -55,9 +57,13 @@ export class QuestionComponent implements OnInit {
    * Open share dialog
    * */
   openDialog() {
-    this.dialog.open(ShareDialogComponent, {
+    const dialog = this.dialog.open(ShareDialogComponent, {
       autoFocus: false,
       minWidth: 512,
+    });
+    dialog.afterClosed().subscribe((value) => {
+      console.log(value);
+      this.snackBar.open('Bağlantı panoya kopyalandı');
     });
   }
 }

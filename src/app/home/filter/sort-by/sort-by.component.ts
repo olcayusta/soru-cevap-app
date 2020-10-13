@@ -6,7 +6,7 @@ import {
   QueryList,
   AfterViewInit,
   OnInit,
-  ChangeDetectorRef,
+  ChangeDetectorRef
 } from '@angular/core';
 import { MatMenu, MatMenuItem } from '@angular/material/menu';
 import { ActivatedRoute } from '@angular/router';
@@ -15,7 +15,7 @@ import { ActivatedRoute } from '@angular/router';
   selector: 'app-sort-by',
   templateUrl: './sort-by.component.html',
   styleUrls: ['./sort-by.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SortByComponent implements OnInit, AfterViewInit {
   @ViewChild('menu') menu: MatMenu;
@@ -44,7 +44,7 @@ export class SortByComponent implements OnInit, AfterViewInit {
     { sort: 'popularity', label: 'Son aktivite tarihi' },
     { sort: 'date', label: 'Most votes' },
     { sort: 'date', label: 'Most frequent' },
-    { sort: 'activity', label: 'Bounty ending soon' },
+    { sort: 'activity', label: 'Bounty ending soon' }
   ];
 
   selectedIndex = 0;

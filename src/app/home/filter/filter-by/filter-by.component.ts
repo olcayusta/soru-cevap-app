@@ -1,8 +1,10 @@
 import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
   Component,
   OnInit,
-  ChangeDetectionStrategy,
   ViewChild,
+  ViewEncapsulation
 } from '@angular/core';
 import { MatMenu, MatMenuItem } from '@angular/material/menu';
 
@@ -10,37 +12,37 @@ import { MatMenu, MatMenuItem } from '@angular/material/menu';
   selector: 'app-filter-by',
   templateUrl: './filter-by.component.html',
   styleUrls: ['./filter-by.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FilterByComponent implements OnInit {
-  @ViewChild('languageMenu') languageMenu: MatMenu;
+  @ViewChild('filterMenu') filterMenu: MatMenu;
 
   items = [
     {
       sort: 'a',
       label: 'No answers',
-      checked: true,
+      checked: true
     },
     {
       sort: 'b',
       label: 'No accepted answer',
-      checked: true,
+      checked: true
     },
     {
       sort: 'c',
       label: 'Has bounty',
-      checked: false,
-    },
+      checked: false
+    }
   ];
 
   selectedItemIndex = 0;
 
-  constructor() {}
+  constructor(public cdr: ChangeDetectorRef) {}
 
   ngOnInit(): void {}
 
   onLanguageMenuItemClicked(menuItem: MatMenuItem, index: number): void {
-    this.languageMenu._allItems.toArray().forEach((value) => {
+    this.filterMenu._allItems.toArray().forEach((value) => {
       value._highlighted = false;
     });
     menuItem._highlighted = true;

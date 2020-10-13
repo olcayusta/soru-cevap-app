@@ -18,10 +18,12 @@ interface ILogin {
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
-  isLoggedInSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  isLoggedInSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
+    false
+  );
   isLoggedIn$: Observable<boolean> = this.isLoggedInSubject.asObservable();
 
   userSubject = new BehaviorSubject<User>(null);
@@ -29,17 +31,15 @@ export class AuthService {
   // store the URL so we can redirect after logging in
   redirectUrl = '/';
 
-  constructor(
-    private http: HttpClient
-  ) {
+  constructor(private http: HttpClient) {
     const loggedIn = !!JSON.parse(localStorage.getItem('user'));
     this.isLoggedInSubject.next(loggedIn);
     this.userSubject.next(JSON.parse(localStorage.getItem('user')));
   }
 
   /*
-  * handleError function
-  * */
+   * handleError function
+   * */
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
       // A client-side or network error occurred. Handle it accordingly.
@@ -48,12 +48,11 @@ export class AuthService {
       // The backend returned an unsuccessful response code.
       // The response body may contain clues as to what went wrong.
       console.error(
-        `Backend returned code ${error.status}, ` +
-        `body was: ${error.error}`);
+        `Backend returned code ${error.status}, ` + `body was: ${error.error}`
+      );
     }
     // Return an observable with a user-facing error message.
-    return throwError(
-      'Something bad happened; please try again later.');
+    return throwError('Something bad happened; please try again later.');
   }
 
   /**
@@ -64,15 +63,18 @@ export class AuthService {
   }
 
   login(email: string, password: string): Observable<ILogin> {
-    return this.http.post<ILogin>(`${environment.apiUrl}/users/login`, {
-      email, password
-    }).pipe(
-      tap(({user, token}: ILogin) => {
-        if (token) {
-          this.saveUserToLocalStorage(user, token);
-        }
+    return this.http
+      .post<ILogin>(`${environment.apiUrl}/users/login`, {
+        email,
+        password,
       })
-    );
+      .pipe(
+        tap(({ user, token }: ILogin) => {
+          if (token) {
+            this.saveUserToLocalStorage(user, token);
+          }
+        })
+      );
   }
 
   /**

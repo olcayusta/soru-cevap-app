@@ -7,18 +7,21 @@ import { RecentQuestionsComponent } from './recent-questions/recent-questions.co
 import { SharedModule } from '../shared/shared.module';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { FilterComponent } from './filter/filter.component';
-import { MAT_MENU_SCROLL_STRATEGY, MatMenuModule } from '@angular/material/menu';
+import {
+  MAT_MENU_SCROLL_STRATEGY,
+  MatMenuModule,
+} from '@angular/material/menu';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { IconModule } from '../shared/icon/icon.module';
 import { IsVisibleDirective } from './is-visible.directive';
 import { MatButtonModule } from '@angular/material/button';
 import { BannerComponent } from './banner/banner.component';
 import { MatDividerModule } from '@angular/material/divider';
-import { SortByComponent } from './sort-by/sort-by.component';
+import { SortByComponent } from './filter/sort-by/sort-by.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatChipsModule } from '@angular/material/chips';
 import { CloseScrollStrategy, Overlay } from '@angular/cdk/overlay';
-import { FilterByComponent } from './filter-by/filter-by.component';
+import { FilterByComponent } from './filter/filter-by/filter-by.component';
 
 function scrollFactory(overlay: Overlay): () => CloseScrollStrategy {
   return () => overlay.scrollStrategies.close();
@@ -45,11 +48,14 @@ function scrollFactory(overlay: Overlay): () => CloseScrollStrategy {
     MatButtonModule,
     MatDividerModule,
     MatIconModule,
-    MatChipsModule
+    MatChipsModule,
   ],
   providers: [
-    {provide: MAT_MENU_SCROLL_STRATEGY, useFactory: scrollFactory, deps: [Overlay]}
-  ]
+    {
+      provide: MAT_MENU_SCROLL_STRATEGY,
+      useFactory: scrollFactory,
+      deps: [Overlay],
+    },
+  ],
 })
-export class HomeModule {
-}
+export class HomeModule {}
