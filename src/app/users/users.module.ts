@@ -9,17 +9,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
-  declarations: [
-    UsersComponent,
-    UserListItemComponent,
-    UserListComponent
-  ],
-  imports: [
-    CommonModule,
-    UsersRoutingModule,
-    MatDividerModule,
-    MatButtonModule
-  ]
+  declarations: [UsersComponent, UserListItemComponent, UserListComponent],
+  imports: [CommonModule, UsersRoutingModule, MatDividerModule, MatButtonModule]
 })
-export class UsersModule {
-}
+export class UsersModule {}

@@ -11,13 +11,12 @@ import { environment } from '@environments/environment';
 
 @Injectable()
 export class JwtInterceptor implements HttpInterceptor {
+  constructor(private authService: AuthService) {}
 
-  constructor(
-    private authService: AuthService
-  ) {
-  }
-
-  intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
+  intercept(
+    request: HttpRequest<unknown>,
+    next: HttpHandler
+  ): Observable<HttpEvent<unknown>> {
     const currentUser = this.authService.userValue;
     const isLoggedIn = currentUser && currentUser.token;
     const isApiUrl = request.url.startsWith(environment.apiUrl);

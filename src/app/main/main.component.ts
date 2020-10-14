@@ -24,10 +24,10 @@ export class MainComponent implements OnInit {
   ) {}
 
   fabButtonMakeWidthOnScroll(): void {
-    let prevScrollpos = window.pageYOffset;
+    let prevScrollPosition = window.pageYOffset;
     window.onscroll = () => {
       const currentScrollPos = window.pageYOffset;
-      if (prevScrollpos > currentScrollPos) {
+      if (prevScrollPosition > currentScrollPos) {
         // document.getElementById('navbar').style.top = '0';
         console.log('yukari kaydir');
         document.getElementById('extended-fab').classList.remove('mini-fab');
@@ -36,7 +36,7 @@ export class MainComponent implements OnInit {
         console.log('asagi kaydir');
         document.getElementById('extended-fab').classList.add('mini-fab');
       }
-      prevScrollpos = currentScrollPos;
+      prevScrollPosition = currentScrollPos;
     };
   }
 

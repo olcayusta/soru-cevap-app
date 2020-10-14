@@ -6,14 +6,7 @@ import { TagComponent } from './tag.component';
 import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
-  declarations: [
-    TagComponent
-  ],
-  imports: [
-    CommonModule,
-    TagRoutingModule,
-    SharedModule
-  ]
+  declarations: [TagComponent],
+  imports: [CommonModule, TagRoutingModule, SharedModule]
 })
-export class TagModule {
-}
+export class TagModule {}

@@ -13,15 +13,13 @@ import { map } from 'rxjs/operators';
 export class TagComponent implements OnInit {
   tag$: Observable<Tag>;
 
-  constructor(
-    private route: ActivatedRoute
-  ) {
-  }
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.tag$ = this.route.data.pipe(map(res => {
-      return res.tag;
-    }));
+    this.tag$ = this.route.data.pipe(
+      map((res) => {
+        return res.tag;
+      })
+    );
   }
-
 }

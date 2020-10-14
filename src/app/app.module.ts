@@ -36,7 +36,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { NavDrawerComponent } from './main/nav-drawer/nav-drawer.component';
 import { SearchFormComponent } from './search-form/search-form.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserMenuPopupComponent } from './top-bar/components/user-menu-popup/user-menu-popup.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatChipsModule } from '@angular/material/chips';
@@ -45,6 +45,7 @@ import { NotificationButtonComponent } from './top-bar/components/notification-b
 import { AvatarButtonComponent } from './top-bar/components/avatar-button/avatar-button.component';
 import { SettingsDialogComponent } from './settings-dialog/settings-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatSelectModule } from '@angular/material/select';
 
 registerLocaleData(localeTr);
 
@@ -76,7 +77,7 @@ registerLocaleData(localeTr);
     OverlayModule,
     MatProgressBarModule,
     MatTooltipModule,
-    ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production}),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     IconModule,
     MatBadgeModule,
     MatMenuModule,
@@ -91,14 +92,15 @@ registerLocaleData(localeTr);
     MatSlideToggleModule,
     ReactiveFormsModule,
     MatChipsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSelectModule,
+    FormsModule
   ],
   providers: [
-    {provide: LOCALE_ID, useValue: 'tr-TR'},
-    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
-    {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {horizontalPosition: 'center'}}
+    { provide: LOCALE_ID, useValue: 'tr-TR' },
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: { horizontalPosition: 'start', duration: 4000 } }
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+export class AppModule {}

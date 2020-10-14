@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationCancel, NavigationError, ResolveEnd, ResolveStart, Router } from '@angular/router';
 import { SocketService } from '@shared/services/socket.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -7,6 +7,7 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 import { SwPush } from '@angular/service-worker';
 import { PushNotificationService } from '@shared/services/push-notification.service';
 import { environment } from '@environments/environment';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -14,25 +15,29 @@ import { environment } from '@environments/environment';
   styleUrls: ['./app.component.scss'],
   animations: [
     trigger('transformMenu', [
-      state('void', style({
-        opacity: 0,
-        transform: 'scale(0.8)'
-      })),
-      transition('void => enter', animate('120ms cubic-bezier(0, 0, 0.2, 1)', style({
-        opacity: 1,
-        transform: 'scale(1)'
-      }))),
-      transition('* => void', animate('100ms 25ms linear', style({opacity: 0})))
+      state(
+        'void',
+        style({
+          opacity: 0,
+          transform: 'scale(0.8)'
+        })
+      ),
+      transition(
+        'void => enter',
+        animate(
+          '120ms cubic-bezier(0, 0, 0.2, 1)',
+          style({
+            opacity: 1,
+            transform: 'scale(1)'
+          })
+        )
+      ),
+      transition('* => void', animate('100ms 25ms linear', style({ opacity: 0 })))
     ]),
     trigger('myInsertRemoveTrigger', [
-      transition(':enter', [
-        style({opacity: 0, height: '0px'}),
-        animate('100ms', style({opacity: 1, height: '4px'})),
-      ]),
-      transition(':leave', [
-        animate('100ms', style({opacity: 0, height: '0px'}))
-      ])
-    ]),
+      transition(':enter', [style({ opacity: 0, height: '0px' }), animate('100ms', style({ opacity: 1, height: '4px' }))]),
+      transition(':leave', [animate('100ms', style({ opacity: 0, height: '0px' }))])
+    ])
   ]
 })
 export class AppComponent implements OnInit {
@@ -45,17 +50,21 @@ export class AppComponent implements OnInit {
     private route: ActivatedRoute,
     private spinnerService: SpinnerService,
     private swPush: SwPush,
-    private pushService: PushNotificationService
+    private pushService: PushNotificationService,
+    @Inject(DOCUMENT) private document: Document
   ) {
     if (swPush.isEnabled) {
-      swPush.requestSubscription({
-        serverPublicKey: environment.vapidPublic
-      }).then(subscription => {
-        this.pushService.sendSubscriptionToTheServer(subscription).subscribe();
-      }).catch(console.error);
+      swPush
+        .requestSubscription({
+          serverPublicKey: environment.vapidPublic
+        })
+        .then((subscription) => {
+          this.pushService.sendSubscriptionToTheServer(subscription).subscribe();
+        })
+        .catch(console.error);
     }
 
-    router.events.subscribe(value => {
+    router.events.subscribe((value) => {
       if (value instanceof ResolveStart) {
         this.spinner = true;
         this.spinnerService.addSpinner();
@@ -74,7 +83,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.socketService.on('new answer').subscribe(value => {
+    this.socketService.on('new answer').subscribe((value) => {
       console.log('Sorunuza, yeni ber cevap geldi.');
       this.snackBar.open('One line text string.');
     });

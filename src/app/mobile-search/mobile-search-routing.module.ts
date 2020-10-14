@@ -9,4 +9,4 @@ const routes: Routes = [{ path: '', component: MobileSearchComponent }];
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class MobileSearchRoutingModule { }
+export class MobileSearchRoutingModule {}

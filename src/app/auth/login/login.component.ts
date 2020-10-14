@@ -41,32 +41,36 @@ export class LoginComponent implements OnInit {
   }
 
   submit(): void {
-    this.submitted = true;
     if (this.form.valid) {
-      const {email, password} = this.form.value;
+      this.submitted = true;
+      const { email, password } = this.form.value;
 
-      this.authService.login(email, password)
+      this.authService
+        .login(email, password)
         .pipe(
           catchError((err, caught) => {
             this.snackBar.open('Beklenmedik bir sorun yasandi!', 'RETRY');
             return EMPTY;
           })
-        ).subscribe(value => {
-        this.submitted = false;
-        // @ts-ignore
-        if (value.error) {
-          alert('error');
-        } else {
-          // Redirect the user
-          this.router.navigate([this.authService.redirectUrl]).then(value1 => {
-            this.tagService.getFavoriteTags().subscribe(value2 => {
-              if (value2) {
-                localStorage.setItem('watchedTags', JSON.stringify(value2));
-              }
+        )
+        .subscribe((value) => {
+          this.submitted = false;
+          // @ts-ignore
+          if (value.error) {
+            alert('error');
+            console.log(value);
+          } else {
+            // Redirect the user
+            this.router.navigate([this.authService.redirectUrl]).then((value1) => {
+              // Kullanicinin favori etiketlerini kaydet
+              this.tagService.getFavoriteTags().subscribe((value2) => {
+                if (value2) {
+                  localStorage.setItem('watchedTags', JSON.stringify(value2));
+                }
+              });
             });
-          });
-        }
-      });
+          }
+        });
     }
   }
 }

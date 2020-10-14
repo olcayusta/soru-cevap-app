@@ -8,7 +8,7 @@ const routes: Routes = [
   {
     path: '',
     component: UsersComponent,
-    resolve: {users: UserListResolverService}
+    resolve: { users: UserListResolverService }
   }
 ];
 
@@ -16,5 +16,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class UsersRoutingModule {
-}
+export class UsersRoutingModule {}

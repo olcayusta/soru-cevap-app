@@ -35,17 +35,16 @@ input.custom-autofill {
   }
 }
 
-.my-card {
+.login-form-container {
   position: relative;
   width: 550px;
   height: 600px;
   padding: 48px;
   overflow: hidden;
   // background-color: var(--card-background);
-  // border: 1px solid var(--border-color);
   border-radius: 4px;
   background-color: transparent;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.14), 0 2px 1px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--border-color);
 }
 
 .social-login-info {
@@ -61,6 +60,10 @@ mat-progress-bar {
   left: 0;
 }
 
+.login-form {
+
+}
+
 .form-body {
   display: flex;
   flex-direction: column;
@@ -68,9 +71,6 @@ mat-progress-bar {
 }
 
 h4 {
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 24px;
   margin: 0;
   text-align: center;
 }
@@ -82,10 +82,6 @@ p {
   margin: 0;
   text-align: center;
   font-weight: 500;
-  font-size: 14px;
-  line-height: 24px;
-  /* identical to box height, or 171% */
-
   letter-spacing: 0.1px;
 }
 
@@ -113,7 +109,7 @@ p {
 
   button {
     margin-left: -8px;
-    letter-spacing: 1.25px;
+    // letter-spacing: 1.25px;
   }
 }
 
@@ -181,6 +177,10 @@ p {
 .button-link-row {
   .mat-button {
     margin-left: -8px;
-    letter-spacing: 1.25px;
+    // letter-spacing: 1.25px;
   }
+}
+
+.mat-button {
+  letter-spacing: 0;
 }

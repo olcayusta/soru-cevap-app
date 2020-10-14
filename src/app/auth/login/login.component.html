@@ -1,5 +1,5 @@
 <div class="page-center">
-  <div class="my-card">
+  <div class="my-card login-form-container">
     <mat-progress-bar mode="indeterminate" *ngIf="submitted"></mat-progress-bar>
 
    <!-- <div class="buttons">
@@ -18,7 +18,7 @@
       </button>
     </div>-->
 
-    <h4>Oturum aç</h4>
+    <h4 class="headline-4">Oturum aç</h4>
     <p>E-posta hesabınızı kullanarak devam edin</p>
 
     <!-- <div class="buttons">
@@ -64,7 +64,7 @@
       </button>
     </div>-->
 
-    <form autocomplete="off" spellcheck="false" [formGroup]="form" (submit)="submit()">
+    <form autocomplete="off" spellcheck="false" class="login-form" [formGroup]="form" (submit)="submit()">
       <div class="form-body">
 
         <!-- E-posta -->
@@ -75,7 +75,7 @@
         </mat-form-field>
 
         <div class="button-link-row">
-          <a mat-button color="primary">ŞİFREMİ UNUTTUM</a>
+          <a mat-button color="primary">Şifremi unuttum</a>
         </div>
 
         <!-- Şifre -->
@@ -94,7 +94,7 @@
       </div>
 
       <div class="row-actions">
-        <button mat-button color="primary">HESAP OLUŞTURUN</button>
+        <button mat-button color="primary">Hesap oluşturun</button>
         <button type="submit" mat-raised-button color="primary">İLERİ</button>
       </div>
     </form>

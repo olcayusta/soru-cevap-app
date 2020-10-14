@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, ChangeDetectionStrategy, Output, NgModule } from '@angular/core';
+import { Component, EventEmitter, OnInit, ChangeDetectionStrategy, Output } from '@angular/core';
 import { AuthService } from '../../auth/auth.service';
 import { User } from '@shared/models/user.model';
 import { MatDialog } from '@angular/material/dialog';
@@ -25,9 +25,9 @@ export class NavDrawerComponent implements OnInit {
     this.authService.logout();
   }
 
-  /*
+  /**
    * Open settings dialog
-   * */
+   */
   openSettingsDialog() {
     this.closeDrawer.emit();
     this.dialog.open(SettingsDialogComponent, {

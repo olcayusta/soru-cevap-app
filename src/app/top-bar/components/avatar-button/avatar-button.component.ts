@@ -15,10 +15,7 @@ export class AvatarButtonComponent implements OnInit {
   blockScrollStrategy: ScrollStrategy;
   popupOpened = false;
 
-  constructor(
-    private sso: ScrollStrategyOptions,
-    private authService: AuthService
-  ) {
+  constructor(private sso: ScrollStrategyOptions, private authService: AuthService) {
     this.blockScrollStrategy = this.sso.block();
   }
 
