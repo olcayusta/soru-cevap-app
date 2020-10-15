@@ -8,11 +8,6 @@ import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [FavoritesComponent],
-  imports: [
-    CommonModule,
-    FavoritesRoutingModule,
-    MatButtonModule,
-    MatIconModule,
-  ],
+  imports: [CommonModule, FavoritesRoutingModule, MatButtonModule, MatIconModule]
 })
 export class FavoritesModule {}

@@ -7,14 +7,12 @@ import { AuthService } from './auth.service';
   providedIn: 'root'
 })
 export class AuthGuard implements CanLoad {
+  constructor(private authService: AuthService, private router: Router) {}
 
-  constructor(
-    private authService: AuthService,
-    private router: Router
-  ) {
-  }
-
-  canLoad(route: Route, segments: UrlSegment[]): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+  canLoad(
+    route: Route,
+    segments: UrlSegment[]
+  ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     const url: string = segments[0].path;
 
     if (this.authService.userValue) {
@@ -29,5 +27,4 @@ export class AuthGuard implements CanLoad {
 
     // return !!this.authService.userValue;
   }
-
 }

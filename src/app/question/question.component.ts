@@ -1,9 +1,4 @@
-import {
-  Component,
-  OnInit,
-  ChangeDetectionStrategy,
-  ɵmarkDirty as markDirty,
-} from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, ɵmarkDirty as markDirty } from '@angular/core';
 import { Question } from '@shared/models/question.model';
 import { ActivatedRoute } from '@angular/router';
 import { AnswerService } from '@shared/services/answer.service';
@@ -17,11 +12,16 @@ import { MatDialog } from '@angular/material/dialog';
 import { ShareDialogComponent } from '../shared/components/share-dialog/share-dialog.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
+interface ResolveData {
+  title: string;
+  question: Question;
+}
+
 @Component({
   selector: 'app-question',
   templateUrl: './question.component.html',
   styleUrls: ['./question.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class QuestionComponent implements OnInit {
   question$: Observable<Question>;
@@ -38,8 +38,7 @@ export class QuestionComponent implements OnInit {
 
   ngOnInit(): void {
     this.question$ = this.route.data.pipe(
-      map((value) => {
-        const question: Question = value.question;
+      map(({ question, title }: ResolveData) => {
         this.title.setTitle(`${question.title} - ${environment.appTitle}`);
         return question;
       })
@@ -59,7 +58,7 @@ export class QuestionComponent implements OnInit {
   openDialog() {
     const dialog = this.dialog.open(ShareDialogComponent, {
       autoFocus: false,
-      minWidth: 512,
+      minWidth: 512
     });
     dialog.afterClosed().subscribe((value) => {
       console.log(value);

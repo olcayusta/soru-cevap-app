@@ -28,16 +28,13 @@ export class ChipsAutocompleteComponent implements OnInit {
   @ViewChild('fruitInput') fruitInput: ElementRef<HTMLInputElement>;
   @ViewChild('auto') matAutocomplete: MatAutocomplete;
 
-  constructor(
-    private tagService: TagService
-  ) {
-  }
+  constructor(private tagService: TagService) {}
 
   ngOnInit(): void {
     this.filteredFruits = this.fruitCtrl.valueChanges.pipe(
       debounceTime(200),
       distinctUntilChanged(),
-      switchMap(value => this.tagService.searchTag(value))
+      switchMap((value) => this.tagService.searchTag(value))
     );
   }
 
@@ -48,7 +45,6 @@ export class ChipsAutocompleteComponent implements OnInit {
     // Add our fruit
     if ((value || '').trim()) {
       this.fruits.push(value.trim());
-
     }
 
     // Reset the input value
@@ -76,5 +72,4 @@ export class ChipsAutocompleteComponent implements OnInit {
     this.tags.push(tag.id);
     console.log(this.tags);
   }
-
 }

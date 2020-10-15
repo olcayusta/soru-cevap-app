@@ -59,6 +59,10 @@ const routes: Routes = [
       {
         path: 'favorites',
         loadChildren: async () => (await import('./favorites/favorites.module')).FavoritesModule
+      },
+      {
+        path: 'help',
+        loadChildren: async () => (await import('./help/help.module')).HelpModule
       }
     ]
   },

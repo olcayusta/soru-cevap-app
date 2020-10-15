@@ -37,7 +37,7 @@
   <span class="toolbar-title">web.dev</span>
 </mat-toolbar>-->
 
-<div class="overflow-container" cdkScrollable>
+<div class="overflow-container scroller" cdkScrollable>
   <mat-nav-list>
     <a mat-list-item routerLinkActive="active" routerLink="/" [routerLinkActiveOptions]="{exact: true}">
       <mat-icon fontSet="material-icons-outlined">home</mat-icon>
@@ -70,13 +70,13 @@
       <mat-icon fontSet="material-icons-outlined">settings</mat-icon>
       <span>Hesap & ayarlar</span>
     </a>
-    <a mat-list-item routerLinkActive="active" routerLink="/feedback">
-      <mat-icon fontSet="material-icons-outlined">feedback</mat-icon>
-      <span>Geri bildirim gönder</span>
-    </a>
     <a mat-list-item routerLinkActive="active" routerLink="/help">
       <mat-icon fontSet="material-icons-outlined">help_outline</mat-icon>
       <span>Yardım</span>
+    </a>
+    <a mat-list-item routerLinkActive="active" routerLink="/feedback">
+      <mat-icon fontSet="material-icons-outlined">feedback</mat-icon>
+      <span>Geri bildirim gönder</span>
     </a>
   </mat-nav-list>
   <!--

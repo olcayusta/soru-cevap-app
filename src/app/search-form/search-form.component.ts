@@ -17,15 +17,11 @@ export class SearchFormComponent implements OnInit {
   myControl = new FormControl();
   filteredQuestions: Observable<SearchResultI[]>;
 
-  constructor(
-    private searhService: SearchService,
-    private router: Router
-  ) {
-  }
+  constructor(private searhService: SearchService, private router: Router) {}
 
   ngOnInit(): void {
     this.filteredQuestions = this.myControl.valueChanges.pipe(
-      filter(value => value.length > 0),
+      filter((value) => value.length > 0),
       debounceTime(400),
       distinctUntilChanged(),
       switchMap((term: string) => this.searhService.searchQuestion(term))

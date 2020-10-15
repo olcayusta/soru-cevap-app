@@ -8,7 +8,10 @@ const routes: Routes = [
   {
     path: '',
     resolve: { question: QuestionResolverService },
-    component: QuestionComponent
+    component: QuestionComponent,
+    data: {
+      title: 'Spider-Man'
+    }
   }
 ];
 

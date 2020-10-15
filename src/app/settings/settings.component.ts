@@ -10,11 +10,11 @@ import { Observable } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SettingsComponent implements OnInit {
-  user: Observable<User>;
+  user$: Observable<User>;
 
   constructor(private settingsService: SettingsService) {}
 
   ngOnInit(): void {
-    this.user = this.settingsService.getAccount();
+    this.user$ = this.settingsService.getAccount();
   }
 }

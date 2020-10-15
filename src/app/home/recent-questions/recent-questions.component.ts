@@ -1,10 +1,10 @@
-import {Component, OnInit, ChangeDetectionStrategy, ɵmarkDirty as markDirty, OnDestroy} from '@angular/core';
-import {QuestionService} from '@shared/services/question.service';
-import {Question} from '@shared/models/question.model';
-import {ActivatedRoute} from '@angular/router';
-import {FilterService} from '@shared/services/filter.service';
-import {Observable, Subscription} from 'rxjs';
-import {switchMap} from 'rxjs/operators';
+import { Component, OnInit, ChangeDetectionStrategy, ɵmarkDirty as markDirty, OnDestroy } from '@angular/core';
+import { QuestionService } from '@shared/services/question.service';
+import { Question } from '@shared/models/question.model';
+import { ActivatedRoute } from '@angular/router';
+import { FilterService } from '@shared/services/filter.service';
+import { Observable, Subscription } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-recent-questions',
@@ -20,20 +20,15 @@ export class RecentQuestionsComponent implements OnInit, OnDestroy {
 
   subscription: Subscription;
 
-  constructor(
-    private questionService: QuestionService,
-    private filterService: FilterService,
-    private route: ActivatedRoute
-  ) {
-  }
+  constructor(private questionService: QuestionService, private filterService: FilterService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.subscription = this.route.queryParamMap.pipe(
-      switchMap(value => this.filterService.getQuestionsByFiltered(value.get('sort'))),
-    ).subscribe(value => {
-      this.questions = value;
-      markDirty(this);
-    });
+    this.subscription = this.route.queryParamMap
+      .pipe(switchMap((value) => this.filterService.getQuestionsByFiltered(value.get('sort'))))
+      .subscribe((value) => {
+        this.questions = value;
+        markDirty(this);
+      });
   }
 
   ngOnDestroy(): void {
@@ -44,13 +39,12 @@ export class RecentQuestionsComponent implements OnInit, OnDestroy {
 
   loadMore(): void {
     setTimeout(() => {
-      this.questionService.getMoreQuestions(this.offset).subscribe(value => {
+      this.questionService.getMoreQuestions(this.offset).subscribe((value) => {
         if (value.length > 0) {
           this.offset += 6;
           this.questions = [...this.questions, ...value];
           markDirty(this);
         } else {
-
         }
       });
     }, 400);

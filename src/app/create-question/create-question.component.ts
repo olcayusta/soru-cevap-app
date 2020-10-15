@@ -19,11 +19,7 @@ export class CreateQuestionComponent implements OnInit {
 
   @ViewChild(ChipsAutocompleteComponent) chipComponent: ChipsAutocompleteComponent;
 
-  constructor(
-    private fb: FormBuilder,
-    private domSanitizer: DomSanitizer,
-    private questionService: QuestionService
-  ) {
+  constructor(private fb: FormBuilder, private domSanitizer: DomSanitizer, private questionService: QuestionService) {
     this.form = fb.group({
       title: ['', [Validators.required]],
       description: ['', [Validators.required]]
@@ -31,16 +27,16 @@ export class CreateQuestionComponent implements OnInit {
   }
 
   submit(): void {
-    const {title, description} = this.form.value;
+    const { title, description } = this.form.value;
     const tags = this.chipComponent.tags;
-    this.questionService.saveQuestion(title, description, description, tags).subscribe(value => {
+    this.questionService.saveQuestion(title, description, description, tags).subscribe((value) => {
       console.log(value);
     });
   }
 
   ngOnInit(): void {
     document.querySelector('meta[name=theme-color]').setAttribute('content', '#6200EE');
-    this.form.get('description').valueChanges.subscribe(value => {
+    this.form.get('description').valueChanges.subscribe((value) => {
       this.worker.postMessage(value);
     });
   }
@@ -50,8 +46,8 @@ export class CreateQuestionComponent implements OnInit {
   }
 
   onFocus(): void {
-    this.worker = new Worker('../marked.worker', {type: 'module', name: 'marked'});
-    this.worker.onmessage = ({data}) => {
+    this.worker = new Worker('../marked.worker', { type: 'module', name: 'marked' });
+    this.worker.onmessage = ({ data }) => {
       this.description = this.domSanitizer.bypassSecurityTrustHtml(data);
       markDirty(this);
     };

@@ -2,7 +2,30 @@
 
 html, body {
   height: 100%;
+  scrollbar-width: thin;
+
 }
+
+.overflow-container {
+  scrollbar-width: thin;
+}
+
+/*::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #eee;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.24);
+  border-right: 1px solid #fff;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.38);
+}*/
 
 body {
   margin: 0;
@@ -12,6 +35,27 @@ body {
   text-rendering: optimizeSpeed;
   background-color: var(--surface);
   color: var(--color);
+
+
+  //-webkit-text-size-adjust:100%;
+  //-ms-text-size-adjust:100%;
+  //-webkit-overflow-scrolling:touch;
+  //scroll-behavior:smooth;
+  //font-kerning:normal;
+  //-webkit-font-kerning:normal;
+  //-ms-font-kerning:normal;
+  //-moz-font-kerning:normal;
+  //-o-font-kerning:normal;
+  //font-variant-ligatures:contextual common-ligatures;
+  //-webkit-font-variant-ligatures:contextual common-ligatures;
+  //-ms-font-variant-ligatures:contextual common-ligatures;
+  //-moz-font-variant-ligatures:contextual common-ligatures;
+  //-o-font-variant-ligatures:contextual common-ligatures;
+  //font-feature-settings:'kern' 1, 'liga' 1, 'calt' 1;
+  //font:15px/22px 'Inter', system-ui, sans-serif;
+  //font-smoothing:antialiased;
+  //-webkit-font-smoothing:antialiased;
+  //position:relative
 }
 
 mat-sidenav {

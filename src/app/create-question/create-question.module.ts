@@ -16,11 +16,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { IconModule } from '../shared/icon/icon.module';
 
 @NgModule({
-  declarations: [
-    CreateQuestionComponent,
-    ChipsAutocompleteComponent,
-    QuestionDescriptionComponent
-  ],
+  declarations: [CreateQuestionComponent, ChipsAutocompleteComponent, QuestionDescriptionComponent],
   imports: [
     CommonModule,
     CreateQuestionRoutingModule,
@@ -35,5 +31,4 @@ import { IconModule } from '../shared/icon/icon.module';
     IconModule
   ]
 })
-export class CreateQuestionModule {
-}
+export class CreateQuestionModule {}

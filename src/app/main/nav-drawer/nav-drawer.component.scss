@@ -96,7 +96,7 @@ p {
 }*/
 
 // Fix menu and select panel overflow scroll bar
-::ng-deep .mat-select-panel::-webkit-scrollbar {
+/*::ng-deep .mat-select-panel::-webkit-scrollbar {
   width: 12px;
 }
 
@@ -107,7 +107,7 @@ p {
 
 ::ng-deep .mat-select-panel::-webkit-scrollbar-track {
   // border-radius: 10px;
-}
+}*/
 
 .menu-icon {
   margin-left: -8px;
@@ -118,27 +118,27 @@ p {
  */
 
 /* width */
-::ng-deep .overflow-container::-webkit-scrollbar {
-  width: 10px;
-  display: none;
-}
-
-.overflow-container:hover::-webkit-scrollbar {
-  display: block;
-}
-
-/* Track */
-::ng-deep .overflow-container::-webkit-scrollbar-track {
-  // background: #121212;
-  // border-left: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-/* Handle */
-::ng-deep .overflow-container::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.24);
-  border-left: 1px solid rgba(0, 0, 0, .12);
-  // border-radius: 24px;
-}
+//::ng-deep .overflow-container::-webkit-scrollbar {
+//  width: 10px;
+//  display: none;
+//}
+//
+//.overflow-container:hover::-webkit-scrollbar {
+//  display: block;
+//}
+//
+///* Track */
+//::ng-deep .overflow-container::-webkit-scrollbar-track {
+//  // background: #121212;
+//  // border-left: 1px solid rgba(255, 255, 255, 0.12);
+//}
+//
+///* Handle */
+//::ng-deep .overflow-container::-webkit-scrollbar-thumb {
+//  background: rgba(0, 0, 0, 0.24);
+//  border-left: 1px solid rgba(0, 0, 0, .12);
+//  // border-radius: 24px;
+//}
 
 /* Handle on hover */
 ::ng-deep .overflow-container::-webkit-scrollbar-thumb:hover {
