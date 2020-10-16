@@ -17,6 +17,7 @@ button[aria-expanded=true] {
 }
 
 mat-icon {
+  margin-right: -4px;
   color: #6200EE;
 }
 
@@ -25,6 +26,11 @@ mat-icon {
   line-height: 20px;
   margin-right: 8px;
   white-space: nowrap;
+}
+
+.count {
+  color: var(--medium-emphasis-color);
+  margin-left: 4px;
 }
 
 .outlined-menu-button {
@@ -52,7 +58,7 @@ mat-checkbox {
   height: 32px;
   line-height: 32px;
   padding-left: 8px;
-  padding-right: 8px;
+  padding-right: 16px;
 }
 
 .checkbox-item {

@@ -25,8 +25,8 @@ export class SortByComponent implements OnInit, AfterViewInit {
 
   items = [
     { sort: '', label: 'En yeni' },
-    { sort: 'popularity', label: 'Son aktivite tarihi' },
-    { sort: 'date', label: 'Most votes' },
+    { sort: 'activity', label: 'Son aktivite tarihi' },
+    { sort: 'popularity', label: 'Most votes' },
     { sort: 'date', label: 'Most frequent' },
     { sort: 'activity', label: 'Bounty ending soon' }
   ];

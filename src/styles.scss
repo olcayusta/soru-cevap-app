@@ -1,7 +1,39 @@
 @import "reset";
 
+@import 'node_modules/@angular/material/theming';
+
+@include mat-core();
+
+/*
+  Apple
+*/
+/*::-webkit-scrollbar {
+  width: 12px;
+  height: 18px;
+}
+
+::-webkit-scrollbar-button {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  height: 6px;
+  border: 4px solid transparent;
+  background-clip: padding-box;
+  -webkit-border-radius: 100px;
+  background-color: gray;
+  -webkit-box-shadow: inset -1px -1px 0 rgba(0,0,0,.05), inset 1px 1px 0 rgba(0,0,0,.05);
+}*/
+
 html, body {
   height: 100%;
+  // scrollbar-color: rgba(0, 0, 0, .24) #eee;
   scrollbar-width: thin;
 
 }
@@ -10,12 +42,29 @@ html, body {
   scrollbar-width: thin;
 }
 
+.overflow-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.overflow-container::-webkit-scrollbar-track {
+  background: #e8eae7
+}
+
+.overflow-container::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.24);
+  border-right: 1px solid #fff;
+}
+
+.overflow-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.38);
+}
+
 /*::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #eee;
+  background: #e8eae7
 }
 
 ::-webkit-scrollbar-thumb {

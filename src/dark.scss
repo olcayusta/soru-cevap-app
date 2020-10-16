@@ -1,8 +1,5 @@
 @import 'node_modules/@angular/material/theming';
-
 @import "scrollbar";
-
-@include mat-core();
 
 $mat-deep-purple: (
   50: #F2E7FE,

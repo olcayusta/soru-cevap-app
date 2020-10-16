@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, ɵmarkDirty as markDirty } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
@@ -7,7 +7,6 @@ import { environment } from '@environments/environment';
 import { TagService } from '../../shared/services/tag.service';
 import { catchError } from 'rxjs/operators';
 import { EMPTY } from 'rxjs';
-import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-login',
@@ -27,8 +26,7 @@ export class LoginComponent implements OnInit {
     private authService: AuthService,
     private tagService: TagService,
     private router: Router,
-    private title: Title,
-    private snackBar: MatSnackBar
+    private title: Title
   ) {
     this.form = fb.group({
       email: ['yonca2@mail.com', [Validators.required, Validators.email]],
@@ -49,7 +47,11 @@ export class LoginComponent implements OnInit {
         .login(email, password)
         .pipe(
           catchError((err, caught) => {
-            this.snackBar.open('Beklenmedik bir sorun yasandi!', 'RETRY');
+            this.form.get('email').setErrors({
+              emailNotFound: true
+            });
+            markDirty(this);
+            this.submitted = false;
             return EMPTY;
           })
         )

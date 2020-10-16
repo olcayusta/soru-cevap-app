@@ -35,4 +35,8 @@ export class NavDrawerComponent implements OnInit {
       autoFocus: false
     });
   }
+
+  onClicked() {
+    this.closeDrawer.emit();
+  }
 }

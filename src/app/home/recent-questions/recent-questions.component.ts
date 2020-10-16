@@ -24,7 +24,7 @@ export class RecentQuestionsComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.subscription = this.route.queryParamMap
-      .pipe(switchMap((value) => this.filterService.getQuestionsByFiltered(value.get('sort'))))
+      .pipe(switchMap((value) => this.filterService.getQuestionsByFiltered(value.get('sort'), value.get('filter'))))
       .subscribe((value) => {
         this.questions = value;
         markDirty(this);

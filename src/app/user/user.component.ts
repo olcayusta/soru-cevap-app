@@ -4,11 +4,15 @@ import { ActivatedRoute } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 import { environment } from '@environments/environment';
 
+interface ResolveData {
+  user: User;
+}
+
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class UserComponent implements OnInit {
   user: User;
@@ -16,24 +20,24 @@ export class UserComponent implements OnInit {
   links = [
     {
       path: '/',
-      label: 'ANA SAYFA',
+      label: 'ANA SAYFA'
     },
     {
       path: '/questions',
-      label: 'SORULAR',
+      label: 'SORULAR'
     },
     {
       path: '/answers',
-      label: 'CEVAPLAR',
+      label: 'CEVAPLAR'
     },
     {
       path: '/tags',
-      label: 'ETİKETLER',
+      label: 'ETİKETLER'
     },
     {
       path: '/tags',
-      label: 'BOOKMARKS',
-    },
+      label: 'BOOKMARKS'
+    }
   ];
 
   // activeLink = this.links[0];
@@ -41,7 +45,8 @@ export class UserComponent implements OnInit {
   constructor(private route: ActivatedRoute, private title: Title) {}
 
   ngOnInit(): void {
-    this.user = this.route.snapshot.data.user;
-    this.title.setTitle(`${this.user.displayName} - ${environment.appTitle}`);
+    const { user } = this.route.snapshot.data as ResolveData;
+    this.user = user;
+    this.title.setTitle(`${user.displayName} - ${environment.appTitle}`);
   }
 }

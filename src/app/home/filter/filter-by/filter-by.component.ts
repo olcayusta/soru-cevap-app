@@ -1,5 +1,7 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { MatMenu, MatMenuItem } from '@angular/material/menu';
+import { MatCheckboxChange } from '@angular/material/checkbox';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-filter-by',
@@ -12,25 +14,26 @@ export class FilterByComponent implements OnInit {
 
   items = [
     {
-      sort: 'a',
-      label: 'No answers',
-      checked: true
+      filter: 'a',
+      label: 'Cevap yok',
+      checked: false
     },
     {
-      sort: 'b',
-      label: 'No accepted answer',
-      checked: true
+      filter: 'b',
+      label: 'Kabul edilebilir cevap yok',
+      checked: false
     },
     {
-      sort: 'c',
-      label: 'Has bounty',
+      filter: 'c',
+      label: 'Ödül var',
       checked: false
     }
   ];
 
   selectedItemIndex = 0;
+  checkedLength;
 
-  constructor(public cdr: ChangeDetectorRef) {}
+  constructor(public cdr: ChangeDetectorRef, private router: Router) {}
 
   ngOnInit(): void {}
 
@@ -44,5 +47,27 @@ export class FilterByComponent implements OnInit {
   checkboxClicked($event: MouseEvent, index: number) {
     $event.stopPropagation();
     this.selectedItemIndex = index;
+
+    const arrayOfValues = ['a', 'b', 'c', 'd'];
+
+    const js = JSON.stringify(arrayOfValues);
+    console.log(js);
+    console.log(JSON.parse(js));
+
+    this.router.navigate(['/'], {
+      queryParams: {
+        filter: ['a', 'b', 'c']
+      },
+      queryParamsHandling: 'merge'
+    });
+  }
+
+  checkboxChange($event: MatCheckboxChange, index: number) {
+    console.log($event.checked);
+    this.items[index].checked = $event.checked;
+
+    this.checkedLength = this.items.filter((value) => {
+      return value.checked;
+    }).length;
   }
 }

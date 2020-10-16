@@ -35,7 +35,16 @@ import { DOCUMENT } from '@angular/common';
       transition('* => void', animate('100ms 25ms linear', style({ opacity: 0 })))
     ]),
     trigger('myInsertRemoveTrigger', [
-      transition(':enter', [style({ opacity: 0, height: '0px' }), animate('100ms', style({ opacity: 1, height: '4px' }))]),
+      transition(':enter', [
+        style({ opacity: 0, height: '0px' }),
+        animate(
+          '100ms',
+          style({
+            opacity: 1,
+            height: '4px'
+          })
+        )
+      ]),
       transition(':leave', [animate('100ms', style({ opacity: 0, height: '0px' }))])
     ])
   ]

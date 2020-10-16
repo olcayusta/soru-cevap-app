@@ -9,18 +9,13 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class UserListResolverService implements Resolve<User[]> {
-
-  constructor(
-    private userService: UserService
-  ) {
-  }
+  constructor(private userService: UserService) {}
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<User[]> | Promise<User[]> | User[] {
-    return this.userService.getAllUsers()
-      .pipe(
-        catchError(err => {
-          return EMPTY;
-        })
-      )
+    return this.userService.getAllUsers().pipe(
+      catchError((err) => {
+        return EMPTY;
+      })
+    );
   }
 }

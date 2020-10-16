@@ -1,4 +1,10 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { User } from '../../shared/models/user.model';
+import { ActivatedRoute } from '@angular/router';
+
+interface ResolveData {
+  users: User[];
+}
 
 @Component({
   selector: 'app-user-list',
@@ -7,11 +13,12 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class UserListComponent implements OnInit {
+  users: User[];
 
-  constructor() {
-  }
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
+    const { users } = this.route.snapshot.data as ResolveData;
+    this.users = users;
   }
-
 }

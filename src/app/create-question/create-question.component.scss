@@ -12,6 +12,10 @@ mat-toolbar {
   background-color: var(--topbar-background);
 }
 
+mat-icon {
+  color: var(--icon-color);
+}
+
 .fixed {
   position: fixed;
   top: 0;
@@ -65,3 +69,20 @@ mat-form-field {
 
 .description-preview {
 }
+
+/*textarea::-webkit-scrollbar {
+  width: 8px;
+}
+
+textarea::-webkit-scrollbar-track {
+  background: #e8eae7
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.24);
+  border-right: 1px solid #fff;
+}
+
+textarea::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.38);
+}*/

@@ -1,8 +1,6 @@
 @import 'node_modules/@angular/material/theming';
 /*@import "scrollbar";*/
 
-@include mat-core();
-
 $mat-deep-purple: (
   50: #F2E7FE,
   100: #DBB2FF,
@@ -140,7 +138,7 @@ $custom-typography: mat-typography-config(
 );
 
 // Override typography for all Angular Material, including mat-base-typography and all components.
-@include angular-material-typography($custom-typography);
+// @include angular-material-typography($custom-typography);
 
 :root {
   --color: rgba(0, 0, 0, .87);

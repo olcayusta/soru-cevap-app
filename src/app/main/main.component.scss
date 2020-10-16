@@ -41,14 +41,13 @@ main {
   }
 }
 
-.fixed-chip {
+.content-update-chip {
   position: fixed;
-  left: 0;
-  right: 0;
-  top: 64px;
+  left: 50%;
+  top: 64px + 24;
   display: flex;
   justify-content: center;
-  margin: 16px 0;
+  transform: translate3d(-50%, 0, 0);
 }
 
 @media (prefers-color-scheme: light) {
