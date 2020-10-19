@@ -35,7 +35,7 @@ export class SearchFormComponent implements OnInit {
   }*/
 
   displayFn(value: any): string {
-    return value.title || value.displayName || value.title;
+    return value ? value.title || value.displayName || value.title : null;
   }
 
   selectedOption($event: MatAutocompleteSelectedEvent): void {
