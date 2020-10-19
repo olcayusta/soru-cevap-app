@@ -11,7 +11,7 @@ a {
   letter-spacing: 1.25px;
 }
 
-#start {
+#left-content {
   display: flex;
   align-items: center;
 }
@@ -34,10 +34,10 @@ sup {
   padding-right: 12px;
 }
 
-#center {
+#center-content {
 }
 
-#end {
+#right-content {
   display: flex;
   align-items: center;
   justify-content: flex-end;
