@@ -9,10 +9,9 @@ const THRESHOLD = 56;
   selector: '[idSticky]'
 })
 export class StickyDirective {
-
   constructor(
     private renderer: Renderer2,
-    {nativeElement}: ElementRef<HTMLElement>,
+    { nativeElement }: ElementRef<HTMLElement>,
     private breakpointObserver: BreakpointObserver
   ) {
     const isSmallScreen = breakpointObserver.isMatched('(max-width: 599px)');
@@ -24,13 +23,12 @@ export class StickyDirective {
           pairwise(),
           map(([prev, next]) => next < THRESHOLD || prev > next),
           distinctUntilChanged(),
-          startWith(true),
+          startWith(true)
         )
-        .subscribe(stuck => {
+        .subscribe((stuck) => {
           // @ts-ignore
           renderer.setAttribute(nativeElement, 'data-stuck', stuck);
         });
     }
   }
-
 }
