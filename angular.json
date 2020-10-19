@@ -80,7 +80,9 @@
                 }
               ],
               "progress": true,
-              "optimization": true,
+              "optimization": {
+                "fonts": false
+              },
               "outputHashing": "all",
               "sourceMap": false,
               "extractCss": true,
