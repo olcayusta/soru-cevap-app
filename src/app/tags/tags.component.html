@@ -2,8 +2,7 @@
   <h4 class="headline-4">Etiketler</h4>
   <p class="page-description">Our latest news, updates, and stories for developers</p>
 </header>
-<div class="items">
+
+<app-tag-list>
   <app-tag-list-item *ngFor="let tag of tags" [tag]="tag"></app-tag-list-item>
-</div>
-
-
+</app-tag-list>

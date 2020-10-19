@@ -6,10 +6,3 @@ header {
   text-align: center;
   margin: 64px 0;
 }
-
-.items {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 24px;
-}
-

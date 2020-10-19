@@ -7,11 +7,13 @@ import { MatCardModule } from '@angular/material/card';
 import { TagListItemComponent } from './tag-list-item/tag-list-item.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { TagListComponent } from './tag-list/tag-list.component';
 
 @NgModule({
   declarations: [
     TagsComponent,
-    TagListItemComponent
+    TagListItemComponent,
+    TagListComponent
   ],
   imports: [
     CommonModule,
