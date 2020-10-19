@@ -32,21 +32,20 @@ import { MatMenuModule } from '@angular/material/menu';
     QuestionAnswerItemComponent,
     QuestionAnswerItemContentComponent
   ],
-    imports: [
-        CommonModule,
-        QuestionRoutingModule,
-        MatInputModule,
-        MatButtonModule,
-        ReactiveFormsModule,
-        FormsModule,
-        MatDividerModule,
-        SharedModule,
-        IconModule,
-        MatTooltipModule,
-        ClipboardModule,
-        MatIconModule,
-        MatMenuModule
-    ]
+  imports: [
+    CommonModule,
+    QuestionRoutingModule,
+    MatInputModule,
+    MatButtonModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatDividerModule,
+    SharedModule,
+    IconModule,
+    MatTooltipModule,
+    ClipboardModule,
+    MatIconModule,
+    MatMenuModule
+  ]
 })
-export class QuestionModule {
-}
+export class QuestionModule {}
