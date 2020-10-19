@@ -12,10 +12,7 @@ import { Observable } from 'rxjs';
 export class NotificationListPopupComponent implements OnInit {
   notifications$: Observable<Notification[]>;
 
-  constructor(
-    private notificationService: NotificationService
-  ) {
-  }
+  constructor(private notificationService: NotificationService) {}
 
   ngOnInit(): void {
     this.notifications$ = this.notificationService.getNotifications();

@@ -122,8 +122,37 @@ mat-chip {
 }
 
 /*
+  Test...
+*/
+.page-title {
+  text-align: center;
+}
+
+.page-description {
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--medium-emphasis-color);
+  margin: 0;
+}
+
+/*
   Hgroups
 */
+.headline-2 {
+  font-size: 60px;
+  font-weight: 300;
+  line-height: 72px;
+  letter-spacing: -0.5px;
+  margin: 0;
+}
+
+.headline-3 {
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 56px;
+  margin: 0;
+}
+
 .headline-4 {
   font-size: 34px;
   font-weight: 400;

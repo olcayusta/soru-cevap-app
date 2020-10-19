@@ -52,9 +52,6 @@ export class AuthService {
     return throwError('Something bad happened; please try again later.');
   }
 
-  /**
-   * Kullaniciyi dondur.
-   */
   public get userValue(): User {
     return this.userSubject.value;
   }
