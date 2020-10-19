@@ -41,6 +41,10 @@ sup {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+
+  button {
+    margin-right: 8px;
+  }
 }
 
 .toolbar-profile-container {
@@ -50,7 +54,7 @@ sup {
 }
 
 #end button:not(:last-child) {
-  margin-right: 8px;
+  // margin-right: 8px;
 }
 
 mat-toolbar {
