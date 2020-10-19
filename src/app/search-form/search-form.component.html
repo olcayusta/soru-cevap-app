@@ -4,6 +4,7 @@
     </button>-->
   <mat-icon fontSet="material-icons-outlined">search</mat-icon>
   <input aria-label="Ara" autocomplete="off" spellcheck="false" placeholder="Ara" [formControl]="myControl"
+         #autoCompleteInput
          (focusin)="origin.elementRef.nativeElement.style.width = '684px'"
          [matAutocomplete]="auto" [matAutocompleteConnectedTo]="origin">
 </div>
@@ -35,7 +36,8 @@
   </ng-container>
 
   <div class="autocomplete-action-row">
-    <a mat-button color="primary" routerLink="/search/{{myControl.value}}">"{{myControl.value}}" İÇİN TÜM SONUÇLARI
-      GÖSTER</a>
+    <a mat-button color="primary" routerLink="/search/{{myControl.value}}" (click)="closeAutocomplete()">
+      "{{myControl.value}}" İÇİN TÜM SONUÇLARI GÖSTER
+    </a>
   </div>
 </mat-autocomplete>
