@@ -6,11 +6,13 @@
   display: flex;
   align-items: center;
   width: 684px;
-  height: 44px;
+  height: 48px;
   background-color: var(--search-background);
-  padding-left: 16px;
+  padding-left: 12px;
   // border-radius: 8px;
   // border-radius: 8px;
+  background-color: #f1f3f4;
+  padding-right: 16px;
 }
 
 input {
@@ -31,7 +33,7 @@ mat-icon {
 }
 
 ::placeholder {
-  color: var(--medium-emphasis-color);
+  // color: var(--medium-emphasis-color);
 }
 
 ::ng-deep .my-autocomplete {

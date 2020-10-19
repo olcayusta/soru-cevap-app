@@ -1,7 +1,16 @@
 <header class="header">
-  <img class="user-avatar" src="{{user.picture}}" alt="{{user.displayName}}">
-  <h1 class="mat-h1 display-name">{{user.displayName}}</h1>
-  <p>{{user.signupDate | date}}</p>
+
+  <div class="header-user">
+    <img class="user-avatar" src="{{user.picture}}" alt="{{user.displayName}}">
+    <h1 class="mat-h1 display-name">{{user.displayName}}</h1>
+  </div>
+
+
+ <!-- <div>
+    <a href="https://github.com/{{user.githubUrl}}">
+      <img src="https://webdev.imgix.net/images/icons/github.svg" alt="">
+    </a>
+  </div>-->
 </header>
 
 <nav mat-tab-nav-bar>

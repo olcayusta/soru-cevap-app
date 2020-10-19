@@ -18,6 +18,13 @@
 
   <div id="end">
     <ng-container *ngIf="isLoggedIn$ | async; else signIn">
+
+<!--      <div class="filter-bracket">
+        <button mat-icon-button matTooltip="Filtrele" (click)="openSheet.emit()">
+          <mat-icon fontSet="material-icons-outlined">filter_list</mat-icon>
+        </button>
+      </div>-->
+
       <button mat-icon-button routerLink="/create" matTooltip="Oluştur">
         <mat-icon fontSet="material-icons-outlined">add</mat-icon>
       </button>

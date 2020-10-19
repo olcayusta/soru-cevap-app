@@ -4,10 +4,9 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://192.168.1.2:9001',
+  apiUrl: 'http://localhost:9001',
   appTitle: 'Qa App',
-  vapidPublic:
-    'BBuui5T3pIWV_ZyyZel8ynOQLlJO5juM6knPoBzg9shZjkmcqaFm0okyCbWOw2pxSSdEo2p9kiSQYn0V8A-GOjE'
+  vapidPublic: 'BBuui5T3pIWV_ZyyZel8ynOQLlJO5juM6knPoBzg9shZjkmcqaFm0okyCbWOw2pxSSdEo2p9kiSQYn0V8A-GOjE'
 };
 
 /*

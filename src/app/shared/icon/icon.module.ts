@@ -1,20 +1,18 @@
-import {NgModule} from '@angular/core';
-import {NotificationsIconComponent} from './notifications-icon/notifications-icon.component';
-import {MenuIconComponent} from './menu-icon/menu-icon.component';
-import {ChatIconComponent} from './chat-icon/chat-icon.component';
-import {HomeIconComponent} from './home-icon/home-icon.component';
-import {CreateIconComponent} from './create-icon/create-icon.component';
-import {SettingsIconComponent} from './settings-icon/settings-icon.component';
-import {HelpIconComponent} from './help-icon/help-icon.component';
-import {FeedbackIconComponent} from './feedback-icon/feedback-icon.component';
-import {QuestionAnswerIconComponent} from './question-answer-icon/question-answer-icon.component';
-import {ExitToAppIconComponent} from './exit-to-app-icon/exit-to-app-icon.component';
-import {SearchIconComponent} from './search-icon/search-icon.component';
-import {MoreVertIconComponent} from './more-vert-icon/more-vert-icon.component';
-import {VisibilityIconComponent} from './visibility-icon/visibility-icon.component';
-import {VisibilityOffIconComponent} from './visibility-off-icon/visibility-off-icon.component';
-import {FormatBoldIconComponent} from './format-bold-icon/format-bold-icon.component';
-import {CancelIconComponent} from './cancel-icon/cancel-icon.component';
+import { NgModule } from '@angular/core';
+import { NotificationsIconComponent } from './notifications-icon/notifications-icon.component';
+import { ChatIconComponent } from './chat-icon/chat-icon.component';
+import { HomeIconComponent } from './home-icon/home-icon.component';
+import { CreateIconComponent } from './create-icon/create-icon.component';
+import { SettingsIconComponent } from './settings-icon/settings-icon.component';
+import { HelpIconComponent } from './help-icon/help-icon.component';
+import { FeedbackIconComponent } from './feedback-icon/feedback-icon.component';
+import { QuestionAnswerIconComponent } from './question-answer-icon/question-answer-icon.component';
+import { SearchIconComponent } from './search-icon/search-icon.component';
+import { MoreVertIconComponent } from './more-vert-icon/more-vert-icon.component';
+import { VisibilityIconComponent } from './visibility-icon/visibility-icon.component';
+import { VisibilityOffIconComponent } from './visibility-off-icon/visibility-off-icon.component';
+import { FormatBoldIconComponent } from './format-bold-icon/format-bold-icon.component';
+import { CancelIconComponent } from './cancel-icon/cancel-icon.component';
 import { AddIconComponent } from './add-icon/add-icon.component';
 import { RateReviewIconComponent } from './rate-review-icon/rate-review-icon.component';
 import { FilterListIconComponent } from './filter-list-icon/filter-list-icon.component';
@@ -32,7 +30,6 @@ import { GroupIconComponent } from './group-icon/group-icon.component';
 @NgModule({
   declarations: [
     NotificationsIconComponent,
-    MenuIconComponent,
     ChatIconComponent,
     HomeIconComponent,
     CreateIconComponent,
@@ -40,7 +37,6 @@ import { GroupIconComponent } from './group-icon/group-icon.component';
     HelpIconComponent,
     FeedbackIconComponent,
     QuestionAnswerIconComponent,
-    ExitToAppIconComponent,
     SearchIconComponent,
     MoreVertIconComponent,
     VisibilityIconComponent,
@@ -65,13 +61,11 @@ import { GroupIconComponent } from './group-icon/group-icon.component';
     NotificationsIconComponent,
     ChatIconComponent,
     HomeIconComponent,
-    MenuIconComponent,
     CreateIconComponent,
     SettingsIconComponent,
     HelpIconComponent,
     FeedbackIconComponent,
     QuestionAnswerIconComponent,
-    ExitToAppIconComponent,
     SearchIconComponent,
     MoreVertIconComponent,
     VisibilityIconComponent,
@@ -90,5 +84,4 @@ import { GroupIconComponent } from './group-icon/group-icon.component';
     WidgetIconComponent
   ]
 })
-export class IconModule {
-}
+export class IconModule {}

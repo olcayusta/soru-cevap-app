@@ -41,8 +41,5 @@ export class SettingsDialogComponent implements OnInit {
   onChange($event: MatRadioChange) {
     const themeName = $event.value;
     localStorage.setItem('yt-theme', themeName);
-    // this.loadStyle(`${themeName}.css`);
   }
-
-  loadStyle(styleName: string) {}
 }
