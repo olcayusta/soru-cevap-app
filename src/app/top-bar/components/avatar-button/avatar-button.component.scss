@@ -14,6 +14,12 @@
   margin: 0 8px 0 16px;
 }
 
+.img-background {
+  display: flex;
+  background-color: rgba(0, 0, 0, .04);
+  border-radius: 50%;
+}
+
 .img-shadow {
   width: 32px;
   height: 32px;

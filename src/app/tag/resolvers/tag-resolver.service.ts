@@ -9,15 +9,11 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class TagResolverService implements Resolve<Tag> {
-
-  constructor(
-    private tagService: TagService
-  ) {
-  }
+  constructor(private tagService: TagService) {}
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Tag> | Promise<Tag> | Tag {
     return this.tagService.getTag(+route.paramMap.get('tagId')).pipe(
-      catchError(err => {
+      catchError((err) => {
         return EMPTY;
       })
     );

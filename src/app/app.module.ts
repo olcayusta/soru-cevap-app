@@ -40,7 +40,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserMenuPopupComponent } from './top-bar/components/user-menu-popup/user-menu-popup.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatChipsModule } from '@angular/material/chips';
-import { ImgShadowComponent } from './top-bar/img-shadow/img-shadow.component';
+import { ImgShadowComponent } from './top-bar/components/avatar-button/img-shadow/img-shadow.component';
 import { NotificationButtonComponent } from './top-bar/components/notification-button/notification-button.component';
 import { AvatarButtonComponent } from './top-bar/components/avatar-button/avatar-button.component';
 import { SettingsDialogComponent } from './settings-dialog/settings-dialog.component';

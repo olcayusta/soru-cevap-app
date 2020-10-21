@@ -11,10 +11,17 @@ a:hover {
   text-decoration: underline;
 }
 
+.img-shadow {
+  width: 140px;
+  height: 140px;
+  background-color: rgba(0, 0, 0, .04);
+  border-radius: 50%;
+}
+
 .user-avatar {
   display: flex;
-  width: 112px;
-  height: 112px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
   object-fit: cover;
 }

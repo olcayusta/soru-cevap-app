@@ -8,11 +8,6 @@ import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [MobileSearchComponent],
-  imports: [
-    CommonModule,
-    MobileSearchRoutingModule,
-    IconModule,
-    MatButtonModule,
-  ],
+  imports: [CommonModule, MobileSearchRoutingModule, IconModule, MatButtonModule]
 })
 export class MobileSearchModule {}

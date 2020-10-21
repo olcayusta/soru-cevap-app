@@ -9,7 +9,7 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'id-img-shadow',
+  selector: 'app-img-shadow',
   templateUrl: './img-shadow.component.html',
   styleUrls: ['./img-shadow.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -21,10 +21,7 @@ export class ImgShadowComponent implements OnInit {
 
   imgURL: string;
 
-  constructor(
-    private elRef: ElementRef
-  ) {
-  }
+  constructor(private elRef: ElementRef) {}
 
   ngOnInit(): void {
     // const img = new Image();
@@ -35,5 +32,4 @@ export class ImgShadowComponent implements OnInit {
     //   markDirty(this);
     // };
   }
-
 }

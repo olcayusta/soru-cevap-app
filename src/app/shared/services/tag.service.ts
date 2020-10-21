@@ -10,13 +10,10 @@ import { Observable } from 'rxjs';
 export class TagService {
   apiUrl = `${environment.apiUrl}/tags`;
 
-  constructor(
-    private http: HttpClient
-  ) {
-  }
+  constructor(private http: HttpClient) {}
 
   getFavoriteTags(): Observable<Tag[]> {
-    return this.http.get<Tag[]>(`${environment.apiUrl}/watched-tags`)
+    return this.http.get<Tag[]>(`${environment.apiUrl}/watched-tags`);
   }
 
   getAllTags(): Observable<Tag[]> {

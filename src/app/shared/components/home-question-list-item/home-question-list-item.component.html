@@ -2,7 +2,7 @@
 
   <div class="item-left">
     <a class="avatar-link" title="{{question.user.displayName}}" routerLink="/user/{{question.user.id}}">
-      <id-img-shadow picture="{{question.user.picture}}" displayName="{{question.user.displayName}}"></id-img-shadow>
+      <app-img-shadow picture="{{question.user.picture}}" displayName="{{question.user.displayName}}"></app-img-shadow>
     </a>
   </div>
 
@@ -29,9 +29,13 @@
 
     <div class="tag-list">
       <mat-chip-list aria-label="Fish selection">
-        <mat-chip *ngFor="let tag of question.tags" [selected]="tag.selected" routerLink="/tag/{{tag.id}}">
-          <span>{{tag.title}}</span>
+
+        <mat-chip [selected]="tag.selected" *ngFor="let tag of question.tags">
+          <a routerLink="/tag/{{tag.id}}">
+            <span>{{tag.title}}</span>
+          </a>
         </mat-chip>
+
         <mat-chip *ngIf="!question.tags">test</mat-chip>
       </mat-chip-list>
     </div>

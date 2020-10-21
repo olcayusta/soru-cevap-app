@@ -1,8 +1,11 @@
 <button id="avatar-btn" aria-haspopup="true"
         aria-label="Alternatif hesapların listesini açan hesap profil fotoğrafı"
         #avatarElement="cdkOverlayOrigin" cdkOverlayOrigin
-        (click)="openUsermenu()">
-  <img class="avatar-img" src="{{user.picture}}" alt="{{user.displayName}}">
+        (click)="openUserProfilePopup()">
+  <span class="img-background">
+    <img class="avatar-img" src="{{user.picture}}" alt="{{user.displayName}}" (load)="loaded = true"
+         [ngStyle]="{opacity: loaded ? 1 : 0}">
+  </span>
 </button>
 
 <ng-template
