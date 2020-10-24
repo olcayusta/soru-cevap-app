@@ -84,10 +84,6 @@ const routes: Routes = [
     component: MobileAppInfoComponent
   },
   {
-    path: 'mobile-search',
-    loadChildren: async () => (await import('./mobile-search/mobile-search.module')).MobileSearchModule
-  },
-  {
     path: 'create',
     loadChildren: async () => (await import('./create-question/create-question.module')).CreateQuestionModule
   },
