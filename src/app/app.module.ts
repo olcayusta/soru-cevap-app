@@ -46,6 +46,7 @@ import { AvatarButtonComponent } from './top-bar/components/avatar-button/avatar
 import { SettingsDialogComponent } from './settings-dialog/settings-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSelectModule } from '@angular/material/select';
+import { MobileAppInfoComponent } from './mobile-app-info/mobile-app-info.component';
 
 registerLocaleData(localeTr);
 
@@ -64,7 +65,8 @@ registerLocaleData(localeTr);
     ImgShadowComponent,
     NotificationButtonComponent,
     AvatarButtonComponent,
-    SettingsDialogComponent
+    SettingsDialogComponent,
+    MobileAppInfoComponent
   ],
   imports: [
     BrowserModule,
@@ -103,4 +105,5 @@ registerLocaleData(localeTr);
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule {
+}

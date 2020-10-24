@@ -1,10 +1,4 @@
-import {
-  Component, EventEmitter,
-  OnInit,
-  ChangeDetectionStrategy,
-  Output,
-  ɵmarkDirty as markDirty
-} from '@angular/core';
+import { Component, EventEmitter, OnInit, ChangeDetectionStrategy, Output, ɵmarkDirty as markDirty } from '@angular/core';
 import { User } from '@shared/models/user.model';
 import { AuthService } from '../auth/auth.service';
 import { Observable } from 'rxjs';
@@ -38,8 +32,7 @@ export class TopBarComponent implements OnInit {
     private notificationService: NotificationService,
     private breakpointObserver: BreakpointObserver,
     private spinnerService: SpinnerService
-  ) {
-  }
+  ) {}
 
   async ngOnInit(): Promise<void> {
     this.spinner$ = this.spinnerService.subject$;
@@ -48,7 +41,7 @@ export class TopBarComponent implements OnInit {
 
       // Mobile phone
       if (value.matches) {
-        this.stateService.subject.subscribe(state => {
+        this.stateService.subject.subscribe((state) => {
           this.topbarOpened = state;
           console.log(state);
           markDirty(this);
@@ -59,5 +52,4 @@ export class TopBarComponent implements OnInit {
     });
     this.isLoggedIn$ = this.authService.isLoggedIn$;
   }
-
 }

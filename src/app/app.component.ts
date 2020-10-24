@@ -8,6 +8,7 @@ import { SwPush } from '@angular/service-worker';
 import { PushNotificationService } from '@shared/services/push-notification.service';
 import { environment } from '@environments/environment';
 import { DOCUMENT } from '@angular/common';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-root',
@@ -60,8 +61,16 @@ export class AppComponent implements OnInit {
     private spinnerService: SpinnerService,
     private swPush: SwPush,
     private pushService: PushNotificationService,
+    private breakpointObserver: BreakpointObserver,
     @Inject(DOCUMENT) private document: Document
   ) {
+    // Mobile block
+    this.breakpointObserver.observe([Breakpoints.Handset]).subscribe(({ matches }) => {
+      if (matches) {
+        this.router.navigateByUrl('/app');
+      }
+    });
+
     if (swPush.isEnabled) {
       swPush
         .requestSubscription({

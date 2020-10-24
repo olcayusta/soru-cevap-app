@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MainComponent } from './main/main.component';
 import { AuthGuard } from './auth/auth.guard';
+import { MobileAppInfoComponent } from './mobile-app-info/mobile-app-info.component';
 
 const routes: Routes = [
   {
@@ -77,6 +78,10 @@ const routes: Routes = [
   {
     path: '404',
     loadChildren: async () => (await import('./page-not-found/page-not-found.module')).PageNotFoundModule
+  },
+  {
+    path: 'app',
+    component: MobileAppInfoComponent
   },
   {
     path: 'mobile-search',

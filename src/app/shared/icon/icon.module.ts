@@ -20,7 +20,6 @@ import { ContentCopyIconComponent } from './content-copy-icon/content-copy-icon.
 import { ArrowDropDownIconComponent } from './arrow-drop-down-icon/arrow-drop-down-icon.component';
 import { FavoriteIconComponent } from './favorite-icon/favorite-icon.component';
 import { ThumbUpIconComponent } from './thumb-up-icon/thumb-up-icon.component';
-import { ArrowBackIconComponent } from './arrow-back-icon/arrow-back-icon.component';
 import { CloseIconComponent } from './close-icon/close-icon.component';
 import { WifiOffIconComponent } from './wifi-off-icon/wifi-off-icon.component';
 import { WidgetIconComponent } from './widget-icon/widget-icon.component';
@@ -50,7 +49,6 @@ import { GroupIconComponent } from './group-icon/group-icon.component';
     ArrowDropDownIconComponent,
     FavoriteIconComponent,
     ThumbUpIconComponent,
-    ArrowBackIconComponent,
     CloseIconComponent,
     WifiOffIconComponent,
     WidgetIconComponent,
@@ -78,7 +76,6 @@ import { GroupIconComponent } from './group-icon/group-icon.component';
     ArrowDropDownIconComponent,
     FavoriteIconComponent,
     ThumbUpIconComponent,
-    ArrowBackIconComponent,
     CloseIconComponent,
     WifiOffIconComponent,
     WidgetIconComponent

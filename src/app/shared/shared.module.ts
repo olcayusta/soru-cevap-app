@@ -24,7 +24,7 @@ import { MatButtonModule } from '@angular/material/button';
     HighlightSearchPipe,
     ImgShadowComponent,
     MarkedPipe,
-    ShareDialogComponent,
+    ShareDialogComponent
   ],
   imports: [
     CommonModule,
@@ -35,13 +35,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatIconModule,
     MatDialogModule,
     MatInputModule,
-    MatButtonModule,
+    MatButtonModule
   ],
-  exports: [
-    LazyImgDirective,
-    HomeQuestionListItemComponent,
-    HighlightSearchPipe,
-    TimeAgoPipe,
-  ],
+  exports: [LazyImgDirective, HomeQuestionListItemComponent, HighlightSearchPipe, TimeAgoPipe]
 })
 export class SharedModule {}
