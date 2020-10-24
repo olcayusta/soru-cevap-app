@@ -1,10 +1,11 @@
 <ng-container *ngIf="tag$ | async as tag">
   <header>
-    <h4 class="headline-4">{{tag.title}}</h4>
-    <p>Our latest news, updates, and stories about {{tag.title}}.</p>
+    <h2 class="headline-2">{{tag.title}}</h2>
+    <p class="page-description">Our latest news, updates, and stories about {{tag.title}}.</p>
   </header>
 
   <div class="items">
-    <qa-home-question-list-item *ngFor="let question of tag.questions" [question]="question"></qa-home-question-list-item>
+    <qa-home-question-list-item *ngFor="let question of tag.questions"
+                                [question]="question"></qa-home-question-list-item>
   </div>
 </ng-container>

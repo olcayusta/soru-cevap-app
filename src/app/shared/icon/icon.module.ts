@@ -16,7 +16,6 @@ import { CancelIconComponent } from './cancel-icon/cancel-icon.component';
 import { AddIconComponent } from './add-icon/add-icon.component';
 import { RateReviewIconComponent } from './rate-review-icon/rate-review-icon.component';
 import { FilterListIconComponent } from './filter-list-icon/filter-list-icon.component';
-import { ContentCopyIconComponent } from './content-copy-icon/content-copy-icon.component';
 import { ArrowDropDownIconComponent } from './arrow-drop-down-icon/arrow-drop-down-icon.component';
 import { FavoriteIconComponent } from './favorite-icon/favorite-icon.component';
 import { ThumbUpIconComponent } from './thumb-up-icon/thumb-up-icon.component';
@@ -45,7 +44,6 @@ import { GroupIconComponent } from './group-icon/group-icon.component';
     AddIconComponent,
     RateReviewIconComponent,
     FilterListIconComponent,
-    ContentCopyIconComponent,
     ArrowDropDownIconComponent,
     FavoriteIconComponent,
     ThumbUpIconComponent,
@@ -72,7 +70,6 @@ import { GroupIconComponent } from './group-icon/group-icon.component';
     AddIconComponent,
     RateReviewIconComponent,
     FilterListIconComponent,
-    ContentCopyIconComponent,
     ArrowDropDownIconComponent,
     FavoriteIconComponent,
     ThumbUpIconComponent,

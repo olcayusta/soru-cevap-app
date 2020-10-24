@@ -15,6 +15,7 @@ import { ShareDialogComponent } from './components/share-dialog/share-dialog.com
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { ListItemAvatarComponent } from './components/list-item-avatar/list-item-avatar.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { MatButtonModule } from '@angular/material/button';
     HighlightSearchPipe,
     ImgShadowComponent,
     MarkedPipe,
-    ShareDialogComponent
+    ShareDialogComponent,
+    ListItemAvatarComponent
   ],
   imports: [
     CommonModule,

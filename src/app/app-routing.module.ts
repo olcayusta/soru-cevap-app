@@ -46,10 +46,6 @@ const routes: Routes = [
         loadChildren: async () => (await import('./user/user.module')).UserModule
       },
       {
-        path: 'notifications',
-        loadChildren: async () => (await import('./notifications/notifications.module')).NotificationsModule
-      },
-      {
         path: 'question/:questionId',
         loadChildren: async () => (await import('./question/question.module')).QuestionModule
       },

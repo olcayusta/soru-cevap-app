@@ -6,6 +6,7 @@ export interface Question {
   id: number;
   title: string;
   content: string;
+  rawContent: string;
   creationTime: Date;
   viewCount: number;
   userId: number;
