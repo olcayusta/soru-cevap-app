@@ -9,5 +9,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 export class MobileSearchComponent implements OnInit {
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log('Test');
+  }
 }
