@@ -8,9 +8,10 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class SettingsService {
+  API = environment.apiUrl;
   constructor(private http: HttpClient) {}
 
   getAccount(): Observable<User> {
-    return this.http.get<User>(`${environment.apiUrl}/me`);
+    return this.http.get<User>(`${this.API}/me`);
   }
 }
