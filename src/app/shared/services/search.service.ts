@@ -16,12 +16,13 @@ export interface SearchResultI {
   providedIn: 'root'
 })
 export class SearchService {
-
-  constructor(
-    private http: HttpClient
-  ) { }
+  constructor(private http: HttpClient) {}
 
   searchQuestion(searchTerm: string): Observable<SearchResultI[]> {
-    return this.http.get<SearchResultI[]>(`${environment.apiUrl}/search/${searchTerm}`);
+    return this.http.get<SearchResultI[]>(`${environment.apiUrl}/search`, {
+      params: {
+        q: searchTerm
+      }
+    });
   }
 }

@@ -33,13 +33,10 @@
 
 html, body {
   height: 100%;
-  // scrollbar-color: rgba(0, 0, 0, .24) #eee;
-  scrollbar-width: thin;
-
 }
 
 .overflow-container {
-  scrollbar-width: thin;
+
 }
 
 .overflow-container::-webkit-scrollbar {

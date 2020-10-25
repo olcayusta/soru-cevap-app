@@ -21,6 +21,9 @@ export class NavDrawerComponent implements OnInit {
     this.user = this.authService.userValue;
   }
 
+  /**
+   * Çıkış yap
+   * */
   logout(): void {
     this.authService.logout();
   }
@@ -36,6 +39,9 @@ export class NavDrawerComponent implements OnInit {
     });
   }
 
+  /**
+   *  Butona tiklandiginda nav drawer componentini kapat
+   */
   onClicked() {
     this.closeDrawer.emit();
   }

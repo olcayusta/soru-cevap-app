@@ -30,7 +30,7 @@ const routes: Routes = [
         loadChildren: async () => (await import('./tag/tag.module')).TagModule
       },
       {
-        path: 'search/:searchTerm',
+        path: 'search',
         loadChildren: async () => (await import('./search/search.module')).SearchModule
       },
       {
