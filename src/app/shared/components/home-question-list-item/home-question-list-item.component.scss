@@ -12,7 +12,7 @@ a:hover {
   text-decoration: underline;
 }
 
-.item {
+.list-item {
   display: flex;
   grid-gap: 16px;
   // font-family: Archivo, sans-serif;
@@ -34,9 +34,7 @@ a:hover {
   margin: 0 4px;
 }
 
-
-
-.author-img {
+.author-image {
   display: inline-flex;
   width: 40px;
   height: 40px;
@@ -46,6 +44,11 @@ a:hover {
 
 .item-right {
   flex-grow: 1;
+}
+
+.flex-cl {
+  display: flex;
+  align-items: center;
 }
 
 .master-span {
@@ -176,7 +179,7 @@ mat-chip {
 }
 
 @media (max-width: 599px) {
-  .item {
+  .list-item {
     padding-left: 24px;
   }
 

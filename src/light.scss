@@ -1,6 +1,8 @@
 @import 'node_modules/@angular/material/theming';
-/*@import "scrollbar";*/
 
+/*
+  Override colors
+ */
 $mat-deep-purple: (
   50: #F2E7FE,
   100: #DBB2FF,
@@ -33,7 +35,6 @@ $mat-deep-purple: (
     A700: $light-primary-text,
   )
 );
-
 $mat-secondary: (
   50: #C8FFF4,
   100: #70EFDE,
@@ -66,7 +67,6 @@ $mat-secondary: (
     A700: $light-primary-text,
   )
 );
-
 $mat-red: (
   50: #ffebee,
   100: #ffcdd2,
@@ -113,32 +113,7 @@ $app-theme: mat-light-theme((
   )
 ));
 
-$black-theme-primary: mat-palette($mat-gray, 900);
-$black-theme-accent: mat-palette($mat-secondary);
-
-$black-theme: mat-light-theme((
-  color: (
-    primary: $black-theme-primary,
-    accent: $black-theme-accent,
-    warn: $app-theme-warn
-  )
-));
-
 @include angular-material-theme($app-theme);
-/*@include mat-button-theme($black-theme);
-@include mat-progress-spinner-theme($black-theme);
-@include mat-checkbox-theme($black-theme);
-@include mat-badge-theme($black-theme);*/
-
-// Define a custom typography config that overrides the font-family as well as the
-// `headlines` and `body-1` levels.
-$custom-typography: mat-typography-config(
-  $font-family: 'Roboto, sans-serif',
-  $headline: mat-typography-level(32px, 48px, 700), // $body-1: mat-typography-level(16px, 24px, 500)
-);
-
-// Override typography for all Angular Material, including mat-base-typography and all components.
-// @include angular-material-typography($custom-typography);
 
 :root {
   --color: rgba(0, 0, 0, .87);

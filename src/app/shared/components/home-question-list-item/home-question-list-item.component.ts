@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { Question } from '../../models/question.model';
 
 @Component({
@@ -12,17 +12,16 @@ export class HomeQuestionListItemComponent implements OnInit {
 
   selectedTagIds: number[];
 
-  constructor() {
-  }
+  constructor() {}
 
   ngOnInit(): void {
     const tags = JSON.parse(localStorage.getItem('watchedTags'));
     if (tags) {
-      this.selectedTagIds = tags.map(value => {
+      this.selectedTagIds = tags.map((value) => {
         return value.id;
       });
-      this.question?.tags?.forEach(tag => {
-        this.selectedTagIds.forEach(selectedTagId => {
+      this.question?.tags?.forEach((tag) => {
+        this.selectedTagIds.forEach((selectedTagId) => {
           if (tag.id === selectedTagId) tag.selected = true;
         });
       });

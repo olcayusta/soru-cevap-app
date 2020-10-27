@@ -1,6 +1,9 @@
 @import 'node_modules/@angular/material/theming';
 @import "scrollbar";
 
+/*
+  Override colors
+*/
 $mat-deep-purple: (
   50: #F2E7FE,
   100: #DBB2FF,
@@ -33,7 +36,6 @@ $mat-deep-purple: (
     A700: $light-primary-text,
   )
 );
-
 $mat-secondary: (
   50: #C8FFF4,
   100: #70EFDE,

@@ -1,13 +1,13 @@
-<div class="item">
+<div class="list-item">
 
-  <div class="item-left">
-    <a class="avatar-link" title="{{question.user.displayName}}" routerLink="/user/{{question.user.id}}">
-      <app-img-shadow picture="{{question.user.picture}}" displayName="{{question.user.displayName}}"></app-img-shadow>
+
+    <a title="{{question.user.displayName}}" routerLink="/user/{{question.user.id}}">
+      <img class="author-image" src="{{question.user.picture}}" alt="{{question.user.displayName}}" width="40" height="40" loading="lazy">
     </a>
-  </div>
+
 
   <div class="item-right">
-    <div style="display: flex; align-items: center">
+    <div class="flex-cl">
       <a routerLink="/question/{{question.id}}">
         <div class="subtitle-1">{{question.title}}</div>
       </a>
@@ -20,7 +20,9 @@
         <a routerLink="/user/{{question.user.id}}">{{question.user.displayName}}</a>
       </div>
       <span class="bracket">—</span>
-      <div class="time">{{question.creationTime | timeAgo}}</div>
+      <div class="time">
+        <time>{{question.creationTime | timeAgo}}</time>
+      </div>
 
       <!-- <div class="master-span" *ngIf="question.id === 20">
          <span>CEVAPLANDI</span>

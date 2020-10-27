@@ -31,47 +31,6 @@ mat-toolbar {
   }
 }
 
-.headline {
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 24px;
-  margin: 0;
-  // letter-spacing: 0.15px;
-}
-
-.body2 {
-  font-size: 14px;
-  line-height: 20px;
-  // letter-spacing: 0.25px;
-  color: var(--medium-emphasis-color);
-}
-
-.drawer-header {
-  display: flex;
-  flex-direction: column;
-  padding: 40px 16px 16px 16px;
-
-  .drawer-top-flex {
-    margin-top: 30px;
-  }
-
-  img {
-    display: inline-flex;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-}
-
-p {
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: 0.4px;
-  color: var(--medium-emphasis-color);
-  padding-left: 16px;
-}
-
 .mat-list-base .mat-subheader {
   margin-top: 0;
   font-weight: 400;

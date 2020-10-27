@@ -47,6 +47,7 @@ import { SettingsDialogComponent } from './settings-dialog/settings-dialog.compo
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSelectModule } from '@angular/material/select';
 import { MobileAppInfoComponent } from './mobile-app-info/mobile-app-info.component';
+import { DrawerHeaderComponent } from './main/nav-drawer/drawer-header/drawer-header.component';
 
 registerLocaleData(localeTr);
 
@@ -66,7 +67,8 @@ registerLocaleData(localeTr);
     NotificationButtonComponent,
     AvatarButtonComponent,
     SettingsDialogComponent,
-    MobileAppInfoComponent
+    MobileAppInfoComponent,
+    DrawerHeaderComponent
   ],
   imports: [
     BrowserModule,
