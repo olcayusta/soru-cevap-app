@@ -7,12 +7,8 @@ import { RecentQuestionsComponent } from './recent-questions/recent-questions.co
 import { SharedModule } from '../shared/shared.module';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { FilterComponent } from './filter/filter.component';
-import {
-  MAT_MENU_SCROLL_STRATEGY,
-  MatMenuModule,
-} from '@angular/material/menu';
+import { MAT_MENU_SCROLL_STRATEGY, MatMenuModule } from '@angular/material/menu';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { IconModule } from '../shared/icon/icon.module';
 import { IsVisibleDirective } from './is-visible.directive';
 import { MatButtonModule } from '@angular/material/button';
 import { BannerComponent } from './banner/banner.component';
@@ -35,27 +31,26 @@ function scrollFactory(overlay: Overlay): () => CloseScrollStrategy {
     FilterComponent,
     IsVisibleDirective,
     SortByComponent,
-    FilterByComponent,
+    FilterByComponent
   ],
   imports: [
     CommonModule,
     HomeRoutingModule,
     SharedModule,
-    IconModule,
     MatProgressSpinnerModule,
     MatMenuModule,
     MatCheckboxModule,
     MatButtonModule,
     MatDividerModule,
     MatIconModule,
-    MatChipsModule,
+    MatChipsModule
   ],
   providers: [
     {
       provide: MAT_MENU_SCROLL_STRATEGY,
       useFactory: scrollFactory,
-      deps: [Overlay],
-    },
-  ],
+      deps: [Overlay]
+    }
+  ]
 })
 export class HomeModule {}

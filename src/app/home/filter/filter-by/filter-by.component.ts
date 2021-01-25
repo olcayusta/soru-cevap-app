@@ -15,12 +15,12 @@ export class FilterByComponent implements OnInit {
   items = [
     {
       filter: 'a',
-      label: 'Cevap yok',
+      label: 'Cevapsız',
       checked: false
     },
     {
       filter: 'b',
-      label: 'Kabul edilebilir cevap yok',
+      label: 'Doğru cevapsız',
       checked: false
     },
     {

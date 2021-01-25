@@ -13,7 +13,6 @@ import { QuestionDescriptionComponent } from './question-description/question-de
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatDividerModule } from '@angular/material/divider';
-import { IconModule } from '../shared/icon/icon.module';
 
 @NgModule({
   declarations: [CreateQuestionComponent, ChipsAutocompleteComponent, QuestionDescriptionComponent],
@@ -27,8 +26,7 @@ import { IconModule } from '../shared/icon/icon.module';
     MatAutocompleteModule,
     MatIconModule,
     MatToolbarModule,
-    MatDividerModule,
-    IconModule
+    MatDividerModule
   ]
 })
 export class CreateQuestionModule {}

@@ -8,44 +8,6 @@ html, body {
   height: 100%;
 }
 
-.overflow-container {
-
-}
-
-.overflow-container::-webkit-scrollbar {
-  width: 8px;
-}
-
-.overflow-container::-webkit-scrollbar-track {
-  background: #e8eae7
-}
-
-.overflow-container::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.24);
-  border-right: 1px solid #fff;
-}
-
-.overflow-container::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 0, 0, 0.38);
-}
-
-/*::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #e8eae7
-}
-
-::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.24);
-  border-right: 1px solid #fff;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 0, 0, 0.38);
-}*/
-
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;

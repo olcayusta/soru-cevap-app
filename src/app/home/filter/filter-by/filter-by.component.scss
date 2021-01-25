@@ -8,8 +8,8 @@
 }
 
 button[aria-expanded=true] {
-  background-color: rgba(98, 0, 238, 0.12);
-  color: #6200EE;
+  background-color: rgba(0, 0, 0, 0.12);
+  // color: #6200EE;
 
   mat-icon {
     transform: rotate(180deg);
@@ -17,8 +17,8 @@ button[aria-expanded=true] {
 }
 
 mat-icon {
+  color: rgba(0, 0, 0, .6);
   margin-right: -4px;
-  color: #6200EE;
 }
 
 .count {

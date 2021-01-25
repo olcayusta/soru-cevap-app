@@ -12,7 +12,6 @@ import { MatDividerModule } from '@angular/material/divider';
 import { AnswerFormComponent } from './answer-form/answer-form.component';
 import { SharedModule } from '../shared/shared.module';
 import { WebCopyCodeComponent } from './web-copy-code/web-copy-code.component';
-import { IconModule } from '../shared/icon/icon.module';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { ClipboardModule } from '@angular/cdk/clipboard';
 import { QuestionCommentListComponent } from './question-comment-list/question-comment-list.component';
@@ -41,7 +40,6 @@ import { MatMenuModule } from '@angular/material/menu';
     FormsModule,
     MatDividerModule,
     SharedModule,
-    IconModule,
     MatTooltipModule,
     ClipboardModule,
     MatIconModule,

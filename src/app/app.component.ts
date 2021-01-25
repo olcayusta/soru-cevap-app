@@ -66,9 +66,9 @@ export class AppComponent implements OnInit {
   ) {
     // Mobile block
     this.breakpointObserver.observe([Breakpoints.Handset]).subscribe(({ matches }) => {
-      if (matches) {
+      /* if (matches) {
         this.router.navigateByUrl('/app');
-      }
+      }*/
     });
 
     if (swPush.isEnabled) {

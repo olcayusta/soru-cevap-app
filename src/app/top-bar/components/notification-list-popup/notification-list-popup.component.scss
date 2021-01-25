@@ -6,7 +6,8 @@
 
 .popup-page {
   background-color: var(--card-background);
-  height: 100%;
+  // height: 100%;
+  height: 504px;
   max-height: calc(100vh - 64px);
   display: flex;
   flex-direction: column;
@@ -21,9 +22,11 @@
 }
 
 header {
-  padding: 20px 16px;
+  min-height: 56px;
+  padding: 0 16px;
   display: flex;
   align-items: center;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .header-title {
@@ -36,7 +39,7 @@ mat-nav-list {
   padding-top: 0;
 }
 
-section {
+section:hover {
   overflow: auto;
 }
 

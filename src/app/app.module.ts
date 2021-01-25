@@ -18,7 +18,6 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '@environments/environment';
-import { IconModule } from '@shared/icon/icon.module';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatMenuModule } from '@angular/material/menu';
 import { SideSheetComponent } from './main/side-sheet/side-sheet.component';
@@ -82,7 +81,6 @@ registerLocaleData(localeTr);
     MatProgressBarModule,
     MatTooltipModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
-    IconModule,
     MatBadgeModule,
     MatMenuModule,
     MatRadioModule,
@@ -107,5 +105,4 @@ registerLocaleData(localeTr);
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+export class AppModule {}
