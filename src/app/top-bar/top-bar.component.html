@@ -27,6 +27,7 @@
 
       <button mat-icon-button routerLink="/create" matTooltip="Oluştur">
         <mat-icon fontSet="material-icons-outlined">add</mat-icon>
+        <!--<span>Soru sor</span>-->
       </button>
 
       <button mat-icon-button matTooltip="İncelemeler" hidden>
@@ -60,7 +61,7 @@
   <!-- More things -->
   <button mat-icon-button aria-label="Uygulamalar" matTooltip="Uygulamalar" class="top-right-btn more-vert-icon"
           [matMenuTriggerFor]="moreMenu">
-    <id-more-vert-icon></id-more-vert-icon>
+    <mat-icon>more_vert</mat-icon>
   </button>
   <mat-menu #moreMenu="matMenu" xPosition="before" class="text-only-menu">
     <ng-template matMenuContent>
@@ -81,7 +82,7 @@
 
   <!-- Search button -->
   <a mat-icon-button class="mobile-show search-btn" routerLink="/mobile-search">
-    <id-search-icon></id-search-icon>
+    <mat-icon>search</mat-icon>
   </a>
 
   <ng-container *ngIf="isHandset">

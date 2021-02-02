@@ -2,7 +2,9 @@
 
 
     <a title="{{question.user.displayName}}" routerLink="/user/{{question.user.id}}">
-      <img class="author-image" src="{{question.user.picture}}" alt="{{question.user.displayName}}" width="40" height="40" loading="lazy">
+      <div class="img-container">
+        <img class="author-image" src="{{question.user.picture}}" alt="{{question.user.displayName}}" width="40" height="40" loading="lazy">
+      </div>
     </a>
 
 

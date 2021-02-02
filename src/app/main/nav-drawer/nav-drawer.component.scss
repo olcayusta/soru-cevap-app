@@ -5,6 +5,10 @@
 mat-toolbar {
   background: transparent;
   // border-bottom: 1px solid var(--border-color);
+
+  mat-icon {
+    color: rgba(0, 0, 0, .6);
+  }
 }
 
 .toolbar-title {
@@ -16,6 +20,11 @@ mat-toolbar {
   line-height: 24px;
   font-weight: 500;
   color: var(--icon-color);
+  font-family: Archivo, sans-serif;
+
+  mat-icon {
+    display: none;
+  }
 
   span {
     margin-left: 32px;
@@ -23,8 +32,9 @@ mat-toolbar {
 }
 
 .active {
-  background-color: var(--list-active-background) !important;
-  color: var(--primary-color) !important;
+  // background-color: var(--list-active-background) !important;
+  // color: var(--primary-color) !important;
+  color: black;
 
   ::ng-deep svg {
     fill: var(--primary-color)
@@ -69,7 +79,7 @@ mat-toolbar {
 }*/
 
 .menu-icon {
-  margin-left: -8px;
+  // margin-left: -8px;
 }
 
 /*.overflow-container {

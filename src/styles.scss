@@ -10,7 +10,7 @@ html, body {
 
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: Archivo, sans-serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeSpeed;
@@ -108,6 +108,10 @@ svg {
 
 .mat-drawer-container {
   // background-color: #fff !important;
+}
+
+.mat-option {
+  font-family: Archivo, sans-serif;
 }
 
 // Fix menu and select panel overflow scroll bar
