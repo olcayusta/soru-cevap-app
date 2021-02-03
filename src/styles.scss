@@ -4,6 +4,15 @@
 
 @include mat-core();
 
+$custom-typography: mat-typography-config(
+  $font-family: 'Archivo, sans-serif',
+);
+
+@include mat-snack-bar-typography($custom-typography);
+@include mat-tabs-typography($custom-typography);
+@include mat-list-typography($custom-typography);
+
+
 html, body {
   height: 100%;
 }
