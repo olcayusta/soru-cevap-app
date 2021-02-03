@@ -72,16 +72,16 @@ const routes: Routes = [
     loadChildren: async () => (await import('./auth/register/register.module')).RegisterModule
   },
   {
-    path: '404',
-    loadChildren: async () => (await import('./page-not-found/page-not-found.module')).PageNotFoundModule
-  },
-  {
     path: 'app',
     component: MobileAppInfoComponent
   },
   {
     path: 'create',
     loadChildren: async () => (await import('./create-question/create-question.module')).CreateQuestionModule
+  },
+  {
+    path: '404',
+    loadChildren: async () => (await import('./page-not-found/page-not-found.module')).PageNotFoundModule
   },
   {
     path: '**',
