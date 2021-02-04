@@ -16,7 +16,7 @@ export const localeFunc = (number: number, index: number): [string, string] => {
     ['1 ay önce', '1 ay içinde'],
     ['%s ay önce', '%s ay içinde'],
     ['1 yıl önce', '1 yıl içinde'],
-    ['%s yıl önce', '%s yıl içinde'],
+    ['%s yıl önce', '%s yıl içinde']
   ][index] as [string, string];
 };
 
@@ -26,7 +26,6 @@ register('my-locale', localeFunc);
   name: 'timeAgo'
 })
 export class TimeAgoPipe implements PipeTransform {
-
   transform(value: Date, ...args: unknown[]): unknown {
     return format(value, 'my-locale');
   }

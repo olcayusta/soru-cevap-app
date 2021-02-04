@@ -8,11 +8,7 @@ import { environment } from '../../../environments/environment';
   providedIn: 'root'
 })
 export class FavoriteService {
-
-  constructor(
-    private http: HttpClient
-  ) {
-  }
+  constructor(private http: HttpClient) {}
 
   addToFavorite(questionId: number): Observable<Question> {
     return this.http.post<Question>(`${environment.apiUrl}/bookmarks`, {
