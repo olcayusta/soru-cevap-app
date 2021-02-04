@@ -9,11 +9,7 @@ import { environment } from '@environments/environment';
   providedIn: 'root'
 })
 export class NotificationService {
-
-  constructor(
-    private http: HttpClient
-  ) {
-  }
+  constructor(private http: HttpClient) {}
 
   getNotifications(): Observable<Notification[]> {
     return this.http.get<Notification[]>(`${environment.apiUrl}/notifications`);
