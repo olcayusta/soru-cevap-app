@@ -8,9 +8,32 @@ $custom-typography: mat-typography-config(
   $font-family: 'Archivo, sans-serif',
 );
 
+@include mat-base-typography($custom-typography);
 @include mat-snack-bar-typography($custom-typography);
 @include mat-tabs-typography($custom-typography);
 @include mat-list-typography($custom-typography);
+@include mat-dialog-typography($custom-typography);
+@include mat-button-typography($custom-typography);
+@include mat-form-field-typography($custom-typography);
+@include mat-radio-typography($custom-typography);
+@include mat-option-typography($custom-typography);
+@include mat-optgroup-typography($custom-typography);
+@include mat-toolbar-typography($custom-typography);
+@include mat-tooltip-typography($custom-typography);
+
+$chip-typography: mat-typography-config(
+  $font-family: 'Archivo, sans-serif',
+  $body-2: mat-typography-level(14px, 16px, 400)
+);
+
+@include mat-chips-typography($chip-typography);
+
+$list-typography: mat-typography-config(
+  $font-family: 'Archivo, sans-serif',
+  $subheading-2: mat-typography-level(14px, 24px, 500)
+);
+
+@include mat-list-typography($list-typography);
 
 
 html, body {
