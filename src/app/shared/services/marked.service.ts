@@ -1,12 +1,11 @@
 import { Injectable } from '@angular/core';
-import {parse} from 'marked';
+import { parse } from 'marked';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MarkedService {
-
-  constructor() { }
+  constructor() {}
 
   setMarked(text: string): void {
     parse(text, (error, parseResult) => {
