@@ -68,7 +68,6 @@ mat-toolbar {
   // width: calc(100vw - 17px);
  /* box-shadow: none !important;
   border-bottom: 2px solid rgba(0, 0, 0, .12);*/
-  font-family: Archivo, sans-serif;
 }
 
 mat-toolbar-row:not(:first-child) {
@@ -95,10 +94,6 @@ mat-toolbar-row:not(:first-child) {
 
 .mobile-show {
   display: none;
-}
-
-.mat-button {
-  // font-family: Archivo, sans-serif;
 }
 
 mat-progress-bar {
