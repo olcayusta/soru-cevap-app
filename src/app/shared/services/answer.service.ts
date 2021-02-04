@@ -8,11 +8,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AnswerService {
-
-  constructor(
-    private http: HttpClient
-  ) {
-  }
+  constructor(private http: HttpClient) {}
 
   getAnswers(questionId: number): Observable<Answer[]> {
     return this.http.get<Answer[]>(`${environment.apiUrl}/questions/${questionId}/answers`);
@@ -20,7 +16,8 @@ export class AnswerService {
 
   create(questionId: number, content: string): Observable<Answer> {
     return this.http.post<Answer>(`${environment.apiUrl}/answers`, {
-      questionId, content
+      questionId,
+      content
     });
   }
 }
