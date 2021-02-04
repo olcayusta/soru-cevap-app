@@ -35,7 +35,8 @@ const routes: Routes = [
       },
       {
         path: 'settings',
-        loadChildren: async () => (await import('./settings/settings.module')).SettingsModule
+        loadChildren: async () => (await import('./settings/settings.module')).SettingsModule,
+        canLoad: [AuthGuard]
       },
       {
         path: 'list',
