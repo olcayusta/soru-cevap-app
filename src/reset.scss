@@ -45,10 +45,6 @@ mat-nav-list {
   // margin-right: 12px !important;
 }
 
-[mat-button] {
-  font-family: Archivo, sans-serif !important;
-}
-
 .mat-button {
   padding: 0 8px !important;
   letter-spacing: 1.25px;
@@ -83,7 +79,6 @@ mat-nav-list {
   mat-chip
 */
 mat-chip {
-  font-weight: 400 !important;
   line-height: 16px;
   letter-spacing: .15px;
   background-color: #eee !important;
