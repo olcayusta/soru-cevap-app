@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { TagRoutingModule } from './tag-routing.module';
 import { TagComponent } from './tag.component';
 import { SharedModule } from '../shared/shared.module';
-import {MatDividerModule} from "@angular/material/divider";
+import { MatDividerModule } from '@angular/material/divider';
 
 @NgModule({
   declarations: [TagComponent],

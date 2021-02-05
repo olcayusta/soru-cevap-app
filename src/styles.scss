@@ -1,8 +1,6 @@
 @use "reset";
 
-@import 'node_modules/@angular/material/theming';
-
-@include mat-core();
+@import '~@angular/material/theming';
 
 $custom-typography: mat-typography-config(
   $font-family: 'Archivo, sans-serif',

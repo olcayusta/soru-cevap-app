@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { NotificationService } from '../../../../shared/services/notification.service';
-import { Notification } from '../../../../shared/models/notification.model';
+import { NotificationService } from '@shared/services/notification.service';
+import { Notification } from '@shared/models/notification.model';
 import { Observable } from 'rxjs';
 
 @Component({
