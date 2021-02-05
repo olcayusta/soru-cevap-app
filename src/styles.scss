@@ -20,6 +20,7 @@ $custom-typography: mat-typography-config(
 @include mat-optgroup-typography($custom-typography);
 @include mat-toolbar-typography($custom-typography);
 @include mat-tooltip-typography($custom-typography);
+@include mat-badge-typography($custom-typography);
 
 $chip-typography: mat-typography-config(
   $font-family: 'Archivo, sans-serif',
