@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NotificationListPopupComponent implements OnInit {
-  notifications$: Observable<Notification[]>;
+  notifications$!: Observable<Notification[]>;
 
   constructor(private notificationService: NotificationService) {}
 

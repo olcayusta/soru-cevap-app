@@ -11,17 +11,12 @@ import { Observable } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class QuestionCommentListComponent implements OnInit {
-  comments$: Observable<Comment[]>;
+  comments$!: Observable<Comment[]>;
 
-  constructor(
-    private route: ActivatedRoute,
-    private commentService: CommentService
-  ) {
-  }
+  constructor(private route: ActivatedRoute, private commentService: CommentService) {}
 
   ngOnInit(): void {
     const questionId = this.route.snapshot.paramMap.get('questionId');
-    this.comments$ = this.commentService.gerComments(+questionId);
+    this.comments$ = this.commentService.gerComments(+!questionId);
   }
-
 }

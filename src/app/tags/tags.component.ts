@@ -9,15 +9,11 @@ import { ActivatedRoute } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TagsComponent implements OnInit {
-  tags: Tag[];
+  tags!: Tag[];
 
-  constructor(
-    private route: ActivatedRoute
-  ) {
-  }
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.tags = this.route.snapshot.data.tags;
   }
-
 }

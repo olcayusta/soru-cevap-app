@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class UsersComponent implements OnInit {
-  users: User[];
+  users!: User[];
 
   constructor(private route: ActivatedRoute) {}
 

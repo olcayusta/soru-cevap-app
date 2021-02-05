@@ -72,7 +72,9 @@ body {
 }
 
 mat-sidenav {
+  width: 304px;
   min-height: 100vh;
+  // content-visibility: layout;
   background-color: var(--drawer-background) !important;
 }
 

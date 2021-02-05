@@ -8,12 +8,9 @@ import { Tag } from '../../shared/models/tag.model';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TagListItemComponent implements OnInit {
-  @Input() tag: Tag;
+  @Input() tag!: Tag;
 
-  constructor() {
-  }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

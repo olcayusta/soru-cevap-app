@@ -9,7 +9,7 @@ import { mapTo } from 'rxjs/operators';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BannerComponent implements OnInit {
-  online$: Observable<boolean>;
+  online$!: Observable<boolean>;
 
   constructor() {}
 

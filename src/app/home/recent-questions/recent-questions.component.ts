@@ -13,18 +13,22 @@ import { switchMap } from 'rxjs/operators';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RecentQuestionsComponent implements OnInit, OnDestroy {
-  questions: Question[];
-  questions$: Observable<Question[]>;
+  questions!: Question[];
+  questions$!: Observable<Question[]>;
 
   offset = 12;
 
-  subscription: Subscription;
+  subscription!: Subscription;
 
   constructor(private questionService: QuestionService, private filterService: FilterService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.subscription = this.route.queryParamMap
-      .pipe(switchMap((value) => this.filterService.getQuestionsByFiltered(value.get('sort'), value.get('filter'))))
+      .pipe(
+        switchMap((value) =>
+          this.filterService.getQuestionsByFiltered(value.get('sort') as string, value.get('filter') as string)
+        )
+      )
       .subscribe((value) => {
         this.questions = value;
         markDirty(this);

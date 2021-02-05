@@ -13,7 +13,7 @@ import { SettingsDialogComponent } from '../../settings-dialog/settings-dialog.c
 export class NavDrawerComponent implements OnInit {
   @Output() closeDrawer = new EventEmitter();
 
-  user: User;
+  user!: User;
 
   constructor(private authService: AuthService, private dialog: MatDialog) {}
 

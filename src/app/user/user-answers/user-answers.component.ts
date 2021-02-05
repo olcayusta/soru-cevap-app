@@ -11,12 +11,12 @@ import { Observable } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class UserAnswersComponent implements OnInit {
-  answers$: Observable<Answer[]>;
+  answers$!: Observable<Answer[]>;
 
   constructor(private userService: UserService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    const userId = this.route.snapshot.parent.parent.paramMap.get('userId');
-    this.answers$ = this.userService.getUserAnswers(+userId);
+    const userId = this.route.snapshot.parent!.parent!.paramMap.get('userId');
+    this.answers$ = this.userService.getUserAnswers(userId);
   }
 }

@@ -4,11 +4,10 @@
 
 mat-toolbar {
   background: transparent;
-  // border-bottom: 1px solid var(--border-color);
+}
 
-  mat-icon {
-    color: rgba(0, 0, 0, .6);
-  }
+mat-toolbar mat-icon {
+  color: var(--medium-emphasis-color);
 }
 
 .toolbar-title {
@@ -17,24 +16,20 @@ mat-toolbar {
 
 .mat-list-item {
   color: var(--icon-color);
+}
 
-  mat-icon {
-    display: none;
-  }
+.mat-list-item mat-icon {
+  display: none;
+}
 
-  span {
-    margin-left: 32px;
-  }
+.mat-list-item span {
+  margin-left: 32px;
 }
 
 .active {
   // background-color: var(--list-active-background) !important;
   // color: var(--primary-color) !important;
   color: black;
-
-  ::ng-deep svg {
-    fill: var(--primary-color)
-  }
 }
 
 .mat-list-base .mat-subheader {

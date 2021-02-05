@@ -6,7 +6,10 @@ import {
   EmbeddedViewRef,
   ViewChild,
   ElementRef,
-  ComponentFactoryResolver, ViewContainerRef, AfterViewInit, ɵmarkDirty as markDirty
+  ComponentFactoryResolver,
+  ViewContainerRef,
+  AfterViewInit,
+  ɵmarkDirty as markDirty
 } from '@angular/core';
 import { Answer } from '../../shared/models/answer.model';
 import { WebCopyCodeComponent } from '../web-copy-code/web-copy-code.component';
@@ -18,15 +21,11 @@ import { WebCopyCodeComponent } from '../web-copy-code/web-copy-code.component';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class QuestionAnswerItemComponent implements OnInit, AfterViewInit {
-  @Input() answer: Answer;
+  @Input() answer!: Answer;
 
-  @ViewChild('divElement') divElement: ElementRef<HTMLDivElement>;
+  @ViewChild('divElement') divElement!: ElementRef<HTMLDivElement>;
 
-  constructor(
-    private resolver: ComponentFactoryResolver,
-    private vcr: ViewContainerRef
-  ) {
-  }
+  constructor(private resolver: ComponentFactoryResolver, private vcr: ViewContainerRef) {}
 
   ngAfterViewInit(): void {
     /*   this.divElement.nativeElement.querySelectorAll('pre')
@@ -45,7 +44,5 @@ export class QuestionAnswerItemComponent implements OnInit, AfterViewInit {
          });*/
   }
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

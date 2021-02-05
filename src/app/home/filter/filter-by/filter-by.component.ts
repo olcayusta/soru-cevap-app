@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FilterByComponent implements OnInit {
-  @ViewChild('filterMenu') filterMenu: MatMenu;
+  @ViewChild('filterMenu') filterMenu!: MatMenu;
 
   items = [
     {
@@ -31,7 +31,9 @@ export class FilterByComponent implements OnInit {
   ];
 
   selectedItemIndex = 0;
-  checkedLength;
+
+  // any
+  checkedLength: any;
 
   constructor(public cdr: ChangeDetectorRef, private router: Router) {}
 

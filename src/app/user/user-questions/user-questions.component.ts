@@ -11,12 +11,12 @@ import { ActivatedRoute } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class UserQuestionsComponent implements OnInit {
-  questions: Observable<Question[]>;
+  questions!: Observable<Question[]>;
 
   constructor(private userService: UserService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    const userId = this.route.snapshot.parent.parent.paramMap.get('userId');
-    this.questions = this.userService.getUserQuestions(+userId);
+    const userId = this.route.snapshot.parent!.parent!.paramMap.get('userId');
+    this.questions = this.userService.getUserQuestions(userId);
   }
 }

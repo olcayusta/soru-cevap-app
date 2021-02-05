@@ -10,7 +10,7 @@ import { Question } from '../shared/models/question.model';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FavoritesComponent implements OnInit {
-  questions$: Observable<Question[]>;
+  questions$!: Observable<Question[]>;
 
   constructor(private favoriteService: FavoriteService) {}
 

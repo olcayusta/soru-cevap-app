@@ -16,7 +16,7 @@
       <ng-container *ngIf="q.answer">
         <!--<img src="{{q.answer.user.picture}}" alt="{{q.answer.user.displayName}}">-->
         <a routerLink="/user/{{q.answer.user.id}}">
-          <span>{{q.answer?.user.displayName}}</span>
+          <span>{{q.answer?.user?.displayName}}</span>
         </a>
         <span class="bracket">—</span>
         <span>{{q.answer.creationTime | timeAgo}} yanıtladı</span>

@@ -14,9 +14,9 @@ import { Router } from '@angular/router';
 })
 export class SearchFormComponent implements OnInit {
   myControl = new FormControl();
-  filteredQuestions: Observable<SearchResultI[]>;
+  filteredQuestions!: Observable<SearchResultI[]>;
 
-  @ViewChild('autoCompleteInput', { read: MatAutocompleteTrigger }) autoComplete: MatAutocompleteTrigger;
+  @ViewChild('autoCompleteInput', { read: MatAutocompleteTrigger }) autoComplete!: MatAutocompleteTrigger;
 
   constructor(private searhService: SearchService, private router: Router) {}
 

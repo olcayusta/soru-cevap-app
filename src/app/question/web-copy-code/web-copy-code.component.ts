@@ -15,12 +15,13 @@ import { Clipboard } from '@angular/cdk/clipboard';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class WebCopyCodeComponent implements OnInit, AfterViewInit {
-  text: HTMLElement;
-  lang: string;
+  text!: HTMLElement;
+  lang!: string;
 
   constructor(private cdr: ChangeDetectorRef, private clipboard: Clipboard) {}
 
   copyCode(): void {
+    // @ts-ignore
     this.clipboard.copy(this.text.textContent);
   }
 

@@ -11,7 +11,7 @@ import { shareReplay } from 'rxjs/operators';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ListComponent implements OnInit {
-  questions$: Observable<Question[]>;
+  questions$!: Observable<Question[]>;
 
   constructor(private listService: ListService) {}
 

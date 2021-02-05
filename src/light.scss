@@ -127,6 +127,7 @@ $gray-theme: mat-light-theme((
 ));
 
 @include angular-material-theme($app-theme);
+@include mat-toolbar-theme($app-theme);
 @include mat-progress-spinner-theme($gray-theme);
 
 :root {

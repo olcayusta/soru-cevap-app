@@ -17,14 +17,15 @@ export class TopBarComponent implements OnInit {
   @Output() openDrawer = new EventEmitter();
   @Output() openSheet = new EventEmitter();
 
-  isLoggedIn$: Observable<boolean>;
-  user: User;
+  isLoggedIn$!: Observable<boolean>;
+  user!: User;
 
-  topbarOpened;
+  // any
+  topbarOpened: any;
 
-  isHandset: boolean;
+  isHandset!: boolean;
 
-  spinner$: Observable<boolean>;
+  spinner$!: Observable<boolean>;
 
   constructor(
     private authService: AuthService,

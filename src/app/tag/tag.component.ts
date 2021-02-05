@@ -15,7 +15,7 @@ interface ResolveData {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TagComponent implements OnInit {
-  tag$: Observable<Tag>;
+  tag$!: Observable<Tag>;
 
   constructor(private route: ActivatedRoute) {}
 
@@ -25,6 +25,7 @@ export class TagComponent implements OnInit {
    */
   ngOnInit(): void {
     this.tag$ = this.route.data.pipe(
+      // @ts-ignore
       map(({ tag }: ResolveData) => {
         return tag;
       })

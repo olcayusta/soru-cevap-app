@@ -8,5 +8,5 @@ import { User } from '@shared/models/user.model';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class UserListItemComponent {
-  @Input() user: User;
+  @Input() user!: User;
 }

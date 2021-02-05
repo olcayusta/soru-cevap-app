@@ -13,7 +13,7 @@ interface ResolveData {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class UserListComponent implements OnInit {
-  users: User[];
+  users!: User[];
 
   constructor(private route: ActivatedRoute) {}
 

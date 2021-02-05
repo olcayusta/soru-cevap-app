@@ -4,17 +4,13 @@ import { User } from '../models/user.model';
 import { environment } from '../../../environments/environment';
 import { Observable } from 'rxjs';
 import { Question } from '../models/question.model';
-import {Answer} from '@shared/models/answer.model';
+import { Answer } from '@shared/models/answer.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-
-  constructor(
-    private http: HttpClient
-  ) {
-  }
+  constructor(private http: HttpClient) {}
 
   getAllUsers(): Observable<User[]> {
     return this.http.get<User[]>(`${environment.apiUrl}/users`);
@@ -24,11 +20,11 @@ export class UserService {
    * REST API uzerinden ilgili kullanicinin, tum bilgilerini getirir.
    * @param userId
    */
-  getUser(userId: number): Observable<User> {
+  getUser(userId: string | null): Observable<User> {
     return this.http.get<User>(`${environment.apiUrl}/users/${userId}`);
   }
 
-  getUserQuestions(userId: number): Observable<Question[]> {
+  getUserQuestions(userId: string | null): Observable<Question[]> {
     return this.http.get<Question[]>(`${environment.apiUrl}/users/${userId}/questions`);
   }
 
@@ -37,7 +33,7 @@ export class UserService {
    * @param userId
    * The parameter Id
    */
-  getUserAnswers(userId: number): Observable<Answer[]> {
+  getUserAnswers(userId: string | null): Observable<Answer[]> {
     return this.http.get<Answer[]>(`${environment.apiUrl}/users/${userId}/answers`);
   }
 
@@ -54,7 +50,10 @@ export class UserService {
    */
   createUser(email: string, password: string, displayName: string, picture: string): Observable<User> {
     return this.http.post<User>(`${environment.apiUrl}/users`, {
-      email, password, displayName, picture
+      email,
+      password,
+      displayName,
+      picture
     });
   }
 }

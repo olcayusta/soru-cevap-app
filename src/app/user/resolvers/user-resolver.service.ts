@@ -12,7 +12,7 @@ export class UserResolverService implements Resolve<User> {
   constructor(private userService: UserService, private router: Router) {}
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<User> | Promise<User> | User {
-    return this.userService.getUser(+route.paramMap.get('userId')).pipe(
+    return this.userService.getUser(route.paramMap.get('userId')).pipe(
       catchError((err: NavigationError) => {
         this.router.navigate(['/404'], { replaceUrl: true });
         return EMPTY;

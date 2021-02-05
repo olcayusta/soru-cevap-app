@@ -8,7 +8,7 @@ import { User } from '@shared/models/user.model';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DrawerHeaderComponent implements OnInit {
-  @Input() user: User;
+  @Input() user!: User;
 
   constructor() {}
 

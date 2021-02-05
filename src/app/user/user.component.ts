@@ -15,7 +15,7 @@ interface ResolveData {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class UserComponent implements OnInit {
-  user: User;
+  user!: User;
 
   links = [
     {
@@ -45,7 +45,7 @@ export class UserComponent implements OnInit {
   constructor(private route: ActivatedRoute, private title: Title) {}
 
   ngOnInit(): void {
-    const { user } = this.route.snapshot.data as ResolveData;
+    const { user } = <ResolveData>this.route.snapshot.data;
     this.user = user;
     this.title.setTitle(`${user.displayName} - ${environment.appTitle}`);
   }

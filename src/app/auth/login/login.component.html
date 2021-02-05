@@ -71,8 +71,8 @@
         <mat-form-field appearance="outline">
           <mat-label>E-posta</mat-label>
           <input aria-label="E-posta" matInput type="email" formControlName="email">
-          <mat-error *ngIf="form.get('email').hasError('required')">Bir e-posta adresi girin</mat-error>
-          <mat-error *ngIf="form.get('email').hasError('emailNotFound')">E-posta adresi bulunamadı</mat-error>
+          <mat-error *ngIf="form.get('email')?.hasError('required')">Bir e-posta adresi girin</mat-error>
+          <mat-error *ngIf="form.get('email')?.hasError('emailNotFound')">E-posta adresi bulunamadı</mat-error>
         </mat-form-field>
 
         <div class="button-link-row">

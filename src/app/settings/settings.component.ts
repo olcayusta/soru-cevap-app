@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SettingsComponent implements OnInit {
-  user$: Observable<User>;
+  user$!: Observable<User>;
 
   constructor(private settingsService: SettingsService) {}
 

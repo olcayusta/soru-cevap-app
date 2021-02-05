@@ -10,7 +10,7 @@ import { SocketService } from '@shared/services/socket.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class UserMenuPopupComponent implements OnInit {
-  user: User;
+  user!: User;
 
   constructor(private authService: AuthService, private socketService: SocketService) {}
 

@@ -8,7 +8,7 @@ import { ActivatedRoute } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SearchComponent implements OnInit {
-  searchQuery;
+  searchQuery!: any;
 
   constructor(private route: ActivatedRoute) {}
 

@@ -15,7 +15,7 @@ interface SubjectData {
 export class SocketService {
   subject: WebSocketSubject<SubjectData> = webSocket({
     url: 'ws://localhost:9001/notification',
-    protocol: localStorage.getItem('token')
+    protocol: <string>localStorage.getItem('token')
   });
 
   constructor() {
@@ -38,9 +38,9 @@ export class SocketService {
     });
   }
 
-  on(event: string): Observable<{ event: string, payload: object }> {
-    return new Observable(subscriber => {
-      this.subject.subscribe(value => {
+  on(event: string): Observable<{ event: string; payload: object }> {
+    return new Observable((subscriber) => {
+      this.subject.subscribe((value) => {
         if (value.event === event) {
           subscriber.next(value);
         }

@@ -25,15 +25,18 @@ export class AuthService {
   isLoggedInSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   isLoggedIn$: Observable<boolean> = this.isLoggedInSubject.asObservable();
 
+  // @ts-ignore
   userSubject = new BehaviorSubject<User>(null);
 
   // store the URL so we can redirect after logging in
   redirectUrl = '/';
 
   constructor(private http: HttpClient) {
-    const loggedIn = !!JSON.parse(localStorage.getItem('user'));
+    const userObject = JSON.parse(localStorage.getItem('user') as string);
+    const loggedIn = !!userObject;
+
     this.isLoggedInSubject.next(loggedIn);
-    this.userSubject.next(JSON.parse(localStorage.getItem('user')));
+    this.userSubject.next(userObject);
   }
 
   /*
@@ -90,6 +93,7 @@ export class AuthService {
    */
   logout(): void {
     localStorage.clear();
+    // @ts-ignore
     this.isLoggedInSubject.next(null);
   }
 }

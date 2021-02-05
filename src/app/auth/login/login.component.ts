@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
         .login(email, password)
         .pipe(
           catchError((err, caught) => {
-            this.form.get('email').setErrors({
+            this.form.get('email')!.setErrors({
               emailNotFound: true
             });
             markDirty(this);

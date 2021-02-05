@@ -18,10 +18,10 @@ import { ActivatedRoute } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SortByComponent implements OnInit, AfterViewInit {
-  @ViewChild('menu') menu: MatMenu;
-  @ViewChildren('menuItem') menuItemList: QueryList<MatMenuItem>;
+  @ViewChild('menu') menu!: MatMenu;
+  @ViewChildren('menuItem') menuItemList!: QueryList<MatMenuItem>;
 
-  menuItems;
+  menuItems!: any;
 
   items = [
     { sort: '', label: 'En yeni' },

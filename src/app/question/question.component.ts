@@ -24,7 +24,7 @@ interface ResolveData {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class QuestionComponent implements OnInit {
-  question$: Observable<Question>;
+  question$!: Observable<Question>;
 
   constructor(
     private route: ActivatedRoute,
@@ -38,6 +38,7 @@ export class QuestionComponent implements OnInit {
 
   ngOnInit(): void {
     this.question$ = this.route.data.pipe(
+      // @ts-ignore
       map(({ question, title }: ResolveData) => {
         this.title.setTitle(`${question.title} - ${environment.appTitle}`);
         return question;

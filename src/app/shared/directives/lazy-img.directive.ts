@@ -5,7 +5,7 @@ import { AfterViewInit, Directive, ElementRef, HostBinding, HostListener, Input,
 })
 export class LazyImgDirective implements OnInit, AfterViewInit {
   // @HostBinding('attr.src') src = null;
-  @Input() appLazyImg: string;
+  @Input() appLazyImg!: string;
 
   constructor({ nativeElement }: ElementRef<HTMLImageElement>, private elRef: ElementRef) {
     const supports = 'loading' in HTMLImageElement.prototype;

@@ -14,11 +14,11 @@ import { Question } from '../shared/models/question.model';
 export class CreateQuestionComponent implements OnInit {
   form: FormGroup;
 
-  description;
+  description!: string;
 
-  worker: Worker;
+  worker!: Worker;
 
-  @ViewChild(ChipsAutocompleteComponent) chipComponent: ChipsAutocompleteComponent;
+  @ViewChild(ChipsAutocompleteComponent) chipComponent!: ChipsAutocompleteComponent;
 
   constructor(private fb: FormBuilder, private domSanitizer: DomSanitizer, private questionService: QuestionService) {
     this.form = fb.group({
@@ -36,11 +36,12 @@ export class CreateQuestionComponent implements OnInit {
   }
 
   changeMetaThemeColor(): void {
+    // @ts-ignore
     document.querySelector('meta[name=theme-color]').setAttribute('content', '#6200EE');
   }
 
   ngOnInit(): void {
-    this.form.get('description').valueChanges.subscribe((value) => {
+    this.form.get('description')!.valueChanges.subscribe((value) => {
       this.worker.postMessage(value);
     });
   }
@@ -52,7 +53,7 @@ export class CreateQuestionComponent implements OnInit {
   onFocus(): void {
     this.worker = new Worker('../marked.worker', { type: 'module', name: 'marked' });
     this.worker.onmessage = ({ data }) => {
-      this.description = this.domSanitizer.bypassSecurityTrustHtml(data);
+      this.description = this.domSanitizer.bypassSecurityTrustHtml(data) as string;
       markDirty(this);
     };
   }

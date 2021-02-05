@@ -19,8 +19,8 @@ interface Car {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SettingsDialogComponent implements OnInit {
-  selectedValue: string;
-  selectedCar: string;
+  selectedValue!: string;
+  selectedCar!: string;
 
   foods: Food[] = [
     { value: 'steak-0', viewValue: 'Cihaz temasını kullan' },

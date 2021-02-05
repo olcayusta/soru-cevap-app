@@ -15,11 +15,11 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ImgShadowComponent implements OnInit {
-  @Input() picture: string;
-  @Input() displayName: string;
-  @ViewChild('imageElement') imageElement: ElementRef<HTMLImageElement>;
+  @Input() picture!: string;
+  @Input() displayName!: string;
+  @ViewChild('imageElement') imageElement!: ElementRef<HTMLImageElement>;
 
-  imgURL: string;
+  imgURL!: string;
 
   constructor(private elRef: ElementRef) {}
 

@@ -10,7 +10,7 @@ import { AuthService } from '../../../auth/auth.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AvatarButtonComponent implements OnInit {
-  user: User;
+  user!: User;
 
   blockScrollStrategy: ScrollStrategy;
   popupOpened = false;

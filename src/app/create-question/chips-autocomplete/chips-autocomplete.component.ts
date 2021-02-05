@@ -20,13 +20,13 @@ export class ChipsAutocompleteComponent implements OnInit {
   removable = true;
   separatorKeysCodes: number[] = [ENTER, COMMA];
   fruitCtrl = new FormControl();
-  filteredFruits: Observable<Tag[]>;
+  filteredFruits!: Observable<Tag[]>;
   fruits: string[] = ['Lemon'];
 
   tags: number[] = [];
 
-  @ViewChild('fruitInput') fruitInput: ElementRef<HTMLInputElement>;
-  @ViewChild('auto') matAutocomplete: MatAutocomplete;
+  @ViewChild('fruitInput') fruitInput!: ElementRef<HTMLInputElement>;
+  @ViewChild('auto') matAutocomplete!: MatAutocomplete;
 
   constructor(private tagService: TagService) {}
 
