@@ -51,6 +51,10 @@ const routes: Routes = [
         loadChildren: async () => (await import('./question/question.module')).QuestionModule
       },
       {
+        path: 'create',
+        loadChildren: async () => (await import('./create-question/create-question.module')).CreateQuestionModule
+      },
+      {
         path: 'edit',
         loadChildren: async () => (await import('./edit/edit.module')).EditModule
       },
@@ -75,10 +79,6 @@ const routes: Routes = [
   {
     path: 'app',
     component: MobileAppInfoComponent
-  },
-  {
-    path: 'create',
-    loadChildren: async () => (await import('./create-question/create-question.module')).CreateQuestionModule
   },
   {
     path: '404',

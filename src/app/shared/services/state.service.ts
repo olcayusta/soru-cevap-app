@@ -8,8 +8,7 @@ export class StateService {
   subject = new Subject<boolean>();
   subject$ = this.subject.asObservable();
 
-  constructor() {
-  }
+  constructor() {}
 
   show(): void {
     this.subject.next(true);
@@ -18,5 +17,4 @@ export class StateService {
   hide(): void {
     this.subject.next(false);
   }
-
 }

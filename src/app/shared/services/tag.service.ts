@@ -20,7 +20,7 @@ export class TagService {
     return this.http.get<Tag[]>(this.apiUrl);
   }
 
-  getTag(tagId: number): Observable<Tag> {
+  getTag(tagId: string | null): Observable<Tag> {
     return this.http.get<Tag>(`${environment.apiUrl}/tags/${tagId}`);
   }
 

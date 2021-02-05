@@ -1,11 +1,11 @@
 import { Component, EventEmitter, OnInit, ChangeDetectionStrategy, Output, ɵmarkDirty as markDirty } from '@angular/core';
-import { User } from '@shared/models/user.model';
-import { AuthService } from '../auth/auth.service';
+import { User } from '../../shared/models/user.model';
+import { AuthService } from '../../auth/auth.service';
 import { Observable } from 'rxjs';
-import { StateService } from '@shared/services/state.service';
-import { NotificationService } from '@shared/services/notification.service';
+import { StateService } from '../../shared/services/state.service';
+import { NotificationService } from '../../shared/services/notification.service';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
-import { SpinnerService } from '@shared/services/spinner.service';
+import { SpinnerService } from '../../shared/services/spinner.service';
 
 @Component({
   selector: 'app-top-bar',

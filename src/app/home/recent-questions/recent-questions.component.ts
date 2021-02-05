@@ -41,6 +41,9 @@ export class RecentQuestionsComponent implements OnInit, OnDestroy {
     }
   }
 
+  // TODO
+  // ilk yukleme yapilirken, ekranda loading belirdigi icin, questions undefined hatasi var
+  // fixleniceks
   loadMore(): void {
     setTimeout(() => {
       this.questionService.getMoreQuestions(this.offset).subscribe((value) => {

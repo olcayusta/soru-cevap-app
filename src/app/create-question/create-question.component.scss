@@ -12,11 +12,7 @@ mat-toolbar {
   background-color: var(--topbar-background);
 }
 
-mat-icon {
-  color: var(--icon-color);
-}
-
-.fixed {
+mat-toolbar.fixed {
   position: fixed;
   top: 0;
   z-index: 1;
@@ -26,16 +22,14 @@ mat-icon {
   margin-left: 24px;
 }
 
+mat-icon {
+  color: var(--icon-color);
+}
+
 h1 {
   font-size: 34px;
   line-height: 48px;
   font-weight: 400;
-}
-
-form {
-  // background-color: #fff;
-  padding: 24px;
-  border-radius: 4px;
 }
 
 .form-body {

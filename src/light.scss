@@ -129,6 +129,7 @@ $gray-theme: mat-light-theme((
 @include angular-material-theme($app-theme);
 @include mat-toolbar-theme($app-theme);
 @include mat-progress-spinner-theme($gray-theme);
+@include mat-form-field-theme($gray-theme);
 
 :root {
   --color: rgba(0, 0, 0, .87);

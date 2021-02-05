@@ -21,15 +21,15 @@ header {
 
 .filter {
   margin: 32px 0 0;
+}
 
-  mat-chip {
-    background-color: #eee;
-  }
+.filter mat-chip {
+  background-color: #eee;
+}
 
-  .mat-chip.mat-standard-chip.mat-chip-selected.mat-primary {
-    background-color: rgb(98 0 238 / .12);
-    color: #6200ee;
-  }
+.filter .mat-chip.mat-standard-chip.mat-chip-selected.mat-primary {
+  background-color: rgb(98 0 238 / .12);
+  color: #6200ee;
 }
 
 .items {

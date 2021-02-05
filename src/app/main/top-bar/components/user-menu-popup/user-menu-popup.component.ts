@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { AuthService } from '../../../auth/auth.service';
-import { User } from '@shared/models/user.model';
-import { SocketService } from '@shared/services/socket.service';
+import { AuthService } from '../../../../auth/auth.service';
+import { User } from '../../../../shared/models/user.model';
+import { SocketService } from '../../../../shared/services/socket.service';
 
 @Component({
   selector: 'app-user-menu-popup',
