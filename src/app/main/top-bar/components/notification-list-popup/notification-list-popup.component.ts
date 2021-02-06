@@ -17,6 +17,7 @@ export class NotificationListPopupComponent implements OnInit {
     lastName: 'Scully',
     age: 24,
     no: 10,
+    test: 1000,
   };
 
   constructor(private notificationService: NotificationService) {}
