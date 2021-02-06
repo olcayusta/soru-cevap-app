@@ -5,9 +5,10 @@ import { environment } from '../../../environments/environment';
 import { Observable } from 'rxjs';
 import { Question } from '../models/question.model';
 import { Answer } from '@shared/models/answer.model';
+import { use } from 'marked';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UserService {
   constructor(private http: HttpClient) {}
@@ -24,7 +25,7 @@ export class UserService {
     return this.http.get<User>(`${environment.apiUrl}/users/${userId}`);
   }
 
-  getUserQuestions(userId: string | null): Observable<Question[]> {
+  getUserQuestions(userId: number): Observable<Question[]> {
     return this.http.get<Question[]>(`${environment.apiUrl}/users/${userId}/questions`);
   }
 
@@ -48,12 +49,17 @@ export class UserService {
    * @param picture
    * Avatar URL
    */
-  createUser(email: string, password: string, displayName: string, picture: string): Observable<User> {
+  createUser(
+    email: string,
+    password: string,
+    displayName: string,
+    picture: string
+  ): Observable<User> {
     return this.http.post<User>(`${environment.apiUrl}/users`, {
       email,
       password,
       displayName,
-      picture
+      picture,
     });
   }
 }

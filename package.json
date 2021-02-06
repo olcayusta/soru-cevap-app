@@ -44,6 +44,7 @@
     "arrowParens": "always",
     "singleQuote": true,
     "proseWrap": "always",
-    "trailingComma": "es5"
+    "trailingComma": "es5",
+    "printWidth": 100
   }
 }

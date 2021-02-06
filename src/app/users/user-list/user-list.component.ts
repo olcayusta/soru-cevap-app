@@ -10,7 +10,7 @@ interface ResolveData {
   selector: 'app-user-list',
   templateUrl: './user-list.component.html',
   styleUrls: ['./user-list.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UserListComponent implements OnInit {
   users!: User[];
@@ -18,7 +18,6 @@ export class UserListComponent implements OnInit {
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    const { users } = this.route.snapshot.data as ResolveData;
-    this.users = users;
+    this.users = (<ResolveData>this.route.snapshot.data).users;
   }
 }

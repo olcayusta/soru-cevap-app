@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { Answer } from '../../shared/models/answer.model';
-import { UserService } from '../../shared/services/user.service';
+import { Answer } from '@shared/models/answer.model';
+import { UserService } from '@shared/services/user.service';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 
@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
   selector: 'app-user-answers',
   templateUrl: './user-answers.component.html',
   styleUrls: ['./user-answers.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UserAnswersComponent implements OnInit {
   answers$!: Observable<Answer[]>;
