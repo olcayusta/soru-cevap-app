@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   selector: 'app-notification-list-popup',
   templateUrl: './notification-list-popup.component.html',
   styleUrls: ['./notification-list-popup.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.Default
 })
 export class NotificationListPopupComponent implements OnInit {
   notifications$!: Observable<Notification[]>;
