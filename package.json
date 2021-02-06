@@ -44,6 +44,6 @@
     "arrowParens": "always",
     "singleQuote": true,
     "proseWrap": "always",
-    "trailingComma": "none"
+    "trailingComma": "es5"
   }
 }
