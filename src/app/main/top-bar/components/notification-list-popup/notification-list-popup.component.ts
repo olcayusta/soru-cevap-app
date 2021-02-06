@@ -14,7 +14,8 @@ export class NotificationListPopupComponent implements OnInit {
 
   hero = {
     firstName: 'Dana',
-    lastName: 'Scully'
+    lastName: 'Scully',
+    age: 24
   };
 
   constructor(private notificationService: NotificationService) {}
