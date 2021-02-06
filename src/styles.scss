@@ -2,6 +2,10 @@
 
 @import '~@angular/material/theming';
 
+@include mat-ripple();
+@include cdk-overlay();
+@include cdk-a11y();
+
 $custom-typography: mat-typography-config(
   $font-family: 'Archivo, sans-serif',
 );
@@ -20,6 +24,8 @@ $custom-typography: mat-typography-config(
 @include mat-tooltip-typography($custom-typography);
 @include mat-badge-typography($custom-typography);
 @include mat-menu-typography($custom-typography);
+@include mat-checkbox-typography($custom-typography);
+@include mat-radio-typography($custom-typography);
 
 $chip-typography: mat-typography-config(
   $font-family: 'Archivo, sans-serif',

@@ -4,7 +4,7 @@ import { SocketService } from '@shared/services/socket.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { SpinnerService } from '@shared/services/spinner.service';
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { SwPush } from '@angular/service-worker';
+import { SwPush, SwUpdate } from '@angular/service-worker';
 import { PushNotificationService } from '@shared/services/push-notification.service';
 import { environment } from '@environments/environment';
 import { DOCUMENT } from '@angular/common';
@@ -62,8 +62,23 @@ export class AppComponent implements OnInit {
     private swPush: SwPush,
     private pushService: PushNotificationService,
     private breakpointObserver: BreakpointObserver,
-    @Inject(DOCUMENT) private document: Document
+    @Inject(DOCUMENT) private document: Document,
+    private updates: SwUpdate
   ) {
+    updates.available.subscribe((event) => {
+      // if (promptUser(event)) {
+      //   updates.activateUpdate().then(() => document.location.reload());
+      // }
+      const snackbar = this.snackBar.open('Available update!', 'TAMAM', {
+        duration: 500000
+      });
+
+      snackbar.onAction().subscribe((value) => {
+        console.log('sayfa yeniden yuklendi!');
+        document.location.reload();
+      });
+    });
+
     // Mobile block
     this.breakpointObserver.observe([Breakpoints.Handset]).subscribe(({ matches }) => {
       /* if (matches) {

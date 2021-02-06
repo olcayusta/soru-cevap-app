@@ -1,4 +1,10 @@
-import { Component, OnInit, ChangeDetectionStrategy, ɵmarkDirty as markDirty, OnDestroy } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ChangeDetectionStrategy,
+  ɵmarkDirty as markDirty,
+  OnDestroy
+} from '@angular/core';
 import { QuestionService } from '@shared/services/question.service';
 import { Question } from '@shared/models/question.model';
 import { ActivatedRoute } from '@angular/router';
@@ -20,13 +26,20 @@ export class RecentQuestionsComponent implements OnInit, OnDestroy {
 
   subscription!: Subscription;
 
-  constructor(private questionService: QuestionService, private filterService: FilterService, private route: ActivatedRoute) {}
+  constructor(
+    private questionService: QuestionService,
+    private filterService: FilterService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
     this.subscription = this.route.queryParamMap
       .pipe(
         switchMap((value) =>
-          this.filterService.getQuestionsByFiltered(value.get('sort') as string, value.get('filter') as string)
+          this.filterService.getQuestionsByFiltered(
+            value.get('sort') as string,
+            value.get('filter') as string
+          )
         )
       )
       .subscribe((value) => {
@@ -45,15 +58,21 @@ export class RecentQuestionsComponent implements OnInit, OnDestroy {
   // ilk yukleme yapilirken, ekranda loading belirdigi icin, questions undefined hatasi var
   // fixleniceks
   loadMore(): void {
-    setTimeout(() => {
-      this.questionService.getMoreQuestions(this.offset).subscribe((value) => {
-        if (value.length > 0) {
-          this.offset += 6;
-          this.questions = [...this.questions, ...value];
-          markDirty(this);
-        } else {
-        }
-      });
-    }, 400);
+    if (this.questions) {
+      setTimeout(() => {
+        this.questionService
+          .getMoreQuestions(this.offset)
+          .subscribe((value) => {
+            if (value.length > 0) {
+              this.offset += 6;
+              this.questions = [...this.questions, ...value];
+              markDirty(this);
+            } else {
+            }
+          });
+      }, 400);
+    } else {
+      console.log('array yok!');
+    }
   }
 }

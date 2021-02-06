@@ -23,7 +23,6 @@ export class QuestionService {
   }
 
   getQuestion(questionId: number | string | null): Observable<Question> {
-    console.log('id: ', questionId);
     return this.http.get<Question>(`${environment.apiUrl}/questions/${questionId}`);
   }
 

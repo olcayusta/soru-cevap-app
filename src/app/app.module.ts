@@ -101,7 +101,7 @@ registerLocaleData(localeTr);
   providers: [
     { provide: LOCALE_ID, useValue: 'tr-TR' },
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
-    { provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: { horizontalPosition: 'start', duration: 4000 } }
+    { provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: { horizontalPosition: 'center', duration: 4000 } }
   ],
   bootstrap: [AppComponent]
 })

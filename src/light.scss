@@ -137,6 +137,8 @@ $gray-theme: mat-light-theme((
 @include mat-dialog-theme($app-theme);
 @include mat-autocomplete-theme($app-theme);
 @include mat-progress-bar-theme($app-theme);
+@include mat-snack-bar-theme($app-theme);
+@include mat-tabs-theme($app-theme);
 
 /* Gray */
 @include mat-progress-spinner-theme($gray-theme);

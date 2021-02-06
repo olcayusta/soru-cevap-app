@@ -81,7 +81,14 @@
               ],
               "progress": true,
               "optimization": {
-                "fonts": false
+                "fonts": {
+                  "inline": true
+                },
+                "styles": {
+                  "minify": true,
+                  "inlineCritical": false
+                },
+                "scripts": true
               },
               "outputHashing": "all",
               "sourceMap": false,
