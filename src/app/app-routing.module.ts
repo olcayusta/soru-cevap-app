@@ -11,93 +11,96 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        loadChildren: async () => (await import('./home/home.module')).HomeModule
+        loadChildren: async () => (await import('./home/home.module')).HomeModule,
       },
       {
         path: 'users',
         loadChildren: async () => (await import('./users/users.module')).UsersModule,
         canLoad: [AuthGuard],
         data: {
-          title: 'BATMAN'
-        }
+          title: 'BATMAN',
+        },
       },
       {
         path: 'tags',
-        loadChildren: async () => (await import('./tags/tags.module')).TagsModule
+        loadChildren: async () => (await import('./tags/tags.module')).TagsModule,
       },
       {
         path: 'tag',
-        loadChildren: async () => (await import('./tag/tag.module')).TagModule
+        loadChildren: async () => (await import('./tag/tag.module')).TagModule,
       },
       {
         path: 'search',
-        loadChildren: async () => (await import('./search/search.module')).SearchModule
+        loadChildren: async () => (await import('./search/search.module')).SearchModule,
       },
       {
         path: 'settings',
         loadChildren: async () => (await import('./settings/settings.module')).SettingsModule,
-        canLoad: [AuthGuard]
+        canLoad: [AuthGuard],
       },
       {
         path: 'list',
-        loadChildren: async () => (await import('./list/list.module')).ListModule
+        loadChildren: async () => (await import('./main/list/list.module')).ListModule,
       },
       {
         path: 'user/:userId',
-        loadChildren: async () => (await import('./user/user.module')).UserModule
+        loadChildren: async () => (await import('./user/user.module')).UserModule,
       },
       {
         path: 'question/:questionId',
-        loadChildren: async () => (await import('./question/question.module')).QuestionModule
+        loadChildren: async () => (await import('./question/question.module')).QuestionModule,
       },
       {
         path: 'create',
-        loadChildren: async () => (await import('./create-question/create-question.module')).CreateQuestionModule
+        loadChildren: async () =>
+          (await import('./create-question/create-question.module')).CreateQuestionModule,
       },
       {
         path: 'edit',
-        loadChildren: async () => (await import('./edit/edit.module')).EditModule
+        loadChildren: async () => (await import('./edit/edit.module')).EditModule,
       },
       {
         path: 'favorites',
-        loadChildren: async () => (await import('./favorites/favorites.module')).FavoritesModule
+        loadChildren: async () => (await import('./favorites/favorites.module')).FavoritesModule,
       },
       {
         path: 'help',
-        loadChildren: async () => (await import('./help/help.module')).HelpModule
-      }
-    ]
+        loadChildren: async () => (await import('./help/help.module')).HelpModule,
+      },
+    ],
   },
   {
     path: 'login',
-    loadChildren: async () => (await import('./auth/login/login.module')).LoginModule
+    loadChildren: async () => (await import('./auth/login/login.module')).LoginModule,
   },
   {
     path: 'register',
-    loadChildren: async () => (await import('./auth/register/register.module')).RegisterModule
+    loadChildren: async () => (await import('./auth/register/register.module')).RegisterModule,
   },
   {
     path: 'app',
-    component: MobileAppInfoComponent
+    component: MobileAppInfoComponent,
   },
   {
     path: '404',
-    loadChildren: async () => (await import('./page-not-found/page-not-found.module')).PageNotFoundModule
+    loadChildren: async () =>
+      (await import('./page-not-found/page-not-found.module')).PageNotFoundModule,
   },
   {
     path: '**',
-    loadChildren: async () => (await import('./page-not-found/page-not-found.module')).PageNotFoundModule
-  }
+    loadChildren: async () =>
+      (await import('./page-not-found/page-not-found.module')).PageNotFoundModule,
+  },
 ];
 
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, {
       urlUpdateStrategy: 'eager',
-      enableTracing: false
+      enableTracing: false,
       // scrollOffset: [0, 0]
-    })
+    }),
   ],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule {}

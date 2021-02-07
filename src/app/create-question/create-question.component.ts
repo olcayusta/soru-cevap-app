@@ -1,15 +1,26 @@
-import { Component, OnInit, ChangeDetectionStrategy, ɵmarkDirty as markDirty, ViewChild } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ChangeDetectionStrategy,
+  ɵmarkDirty as markDirty,
+  ViewChild,
+} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { QuestionService } from '@shared/services/question.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ChipsAutocompleteComponent } from './chips-autocomplete/chips-autocomplete.component';
 import { Question } from '../shared/models/question.model';
 
+interface IFormValue {
+  title: string;
+  description: string;
+}
+
 @Component({
   selector: 'app-create-question',
   templateUrl: './create-question.component.html',
   styleUrls: ['./create-question.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CreateQuestionComponent implements OnInit {
   form: FormGroup;
@@ -20,15 +31,22 @@ export class CreateQuestionComponent implements OnInit {
 
   @ViewChild(ChipsAutocompleteComponent) chipComponent!: ChipsAutocompleteComponent;
 
-  constructor(private fb: FormBuilder, private domSanitizer: DomSanitizer, private questionService: QuestionService) {
+  constructor(
+    private fb: FormBuilder,
+    private domSanitizer: DomSanitizer,
+    private questionService: QuestionService
+  ) {
     this.form = fb.group({
       title: ['', [Validators.required]],
-      description: ['', [Validators.required]]
+      description: ['', [Validators.required]],
     });
   }
 
+  /**
+   * Save question
+   */
   submit(): void {
-    const { title, description } = this.form.value;
+    const { title, description } = <IFormValue>this.form.value;
     const tags = this.chipComponent.tags;
     this.questionService.saveQuestion(title, description, tags).subscribe((value) => {
       console.log(value);

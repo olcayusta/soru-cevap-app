@@ -5,7 +5,6 @@ import { environment } from '../../../environments/environment';
 import { Observable } from 'rxjs';
 import { Question } from '../models/question.model';
 import { Answer } from '@shared/models/answer.model';
-import { use } from 'marked';
 
 @Injectable({
   providedIn: 'root',

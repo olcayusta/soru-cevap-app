@@ -8,7 +8,7 @@ import { SettingsDialogComponent } from '../../settings-dialog/settings-dialog.c
   selector: 'app-nav-drawer',
   templateUrl: './nav-drawer.component.html',
   styleUrls: ['./nav-drawer.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavDrawerComponent implements OnInit {
   @Output() closeDrawer = new EventEmitter();
@@ -22,20 +22,20 @@ export class NavDrawerComponent implements OnInit {
   }
 
   /**
-   * Çıkış yap
-   * */
+   * Logout
+   */
   logout(): void {
     this.authService.logout();
   }
 
   /**
-   * Open settings dialog
+   * Open Settings Dialog
    */
   openSettingsDialog() {
     this.closeDrawer.emit();
     this.dialog.open(SettingsDialogComponent, {
       minWidth: 900,
-      autoFocus: false
+      autoFocus: false,
     });
   }
 

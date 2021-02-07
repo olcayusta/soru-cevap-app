@@ -1,0 +1,28 @@
+<header>
+  <h1>Sorularım</h1>
+</header>
+<!--<qa-home-question-list-item *ngFor="let question of questions$ | async" [question]="question"></qa-home-question-list-item>-->
+
+<div class="grid-list">
+  <div class="grid-item" *ngFor="let question of questions$ | async">
+    <div class="title">
+      <a routerLink="/question/{{question.id}}">{{question.title}}</a>
+    </div>
+    <div class="subtitle">
+      <!--<span>{{question.user.displayName}}</span>
+      <span class="bracket">—</span>-->
+
+      <!-- Answered -->
+      <ng-container *ngIf="question.answer">
+        <!--<img src="{{question.answer.user.picture}}" alt="{{question.answer.user.displayName}}">-->
+        <a routerLink="/user/{{question.answer.user.id}}">
+          <span>{{question.answer?.user?.displayName}}</span>
+        </a>
+        <span class="bracket">—</span>
+        <span>{{question.answer.creationTime | timeAgo}} yanıtladı</span>
+      </ng-container>
+    </div>
+
+    <mat-divider></mat-divider>
+  </div>
+</div>

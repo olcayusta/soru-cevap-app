@@ -1,5 +1,12 @@
-import { Component, Inject, OnInit } from '@angular/core';
-import { ActivatedRoute, NavigationCancel, NavigationError, ResolveEnd, ResolveStart, Router } from '@angular/router';
+import { Component, Inject, OnInit, ɵmarkDirty as markDirty } from '@angular/core';
+import {
+  ActivatedRoute,
+  NavigationCancel, NavigationEnd,
+  NavigationError,
+  ResolveEnd,
+  ResolveStart,
+  Router,
+} from '@angular/router';
 import { SocketService } from '@shared/services/socket.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { SpinnerService } from '@shared/services/spinner.service';
@@ -9,6 +16,8 @@ import { PushNotificationService } from '@shared/services/push-notification.serv
 import { environment } from '@environments/environment';
 import { DOCUMENT } from '@angular/common';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import {filter, map} from 'rxjs/operators';
+import {Title} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-root',
@@ -20,7 +29,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
         'void',
         style({
           opacity: 0,
-          transform: 'scale(0.8)'
+          transform: 'scale(0.8)',
         })
       ),
       transition(
@@ -29,11 +38,11 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
           '120ms cubic-bezier(0, 0, 0.2, 1)',
           style({
             opacity: 1,
-            transform: 'scale(1)'
+            transform: 'scale(1)',
           })
         )
       ),
-      transition('* => void', animate('100ms 25ms linear', style({ opacity: 0 })))
+      transition('* => void', animate('100ms 25ms linear', style({ opacity: 0 }))),
     ]),
     trigger('myInsertRemoveTrigger', [
       transition(':enter', [
@@ -42,13 +51,13 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
           '100ms',
           style({
             opacity: 1,
-            height: '4px'
+            height: '4px',
           })
-        )
+        ),
       ]),
-      transition(':leave', [animate('100ms', style({ opacity: 0, height: '0px' }))])
-    ])
-  ]
+      transition(':leave', [animate('100ms', style({ opacity: 0, height: '0px' }))]),
+    ]),
+  ],
 })
 export class AppComponent implements OnInit {
   spinner = false;
@@ -58,6 +67,8 @@ export class AppComponent implements OnInit {
     private socketService: SocketService,
     private snackBar: MatSnackBar,
     private route: ActivatedRoute,
+    private activatedRoute: ActivatedRoute,
+    private titleService: Title,
     private spinnerService: SpinnerService,
     private swPush: SwPush,
     private pushService: PushNotificationService,
@@ -70,7 +81,7 @@ export class AppComponent implements OnInit {
       //   updates.activateUpdate().then(() => document.location.reload());
       // }
       const snackbar = this.snackBar.open('Available update!', 'TAMAM', {
-        duration: 500000
+        duration: 500000,
       });
 
       snackbar.onAction().subscribe((value) => {
@@ -89,7 +100,7 @@ export class AppComponent implements OnInit {
     if (swPush.isEnabled) {
       swPush
         .requestSubscription({
-          serverPublicKey: environment.vapidPublic
+          serverPublicKey: environment.vapidPublic,
         })
         .then((subscription) => {
           this.pushService.sendSubscriptionToTheServer(subscription).subscribe();

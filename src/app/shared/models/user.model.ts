@@ -1,10 +1,10 @@
 export interface User {
-  id?: number;
-  displayName: string;
-  picture: string;
-  email: string;
-  password?: string;
-  signupDate?: Date;
-  token?: string;
-  githubUrl: string;
+  readonly id: number;
+  readonly displayName: string;
+  readonly picture: string;
+  readonly email: string;
+  readonly password: string;
+  readonly signupDate?: Date;
+  readonly token?: string;
+  readonly githubUrl: string;
 }

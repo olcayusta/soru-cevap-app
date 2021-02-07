@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 import { environment } from '@environments/environment';
 
-interface ResolveData {
+interface IUserResolveData {
   user: User;
 }
 
@@ -45,7 +45,7 @@ export class UserComponent implements OnInit {
   constructor(private route: ActivatedRoute, private title: Title) {}
 
   ngOnInit(): void {
-    const { user } = <ResolveData>this.route.snapshot.data;
+    const { user } = <IUserResolveData>this.route.snapshot.data;
     this.user = user;
     this.title.setTitle(`${user.displayName} - ${environment.appTitle}`);
   }

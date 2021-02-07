@@ -6,12 +6,15 @@ import { TagService } from '../../shared/services/tag.service';
 import { catchError } from 'rxjs/operators';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TagResolverService implements Resolve<Tag> {
   constructor(private tagService: TagService) {}
 
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Tag> | Promise<Tag> | Tag {
+  resolve(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot
+  ): Observable<Tag> | Promise<Tag> | Tag {
     return this.tagService.getTag(route.paramMap.get('tagId')).pipe(
       catchError((err) => {
         return EMPTY;

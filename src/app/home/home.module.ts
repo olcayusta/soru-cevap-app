@@ -31,7 +31,7 @@ function scrollFactory(overlay: Overlay): () => CloseScrollStrategy {
     FilterComponent,
     IsVisibleDirective,
     SortByComponent,
-    FilterByComponent
+    FilterByComponent,
   ],
   imports: [
     CommonModule,
@@ -43,14 +43,14 @@ function scrollFactory(overlay: Overlay): () => CloseScrollStrategy {
     MatButtonModule,
     MatDividerModule,
     MatIconModule,
-    MatChipsModule
+    MatChipsModule,
   ],
   providers: [
     {
       provide: MAT_MENU_SCROLL_STRATEGY,
       useFactory: scrollFactory,
-      deps: [Overlay]
-    }
-  ]
+      deps: [Overlay],
+    },
+  ],
 })
 export class HomeModule {}

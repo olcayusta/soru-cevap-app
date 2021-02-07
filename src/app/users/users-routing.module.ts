@@ -8,12 +8,12 @@ const routes: Routes = [
   {
     path: '',
     component: UsersComponent,
-    resolve: { users: UserListResolverService }
-  }
+    resolve: { users: UserListResolverService },
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class UsersRoutingModule {}
