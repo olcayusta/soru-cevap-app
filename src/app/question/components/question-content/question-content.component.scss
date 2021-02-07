@@ -7,11 +7,11 @@
 }
 
 @media (prefers-color-scheme: light) {
-  @import "~highlight.js/scss/lightfair";
+  @import "../../../../../node_modules/highlight.js/scss/lightfair";
 }
 
 @media (prefers-color-scheme: dark) {
-  @import "~highlight.js/scss/dark";
+  @import "../../../../../node_modules/highlight.js/scss/dark";
 }
 
 code, pre {

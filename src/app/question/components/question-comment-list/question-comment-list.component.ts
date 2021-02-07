@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { Comment } from '../../shared/models/comment.model';
-import { CommentService } from '../../shared/services/comment.service';
+import { Comment } from '../../../shared/models/comment.model';
+import { CommentService } from '../../../shared/services/comment.service';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 
@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
   selector: 'app-question-comment-list',
   templateUrl: './question-comment-list.component.html',
   styleUrls: ['./question-comment-list.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class QuestionCommentListComponent implements OnInit {
   comments$!: Observable<Comment[]>;
@@ -17,6 +17,6 @@ export class QuestionCommentListComponent implements OnInit {
 
   ngOnInit(): void {
     const questionId = this.route.snapshot.paramMap.get('questionId');
-    this.comments$ = this.commentService.gerComments(+!questionId);
+    this.comments$ = this.commentService.gerComments(Number(questionId));
   }
 }

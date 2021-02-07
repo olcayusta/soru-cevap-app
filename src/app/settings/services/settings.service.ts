@@ -5,13 +5,14 @@ import { User } from '../../shared/models/user.model';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class SettingsService {
-  API = environment.apiUrl;
+  API_URL = environment.apiUrl;
+
   constructor(private http: HttpClient) {}
 
   getAccount(): Observable<User> {
-    return this.http.get<User>(`${this.API}/me`);
+    return this.http.get<User>(`${this.API_URL}/me`);
   }
 }

@@ -4,7 +4,7 @@ import {
   ChangeDetectionStrategy,
   AfterViewInit,
   ChangeDetectorRef,
-  ɵmarkDirty as markDirty
+  ɵmarkDirty as markDirty,
 } from '@angular/core';
 import { Clipboard } from '@angular/cdk/clipboard';
 
@@ -12,7 +12,7 @@ import { Clipboard } from '@angular/cdk/clipboard';
   selector: 'app-web-copy-code',
   templateUrl: './web-copy-code.component.html',
   styleUrls: ['./web-copy-code.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class WebCopyCodeComponent implements OnInit, AfterViewInit {
   text!: HTMLElement;

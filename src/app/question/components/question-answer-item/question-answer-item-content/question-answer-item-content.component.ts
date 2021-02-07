@@ -13,7 +13,7 @@ import {
   OnChanges,
   SimpleChanges
 } from '@angular/core';
-import { WebCopyCodeComponent } from '../../web-copy-code/web-copy-code.component';
+import { WebCopyCodeComponent } from '../../../web-copy-code/web-copy-code.component';
 
 @Component({
   selector: 'id-question-answer-item-content',

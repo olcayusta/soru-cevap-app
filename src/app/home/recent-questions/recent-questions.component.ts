@@ -49,6 +49,9 @@ export class RecentQuestionsComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    /**
+     * Abone olunmus bir akis varsa, bu akisin aboneligini kapat.
+     */
     if (this.subscription) {
       this.subscription.unsubscribe();
     }

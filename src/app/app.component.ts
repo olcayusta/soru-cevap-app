@@ -76,27 +76,31 @@ export class AppComponent implements OnInit {
     @Inject(DOCUMENT) private document: Document,
     private updates: SwUpdate
   ) {
+    /**
+     * Button clicked, if updates available reload page
+     */
     updates.available.subscribe((event) => {
-      // if (promptUser(event)) {
-      //   updates.activateUpdate().then(() => document.location.reload());
-      // }
       const snackbar = this.snackBar.open('Available update!', 'TAMAM', {
         duration: 500000,
       });
 
       snackbar.onAction().subscribe((value) => {
-        console.log('sayfa yeniden yuklendi!');
         document.location.reload();
       });
     });
 
-    // Mobile block
+    /**
+     * App disable for access mobile phone (android - iphone)
+     */
     this.breakpointObserver.observe([Breakpoints.Handset]).subscribe(({ matches }) => {
       /* if (matches) {
         this.router.navigateByUrl('/app');
       }*/
     });
 
+    /**
+     * swPush Init
+     */
     if (swPush.isEnabled) {
       swPush
         .requestSubscription({
@@ -108,6 +112,9 @@ export class AppComponent implements OnInit {
         .catch(console.error);
     }
 
+    /**
+     * Router events for spinner
+     */
     router.events.subscribe((value) => {
       if (value instanceof ResolveStart) {
         this.spinner = true;
@@ -127,6 +134,9 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    /**
+     * Make a notification for author user id for created answer for question.
+     */
     this.socketService.on('new answer').subscribe((value) => {
       console.log('Sorunuza, yeni ber cevap geldi.');
       this.snackBar.open('One line text string.');

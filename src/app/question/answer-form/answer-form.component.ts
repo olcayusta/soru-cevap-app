@@ -1,4 +1,10 @@
-import { Component, OnInit, ChangeDetectionStrategy, ɵmarkDirty as markDirty, AfterViewInit } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ChangeDetectionStrategy,
+  ɵmarkDirty as markDirty,
+  AfterViewInit,
+} from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { AnswerService } from '@shared/services/answer.service';
@@ -7,11 +13,11 @@ import { AnswerService } from '@shared/services/answer.service';
   selector: 'app-answer-form',
   templateUrl: './answer-form.component.html',
   styleUrls: ['./answer-form.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AnswerFormComponent implements OnInit, AfterViewInit {
   answerControl: FormControl = new FormControl('', {
-    validators: [Validators.required, Validators.minLength(24)]
+    validators: [Validators.required, Validators.minLength(24)],
   });
 
   constructor(private route: ActivatedRoute, private answerService: AnswerService) {}

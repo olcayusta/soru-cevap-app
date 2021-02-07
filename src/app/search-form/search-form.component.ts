@@ -3,20 +3,24 @@ import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { debounceTime, distinctUntilChanged, filter, switchMap } from 'rxjs/operators';
 import { SearchResultI, SearchService } from '@shared/services/search.service';
-import { MatAutocompleteSelectedEvent, MatAutocompleteTrigger } from '@angular/material/autocomplete';
+import {
+  MatAutocompleteSelectedEvent,
+  MatAutocompleteTrigger,
+} from '@angular/material/autocomplete';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search-form',
   templateUrl: './search-form.component.html',
   styleUrls: ['./search-form.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SearchFormComponent implements OnInit {
   myControl = new FormControl();
   filteredQuestions!: Observable<SearchResultI[]>;
 
-  @ViewChild('autoCompleteInput', { read: MatAutocompleteTrigger }) autoComplete!: MatAutocompleteTrigger;
+  @ViewChild('autoCompleteInput', { read: MatAutocompleteTrigger })
+  autoComplete!: MatAutocompleteTrigger;
 
   constructor(private searhService: SearchService, private router: Router) {}
 

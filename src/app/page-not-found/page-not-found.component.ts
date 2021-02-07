@@ -9,9 +9,9 @@ import { environment } from '../../environments/environment';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PageNotFoundComponent implements OnInit {
-  constructor(private title: Title) {}
+  constructor(private titleService: Title) {}
 
   ngOnInit(): void {
-    this.title.setTitle(`Sayfa bulunamadı - ${environment.appTitle}`);
+    this.titleService.setTitle(`Sayfa bulunamadı - ${environment.appTitle}`);
   }
 }

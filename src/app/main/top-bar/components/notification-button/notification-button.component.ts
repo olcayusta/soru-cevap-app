@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy, ɵmarkDirty as markDirty } from '@angular/core';
 import { shareReplay } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { NotificationService } from '../../../../shared/services/notification.service';
+import { NotificationService } from '@shared/services/notification.service';
 import { ScrollStrategy, ScrollStrategyOptions } from '@angular/cdk/overlay';
 
 @Component({

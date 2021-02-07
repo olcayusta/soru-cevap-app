@@ -9,7 +9,7 @@ import { SocketService } from '@shared/services/socket.service';
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MainComponent implements OnInit {
   mode!: MatDrawerMode;
@@ -49,9 +49,10 @@ export class MainComponent implements OnInit {
     } else {
       this.mode = 'side';
     }
-    /*this.snackBar.open('Sorunuza yanıt geldi', 'TAMAM', {
+
+    this.snackBar.open('Sorunuza yanıt geldi', 'TAMAM', {
       horizontalPosition: 'start'
-    });*/
+    });
 
     /* this.socketService.subject.subscribe(value => {
        console.log(value);

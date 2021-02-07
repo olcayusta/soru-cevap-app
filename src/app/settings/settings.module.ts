@@ -9,6 +9,12 @@ import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [SettingsComponent],
-  imports: [CommonModule, SettingsRoutingModule, MatExpansionModule, MatInputModule, MatButtonModule]
+  imports: [
+    CommonModule,
+    SettingsRoutingModule,
+    MatExpansionModule,
+    MatInputModule,
+    MatButtonModule,
+  ],
 })
 export class SettingsModule {}

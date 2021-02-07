@@ -1,7 +1,15 @@
-import { AfterViewInit, Directive, ElementRef, HostBinding, HostListener, Input, OnInit } from '@angular/core';
+import {
+  AfterViewInit,
+  Directive,
+  ElementRef,
+  HostBinding,
+  HostListener,
+  Input,
+  OnInit,
+} from '@angular/core';
 
 @Directive({
-  selector: '[appLazyImg]'
+  selector: '[appLazyImg]',
 })
 export class LazyImgDirective implements OnInit, AfterViewInit {
   // @HostBinding('attr.src') src = null;

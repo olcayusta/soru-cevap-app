@@ -9,16 +9,16 @@ import {
   ComponentFactoryResolver,
   ViewContainerRef,
   AfterViewInit,
-  ɵmarkDirty as markDirty
+  ɵmarkDirty as markDirty,
 } from '@angular/core';
-import { Answer } from '../../shared/models/answer.model';
-import { WebCopyCodeComponent } from '../web-copy-code/web-copy-code.component';
+import { Answer } from '../../../shared/models/answer.model';
+import { WebCopyCodeComponent } from '../../web-copy-code/web-copy-code.component';
 
 @Component({
   selector: 'app-question-answer-item',
   templateUrl: './question-answer-item.component.html',
   styleUrls: ['./question-answer-item.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class QuestionAnswerItemComponent implements OnInit, AfterViewInit {
   @Input() answer!: Answer;

@@ -65,7 +65,7 @@ const routes: Routes = [
       },
       {
         path: 'help',
-        loadChildren: async () => (await import('./help/help.module')).HelpModule,
+        loadChildren: async () => (await import('./modules/help/help.module')).HelpModule,
       },
     ],
   },

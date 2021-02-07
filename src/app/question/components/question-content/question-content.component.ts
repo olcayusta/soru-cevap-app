@@ -9,14 +9,14 @@ import {
   OnInit,
   ViewChild,
   ViewContainerRef,
-  ViewEncapsulation
+  ViewEncapsulation,
 } from '@angular/core';
-import { WebCopyCodeComponent } from '../web-copy-code/web-copy-code.component';
+import { WebCopyCodeComponent } from '../../web-copy-code/web-copy-code.component';
 
 import hljs from 'highlight.js';
 
 hljs.configure({
-  languages: ['javascript', 'typescript', 'sql']
+  languages: ['javascript', 'typescript', 'sql'],
 });
 
 @Component({
@@ -24,7 +24,7 @@ hljs.configure({
   templateUrl: './question-content.component.html',
   styleUrls: ['./question-content.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 export class QuestionContentComponent implements OnInit, AfterViewInit {
   @Input() content!: string;
