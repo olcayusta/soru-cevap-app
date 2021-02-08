@@ -3,12 +3,12 @@
   <div id="left-content">
     <button mat-icon-button aria-label="Open menu" class="menu-button"
             (click)="openDrawer.emit()">
-      <mat-icon fontSet="material-icons-outlined">menu</mat-icon>
+      <app-menu-icon></app-menu-icon>
     </button>
 
-<!--    <button mat-icon-button aria-label="Open menu" class="menu-button">-->
-<!--      <app-menu-icon></app-menu-icon>-->
-<!--    </button>-->
+    <!--    <button mat-icon-button aria-label="Open menu" class="menu-button">-->
+    <!--      <app-menu-icon></app-menu-icon>-->
+    <!--    </button>-->
 
     <a routerLink="/" class="logo-link" aria-label="Ana Sayfa">
       <span>İyidev</span>
@@ -63,10 +63,10 @@
   <!--  </button>-->
 
   <!-- More things -->
-<!--  <button mat-icon-button aria-label="Uygulamalar" matTooltip="Uygulamalar" class="top-right-btn more-vert-icon"
-          [matMenuTriggerFor]="moreMenu">
-    <mat-icon>more_vert</mat-icon>
-  </button>-->
+  <!--  <button mat-icon-button aria-label="Uygulamalar" matTooltip="Uygulamalar" class="top-right-btn more-vert-icon"
+            [matMenuTriggerFor]="moreMenu">
+      <mat-icon>more_vert</mat-icon>
+    </button>-->
   <mat-menu #moreMenu="matMenu" xPosition="before" class="text-only-menu">
     <ng-template matMenuContent>
       <button mat-menu-item>

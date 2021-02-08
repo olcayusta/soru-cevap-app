@@ -6,12 +6,15 @@ import { EMPTY, Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class QuestionResolverService implements Resolve<Question> {
   constructor(private questionService: QuestionService, private router: Router) {}
 
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Question> | Promise<Question> | Question {
+  resolve(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot
+  ): Observable<Question> | Promise<Question> | Question {
     return this.questionService.getQuestion(route.paramMap.get('questionId')).pipe(
       catchError((err, caught) => {
         this.router.navigateByUrl('/404');

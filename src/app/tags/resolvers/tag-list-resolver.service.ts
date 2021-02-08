@@ -6,16 +6,15 @@ import { EMPTY, Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TagListResolverService implements Resolve<Tag[]> {
+  constructor(private tagService: TagService) {}
 
-  constructor(
-    private tagService: TagService
-  ) {
-  }
-
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Tag[]> | Promise<Tag[]> | Tag[] {
+  resolve(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot
+  ): Observable<Tag[]> | Promise<Tag[]> | Tag[] {
     return this.tagService.getAllTags().pipe(
       catchError((err, caught) => {
         return EMPTY;

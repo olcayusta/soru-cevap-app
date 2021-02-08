@@ -17,6 +17,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { ListItemAvatarComponent } from './components/list-item-avatar/list-item-avatar.component';
 import { MenuIconComponent } from './icons/menu-icon/menu-icon.component';
+import { NotificationsIconComponent } from './icons/notifications-icon/notifications-icon.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { MenuIconComponent } from './icons/menu-icon/menu-icon.component';
     MarkedPipe,
     ShareDialogComponent,
     ListItemAvatarComponent,
-    MenuIconComponent
+    MenuIconComponent,
+    NotificationsIconComponent,
   ],
   imports: [
     CommonModule,
@@ -39,8 +41,15 @@ import { MenuIconComponent } from './icons/menu-icon/menu-icon.component';
     MatIconModule,
     MatDialogModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
   ],
-  exports: [LazyImgDirective, HomeQuestionListItemComponent, HighlightSearchPipe, TimeAgoPipe, MenuIconComponent]
+  exports: [
+    LazyImgDirective,
+    HomeQuestionListItemComponent,
+    HighlightSearchPipe,
+    TimeAgoPipe,
+    MenuIconComponent,
+    NotificationsIconComponent,
+  ],
 })
 export class SharedModule {}

@@ -3,10 +3,24 @@
         #notificationElement="cdkOverlayOrigin"
         cdkOverlayOrigin
         (click)="openNotifications()">
-  <mat-icon fontSet="material-icons-outlined" matBadge="{{notificationCount$ | async}}"
-            [matBadgeHidden]="(notificationCount$ | async) === 0">notifications
-  </mat-icon>
+    <mat-icon fontSet="material-icons-outlined" matBadge="{{notificationCount$ | async}}"
+              [matBadgeHidden]="(notificationCount$ | async) === 0">notifications
+    </mat-icon>
+<!--  <app-notifications-icon matBadge="{{notificationCount$ | async}}"
+                          [matBadgeHidden]="(notificationCount$ | async) === 0"></app-notifications-icon>-->
 </button>
+
+<!--
+<ng-template
+  cdkConnectedOverlay
+  (overlayOutsideClick)="outsideClick()"
+  [cdkConnectedOverlayScrollStrategy]="blockScrollStrategy"
+  [cdkConnectedOverlayOpen]="popupOpened"
+  [cdkConnectedOverlayOrigin]="notificationElement">
+  <app-notification-list-popup></app-notification-list-popup>
+</ng-template>
+-->
+
 
 <ng-template
   cdkConnectedOverlay
@@ -16,3 +30,5 @@
   [cdkConnectedOverlayOrigin]="notificationElement">
   <app-notification-list-popup></app-notification-list-popup>
 </ng-template>
+
+

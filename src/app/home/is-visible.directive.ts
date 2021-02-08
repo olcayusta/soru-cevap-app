@@ -1,15 +1,12 @@
 import { AfterViewInit, Directive, ElementRef, EventEmitter, Output } from '@angular/core';
 
 @Directive({
-  selector: '[appIsVisible]'
+  selector: '[appIsVisible]',
 })
 export class IsVisibleDirective implements AfterViewInit {
   @Output() isVisible = new EventEmitter();
 
-  constructor(
-    private elementRef: ElementRef<HTMLElement>
-  ) {
-  }
+  constructor(private elementRef: ElementRef<HTMLElement>) {}
 
   ngAfterViewInit(): void {
     const obs = new IntersectionObserver((entries, observer) => {
@@ -19,5 +16,4 @@ export class IsVisibleDirective implements AfterViewInit {
     });
     obs.observe(this.elementRef.nativeElement);
   }
-
 }

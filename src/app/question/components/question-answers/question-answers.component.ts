@@ -8,7 +8,7 @@ import { ActivatedRoute } from '@angular/router';
   selector: 'app-question-answers',
   templateUrl: './question-answers.component.html',
   styleUrls: ['./question-answers.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class QuestionAnswersComponent implements OnInit {
   answers$!: Observable<Answer[]>;
@@ -17,6 +17,6 @@ export class QuestionAnswersComponent implements OnInit {
 
   ngOnInit(): void {
     const questionId = this.route.snapshot.paramMap.get('questionId');
-    this.answers$ = this.answerService.getAnswers(+!questionId);
+    this.answers$ = this.answerService.getAnswers(Number(questionId));
   }
 }

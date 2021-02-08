@@ -3,7 +3,7 @@ import {
   OnInit,
   ChangeDetectionStrategy,
   ɵmarkDirty as markDirty,
-  OnDestroy
+  OnDestroy,
 } from '@angular/core';
 import { QuestionService } from '@shared/services/question.service';
 import { Question } from '@shared/models/question.model';
@@ -16,7 +16,7 @@ import { switchMap } from 'rxjs/operators';
   selector: 'app-recent-questions',
   templateUrl: './recent-questions.component.html',
   styleUrls: ['./recent-questions.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RecentQuestionsComponent implements OnInit, OnDestroy {
   questions!: Question[];
@@ -63,16 +63,15 @@ export class RecentQuestionsComponent implements OnInit, OnDestroy {
   loadMore(): void {
     if (this.questions) {
       setTimeout(() => {
-        this.questionService
-          .getMoreQuestions(this.offset)
-          .subscribe((value) => {
-            if (value.length > 0) {
-              this.offset += 6;
-              this.questions = [...this.questions, ...value];
-              markDirty(this);
-            } else {
-            }
-          });
+        this.questionService.getMoreQuestions(this.offset).subscribe((value) => {
+          if (value.length > 0) {
+            this.offset += 6;
+            this.questions = [...this.questions, ...value];
+            markDirty(this);
+          } else {
+            console.log('data bitti!..');
+          }
+        });
       }, 400);
     } else {
       console.log('array yok!');

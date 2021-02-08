@@ -24,12 +24,12 @@ import { SideSheetComponent } from './main/side-sheet/side-sheet.component';
 import { MatRadioModule } from '@angular/material/radio';
 import { MAT_SNACK_BAR_DEFAULT_OPTIONS, MatSnackBarModule } from '@angular/material/snack-bar';
 import { StickyDirective } from './main/top-bar/directives/sticky.directive';
-import { BottomBarComponent } from './bottom-bar/bottom-bar.component';
+import { BottomBarComponent } from './components/bottom-bar/bottom-bar.component';
 import { MatRippleModule } from '@angular/material/core';
 import { JwtInterceptor } from './auth/interceptors/jwt.interceptor';
 import { MatInputModule } from '@angular/material/input';
 import { SharedModule } from '@shared/shared.module';
-import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import {MAT_AUTOCOMPLETE_DEFAULT_OPTIONS, MatAutocompleteModule} from '@angular/material/autocomplete';
 import { NotificationListPopupComponent } from './main/top-bar/components/notification-list-popup/notification-list-popup.component';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
@@ -101,7 +101,7 @@ registerLocaleData(localeTr);
   providers: [
     { provide: LOCALE_ID, useValue: 'tr-TR' },
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
-    { provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: { horizontalPosition: 'center', duration: 4000 } }
+    { provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: { horizontalPosition: 'center', duration: 4000 } },
   ],
   bootstrap: [AppComponent]
 })

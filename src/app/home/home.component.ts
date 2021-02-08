@@ -7,13 +7,13 @@ import { StateService } from '../shared/services/state.service';
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeComponent implements OnInit {
-  constructor(private title: Title, private stateService: StateService) {}
+  constructor(private titleService: Title, private stateService: StateService) {}
 
   ngOnInit(): void {
-    this.title.setTitle(`${environment.appTitle}`);
     this.stateService.show();
+    this.titleService.setTitle(`${environment.appTitle}`);
   }
 }

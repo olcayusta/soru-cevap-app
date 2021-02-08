@@ -1,8 +1,8 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Tag } from '@shared/models/tag.model';
 import { ActivatedRoute } from '@angular/router';
-import {Title} from "@angular/platform-browser";
-import {environment} from "../../environments/environment";
+import { Title } from '@angular/platform-browser';
+import { environment } from '../../environments/environment';
 
 interface ITagsResolveData {
   tags: Tag[];

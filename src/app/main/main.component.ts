@@ -3,7 +3,6 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDrawerMode } from '@angular/material/sidenav';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { DOCUMENT } from '@angular/common';
-import { SocketService } from '@shared/services/socket.service';
 
 @Component({
   selector: 'app-main',
@@ -14,16 +13,17 @@ import { SocketService } from '@shared/services/socket.service';
 export class MainComponent implements OnInit {
   mode!: MatDrawerMode;
 
-  // any
-  isSmallScreen: any;
+  isSmallScreen!: boolean;
 
   constructor(
     private snackBar: MatSnackBar,
     private breakpointObserver: BreakpointObserver,
-    @Inject(DOCUMENT) private document: Document,
-    private socketService: SocketService
+    @Inject(DOCUMENT) private document: Document
   ) {}
 
+  /**
+   * Mobil tasarimda, scroll kaydirilinca, asagi veya yukari durumuna gore, fab width degeri degistir.
+   */
   fabButtonMakeWidthOnScroll(): void {
     let prevScrollPosition = window.pageYOffset;
     window.onscroll = () => {
@@ -49,15 +49,6 @@ export class MainComponent implements OnInit {
     } else {
       this.mode = 'side';
     }
-
-    this.snackBar.open('Sorunuza yanıt geldi', 'TAMAM', {
-      horizontalPosition: 'start'
-    });
-
-    /* this.socketService.subject.subscribe(value => {
-       console.log(value);
-       this.snackBar.open('Sorunuza yanıt geldi', 'TAMAM');
-     });*/
   }
 
   makeOverflowAuto(): void {

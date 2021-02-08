@@ -6,12 +6,15 @@ import { EMPTY, Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UserListResolverService implements Resolve<User[]> {
   constructor(private userService: UserService) {}
 
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<User[]> | Promise<User[]> | User[] {
+  resolve(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot
+  ): Observable<User[]> | Promise<User[]> | User[] {
     return this.userService.getAllUsers().pipe(
       catchError((err) => {
         return EMPTY;

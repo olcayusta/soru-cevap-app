@@ -12,7 +12,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { ShareDialogComponent } from '../shared/components/share-dialog/share-dialog.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
-interface ResolveData {
+interface IQuestionResolveData {
   title: string;
   question: Question;
 }
@@ -39,7 +39,7 @@ export class QuestionComponent implements OnInit {
   ngOnInit(): void {
     this.question$ = this.route.data.pipe(
       // @ts-ignore
-      map(({ question, title }: ResolveData) => {
+      map(({ question, title }: IQuestionResolveData) => {
         this.title.setTitle(`${question.title} - ${environment.appTitle}`);
         return question;
       })

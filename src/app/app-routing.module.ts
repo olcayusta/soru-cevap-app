@@ -40,7 +40,7 @@ const routes: Routes = [
       },
       {
         path: 'list',
-        loadChildren: async () => (await import('./main/list/list.module')).ListModule,
+        loadChildren: async () => (await import('./modules/list/list.module')).ListModule,
       },
       {
         path: 'user/:userId',
@@ -61,7 +61,7 @@ const routes: Routes = [
       },
       {
         path: 'favorites',
-        loadChildren: async () => (await import('./favorites/favorites.module')).FavoritesModule,
+        loadChildren: async () => (await import('./modules/favorites/favorites.module')).FavoritesModule,
       },
       {
         path: 'help',

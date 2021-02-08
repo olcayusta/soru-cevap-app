@@ -32,8 +32,8 @@ export class AnswerFormComponent implements OnInit, AfterViewInit {
    * Create an answer
    */
   formSubmit(): void {
-    const questionId = this.route.snapshot.paramMap.get('questionId');
-    this.answerService.create(+!questionId, this.answerControl.value).subscribe((value) => {
+    const questionId = Number(this.route.snapshot.paramMap.get('questionId'));
+    this.answerService.create(questionId, this.answerControl.value).subscribe((value) => {
       console.log(value);
     });
   }
