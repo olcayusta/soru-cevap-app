@@ -16,8 +16,6 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { ListItemAvatarComponent } from './components/list-item-avatar/list-item-avatar.component';
-import { MenuIconComponent } from './icons/menu-icon/menu-icon.component';
-import { NotificationsIconComponent } from './icons/notifications-icon/notifications-icon.component';
 
 @NgModule({
   declarations: [
@@ -29,8 +27,6 @@ import { NotificationsIconComponent } from './icons/notifications-icon/notificat
     MarkedPipe,
     ShareDialogComponent,
     ListItemAvatarComponent,
-    MenuIconComponent,
-    NotificationsIconComponent,
   ],
   imports: [
     CommonModule,
@@ -43,13 +39,6 @@ import { NotificationsIconComponent } from './icons/notifications-icon/notificat
     MatInputModule,
     MatButtonModule,
   ],
-  exports: [
-    LazyImgDirective,
-    HomeQuestionListItemComponent,
-    HighlightSearchPipe,
-    TimeAgoPipe,
-    MenuIconComponent,
-    NotificationsIconComponent,
-  ],
+  exports: [LazyImgDirective, HomeQuestionListItemComponent, HighlightSearchPipe, TimeAgoPipe],
 })
 export class SharedModule {}

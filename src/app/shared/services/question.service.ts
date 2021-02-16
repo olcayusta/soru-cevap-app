@@ -22,7 +22,7 @@ export class QuestionService {
     return this.http.get<Question[]>(`${environment.apiUrl}/questions/unanswered`);
   }
 
-  getQuestion(questionId: number | string | null): Observable<Question> {
+  getQuestion(questionId: number): Observable<Question> {
     return this.http.get<Question>(`${environment.apiUrl}/questions/${questionId}`);
   }
 

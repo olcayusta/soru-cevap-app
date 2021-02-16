@@ -10,6 +10,7 @@ import {
   ViewChild,
   ViewContainerRef,
   ViewEncapsulation,
+  ɵmarkDirty as markDirty
 } from '@angular/core';
 import { WebCopyCodeComponent } from '../../web-copy-code/web-copy-code.component';
 

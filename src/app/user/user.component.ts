@@ -3,6 +3,7 @@ import { User } from '@shared/models/user.model';
 import { ActivatedRoute } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 import { environment } from '@environments/environment';
+import { UserResolver } from './user.resolver';
 
 interface IUserResolveData {
   user: User;

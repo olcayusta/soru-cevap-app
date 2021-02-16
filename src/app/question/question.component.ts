@@ -1,11 +1,11 @@
-import { Component, OnInit, ChangeDetectionStrategy, ɵmarkDirty as markDirty } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Question } from '@shared/models/question.model';
 import { ActivatedRoute } from '@angular/router';
 import { AnswerService } from '@shared/services/answer.service';
 import { StateService } from '@shared/services/state.service';
 import { Title } from '@angular/platform-browser';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, pluck, tap } from 'rxjs/operators';
 import { FavoriteService } from '../shared/services/favorite.service';
 import { environment } from '../../environments/environment';
 import { MatDialog } from '@angular/material/dialog';
@@ -13,7 +13,6 @@ import { ShareDialogComponent } from '../shared/components/share-dialog/share-di
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 interface IQuestionResolveData {
-  title: string;
   question: Question;
 }
 
@@ -25,6 +24,7 @@ interface IQuestionResolveData {
 })
 export class QuestionComponent implements OnInit {
   question$!: Observable<Question>;
+  soru: Question | undefined;
 
   constructor(
     private route: ActivatedRoute,
@@ -33,17 +33,41 @@ export class QuestionComponent implements OnInit {
     private favoriteService: FavoriteService,
     private dialog: MatDialog,
     private snackBar: MatSnackBar,
-    private title: Title
+    private titleService: Title,
+    private activatedRoute: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
+    /* this.route.data.subscribe(({ question }: RouteData) => {
+       this.soru = question;
+     });
+
+     this.route.data.subscribe((data: { question?: Question }) => {
+       this.soru = data.question;
+     });
+
+     this.question$ = this.route.data.pipe(
+       map((value: { question?: Question }) => {
+         return value.question;
+       })
+     );
+
+     this.question$ = this.route.data.pipe(
+       pluck('question'),
+       tap((question) => {
+         this.titleService.setTitle(`${question.title} - ${environment.appTitle}`);
+         return question;
+       })
+     );*/
+
     this.question$ = this.route.data.pipe(
       // @ts-ignore
-      map(({ question, title }: IQuestionResolveData) => {
-        this.title.setTitle(`${question.title} - ${environment.appTitle}`);
+      map(({ question }: IQuestionResolveData) => {
+        this.titleService.setTitle(`${question.title} - ${environment.appTitle}`);
         return question;
       })
     );
+
     this.stateService.hide();
   }
 
@@ -54,7 +78,7 @@ export class QuestionComponent implements OnInit {
   }
 
   /*
-   * Open share dialog
+   * Open Share Dialog
    * */
   openDialog() {
     const dialog = this.dialog.open(ShareDialogComponent, {

@@ -17,9 +17,6 @@ const routes: Routes = [
         path: 'users',
         loadChildren: async () => (await import('./users/users.module')).UsersModule,
         canLoad: [AuthGuard],
-        data: {
-          title: 'BATMAN',
-        },
       },
       {
         path: 'tags',
@@ -61,7 +58,8 @@ const routes: Routes = [
       },
       {
         path: 'favorites',
-        loadChildren: async () => (await import('./modules/favorites/favorites.module')).FavoritesModule,
+        loadChildren: async () =>
+          (await import('./modules/favorites/favorites.module')).FavoritesModule,
       },
       {
         path: 'help',
@@ -98,6 +96,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes, {
       urlUpdateStrategy: 'eager',
       enableTracing: false,
+      scrollPositionRestoration: 'enabled',
       // scrollOffset: [0, 0]
     }),
   ],

@@ -16,7 +16,7 @@ export class UserAnswersComponent implements OnInit {
   constructor(private userService: UserService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    const userId = this.route.snapshot.parent!.parent!.paramMap.get('userId');
+    const userId = Number(this.route.snapshot.parent!.parent!.paramMap.get('userId'));
     this.answers$ = this.userService.getUserAnswers(userId);
   }
 }

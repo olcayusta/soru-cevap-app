@@ -20,7 +20,7 @@ export class UserService {
    * REST API uzerinden ilgili kullanicinin, tum bilgilerini getirir.
    * @param userId
    */
-  getUser(userId: string | null): Observable<User> {
+  getUser(userId: number): Observable<User> {
     return this.http.get<User>(`${environment.apiUrl}/users/${userId}`);
   }
 
@@ -33,7 +33,7 @@ export class UserService {
    * @param userId
    * The parameter Id
    */
-  getUserAnswers(userId: string | null): Observable<Answer[]> {
+  getUserAnswers(userId: number): Observable<Answer[]> {
     return this.http.get<Answer[]>(`${environment.apiUrl}/users/${userId}/answers`);
   }
 

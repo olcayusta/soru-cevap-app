@@ -7,8 +7,12 @@ import { Title } from '@angular/platform-browser';
 import { environment } from '../../environments/environment';
 
 interface ITagResolveData {
-  eiket: Tag;
+  tag: Tag;
 }
+
+type RouteData = {
+  tag: Tag;
+};
 
 @Component({
   selector: 'app-tag',
@@ -32,7 +36,7 @@ export class TagComponent implements OnInit {
      */
     this.tag$ = this.route.data.pipe(
       // @ts-ignore
-      map(({ tag }: ITagResolveData) => {
+      map(({ tag }: RouteData) => {
         return tag;
       })
     );

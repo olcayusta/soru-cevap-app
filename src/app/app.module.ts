@@ -29,7 +29,7 @@ import { MatRippleModule } from '@angular/material/core';
 import { JwtInterceptor } from './auth/interceptors/jwt.interceptor';
 import { MatInputModule } from '@angular/material/input';
 import { SharedModule } from '@shared/shared.module';
-import {MAT_AUTOCOMPLETE_DEFAULT_OPTIONS, MatAutocompleteModule} from '@angular/material/autocomplete';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { NotificationListPopupComponent } from './main/top-bar/components/notification-list-popup/notification-list-popup.component';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
@@ -37,16 +37,15 @@ import { NavDrawerComponent } from './main/nav-drawer/nav-drawer.component';
 import { SearchFormComponent } from './search-form/search-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserMenuPopupComponent } from './main/top-bar/components/user-menu-popup/user-menu-popup.component';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatChipsModule } from '@angular/material/chips';
 import { ImgShadowComponent } from './main/top-bar/components/avatar-button/img-shadow/img-shadow.component';
 import { NotificationButtonComponent } from './main/top-bar/components/notification-button/notification-button.component';
 import { AvatarButtonComponent } from './main/top-bar/components/avatar-button/avatar-button.component';
 import { SettingsDialogComponent } from './settings-dialog/settings-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
-import { MatSelectModule } from '@angular/material/select';
 import { MobileAppInfoComponent } from './mobile-app-info/mobile-app-info.component';
 import { DrawerHeaderComponent } from './main/nav-drawer/drawer-header/drawer-header.component';
+import { MatSelectModule } from '@angular/material/select';
 
 registerLocaleData(localeTr);
 
@@ -67,7 +66,7 @@ registerLocaleData(localeTr);
     AvatarButtonComponent,
     SettingsDialogComponent,
     MobileAppInfoComponent,
-    DrawerHeaderComponent
+    DrawerHeaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -91,18 +90,19 @@ registerLocaleData(localeTr);
     MatListModule,
     SharedModule,
     MatIconModule,
-    MatSlideToggleModule,
     ReactiveFormsModule,
     MatChipsModule,
     MatDialogModule,
-    MatSelectModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'tr-TR' },
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
-    { provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: { horizontalPosition: 'center', duration: 4000 } },
+    {
+      provide: MAT_SNACK_BAR_DEFAULT_OPTIONS,
+      useValue: { horizontalPosition: 'center', duration: 4000 },
+    },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

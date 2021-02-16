@@ -2,13 +2,13 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { UsersComponent } from './users.component';
-import { UserListResolverService } from './resolvers/user-list-resolver.service';
+import { UsersResolver } from './users.resolver';
 
 const routes: Routes = [
   {
     path: '',
     component: UsersComponent,
-    resolve: { users: UserListResolverService },
+    resolve: { users: UsersResolver },
   },
 ];
 

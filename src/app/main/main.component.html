@@ -1,4 +1,4 @@
-<mat-sidenav-container>
+<mat-sidenav-container id="drawer-container">
   <mat-sidenav #drawer position="start" [autoFocus]="false" fixedInViewport (closedStart)="makeOverflowAuto()"
                (openedStart)="makeOverflowHidden()">
     <app-nav-drawer (closeDrawer)="drawer.close()"></app-nav-drawer>
@@ -9,8 +9,10 @@
     <app-side-sheet></app-side-sheet>
   </mat-sidenav>
 
-  <app-top-bar (openDrawer)="drawer.open()" (openSheet)="sheet.open()"></app-top-bar>
-  <!--
+  <mat-sidenav-content id="drawer-content">
+    <div id="gf-full-page">
+        <app-top-bar (openDrawer)="drawer.open()" (openSheet)="sheet.open()"></app-top-bar>
+      <!--
     <div id="main">
       <div class="my-content example-sidenav-content">
               <router-outlet></router-outlet>
@@ -21,37 +23,39 @@
         &lt;!&ndash;<app-bottom-bar></app-bottom-bar>&ndash;&gt;
       </div>
     </div>-->
+      <main>
+        <div id="content">
+          <div class="my-content">
+            <router-outlet></router-outlet>
 
-  <main>
-    <div id="content">
-      <div class="my-content">
-        <router-outlet></router-outlet>
+            <!--        <div class="fixed-chip">-->
+            <!--          <mat-chip class="mat-elevation-z4">New Releases</mat-chip>-->
+            <!--        </div>-->
 
-        <!--        <div class="fixed-chip">-->
-        <!--          <mat-chip class="mat-elevation-z4">New Releases</mat-chip>-->
-        <!--        </div>-->
+            <!--          <div class="fixed-fab-btn">-->
+            <!--            <a mat-fab color="accent" routerLink="/create" class="extended-fab" id="extended-fab">-->
+            <!--              <mat-icon>create</mat-icon>-->
+            <!--              <span>OLUŞTUR</span>-->
+            <!--            </a>-->
+            <!--          </div>-->
 
-<!--          <div class="fixed-fab-btn">-->
-<!--            <a mat-fab color="accent" routerLink="/create" class="extended-fab" id="extended-fab">-->
-<!--              <mat-icon>create</mat-icon>-->
-<!--              <span>OLUŞTUR</span>-->
-<!--            </a>-->
-<!--          </div>-->
-
-         <!--       <div class="fixed-fab-btn">
-                  <a mat-fab matTooltip="Oluştur" class="my-fab-elevation">
-                    <mat-icon fontSet="material-icons-outlined">create</mat-icon>
-                  </a>
-                </div>-->
+            <!--       <div class="fixed-fab-btn">
+                     <a mat-fab matTooltip="Oluştur" class="my-fab-elevation">
+                       <mat-icon fontSet="material-icons-outlined">create</mat-icon>
+                     </a>
+                   </div>-->
 
 
-        <!--  <div class="content-update-chip">
-            <mat-chip>Yeni öneriler</mat-chip>
+            <!--  <div class="content-update-chip">
+                <mat-chip>Yeni öneriler</mat-chip>
+              </div>
+      -->
+            <!-- <app-bottom-bar></app-bottom-bar>-->
           </div>
-  -->
-        <!--<id-bottom-bar></id-bottom-bar>-->
-      </div>
+        </div>
+      </main>
     </div>
-  </main>
 
+
+  </mat-sidenav-content>
 </mat-sidenav-container>

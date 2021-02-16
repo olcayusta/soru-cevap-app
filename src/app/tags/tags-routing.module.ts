@@ -2,19 +2,18 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { TagsComponent } from './tags.component';
-import { TagListResolverService } from './resolvers/tag-list-resolver.service';
+import { TagsResolver } from './tags.resolver';
 
 const routes: Routes = [
   {
     path: '',
     component: TagsComponent,
-    resolve: {tags: TagListResolverService}
-  }
+    resolve: { tags: TagsResolver },
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class TagsRoutingModule {
-}
+export class TagsRoutingModule {}
