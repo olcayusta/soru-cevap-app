@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule, Route } from '@angular/router';
 
 import { QuestionComponent } from './question.component';
-import { QuestionResolver } from './question.resolver';
+import { QuestionResolver } from './resolvers/question.resolver';
 
 /*export type RouteData = {
   title?: string;

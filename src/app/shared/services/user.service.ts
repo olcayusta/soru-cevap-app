@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable, OnDestroy} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../models/user.model';
 import { environment } from '../../../environments/environment';
@@ -10,7 +10,8 @@ import { Answer } from '@shared/models/answer.model';
   providedIn: 'root',
 })
 export class UserService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
 
   getAllUsers(): Observable<User[]> {
     return this.http.get<User[]>(`${environment.apiUrl}/users`);

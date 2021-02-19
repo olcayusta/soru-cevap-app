@@ -7,6 +7,6 @@ import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [PageNotFoundComponent],
-  imports: [CommonModule, PageNotFoundRoutingModule, MatButtonModule]
+  imports: [CommonModule, PageNotFoundRoutingModule, MatButtonModule],
 })
 export class PageNotFoundModule {}

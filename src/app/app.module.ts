@@ -45,7 +45,6 @@ import { SettingsDialogComponent } from './settings-dialog/settings-dialog.compo
 import { MatDialogModule } from '@angular/material/dialog';
 import { MobileAppInfoComponent } from './mobile-app-info/mobile-app-info.component';
 import { DrawerHeaderComponent } from './main/nav-drawer/drawer-header/drawer-header.component';
-import { MatSelectModule } from '@angular/material/select';
 
 registerLocaleData(localeTr);
 

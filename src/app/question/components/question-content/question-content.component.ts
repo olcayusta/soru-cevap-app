@@ -4,21 +4,12 @@ import {
   Component,
   ComponentFactoryResolver,
   ElementRef,
-  EmbeddedViewRef,
   Input,
   OnInit,
   ViewChild,
   ViewContainerRef,
   ViewEncapsulation,
-  ɵmarkDirty as markDirty
 } from '@angular/core';
-import { WebCopyCodeComponent } from '../../web-copy-code/web-copy-code.component';
-
-import hljs from 'highlight.js';
-
-hljs.configure({
-  languages: ['javascript', 'typescript', 'sql'],
-});
 
 @Component({
   selector: 'app-question-content',
@@ -29,19 +20,17 @@ hljs.configure({
 })
 export class QuestionContentComponent implements OnInit, AfterViewInit {
   @Input() content!: string;
-  @ViewChild('divElement') divElement!: ElementRef<HTMLDivElement>;
   @ViewChild('divElement2', { read: ElementRef }) divElement2!: ElementRef<HTMLDivElement>;
 
-  div!: HTMLDivElement;
+  div: HTMLDivElement = document.createElement('div');
 
   constructor(private resolver: ComponentFactoryResolver, private vcr: ViewContainerRef) {}
 
-  ngOnInit(): void {
-    this.div = document.createElement('div');
-    this.div.innerHTML = this.content;
-  }
+  ngOnInit(): void {}
 
-  ngAfterViewInit(): void {
+  initHighlight() {
+    /*this.div.innerHTML = this.content;
+
     this.div.querySelectorAll('pre').forEach((block: HTMLElement) => {
       const factory = this.resolver.resolveComponentFactory(WebCopyCodeComponent);
       const compRef = this.vcr.createComponent<WebCopyCodeComponent>(factory);
@@ -53,10 +42,16 @@ export class QuestionContentComponent implements OnInit, AfterViewInit {
       block.replaceWith(hostView.rootNodes[0]);
       hostView.rootNodes[0].appendChild(compRef.instance.text);
 
-      hljs.highlightBlock(block);
+      highlightBlock(block);
+
+      // @ts-ignore
+      /!*      const response = highlightAuto(block.textContent).language;
+            console.log(response);*!/
 
       compRef.instance.lang = block.className.split(' ')[1];
     });
-    this.divElement2.nativeElement.appendChild(this.div);
+    this.divElement2.nativeElement.appendChild(this.div);*/
   }
+
+  ngAfterViewInit(): void {}
 }

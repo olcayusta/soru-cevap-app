@@ -9,16 +9,16 @@ import { MatButtonModule } from '@angular/material/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { QuestionAnswersComponent } from './components/question-answers/question-answers.component';
 import { MatDividerModule } from '@angular/material/divider';
-import { AnswerFormComponent } from './answer-form/answer-form.component';
+import { AnswerFormComponent } from './components/answer-form/answer-form.component';
 import { SharedModule } from '../shared/shared.module';
-import { WebCopyCodeComponent } from './web-copy-code/web-copy-code.component';
+import { WebCopyCodeComponent } from './components/web-copy-code/web-copy-code.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { ClipboardModule } from '@angular/cdk/clipboard';
 import { QuestionCommentListComponent } from './components/question-comment-list/question-comment-list.component';
 import { QuestionAnswerItemComponent } from './components/question-answer-item/question-answer-item.component';
 import { QuestionAnswerItemContentComponent } from './components/question-answer-item/question-answer-item-content/question-answer-item-content.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
+import { PrivateHighlightDirective } from './components/question-content/private-highlight.directive';
 
 @NgModule({
   declarations: [
@@ -29,7 +29,8 @@ import { MatMenuModule } from '@angular/material/menu';
     WebCopyCodeComponent,
     QuestionCommentListComponent,
     QuestionAnswerItemComponent,
-    QuestionAnswerItemContentComponent
+    QuestionAnswerItemContentComponent,
+    PrivateHighlightDirective,
   ],
   imports: [
     CommonModule,
@@ -41,9 +42,8 @@ import { MatMenuModule } from '@angular/material/menu';
     MatDividerModule,
     SharedModule,
     MatTooltipModule,
-    ClipboardModule,
     MatIconModule,
-    MatMenuModule
-  ]
+    MatMenuModule,
+  ],
 })
 export class QuestionModule {}

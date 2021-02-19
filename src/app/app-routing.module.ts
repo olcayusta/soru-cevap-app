@@ -11,7 +11,8 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        loadChildren: async () => (await import('./home/home.module')).HomeModule,
+        //loadChildren: async () => (await import('./home/home.module')).HomeModule,
+        loadChildren: async () => import('./home/home.module').then((value) => value.HomeModule),
       },
       {
         path: 'users',
@@ -96,7 +97,6 @@ const routes: Routes = [
     RouterModule.forRoot(routes, {
       urlUpdateStrategy: 'eager',
       enableTracing: false,
-      scrollPositionRestoration: 'enabled',
       // scrollOffset: [0, 0]
     }),
   ],

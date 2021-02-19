@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
-import { Tag } from '../../shared/models/tag.model';
+import { Tag } from '../../../shared/models/tag.model';
 
 @Component({
   selector: 'app-tag-list-item',

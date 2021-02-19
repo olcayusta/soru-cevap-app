@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { TagsComponent } from './tags.component';
-import { TagsResolver } from './tags.resolver';
+import { TagsResolver } from './resolvers/tags.resolver';
 
 const routes: Routes = [
   {
