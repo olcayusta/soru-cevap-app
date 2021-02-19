@@ -7,11 +7,11 @@
 }
 
 @media (prefers-color-scheme: light) {
-  @import "../../../../../node_modules/highlight.js/scss/lightfair";
+  @import "~highlight.js/scss/github";
 }
 
 @media (prefers-color-scheme: dark) {
-  @import "../../../../../node_modules/highlight.js/scss/dark";
+  @import "~highlight.js/scss/night-owl";
 }
 
 code, pre {
@@ -50,27 +50,22 @@ p {
   border-radius: 4px;
 }
 
-@media (max-width: 599px) {
-  pre {
-    // margin: 0 -24px !important;
-    // border-radius: 0 !important;
-    // border: 0 !important;
-    padding: 8px;
-  }
-}
-
 pre {
   display: flex !important;
   max-height: 512px;
   font-family: Roboto Mono, monospace;
-  // padding: 48px 8px 16px 8px !important;
-  padding: 16px 8px 16px 8px !important;
   background-color: var(--code-background) !important;
-  // border: 1px solid #dadce0;
   font-size: 14px;
   line-height: 24px;
-  border-radius: 8px !important;
   overflow: auto;
-  margin: 24px 0;
-  border: 1px solid rgba(0, 0, 0, .12);
+  margin: 24px -160px;
+  padding: 24px 160px !important;
+}
+
+@media (max-width: 599px) {
+  pre {
+    display: block !important;
+    margin: 0 -24px !important;
+    padding: 16px 24px !important;
+  }
 }

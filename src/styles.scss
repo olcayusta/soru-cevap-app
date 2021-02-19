@@ -271,21 +271,21 @@ pre {
   letter-spacing: 0.25px;
 }
 
-pre::-webkit-scrollbar, pre[class*='language-']::-webkit-scrollbar {
-  height: 10px;
-  width: 10px;
-}
-
-pre::-webkit-scrollbar-thumb, pre[class*='language-']::-webkit-scrollbar-thumb {
-  background: #80868b;
-  background-clip: padding-box;
-  border: 2.5px solid rgba(0, 0, 0, 0);
-  border-radius: 5px;
-}
-
-pre::-webkit-scrollbar-track, pre[class*='language-']::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0);
-}
+//pre::-webkit-scrollbar, pre[class*='language-']::-webkit-scrollbar {
+//  height: 10px;
+//  width: 10px;
+//}
+//
+//pre::-webkit-scrollbar-thumb, pre[class*='language-']::-webkit-scrollbar-thumb {
+//  background: #80868b;
+//  background-clip: padding-box;
+//  border: 2.5px solid rgba(0, 0, 0, 0);
+//  border-radius: 5px;
+//}
+//
+//pre::-webkit-scrollbar-track, pre[class*='language-']::-webkit-scrollbar-track {
+//  background: rgba(0, 0, 0, 0);
+//}
 
 .mat-tooltip {
   // font-size: 12px;
@@ -305,3 +305,5 @@ pre::-webkit-scrollbar-track, pre[class*='language-']::-webkit-scrollbar-track {
   margin-right: 8px;
   white-space: nowrap;
 }
+
+@import "~highlight.js/scss/darcula";

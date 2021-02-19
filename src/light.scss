@@ -1,7 +1,5 @@
 @import '~@angular/material/theming';
 
-@import "scrollbar";
-
 /*
   Override colors
  */
@@ -115,7 +113,7 @@ $app-theme: mat-light-theme((
 ));
 
 /* Gray Theme */
-$gray-theme-primary: mat-palette($mat-gray);
+$gray-theme-primary: mat-palette($mat-gray, 900);
 $gray-theme-accent: mat-palette($mat-gray);
 $gray-theme-warn: mat-palette($mat-red);
 $gray-theme: mat-light-theme((
@@ -138,11 +136,11 @@ $gray-theme: mat-light-theme((
 @include mat-radio-theme($app-theme);
 @include mat-dialog-theme($app-theme);
 @include mat-autocomplete-theme($app-theme);
-@include mat-progress-bar-theme($app-theme);
 @include mat-snack-bar-theme($app-theme);
 @include mat-tabs-theme($app-theme);
 
 /* Gray */
+@include mat-progress-bar-theme($gray-theme);
 @include mat-progress-spinner-theme($gray-theme);
 @include mat-form-field-theme($gray-theme);
 @include mat-list-theme($gray-theme);
@@ -172,9 +170,11 @@ $gray-theme: mat-light-theme((
 }
 
 .mat-progress-bar-background {
-  fill: #D2BBF4;
+  // fill: #D2BBF4;
+  fill: #C2C2C2;
 }
 
 .mat-progress-bar-buffer {
-  background-color: #D2BBF4;
+  // background-color: #D2BBF4;
+  background-color: #C2C2C2;
 }

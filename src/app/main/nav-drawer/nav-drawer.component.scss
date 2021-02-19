@@ -31,6 +31,7 @@ mat-toolbar mat-icon {
   // background-color: var(--list-active-background) !important;
   // color: var(--primary-color) !important;
   color: black;
+  font-weight: 600;
 }
 
 .mat-list-base .mat-subheader {
@@ -78,3 +79,8 @@ mat-toolbar mat-icon {
   height: calc(100vh - 172px);
   overflow: auto;
 }*/
+
+mat-divider {
+/*  margin: 0 28px;
+  width: auto;*/
+}
