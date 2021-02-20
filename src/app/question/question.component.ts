@@ -1,19 +1,20 @@
-import { AfterViewInit, ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Question } from '@shared/models/question.model';
 import { ActivatedRoute } from '@angular/router';
 import { AnswerService } from '@shared/services/answer.service';
 import { StateService } from '@shared/services/state.service';
 import { Title } from '@angular/platform-browser';
 import { Observable } from 'rxjs';
-import { map, pluck, tap } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { FavoriteService } from '../shared/services/favorite.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ShareDialogComponent } from '../shared/components/share-dialog/share-dialog.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { environment } from '../../environments/environment';
 
-interface IQuestionResolveData {
+type ResolveData = {
   question: Question;
-}
+};
 
 @Component({
   selector: 'app-question',
@@ -22,9 +23,7 @@ interface IQuestionResolveData {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class QuestionComponent implements OnInit {
-  question!: Question;
   question$!: Observable<Question>;
-  soru: Question | undefined;
 
   constructor(
     private route: ActivatedRoute,
@@ -38,37 +37,19 @@ export class QuestionComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    /* this.route.data.subscribe(({ question }: RouteData) => {
-       this.soru = question;
-     });
-
-     this.route.data.subscribe((data: { question?: Question }) => {
-       this.soru = data.question;
-     });
-
-     this.question$ = this.route.data.pipe(
-       map((value: { question?: Question }) => {
-         return value.question;
-       })
-     );
-
-     this.question$ = this.route.data.pipe(
-       pluck('question'),
-       tap((question) => {
-         this.titleService.setTitle(`${question.title} - ${environment.appTitle}`);
-         return question;
-       })
-     );*/
-
     this.question$ = this.route.data.pipe(
-      // @ts-ignore
-      map(({ question }: IQuestionResolveData) => {
-        // this.titleService.setTitle(`${question.title} - ${environment.appTitle}`);
+      map((data) => {
+        const { question } = <ResolveData>data;
+        this.updateTitle(question.title);
         return question;
       })
     );
 
     this.stateService.hide();
+  }
+
+  updateTitle(questionTitle: string) {
+    this.titleService.setTitle(`${questionTitle} - ${environment.appTitle}`);
   }
 
   addToFavorite(questionId: number): void {
