@@ -8,13 +8,19 @@ import {
   Renderer2,
   ViewContainerRef,
 } from '@angular/core';
-import { WebCopyCodeComponent } from '../web-copy-code/web-copy-code.component';
+import { WebCopyCodeComponent } from '../components/web-copy-code/web-copy-code.component';
 
-import { highlightBlock, configure } from 'highlight.js';
+import { highlightBlock, configure, registerLanguage } from 'highlight.js';
+import javascript from 'highlight.js/lib/languages/javascript';
+import typescript from 'highlight.js/lib/languages/typescript';
+import css from 'highlight.js/lib/languages/css';
+import sql from 'highlight.js/lib/languages/sql';
+import html from 'highlight.js/lib/languages/html';
+import php from 'highlight.js/lib/languages/php';
 
-/*configure({
-  languages: ['javascript', 'typescript', 'sql'],
-});*/
+configure({
+  languages: ['javascript', 'typescript', 'sql', 'html', 'css', 'php'],
+});
 
 @Directive({
   selector: '[appPrivateHighlight]',
@@ -35,8 +41,6 @@ export class PrivateHighlightDirective implements AfterViewInit {
 
     const blocks = this.div.querySelectorAll('pre');
     blocks.forEach((value) => {
-
-
       /**
        * Eger bir language varsa, o dilde renklendir.
        * Yoksa, otomatk olarak renklendir
@@ -44,7 +48,7 @@ export class PrivateHighlightDirective implements AfterViewInit {
 
       // @ts-ignore
       const lang = value.querySelector('code').className;
-      console.log(`Language => ${lang}`)
+      console.log(`Language => ${lang}`);
 
       highlightBlock(value);
 

@@ -18,7 +18,7 @@ import { QuestionAnswerItemComponent } from './components/question-answer-item/q
 import { QuestionAnswerItemContentComponent } from './components/question-answer-item/question-answer-item-content/question-answer-item-content.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
-import { PrivateHighlightDirective } from './components/question-content/private-highlight.directive';
+import { PrivateHighlightDirective } from './directives/private-highlight.directive';
 
 @NgModule({
   declarations: [
