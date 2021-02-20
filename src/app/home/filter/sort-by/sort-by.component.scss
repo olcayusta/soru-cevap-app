@@ -44,10 +44,10 @@ mat-icon {
 
 @media (prefers-color-scheme: light) {
   .mat-menu-item-highlighted {
-    background-color: rgba(98, 0, 238, 0.12) !important;
-    // background-color: rgba(0, 0, 0, 0.12) !important;
+    // background-color: rgba(98, 0, 238, 0.12) !important;
+    background-color: rgba(0, 0, 0, 0.12) !important;
     // color: #6200EE;
-    color: #6200EE;
+    color: black;
   }
 }
 

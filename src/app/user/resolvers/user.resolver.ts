@@ -1,4 +1,4 @@
-import { Injectable, OnDestroy, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 import {
   Router,
   Resolve,
@@ -8,8 +8,8 @@ import {
 } from '@angular/router';
 import { EMPTY, Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { UserService } from '../shared/services/user.service';
-import { User } from '../shared/models/user.model';
+import { UserService } from '../services/user.service';
+import { User } from '../../shared/models/user.model';
 
 @Injectable()
 export class UserResolver implements Resolve<User> {

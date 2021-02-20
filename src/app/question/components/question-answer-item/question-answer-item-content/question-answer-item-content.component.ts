@@ -32,7 +32,7 @@ export class QuestionAnswerItemContentComponent implements OnInit, AfterViewInit
   ngOnInit(): void {}
 
   ngAfterViewInit(): void {
-    this.divElement.nativeElement.querySelectorAll('pre').forEach((block: HTMLElement) => {
+    this.divElement.nativeElement.querySelectorAll('pre').forEach((block: HTMLPreElement) => {
       const factory = this.resolver.resolveComponentFactory(WebCopyCodeComponent);
 
       const compRef = this.vcr.createComponent<WebCopyCodeComponent>(factory);

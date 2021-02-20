@@ -19,6 +19,7 @@ import { QuestionAnswerItemContentComponent } from './components/question-answer
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { PrivateHighlightDirective } from './directives/private-highlight.directive';
+import { DevsiteCodeComponent } from './components/devsite-code/devsite-code.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { PrivateHighlightDirective } from './directives/private-highlight.direct
     QuestionAnswerItemComponent,
     QuestionAnswerItemContentComponent,
     PrivateHighlightDirective,
+    DevsiteCodeComponent,
   ],
   imports: [
     CommonModule,

@@ -4,10 +4,6 @@ import { ActivatedRoute } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 import { environment } from '../../environments/environment';
 
-interface ITagsResolveData {
-  tags: Tag[];
-}
-
 @Component({
   selector: 'app-tags',
   templateUrl: './tags.component.html',
@@ -20,7 +16,7 @@ export class TagsComponent implements OnInit {
   constructor(private route: ActivatedRoute, private titleService: Title) {}
 
   ngOnInit(): void {
-    const { tags } = <ITagsResolveData>this.route.snapshot.data;
+    const { tags } = <{ tags: Tag[] }>this.route.snapshot.data;
     this.tags = tags;
     this.titleService.setTitle(`Etiketler - ${environment.appTitle}`);
   }

@@ -12,10 +12,6 @@ import { ShareDialogComponent } from '../shared/components/share-dialog/share-di
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { environment } from '../../environments/environment';
 
-type ResolveData = {
-  question: Question;
-};
-
 @Component({
   selector: 'app-question',
   templateUrl: './question.component.html',
@@ -39,7 +35,7 @@ export class QuestionComponent implements OnInit {
   ngOnInit(): void {
     this.question$ = this.route.data.pipe(
       map((data) => {
-        const { question } = <ResolveData>data;
+        const { question } = <{ question: Question }>data;
         this.updateTitle(question.title);
         return question;
       })

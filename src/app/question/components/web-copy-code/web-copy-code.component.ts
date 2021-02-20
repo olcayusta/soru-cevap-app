@@ -8,16 +8,16 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class WebCopyCodeComponent {
-  text!: HTMLElement;
+  text!: HTMLPreElement;
   lang!: string;
 
   constructor(private snackBar: MatSnackBar) {}
 
   async copyCode(): Promise<void> {
-    await this.copyPageUrl();
+    await this.copyPreCode();
   }
 
-  async copyPageUrl() {
+  async copyPreCode() {
     try {
       // @ts-ignore
       await navigator.clipboard.writeText(this.text.textContent);

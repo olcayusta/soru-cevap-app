@@ -10,7 +10,15 @@ import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [RegisterComponent],
-  imports: [CommonModule, RegisterRoutingModule, ReactiveFormsModule, MatInputModule, MatButtonModule],
-  providers: [{ provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'standard' } }]
+  imports: [
+    CommonModule,
+    RegisterRoutingModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatButtonModule,
+  ],
+  providers: [
+    { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'standard' } },
+  ],
 })
 export class RegisterModule {}

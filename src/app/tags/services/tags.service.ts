@@ -4,9 +4,7 @@ import { Observable } from 'rxjs';
 import { Tag } from '../../shared/models/tag.model';
 import {environment} from "../../../environments/environment";
 
-@Injectable({
-  providedIn: "any"
-})
+@Injectable()
 export class TagsService implements OnDestroy {
   API_URL = `${environment.apiUrl}/tags`;
 

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { UserComponent } from './user.component';
-import { UserResolver } from './user.resolver';
+import { UserResolver } from './resolvers/user.resolver';
 
 const routes: Routes = [
   {
@@ -13,12 +13,12 @@ const routes: Routes = [
       {
         path: 'questions',
         loadChildren: () =>
-          import('./user-questions/user-questions.module').then((m) => m.UserQuestionsModule),
+          import('./components/user-questions/user-questions.module').then((m) => m.UserQuestionsModule),
       },
       {
         path: 'answers',
         loadChildren: () =>
-          import('./user-answers/user-answers.module').then((m) => m.UserAnswersModule),
+          import('./components/user-answers/user-answers.module').then((m) => m.UserAnswersModule),
       },
     ],
   },
