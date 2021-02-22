@@ -5,7 +5,7 @@ import {
   ɵmarkDirty as markDirty,
   OnDestroy,
 } from '@angular/core';
-import { QuestionService } from '@shared/services/question.service';
+import { QuestionService } from '../../question/services/question.service';
 import { Question } from '@shared/models/question.model';
 import { ActivatedRoute } from '@angular/router';
 import { FilterService } from '@shared/services/filter.service';

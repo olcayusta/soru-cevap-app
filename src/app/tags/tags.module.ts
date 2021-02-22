@@ -8,6 +8,7 @@ import { TagListItemComponent } from './components/tag-list-item/tag-list-item.c
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { TagListComponent } from './components/tag-list/tag-list.component';
+import { TagsService } from './services/tags.service';
 
 @NgModule({
   declarations: [TagsComponent, TagListItemComponent, TagListComponent],

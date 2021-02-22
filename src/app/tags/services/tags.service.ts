@@ -1,22 +1,17 @@
-import {Injectable, OnDestroy} from '@angular/core';
+import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 import { Tag } from '../../shared/models/tag.model';
-import {environment} from "../../../environments/environment";
+import { environment } from '../../../environments/environment';
 
-@Injectable()
-export class TagsService implements OnDestroy {
+@Injectable({
+  providedIn: "root"
+})
+export class TagsService {
   API_URL = `${environment.apiUrl}/tags`;
 
-  constructor(private http: HttpClient) {
-    console.log('tags.service.ts init!');
-  }
+  constructor(private http: HttpClient) {}
 
-  ngOnDestroy(): void {
-    console.log('tags.service.ts destroy!');
-  }
-
-  getAllTags(): Observable<Tag[]> {
+  getAllTags() {
     return this.http.get<Tag[]>(this.API_URL);
   }
 }

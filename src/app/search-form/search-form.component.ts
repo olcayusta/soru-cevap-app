@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, OnInit, ViewChild } from '@angular/
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { debounceTime, distinctUntilChanged, filter, switchMap } from 'rxjs/operators';
-import { SearchResultI, SearchService } from '@shared/services/search.service';
+import { ISearchResult, SearchService } from '@shared/services/search.service';
 import {
   MatAutocompleteSelectedEvent,
   MatAutocompleteTrigger,
@@ -17,7 +17,7 @@ import { Router } from '@angular/router';
 })
 export class SearchFormComponent implements OnInit {
   myControl = new FormControl();
-  filteredQuestions!: Observable<SearchResultI[]>;
+  filteredQuestions!: Observable<ISearchResult[]>;
 
   @ViewChild('autoCompleteInput', { read: MatAutocompleteTrigger })
   autoComplete!: MatAutocompleteTrigger;

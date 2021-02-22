@@ -6,23 +6,23 @@ import { Observable } from 'rxjs';
 import { Tag } from '@shared/models/tag.model';
 import { User } from '@shared/models/user.model';
 
-export interface SearchResultI {
+export interface ISearchResult {
   questions: Question[];
   tags: Tag[];
   users: User[];
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class SearchService {
   constructor(private http: HttpClient) {}
 
-  searchQuestion(searchTerm: string): Observable<SearchResultI[]> {
-    return this.http.get<SearchResultI[]>(`${environment.apiUrl}/search`, {
+  searchQuestion(searchTerm: string) {
+    return this.http.get<ISearchResult[]>(`${environment.apiUrl}/search`, {
       params: {
-        q: searchTerm
-      }
+        q: searchTerm,
+      },
     });
   }
 }

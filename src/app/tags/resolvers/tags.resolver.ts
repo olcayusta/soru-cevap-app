@@ -6,9 +6,9 @@ import { catchError } from 'rxjs/operators';
 import { TagsService } from '../services/tags.service';
 
 @Injectable({
-  providedIn: 'any',
+  providedIn: 'root',
 })
-export class TagsResolver implements Resolve<Tag[]>, OnDestroy {
+export class TagsResolver implements Resolve<Tag[]> {
   constructor(private tagsService: TagsService) {}
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Tag[]> {
@@ -17,9 +17,5 @@ export class TagsResolver implements Resolve<Tag[]>, OnDestroy {
         return EMPTY;
       })
     );
-  }
-
-  ngOnDestroy() {
-    console.log('BOOOOMM -- resolve is destroyed - BOOOMMM');
   }
 }

@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { MatAutocomplete, MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 import { debounceTime, distinctUntilChanged, map, startWith, switchMap } from 'rxjs/operators';
 import { MatChipInputEvent } from '@angular/material/chips';
-import { TagService } from '../../shared/services/tag.service';
+import { TagService } from '../../tag/services/tag.service';
 import { Tag } from '../../shared/models/tag.model';
 
 @Component({

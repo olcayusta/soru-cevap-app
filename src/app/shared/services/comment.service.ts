@@ -5,13 +5,10 @@ import { environment } from '../../../environments/environment';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CommentService {
-
-  constructor(
-    private http: HttpClient
-  ) { }
+  constructor(private http: HttpClient) {}
 
   gerComments(questionId: number): Observable<Comment[]> {
     return this.http.get<Comment[]>(`${environment.apiUrl}/questions/${questionId}/comments`);
@@ -19,7 +16,7 @@ export class CommentService {
 
   saveComment(content: string): Observable<Comment> {
     return this.http.post<Comment>(`${environment.apiUrl}/comments`, {
-      content
+      content,
     });
   }
 }

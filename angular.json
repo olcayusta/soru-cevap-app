@@ -86,7 +86,7 @@
                 },
                 "styles": {
                   "minify": true,
-                  "inlineCritical": false
+                  "inlineCritical": true
                 },
                 "scripts": true
               },

@@ -6,7 +6,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { QuestionService } from '@shared/services/question.service';
+import { QuestionService } from '../question/services/question.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ChipsAutocompleteComponent } from './chips-autocomplete/chips-autocomplete.component';
 import { Question } from '../shared/models/question.model';

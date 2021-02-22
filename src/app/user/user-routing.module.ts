@@ -13,7 +13,9 @@ const routes: Routes = [
       {
         path: 'questions',
         loadChildren: () =>
-          import('./components/user-questions/user-questions.module').then((m) => m.UserQuestionsModule),
+          import('./components/user-questions/user-questions.module').then(
+            (m) => m.UserQuestionsModule
+          ),
       },
       {
         path: 'answers',
@@ -27,6 +29,6 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
-  providers: [UserResolver]
+  providers: [UserResolver],
 })
 export class UserRoutingModule {}

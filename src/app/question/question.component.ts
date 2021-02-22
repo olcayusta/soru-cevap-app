@@ -28,8 +28,7 @@ export class QuestionComponent implements OnInit {
     private favoriteService: FavoriteService,
     private dialog: MatDialog,
     private snackBar: MatSnackBar,
-    private titleService: Title,
-    private activatedRoute: ActivatedRoute
+    private titleService: Title
   ) {}
 
   ngOnInit(): void {

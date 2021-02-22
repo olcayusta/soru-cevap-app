@@ -4,7 +4,7 @@ import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 import { environment } from '@environments/environment';
-import { TagService } from '../../shared/services/tag.service';
+import { TagService } from '../../tag/services/tag.service';
 import { catchError } from 'rxjs/operators';
 import { EMPTY } from 'rxjs';
 

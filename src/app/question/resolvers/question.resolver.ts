@@ -7,7 +7,7 @@ import {
   NavigationError,
 } from '@angular/router';
 import { EMPTY, Observable } from 'rxjs';
-import { QuestionService } from '../../shared/services/question.service';
+import { QuestionService } from '../services/question.service';
 import { Question } from '../../shared/models/question.model';
 import { catchError } from 'rxjs/operators';
 import { Location } from '@angular/common';
