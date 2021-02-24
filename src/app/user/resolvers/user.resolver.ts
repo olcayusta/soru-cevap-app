@@ -11,7 +11,9 @@ import { catchError } from 'rxjs/operators';
 import { UserService } from '../services/user.service';
 import { User } from '../../shared/models/user.model';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class UserResolver implements Resolve<User> {
   constructor(private userService: UserService, private router: Router) {}
 
@@ -21,7 +23,7 @@ export class UserResolver implements Resolve<User> {
       catchError((err: NavigationError) => {
         this.router.navigate(['/404'], {
           replaceUrl: true,
-        });
+        })
         return EMPTY;
       })
     );

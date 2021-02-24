@@ -12,7 +12,7 @@ import { EMPTY } from 'rxjs';
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LoginComponent implements OnInit {
   form: FormGroup;
@@ -22,15 +22,15 @@ export class LoginComponent implements OnInit {
   hide = true;
 
   constructor(
-    private fb: FormBuilder,
+    private formBuilder: FormBuilder,
     private authService: AuthService,
     private tagService: TagService,
     private router: Router,
     private title: Title
   ) {
-    this.form = fb.group({
+    this.form = formBuilder.group({
       email: ['yonca2@mail.com', [Validators.required, Validators.email]],
-      password: ['123456', [Validators.required, Validators.min(8)]]
+      password: ['123456', [Validators.required, Validators.min(8)]],
     });
   }
 
@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
         .pipe(
           catchError((err, caught) => {
             this.form.get('email')!.setErrors({
-              emailNotFound: true
+              emailNotFound: true,
             });
             markDirty(this);
             this.submitted = false;
