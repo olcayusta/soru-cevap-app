@@ -22,8 +22,4 @@ export class UserMenuPopupComponent implements OnInit {
     this.authService.logout();
     this.socketService.disconnect();
   }
-
-  onChange() {
-    document.body.classList.add('unicorn-dark-theme');
-  }
 }
