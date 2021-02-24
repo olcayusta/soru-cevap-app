@@ -9,7 +9,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { FilterComponent } from './filter/filter.component';
 import { MAT_MENU_SCROLL_STRATEGY, MatMenuModule } from '@angular/material/menu';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { IsVisibleDirective } from './is-visible.directive';
+import { IsVisibleDirective } from './directives/is-visible.directive';
 import { MatButtonModule } from '@angular/material/button';
 import { BannerComponent } from './banner/banner.component';
 import { MatDividerModule } from '@angular/material/divider';

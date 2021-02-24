@@ -1,6 +1,4 @@
 import { Component, EventEmitter, OnInit, ChangeDetectionStrategy, Output } from '@angular/core';
-import { AuthService } from '../../auth/auth.service';
-import { User } from '@shared/models/user.model';
 import { MatDialog } from '@angular/material/dialog';
 import { SettingsDialogComponent } from '../../settings-dialog/settings-dialog.component';
 
@@ -11,28 +9,17 @@ import { SettingsDialogComponent } from '../../settings-dialog/settings-dialog.c
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavDrawerComponent implements OnInit {
-  @Output() closeDrawer = new EventEmitter();
+  @Output() closeDrawer = new EventEmitter<boolean>();
 
-  user!: User;
+  constructor(private dialog: MatDialog) {}
 
-  constructor(private authService: AuthService, private dialog: MatDialog) {}
-
-  ngOnInit(): void {
-    this.user = this.authService.userValue;
-  }
-
-  /**
-   * Logout
-   */
-  logout(): void {
-    this.authService.logout();
-  }
+  ngOnInit(): void {}
 
   /**
    * Open Settings Dialog
    */
   openSettingsDialog() {
-    this.closeDrawer.emit();
+    this.closeDrawer.emit(true);
     this.dialog.open(SettingsDialogComponent, {
       minWidth: 900,
       autoFocus: false,
