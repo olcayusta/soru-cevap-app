@@ -15,9 +15,6 @@ export class NavDrawerComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  /**
-   * Open Settings Dialog
-   */
   openSettingsDialog() {
     this.closeDrawer.emit(true);
     this.dialog.open(SettingsDialogComponent, {

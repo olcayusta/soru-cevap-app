@@ -44,7 +44,6 @@ import { AvatarButtonComponent } from './main/top-bar/components/avatar-button/a
 import { SettingsDialogComponent } from './settings-dialog/settings-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MobileAppInfoComponent } from './mobile-app-info/mobile-app-info.component';
-import { DrawerHeaderComponent } from './main/nav-drawer/drawer-header/drawer-header.component';
 
 registerLocaleData(localeTr);
 
@@ -65,7 +64,6 @@ registerLocaleData(localeTr);
     AvatarButtonComponent,
     SettingsDialogComponent,
     MobileAppInfoComponent,
-    DrawerHeaderComponent,
   ],
   imports: [
     BrowserModule,
