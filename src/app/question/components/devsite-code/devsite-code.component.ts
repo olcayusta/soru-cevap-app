@@ -4,13 +4,10 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   selector: 'app-devsite-code',
   templateUrl: './devsite-code.component.html',
   styleUrls: ['./devsite-code.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DevsiteCodeComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

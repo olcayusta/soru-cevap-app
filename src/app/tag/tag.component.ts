@@ -6,14 +6,6 @@ import { map } from 'rxjs/operators';
 import { Title } from '@angular/platform-browser';
 import { environment } from '../../environments/environment';
 
-interface ITagResolveData {
-  tag: Tag;
-}
-
-type RouteData = {
-  tag: Tag;
-};
-
 @Component({
   selector: 'app-tag',
   templateUrl: './tag.component.html',
@@ -25,18 +17,10 @@ export class TagComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private titleService: Title) {}
 
-  /**
-   * snapshot ozelligini kullanamiyoruz.
-   * cunku bir tag sayfasindan, baska bir tag sayfasina gecis yapmamiz gerekli
-   */
   ngOnInit(): void {
-    /**
-     * Kullanici, tag.component.ts sayfasindan baska bir tag.component.ts sayfasina gidebilir.
-     * Bu yuzden, dinamik olarak cekmeliyiz.
-     */
     this.tag$ = this.route.data.pipe(
-      // @ts-ignore
-      map(({ tag }: RouteData) => {
+      map((data) => {
+        const { tag } = <{ tag: Tag }>data;
         return tag;
       })
     );

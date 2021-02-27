@@ -9,7 +9,8 @@ import { Answer } from '../../shared/models/answer.model';
   providedIn: 'root',
 })
 export class UserService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
 
   getUser(userId: number) {
     return this.http.get<User>(`${environment.apiUrl}/users/${userId}`);

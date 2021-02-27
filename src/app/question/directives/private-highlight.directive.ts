@@ -13,7 +13,6 @@ import { WebCopyCodeComponent } from '../components/web-copy-code/web-copy-code.
 
 // import { registerLanguage, highlight } from 'highlight.js';
 
-
 // @ts-ignore
 import hljs from 'highlight.js/lib/core';
 
@@ -55,8 +54,7 @@ export class PrivateHighlightDirective implements OnInit, AfterViewInit {
     private renderer: Renderer2
   ) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   ngAfterViewInit(): void {
     this.renderer.setProperty(this.div, 'innerHTML', this.appPrivateHighlight);
@@ -69,9 +67,9 @@ export class PrivateHighlightDirective implements OnInit, AfterViewInit {
 
       const fixedLang = lang.split('-')[1];
 
-/*      if (lang) {
-        console.log('VAR');
-      }*/
+      /*      if (lang) {
+              console.log('VAR');
+            }*/
 
       hljs.highlightBlock(value.querySelector('code'));
 

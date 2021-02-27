@@ -22,7 +22,10 @@ export class QuestionResolver implements Resolve<Question> {
     private location: Location
   ) {}
 
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Question> {
+  resolve(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot
+  ): Observable<Question> {
     const questionId = Number(route.paramMap.get('questionId'));
     return this.questionService.getQuestion(questionId).pipe(
       catchError((err: NavigationError) => {

@@ -4,10 +4,6 @@ import { ActivatedRoute } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 import { environment } from '../../environments/environment';
 
-interface IUsersResolveData {
-  users: User[];
-}
-
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
@@ -20,7 +16,7 @@ export class UsersComponent implements OnInit {
   constructor(private route: ActivatedRoute, private titleService: Title) {}
 
   ngOnInit(): void {
-    const { users } = <IUsersResolveData>this.route.snapshot.data;
+    const { users } = <{ users: User[] }>this.route.snapshot.data;
     this.users = users;
     this.titleService.setTitle(`Kullanıcılar - ${environment.appTitle}`);
   }

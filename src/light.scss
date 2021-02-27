@@ -124,6 +124,14 @@ $gray-theme: mat-light-theme((
   )
 ));
 
+$secondary-gray-theme: mat-light-theme((
+  color: (
+    primary: mat-palette($mat-gray),
+    accent: mat-palette($mat-gray),
+    warn: mat-palette($mat-red),
+  )
+));
+
 /* Purple */
 @include mat-core-theme($app-theme);
 @include mat-toolbar-theme($app-theme);
@@ -141,7 +149,7 @@ $gray-theme: mat-light-theme((
 
 /* Gray */
 @include mat-progress-bar-theme($gray-theme);
-@include mat-progress-spinner-theme($gray-theme);
+@include mat-progress-spinner-theme($secondary-gray-theme);
 @include mat-form-field-theme($gray-theme);
 @include mat-list-theme($gray-theme);
 @include mat-divider-theme($gray-theme);
