@@ -9,18 +9,21 @@ import { Answer } from '../../shared/models/answer.model';
   providedIn: 'root',
 })
 export class UserService {
-  constructor(private http: HttpClient) {
-  }
+  constructor(private http: HttpClient) {}
 
   getUser(userId: number) {
     return this.http.get<User>(`${environment.apiUrl}/users/${userId}`);
   }
 
   getUserQuestions(userId: number) {
-    return this.http.get<Question[]>(`${environment.apiUrl}/users/${userId}/questions`);
+    return this.http.get<Question[]>(
+      `${environment.apiUrl}/users/${userId}/questions`
+    );
   }
 
   getUserAnswers(userId: number) {
-    return this.http.get<Answer[]>(`${environment.apiUrl}/users/${userId}/answers`);
+    return this.http.get<Answer[]>(
+      `${environment.apiUrl}/users/${userId}/answers`
+    );
   }
 }

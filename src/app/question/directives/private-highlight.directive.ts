@@ -26,18 +26,24 @@ import css from 'highlight.js/lib/languages/css';
 import sql from 'highlight.js/lib/languages/sql';
 // @ts-ignore
 import php from 'highlight.js/lib/languages/php';
+// @ts-ignore
+import xml from 'highlight.js/lib/languages/xml';
+// @ts-ignore
+import cos from 'highlight.js/lib/languages/cos';
 
 hljs.registerLanguage('js', javascript);
 hljs.registerLanguage('javascript', javascript);
 hljs.registerLanguage('typescript', typescript);
+hljs.registerLanguage('xml', xml);
 hljs.registerLanguage('css', css);
 hljs.registerLanguage('php', php);
 hljs.registerLanguage('sql', sql);
+hljs.registerLanguage('cos', cos);
 
 import { DevsiteCodeComponent } from '../components/devsite-code/devsite-code.component';
 
 hljs.configure({
-  languages: ['javascript', 'typescript', 'sql', 'html', 'css', 'php'],
+  languages: ['javascript', 'typescript', 'sql', 'xml', 'css', 'php', 'cos'],
 });
 
 @Directive({
@@ -56,6 +62,16 @@ export class PrivateHighlightDirective implements OnInit, AfterViewInit {
 
   ngOnInit() {}
 
+  test(): void {
+    // @ts-ignore
+    const lang = value.querySelector('code').className;
+    if (lang) {
+      // import detect language file and highlight
+    } else {
+      // auto detect
+    }
+  }
+
   ngAfterViewInit(): void {
     this.renderer.setProperty(this.div, 'innerHTML', this.appPrivateHighlight);
 
@@ -63,14 +79,17 @@ export class PrivateHighlightDirective implements OnInit, AfterViewInit {
     blocks.forEach((value) => {
       // @ts-ignore
       const lang = value.querySelector('code').className;
-      console.log(`Language => ${lang.split('-')[1]}`);
+      // console.log(`Language => ${lang.split('-')[1]}`);
 
       const fixedLang = lang.split('-')[1];
+
+      // console.log(fixedLang);
 
       /*      if (lang) {
               console.log('VAR');
             }*/
 
+      // hljs.highlightBlock(value.querySelector('code'));
       hljs.highlightBlock(value.querySelector('code'));
 
       this.createComponent(value);

@@ -20,7 +20,9 @@ const routes: Routes = [
       {
         path: 'answers',
         loadChildren: () =>
-          import('./components/user-answers/user-answers.module').then((m) => m.UserAnswersModule),
+          import('./components/user-answers/user-answers.module').then(
+            (m) => m.UserAnswersModule
+          ),
       },
     ],
   },

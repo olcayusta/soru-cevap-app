@@ -7,5 +7,5 @@
 </button>
 
 <ul>
-  <li *ngFor="let q of questions$ | async as questions">{{q.title}}</li>
+  <li *ngFor='let question of questions$ | async as questions'>{{question.title}}</li>
 </ul>

@@ -13,7 +13,7 @@ export class SearchComponent implements OnInit {
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.searchQuery = this.route.snapshot.queryParamMap.get('search_query');
+    this.searchQuery = this.route.snapshot.queryParamMap.get('q');
     console.log(this.searchQuery);
   }
 }

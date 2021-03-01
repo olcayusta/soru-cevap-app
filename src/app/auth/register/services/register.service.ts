@@ -10,17 +10,6 @@ import { HttpClient } from '@angular/common/http';
 export class RegisterService {
   constructor(private http: HttpClient) {}
 
-  /**
-   * Yeni bir kullanıcı oluştur
-   * @param email
-   * E-posta
-   * @param password
-   * Şifre
-   * @param displayName
-   * Kullanıcı adı
-   * @param picture
-   * Avatar URL
-   */
   createUser(
     email: string,
     password: string,

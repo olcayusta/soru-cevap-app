@@ -15,6 +15,6 @@ export class SettingsComponent implements OnInit {
   constructor(private settingsService: SettingsService) {}
 
   ngOnInit(): void {
-    this.user$ = this.settingsService.getAccount();
+    this.user$ = this.settingsService.getAccountSettings();
   }
 }

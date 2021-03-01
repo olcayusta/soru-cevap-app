@@ -17,13 +17,16 @@ import { User } from '../../shared/models/user.model';
 export class UserResolver implements Resolve<User> {
   constructor(private userService: UserService, private router: Router) {}
 
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<User> {
+  resolve(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot
+  ): Observable<User> {
     const userId = Number(route.paramMap.get('userId'));
     return this.userService.getUser(userId).pipe(
       catchError((err: NavigationError) => {
         this.router.navigate(['/404'], {
           replaceUrl: true,
-        })
+        });
         return EMPTY;
       })
     );

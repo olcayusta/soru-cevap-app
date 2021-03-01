@@ -11,17 +11,19 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        //loadChildren: async () => (await import('./home/home.module')).HomeModule,
-        loadChildren: async () => import('./home/home.module').then((value) => value.HomeModule),
+        loadChildren: async () =>
+          (await import('./home/home.module')).HomeModule,
       },
       {
         path: 'users',
-        loadChildren: async () => (await import('./users/users.module')).UsersModule,
+        loadChildren: async () =>
+          (await import('./users/users.module')).UsersModule,
         canLoad: [AuthGuard],
       },
       {
         path: 'tags',
-        loadChildren: async () => (await import('./tags/tags.module')).TagsModule,
+        loadChildren: async () =>
+          (await import('./tags/tags.module')).TagsModule,
       },
       {
         path: 'tag',
@@ -29,52 +31,63 @@ const routes: Routes = [
       },
       {
         path: 'search',
-        loadChildren: async () => (await import('./search/search.module')).SearchModule,
+        loadChildren: async () =>
+          (await import('./search/search.module')).SearchModule,
       },
       {
         path: 'settings',
-        loadChildren: async () => (await import('./settings/settings.module')).SettingsModule,
+        loadChildren: async () =>
+          (await import('./settings/settings.module')).SettingsModule,
         canLoad: [AuthGuard],
       },
       {
         path: 'list',
-        loadChildren: async () => (await import('./modules/list/list.module')).ListModule,
+        loadChildren: async () =>
+          (await import('./modules/list/list.module')).ListModule,
       },
       {
         path: 'user/:userId',
-        loadChildren: async () => (await import('./user/user.module')).UserModule,
+        loadChildren: async () =>
+          (await import('./user/user.module')).UserModule,
       },
       {
         path: 'question/:questionId',
-        loadChildren: async () => (await import('./question/question.module')).QuestionModule,
+        loadChildren: async () =>
+          (await import('./question/question.module')).QuestionModule,
       },
       {
         path: 'create',
         loadChildren: async () =>
-          (await import('./create-question/create-question.module')).CreateQuestionModule,
+          (await import('./create-question/create-question.module'))
+            .CreateQuestionModule,
       },
       {
         path: 'edit',
-        loadChildren: async () => (await import('./edit/edit.module')).EditModule,
+        loadChildren: async () =>
+          (await import('./edit/edit.module')).EditModule,
       },
       {
         path: 'favorites',
         loadChildren: async () =>
-          (await import('./modules/favorites/favorites.module')).FavoritesModule,
+          (await import('./modules/favorites/favorites.module'))
+            .FavoritesModule,
       },
       {
         path: 'help',
-        loadChildren: async () => (await import('./modules/help/help.module')).HelpModule,
+        loadChildren: async () =>
+          (await import('./modules/help/help.module')).HelpModule,
       },
     ],
   },
   {
     path: 'login',
-    loadChildren: async () => (await import('./auth/login/login.module')).LoginModule,
+    loadChildren: async () =>
+      (await import('./auth/login/login.module')).LoginModule,
   },
   {
     path: 'register',
-    loadChildren: async () => (await import('./auth/register/register.module')).RegisterModule,
+    loadChildren: async () =>
+      (await import('./auth/register/register.module')).RegisterModule,
   },
   {
     path: 'app',
@@ -83,12 +96,14 @@ const routes: Routes = [
   {
     path: '404',
     loadChildren: async () =>
-      (await import('./page-not-found/page-not-found.module')).PageNotFoundModule,
+      (await import('./page-not-found/page-not-found.module'))
+        .PageNotFoundModule,
   },
   {
     path: '**',
     loadChildren: async () =>
-      (await import('./page-not-found/page-not-found.module')).PageNotFoundModule,
+      (await import('./page-not-found/page-not-found.module'))
+        .PageNotFoundModule,
   },
 ];
 

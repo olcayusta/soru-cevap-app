@@ -1,7 +1,17 @@
-import { ChangeDetectionStrategy, Component, OnInit, ViewChild } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
-import { debounceTime, distinctUntilChanged, filter, switchMap } from 'rxjs/operators';
+import {
+  debounceTime,
+  distinctUntilChanged,
+  filter,
+  switchMap,
+} from 'rxjs/operators';
 import { ISearchResult, SearchService } from '@shared/services/search.service';
 import {
   MatAutocompleteSelectedEvent,
@@ -41,9 +51,9 @@ export class SearchFormComponent implements OnInit {
     return value ? value.title || value.displayName || value.title : null;
   }
 
-  selectedOption($event: MatAutocompleteSelectedEvent): void {
+  async selectedOption($event: MatAutocompleteSelectedEvent): Promise<void> {
     const q = $event.option.value;
-    this.router.navigateByUrl(`/question/${q.id}`);
+    await this.router.navigateByUrl(`/question/${q.id}`);
   }
 
   closeAutocomplete() {

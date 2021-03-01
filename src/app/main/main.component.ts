@@ -1,4 +1,9 @@
-import { Component, OnInit, ChangeDetectionStrategy, Inject } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ChangeDetectionStrategy,
+  Inject,
+} from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDrawerMode } from '@angular/material/sidenav';
 import { BreakpointObserver } from '@angular/cdk/layout';
@@ -22,7 +27,8 @@ export class MainComponent implements OnInit {
   ) {}
 
   /**
-   * Mobil tasarimda, scroll kaydirilinca, asagi veya yukari durumuna gore, fab width degeri degistir.
+   * Mobil tasarimda, scroll kaydirilinca, asagi veya yukari durumuna gore,
+   * fab width degeri degistir.
    */
   fabButtonMakeWidthOnScroll(): void {
     let prevScrollPosition = window.pageYOffset;
@@ -42,13 +48,11 @@ export class MainComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const isSmallScreen = this.breakpointObserver.isMatched('(max-width: 599px)');
-    this.isSmallScreen = this.breakpointObserver.isMatched('(max-width: 599px)');
-    if (isSmallScreen) {
-      this.mode = 'over';
-    } else {
-      this.mode = 'side';
-    }
+    const isSmallScreen = this.breakpointObserver.isMatched(
+      '(max-width: 599px)'
+    );
+    this.isSmallScreen = isSmallScreen;
+    isSmallScreen ? (this.mode = 'over') : 'side';
   }
 
   makeOverflowAuto(): void {

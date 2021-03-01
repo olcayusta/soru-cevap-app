@@ -1,44 +1,69 @@
 import { Injectable } from '@angular/core';
 import { webSocket, WebSocketSubject } from 'rxjs/webSocket';
-import { delay, retryWhen, tap } from 'rxjs/operators';
-import { AuthService } from '../../auth/auth.service';
 import { Observable } from 'rxjs';
+import { environment } from '@environments/environment';
+import { delay, retryWhen, tap } from 'rxjs/operators';
+
+enum socketEvent {
+  newAnswer = 'new answer',
+  message = 'message',
+}
 
 interface SubjectData {
   event: string;
   payload: object;
 }
 
+type socketEventType = 'new answer' | 'message' | 'hello';
+
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class SocketService {
   subject: WebSocketSubject<SubjectData> = webSocket({
-    url: 'ws://localhost:9001/notification',
-    protocol: <string>localStorage.getItem('token')
+    url: environment.WS_URL,
+    protocol: <string>localStorage.getItem('token'),
   });
 
   constructor() {
-    /*    this.subject.pipe(
-          retryWhen(errors => errors.pipe(
-            tap(err => { console.error('Got error', err);}),
-            delay(1000)
-          ))
-        ).subscribe(data => console.log(data), error => console.error(error));*/
-    this.connect();
+    // this.connect();
+    /*    this.subject.next({
+      event: 'hello',
+      payload: {
+        celebName: 'Dua Lipa',
+      },
+    });*/
   }
 
-  sendMessage(message: string): void {
+  reconnect() {
+    this.subject
+      .pipe(
+        retryWhen((errors) =>
+          errors.pipe(
+            tap((err) => {
+              console.error('Got error', err);
+            }),
+            delay(1000)
+          )
+        )
+      )
+      .subscribe(
+        (data) => console.log(data),
+        (error) => console.error(error)
+      );
+  }
+
+  sendMessage(message: string) {
     this.subject.subscribe();
     this.subject.next({
-      event: 'message',
+      event: socketEvent.message,
       payload: {
-        content: message
-      }
+        content: message,
+      },
     });
   }
 
-  on(event: string): Observable<{ event: string; payload: object }> {
+  on(event: socketEventType): Observable<{ event: string; payload: object }> {
     return new Observable((subscriber) => {
       this.subject.subscribe((value) => {
         if (value.event === event) {

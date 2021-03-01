@@ -22,7 +22,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatCardModule,
     MatProgressBarModule,
     MatRippleModule,
-    MatTooltipModule
-  ]
+    MatTooltipModule,
+  ],
 })
 export class LoginModule {}

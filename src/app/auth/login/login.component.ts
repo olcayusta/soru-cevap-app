@@ -1,4 +1,9 @@
-import { Component, OnInit, ChangeDetectionStrategy, ɵmarkDirty as markDirty } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ChangeDetectionStrategy,
+  ɵmarkDirty as markDirty,
+} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
@@ -63,14 +68,16 @@ export class LoginComponent implements OnInit {
             console.log(value);
           } else {
             // Redirect the user
-            this.router.navigate([this.authService.redirectUrl]).then((value1) => {
-              // Kullanicinin favori etiketlerini kaydet
-              this.tagService.getFavoriteTags().subscribe((value2) => {
-                if (value2) {
-                  localStorage.setItem('watchedTags', JSON.stringify(value2));
-                }
+            this.router
+              .navigate([this.authService.redirectUrl])
+              .then((value1) => {
+                // Kullanicinin favori etiketlerini kaydet
+                this.tagService.getFavoriteTags().subscribe((value2) => {
+                  if (value2) {
+                    localStorage.setItem('watchedTags', JSON.stringify(value2));
+                  }
+                });
               });
-            });
           }
         });
     }

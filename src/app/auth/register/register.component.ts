@@ -34,8 +34,10 @@ export class RegisterComponent implements OnInit {
 
   submit(): void {
     const { email, password, displayName, picture } = this.form.value;
-    this.registerService.createUser(email, password, displayName, picture).subscribe((value) => {
-      console.log('Uye kaydedildi!');
-    });
+    this.registerService
+      .createUser(email, password, displayName, picture)
+      .subscribe((value) => {
+        console.log('Uye kaydedildi!');
+      });
   }
 }

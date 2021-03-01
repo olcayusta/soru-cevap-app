@@ -12,7 +12,7 @@ export class SettingsService {
 
   constructor(private http: HttpClient) {}
 
-  getAccount(): Observable<User> {
+  getAccountSettings() {
     return this.http.get<User>(`${this.API_URL}/me`);
   }
 }

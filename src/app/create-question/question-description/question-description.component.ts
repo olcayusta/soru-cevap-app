@@ -4,7 +4,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   selector: 'app-question-description',
   templateUrl: './question-description.component.html',
   styleUrls: ['./question-description.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class QuestionDescriptionComponent implements OnInit {
   constructor() {}

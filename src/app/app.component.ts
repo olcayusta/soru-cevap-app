@@ -1,7 +1,8 @@
-import { Component, Inject, OnInit, ɵmarkDirty as markDirty } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import {
   ActivatedRoute,
-  NavigationCancel, NavigationEnd,
+  NavigationCancel,
+  NavigationEnd,
   NavigationError,
   ResolveEnd,
   ResolveStart,
@@ -10,57 +11,23 @@ import {
 import { SocketService } from '@shared/services/socket.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { SpinnerService } from '@shared/services/spinner.service';
-import { animate, state, style, transition, trigger } from '@angular/animations';
 import { SwPush, SwUpdate } from '@angular/service-worker';
 import { PushNotificationService } from '@shared/services/push-notification.service';
 import { environment } from '@environments/environment';
 import { DOCUMENT } from '@angular/common';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import {filter, map} from 'rxjs/operators';
-import {Title} from "@angular/platform-browser";
+import { BreakpointObserver } from '@angular/cdk/layout';
+import { Title } from '@angular/platform-browser';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  animations: [
-    trigger('transformMenu', [
-      state(
-        'void',
-        style({
-          opacity: 0,
-          transform: 'scale(0.8)',
-        })
-      ),
-      transition(
-        'void => enter',
-        animate(
-          '120ms cubic-bezier(0, 0, 0.2, 1)',
-          style({
-            opacity: 1,
-            transform: 'scale(1)',
-          })
-        )
-      ),
-      transition('* => void', animate('100ms 25ms linear', style({ opacity: 0 }))),
-    ]),
-    trigger('myInsertRemoveTrigger', [
-      transition(':enter', [
-        style({ opacity: 0, height: '0px' }),
-        animate(
-          '100ms',
-          style({
-            opacity: 1,
-            height: '4px',
-          })
-        ),
-      ]),
-      transition(':leave', [animate('100ms', style({ opacity: 0, height: '0px' }))]),
-    ]),
-  ],
 })
 export class AppComponent implements OnInit {
   spinner = false;
+
+  subscription!: Subscription;
 
   constructor(
     private router: Router,
@@ -71,50 +38,30 @@ export class AppComponent implements OnInit {
     private titleService: Title,
     private spinnerService: SpinnerService,
     private swPush: SwPush,
+    private swUpdate: SwUpdate,
     private pushService: PushNotificationService,
     private breakpointObserver: BreakpointObserver,
-    @Inject(DOCUMENT) private document: Document,
-    private updates: SwUpdate
+    @Inject(DOCUMENT) private document: Document
   ) {
-    /**
-     * Button clicked, if updates available reload page
-     */
-    updates.available.subscribe((event) => {
-      const snackbar = this.snackBar.open('Available update!', 'TAMAM', {
+    swUpdate.unrecoverable.subscribe((value) => {
+      console.log(value.reason, value.type);
+    });
+
+    swUpdate.available.subscribe((event) => {
+      console.log(event);
+      const snackBar = this.snackBar.open('Available update!', 'TAMAM', {
         duration: 500000,
       });
 
-      snackbar.onAction().subscribe((value) => {
+      this.subscription = snackBar.onAction().subscribe((value) => {
+        console.log(value);
         document.location.reload();
       });
+
+      console.log(this.subscription.closed);
     });
 
-    /**
-     * App disable for access mobile phone (android - iphone)
-     */
-    this.breakpointObserver.observe([Breakpoints.Handset]).subscribe(({ matches }) => {
-      /* if (matches) {
-        this.router.navigateByUrl('/app');
-      }*/
-    });
-
-    /**
-     * swPush Init
-     */
-    if (swPush.isEnabled) {
-      swPush
-        .requestSubscription({
-          serverPublicKey: environment.vapidPublic,
-        })
-        .then((subscription) => {
-          this.pushService.sendSubscriptionToTheServer(subscription).subscribe();
-        })
-        .catch(console.error);
-    }
-
-    /**
-     * Router events for spinner
-     */
+    // Spinner
     router.events.subscribe((value) => {
       if (value instanceof ResolveStart) {
         this.spinner = true;
@@ -126,14 +73,31 @@ export class AppComponent implements OnInit {
         this.spinnerService.removeSpinner();
       }
 
-      if (value instanceof (NavigationCancel || NavigationError)) {
+      if (
+        value instanceof (NavigationCancel || NavigationError || NavigationEnd)
+      ) {
         this.spinner = false;
         this.spinnerService.removeSpinner();
       }
     });
   }
 
-  ngOnInit(): void {
+  async initSwPush(): Promise<void> {
+    if (this.swPush.isEnabled) {
+      try {
+        const subscription = await this.swPush.requestSubscription({
+          serverPublicKey: environment.vapidPublic,
+        });
+        this.pushService.sendSubscriptionToTheServer(subscription).subscribe();
+      } catch (e) {
+        console.error(e);
+      }
+    }
+  }
+
+  async ngOnInit(): Promise<void> {
+    await this.initSwPush();
+
     /**
      * Make a notification for author user id for created answer for question.
      */
@@ -141,5 +105,9 @@ export class AppComponent implements OnInit {
       console.log('Sorunuza, yeni ber cevap geldi.');
       this.snackBar.open('One line text string.');
     });
+
+    /*this.socketService.on('hello').subscribe(({ payload }) => {
+      console.log(payload);
+    });*/
   }
 }
