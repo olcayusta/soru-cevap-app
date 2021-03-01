@@ -20,6 +20,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { PrivateHighlightDirective } from './directives/private-highlight.directive';
 import { DevsiteCodeComponent } from './components/devsite-code/devsite-code.component';
+import { CodeHighlightDirective } from './directives/code-highlight.directive';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { DevsiteCodeComponent } from './components/devsite-code/devsite-code.com
     QuestionAnswerItemContentComponent,
     PrivateHighlightDirective,
     DevsiteCodeComponent,
+    CodeHighlightDirective,
   ],
   imports: [
     CommonModule,

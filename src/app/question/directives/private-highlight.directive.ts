@@ -77,20 +77,11 @@ export class PrivateHighlightDirective implements OnInit, AfterViewInit {
 
     const blocks = this.div.querySelectorAll('pre');
     blocks.forEach((value) => {
-      // @ts-ignore
-      const lang = value.querySelector('code').className;
-      // console.log(`Language => ${lang.split('-')[1]}`);
+      const codeElement = value.querySelector('code');
+      const lang = codeElement?.className.split('language-')[1];
+      const language = hljs.getLanguage(lang);
 
-      const fixedLang = lang.split('-')[1];
-
-      // console.log(fixedLang);
-
-      /*      if (lang) {
-              console.log('VAR');
-            }*/
-
-      // hljs.highlightBlock(value.querySelector('code'));
-      hljs.highlightBlock(value.querySelector('code'));
+      hljs.highlightBlock(codeElement);
 
       this.createComponent(value);
       // this.loadComponent();
@@ -121,7 +112,7 @@ export class PrivateHighlightDirective implements OnInit, AfterViewInit {
     compRef.instance.text = value;
 
     value.replaceWith(hostView.rootNodes[0]);
-    hostView.rootNodes[0].appendChild(compRef.instance.text);
+    // hostView.rootNodes[0].appendChild(compRef.instance.text);
 
     // FIXME
     hostView.detectChanges();

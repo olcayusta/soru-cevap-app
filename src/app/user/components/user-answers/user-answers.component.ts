@@ -13,10 +13,15 @@ import { Observable } from 'rxjs';
 export class UserAnswersComponent implements OnInit {
   answers$!: Observable<Answer[]>;
 
-  constructor(private userService: UserService, private route: ActivatedRoute) {}
+  constructor(
+    private userService: UserService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
-    const userId = Number(this.route.snapshot.parent!.parent!.paramMap.get('userId'));
+    const userId = Number(
+      this.route.snapshot.parent!.parent!.paramMap.get('userId')
+    );
     this.answers$ = this.userService.getUserAnswers(userId);
   }
 }

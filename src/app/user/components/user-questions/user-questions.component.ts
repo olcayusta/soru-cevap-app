@@ -13,10 +13,15 @@ import { ActivatedRoute } from '@angular/router';
 export class UserQuestionsComponent implements OnInit {
   questions!: Observable<Question[]>;
 
-  constructor(private userService: UserService, private route: ActivatedRoute) {}
+  constructor(
+    private userService: UserService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
-    const userId = Number(this.route.snapshot.parent!.parent!.paramMap.get('userId'));
+    const userId = Number(
+      this.route.snapshot.parent!.parent!.paramMap.get('userId')
+    );
     this.questions = this.userService.getUserQuestions(userId);
   }
 }

@@ -18,13 +18,7 @@ export class WebCopyCodeComponent {
   }
 
   async copyPreCode() {
-    try {
-      // @ts-ignore
-      await navigator.clipboard.writeText(this.text.textContent);
-      this.snackBar.open('Kod kopyalandı');
-      // console.log('Page URL copied to clipboard');
-    } catch (err) {
-      // console.error('Failed to copy: ', err);
-    }
+    await navigator.clipboard.writeText(this.text.textContent!);
+    this.snackBar.open('Kod panoya kopyalandı');
   }
 }
