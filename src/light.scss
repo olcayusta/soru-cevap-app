@@ -145,7 +145,8 @@ $secondary-gray-theme: mat-light-theme((
 @include mat-dialog-theme($app-theme);
 @include mat-autocomplete-theme($app-theme);
 @include mat-snack-bar-theme($app-theme);
-@include mat-tabs-theme($app-theme);
+@include mat-tabs-theme($gray-theme);
+@include mat-expansion-panel-theme($gray-theme);
 
 /* Gray */
 @include mat-progress-bar-theme($gray-theme);
