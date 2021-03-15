@@ -5,6 +5,11 @@ import {
   ChangeDetectionStrategy,
   Output,
   ɵmarkDirty as markDirty,
+  Type,
+  ViewChild,
+  ViewContainerRef,
+  ComponentFactoryResolver,
+  Compiler,
 } from '@angular/core';
 import { User } from '@shared/models/user.model';
 import { AuthService } from '../../auth/auth.service';
@@ -17,9 +22,10 @@ import {
   BreakpointState,
 } from '@angular/cdk/layout';
 import { SpinnerService } from '@shared/services/spinner.service';
+import { SearchFormComponent } from './components/search-form/search-form.component';
 
 @Component({
-  selector: 'app-top-bar',
+  selector: 'qa-top-bar',
   templateUrl: './top-bar.component.html',
   styleUrls: ['./top-bar.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -37,6 +43,9 @@ export class TopBarComponent implements OnInit {
   isHandset!: boolean;
 
   spinner$!: Observable<boolean>;
+
+  @ViewChild('container', { read: ViewContainerRef })
+  container!: ViewContainerRef;
 
   constructor(
     private authService: AuthService,
@@ -64,6 +73,7 @@ export class TopBarComponent implements OnInit {
 
         markDirty(this);
       });
+
     this.isLoggedIn$ = this.authService.isLoggedIn$;
   }
 }

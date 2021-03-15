@@ -12,7 +12,7 @@ import { MatMenu, MatMenuItem } from '@angular/material/menu';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-sort-by',
+  selector: 'qa-sort-filter',
   templateUrl: './sort-by.component.html',
   styleUrls: ['./sort-by.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

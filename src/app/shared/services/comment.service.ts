@@ -11,7 +11,9 @@ export class CommentService {
   constructor(private http: HttpClient) {}
 
   gerComments(questionId: number): Observable<Comment[]> {
-    return this.http.get<Comment[]>(`${environment.apiUrl}/questions/${questionId}/comments`);
+    return this.http.get<Comment[]>(
+      `${environment.apiUrl}/questions/${questionId}/comments`
+    );
   }
 
   saveComment(content: string): Observable<Comment> {

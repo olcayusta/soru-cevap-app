@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  OnInit,
+} from '@angular/core';
 import { Question } from '../../models/question.model';
 import { Tag } from '@shared/models/tag.model';
 
@@ -6,14 +11,12 @@ import { Tag } from '@shared/models/tag.model';
   selector: 'qa-home-question-list-item',
   templateUrl: './home-question-list-item.component.html',
   styleUrls: ['./home-question-list-item.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeQuestionListItemComponent implements OnInit {
   @Input() question!: Question;
 
   selectedTagIds!: number[];
-
-  constructor() {}
 
   ngOnInit(): void {
     const tags = JSON.parse(localStorage.getItem('watchedTags') as string);
@@ -23,7 +26,7 @@ export class HomeQuestionListItemComponent implements OnInit {
       });
       this.question?.tags?.forEach((tag) => {
         this.selectedTagIds.forEach((selectedTagId) => {
-          if (tag.id === selectedTagId) tag.selected = true;
+          tag.id === selectedTagId ? (tag.selected = true) : null;
         });
       });
     }

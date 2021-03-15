@@ -1,7 +1,7 @@
 {
-  "name": "uzman.dev",
-  "short_name": "uzman.dev",
-  "theme_color": "#fff",
+  "name": "Google Fonts",
+  "short_name": "Google Fonts",
+  "theme_color": "#f5f5f5",
   "background_color": "#fff",
   "display": "standalone",
   "scope": "./",

@@ -5,7 +5,7 @@ import { Question } from '@shared/models/question.model';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ListService {
   constructor(private http: HttpClient) {}

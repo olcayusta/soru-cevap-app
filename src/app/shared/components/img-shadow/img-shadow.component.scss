@@ -9,11 +9,10 @@
   opacity: 1;
 }
 
-.img-shadow {
+#img {
   display: flex;
-  width: 40px;
-  height: 40px;
+  /*width: 40px;
+  height: 40px;*/
   border-radius: 50%;
   object-fit: cover;
-  // opacity: 0;
 }

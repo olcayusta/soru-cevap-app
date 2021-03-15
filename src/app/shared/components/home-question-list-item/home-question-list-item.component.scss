@@ -12,7 +12,7 @@ a:hover {
   text-decoration: underline;
 }
 
-.list-item {
+.item {
   display: flex;
   grid-gap: 16px;
   // font-family: Archivo, sans-serif;
@@ -32,6 +32,10 @@ a:hover {
 
 .bracket {
   margin: 0 4px;
+}
+
+#avatar-link {
+  height: 40px;
 }
 
 .img-container {
@@ -79,12 +83,6 @@ a:hover {
   margin: 4px 0;
 }
 
-.spinner {
-  display: grid;
-  place-items: center;
-  padding: 24px 0;
-}
-
 mat-divider {
   display: block;
   margin: 16px 0;
@@ -112,7 +110,6 @@ mat-divider {
   background-color: #000;
   color: #fff;
   border-radius: 50%;
-  font-weight: 700;
   margin: 0 8px;
 }
 
@@ -162,17 +159,17 @@ mat-chip {
 }
 
 @media (prefers-color-scheme: light) {
-/*  .mat-chip-selected {
-    background: #f3ebfe !important;
-    color: #6200ee !important;
-    // border: 1px solid rgba(0, 0, 0, .12) !important;
-  }*/
+  /*  .mat-chip-selected {
+      background: #f3ebfe !important;
+      color: #6200ee !important;
+      // border: 1px solid rgba(0, 0, 0, .12) !important;
+    }*/
 
   .mat-chip-selected {
-/*    background: #6200ee !important;
-    color: #fff !important;*/
-    background: #f3ebfe !important;
-    color: #6200ee !important;
+    /*    background: #6200ee !important;
+        color: #fff !important;*/
+    background: rgba(0, 0, 0, .12) !important;
+    color: black !important;
     border: 1px solid rgba(0, 0, 0, .12) !important;
   }
 }

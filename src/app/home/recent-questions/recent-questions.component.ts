@@ -10,10 +10,10 @@ import { Question } from '@shared/models/question.model';
 import { ActivatedRoute } from '@angular/router';
 import { FilterService } from '@shared/services/filter.service';
 import { Observable, Subscription } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
+import { delay, switchMap } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-recent-questions',
+  selector: 'qa-recent-questions',
   templateUrl: './recent-questions.component.html',
   styleUrls: ['./recent-questions.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -25,6 +25,9 @@ export class RecentQuestionsComponent implements OnInit, OnDestroy {
   offset = 12;
 
   subscription!: Subscription;
+
+  loader = false;
+  dataFinished = false;
 
   constructor(
     private questionService: QuestionService,
@@ -59,22 +62,27 @@ export class RecentQuestionsComponent implements OnInit, OnDestroy {
 
   // TODO
   // ilk yukleme yapilirken, ekranda loading belirdigi icin, questions undefined hatasi var
-  // fixleniceks
+  // fixlenicek
   loadMore(): void {
     if (this.questions) {
-      setTimeout(() => {
-        this.questionService.getMoreQuestions(this.offset).subscribe((value) => {
+      this.loader = true;
+      this.questionService
+        .getMoreQuestions(this.offset)
+        .pipe(delay(100))
+        .subscribe((value) => {
+          this.loader = false;
+          markDirty(this);
           if (value.length > 0) {
             this.offset += 6;
             this.questions = [...this.questions, ...value];
             markDirty(this);
           } else {
-            console.log('data bitti!..');
+            console.warn('data bitti!..');
+            this.dataFinished = true;
           }
         });
-      }, 400);
     } else {
-      console.log('array yok!');
+      console.warn('Veri bulunamadi!');
     }
   }
 }

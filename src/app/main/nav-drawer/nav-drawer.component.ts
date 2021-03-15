@@ -1,6 +1,20 @@
-import { Component, EventEmitter, OnInit, ChangeDetectionStrategy, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  OnInit,
+  ChangeDetectionStrategy,
+  Output,
+  NgModule,
+} from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { SettingsDialogComponent } from '../../settings-dialog/settings-dialog.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatListModule } from '@angular/material/list';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatIconModule } from '@angular/material/icon';
+import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-nav-drawer',
@@ -23,10 +37,21 @@ export class NavDrawerComponent implements OnInit {
     });
   }
 
-  /**
-   *  Butona tiklandiginda nav drawer componentini kapat
-   */
   onClicked() {
     this.closeDrawer.emit();
   }
 }
+
+@NgModule({
+  declarations: [NavDrawerComponent],
+  imports: [
+    CommonModule,
+    RouterModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatListModule,
+    MatDividerModule,
+    MatIconModule,
+  ],
+})
+export class NavDrawerModule {}

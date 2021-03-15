@@ -62,11 +62,11 @@ mat-nav-list {
 
 /* Letter Spacing */
 .mat-tab-link {
-  letter-spacing: 1.25px;
+  // letter-spacing: 1.25px;
 }
 
 mat-chip {
-  letter-spacing: .15px;
+  letter-spacing: .25px;
 }
 
 .mat-button {
@@ -93,7 +93,8 @@ mat-chip {
   mat-chip
 */
 mat-chip {
-  line-height: 16px;
+  line-height: 20px;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
   background-color: #eee !important;
 }
 
@@ -151,7 +152,7 @@ mat-chip {
   H1, H2, H3, H4, H5, H6
 */
 .headline-2 {
-  font-size: 61px;
+  font-size: 60px;
   font-weight: 300;
   line-height: 72px;
   letter-spacing: -0.5px;
@@ -178,8 +179,21 @@ mat-chip {
   font-size: 24px;
   font-weight: 400;
   line-height: 24px;
-  letter-spacing: 0.18px;
+  letter-spacing: 0;
   margin: 0;
+}
+
+.headline-6 {
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: .15px;
+}
+
+.subtitle-1 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: .15px;
 }
 
 .subtitle-2 {
@@ -193,4 +207,13 @@ mat-chip {
   font-size: 14px;
   line-height: 20px;
   letter-spacing: .25px;
+}
+
+/* HLJS */
+.hljs {
+  display: unset;
+  overflow-x: unset;
+  padding: 0;
+  color: unset;
+  background: #f8f8f8;
 }

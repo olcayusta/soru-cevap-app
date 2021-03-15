@@ -13,6 +13,8 @@
   </div>
 
   <div id='center-content'>
+<!--    <app-search-form></app-search-form>-->
+   <!-- <ng-container [ngComponentOutlet]='searchFormOutlet!' *ngIf='isDesktop'></ng-container>-->
     <app-search-form></app-search-form>
   </div>
 
@@ -50,9 +52,8 @@
 </mat-toolbar>
 
 <ng-template #signIn>
-  <!-- Search button -->
   <a mat-icon-button class='mobile-show search-btn' routerLink='/mobile-search'>
-    <mat-icon>search</mat-icon>
+    <mat-icon class='material-icons-outlined'>search</mat-icon>
   </a>
 
   <ng-container *ngIf='isHandset'>

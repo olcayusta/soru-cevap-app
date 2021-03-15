@@ -11,9 +11,9 @@
   display: none;
 }
 
-button[aria-expanded=true] {
+button[aria-expanded='true'] {
   background-color: rgba(98, 0, 238, 0.12);
-  color: #6200EE;
+  color: #6200ee;
 
   mat-icon {
     transform: rotate(180deg);
@@ -51,4 +51,8 @@ mat-checkbox {
 .container {
   display: flex;
   align-items: center;
+}
+
+::ng-deep .mat-checkbox-layout .mat-checkbox-label {
+  margin-left: 8px;
 }

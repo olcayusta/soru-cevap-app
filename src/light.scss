@@ -135,26 +135,27 @@ $secondary-gray-theme: mat-light-theme((
 /* Purple */
 @include mat-core-theme($app-theme);
 @include mat-toolbar-theme($app-theme);
-@include mat-button-theme($app-theme);
 @include mat-menu-theme($app-theme);
 @include mat-chips-theme($app-theme);
 @include mat-badge-theme($app-theme);
 @include mat-tooltip-theme($app-theme);
-@include mat-checkbox-theme($app-theme);
 @include mat-radio-theme($app-theme);
 @include mat-dialog-theme($app-theme);
 @include mat-autocomplete-theme($app-theme);
 @include mat-snack-bar-theme($app-theme);
-@include mat-tabs-theme($gray-theme);
-@include mat-expansion-panel-theme($gray-theme);
+@include mat-button-theme($app-theme);
+@include mat-checkbox-theme($app-theme);
 
 /* Gray */
+@include mat-tabs-theme($gray-theme);
+@include mat-expansion-panel-theme($gray-theme);
 @include mat-progress-bar-theme($gray-theme);
 @include mat-progress-spinner-theme($secondary-gray-theme);
 @include mat-form-field-theme($gray-theme);
 @include mat-list-theme($gray-theme);
 @include mat-divider-theme($gray-theme);
 @include mat-sidenav-theme($gray-theme);
+
 
 :root {
   --color: rgba(0, 0, 0, .87);

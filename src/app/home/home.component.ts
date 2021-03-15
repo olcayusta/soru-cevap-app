@@ -10,7 +10,10 @@ import { StateService } from '../shared/services/state.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeComponent implements OnInit {
-  constructor(private titleService: Title, private stateService: StateService) {}
+  constructor(
+    private titleService: Title,
+    private stateService: StateService
+  ) {}
 
   ngOnInit(): void {
     this.stateService.show();

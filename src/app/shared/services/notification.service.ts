@@ -6,12 +6,12 @@ import { Observable } from 'rxjs';
 import { environment } from '@environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class NotificationService {
   constructor(private http: HttpClient) {}
 
-  getNotifications(): Observable<Notification[]> {
+  getAllNotifications(): Observable<Notification[]> {
     return this.http.get<Notification[]>(`${environment.apiUrl}/notifications`);
   }
 

@@ -13,12 +13,8 @@
   (overlayOutsideClick)='outsideClick()'
   [cdkConnectedOverlayScrollStrategy]='blockScrollStrategy'
   [cdkConnectedOverlayOpen]='popupOpened'
-  cdkConnectedOverlayPush
-  [cdkConnectedOverlayGrowAfterOpen]='true'
+  (detach)='onDetach()'
   [cdkConnectedOverlayOrigin]='avatarElement'>
   <!--<app-user-menu-popup></app-user-menu-popup>-->
-
   <ng-container [ngComponentOutlet]='ironDropdownOutlet!'></ng-container>
-
-
 </ng-template>

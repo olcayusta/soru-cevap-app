@@ -5,14 +5,14 @@ import { Question } from '../models/question.model';
 import { environment } from '../../../environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class FavoriteService {
   constructor(private http: HttpClient) {}
 
   addToFavorite(questionId: number): Observable<Question> {
     return this.http.post<Question>(`${environment.apiUrl}/bookmarks`, {
-      questionId
+      questionId,
     });
   }
 

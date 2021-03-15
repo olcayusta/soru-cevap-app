@@ -1,23 +1,25 @@
 import {
-  Component,
-  OnInit,
   ChangeDetectionStrategy,
+  Component,
+  ElementRef,
   Input,
-  ɵmarkDirty as markDirty,
+  OnInit,
   ViewChild,
-  ElementRef
 } from '@angular/core';
 
 @Component({
-  selector: 'app-img-shadow',
+  selector: 'qa-img-shadow',
   templateUrl: './img-shadow.component.html',
   styleUrls: ['./img-shadow.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ImgShadowComponent implements OnInit {
-  @Input() picture!: string;
-  @Input() displayName!: string;
+  @Input() src!: string;
+  @Input() alt!: string;
   @ViewChild('imageElement') imageElement!: ElementRef<HTMLImageElement>;
+
+  @Input() width: number = 40;
+  @Input() height: number = 40;
 
   imgURL!: string;
 

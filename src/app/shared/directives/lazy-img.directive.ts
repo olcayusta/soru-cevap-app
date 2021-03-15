@@ -1,45 +1,27 @@
-import {
-  AfterViewInit,
-  Directive,
-  ElementRef,
-  HostBinding,
-  HostListener,
-  Input,
-  OnInit,
-} from '@angular/core';
+import { Directive, ElementRef, HostBinding, OnInit } from '@angular/core';
 
 @Directive({
-  selector: '[appLazyImg]',
+  selector: '[qaLazyImg]',
 })
-export class LazyImgDirective implements OnInit, AfterViewInit {
-  // @HostBinding('attr.src') src = null;
-  @Input() appLazyImg!: string;
+export class LazyImgDirective implements OnInit {
+  @HostBinding('attr.src') src = null;
+  imgSrc!: string;
 
-  constructor({ nativeElement }: ElementRef<HTMLImageElement>, private elRef: ElementRef) {
-    const supports = 'loading' in HTMLImageElement.prototype;
-
-    if (supports) {
-      /*   nativeElement.setAttribute('loading', 'lazy');
-      console.log('Support!');*/
-    } else {
-      // fallback
-    }
-  }
+  constructor(private elementRef: ElementRef<HTMLImageElement>) {}
 
   ngOnInit(): void {
-    // this.currentSrc = this.elRef.nativeElement.src;
-  }
+    const nativeElement = this.elementRef.nativeElement;
+    this.imgSrc = nativeElement.src;
 
-  ngAfterViewInit(): void {
-    const obs = new IntersectionObserver((entries, observer) => {
-      const entry = entries[0];
-      const img = entry.target as HTMLImageElement;
-      if (entry.isIntersecting) {
-        img.src = this.appLazyImg;
+    const intersectionObserver = new IntersectionObserver(([entry]) => {
+      const { isIntersecting, target } = entry;
+      const img = target as HTMLImageElement;
+      if (isIntersecting) {
+        img.src = this.imgSrc;
         img.style.opacity = '1';
-        obs.disconnect();
+        intersectionObserver.disconnect();
       }
     });
-    obs.observe(this.elRef.nativeElement);
+    intersectionObserver.observe(nativeElement);
   }
 }

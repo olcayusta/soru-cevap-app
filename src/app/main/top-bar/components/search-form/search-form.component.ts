@@ -1,10 +1,11 @@
 import {
   ChangeDetectionStrategy,
   Component,
+  NgModule,
   OnInit,
   ViewChild,
 } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { Observable } from 'rxjs';
 import {
   debounceTime,
@@ -14,10 +15,16 @@ import {
 } from 'rxjs/operators';
 import { ISearchResult, SearchService } from '@shared/services/search.service';
 import {
+  MatAutocompleteModule,
   MatAutocompleteSelectedEvent,
   MatAutocompleteTrigger,
 } from '@angular/material/autocomplete';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
+import { MatIconModule } from '@angular/material/icon';
+import { HighlightSearchPipe } from './pipes/highlight-search.pipe';
+import { CommonModule } from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
+import { SharedModule } from '@shared/shared.module';
 
 @Component({
   selector: 'app-search-form',
@@ -60,3 +67,20 @@ export class SearchFormComponent implements OnInit {
     this.autoComplete.closePanel();
   }
 }
+
+/*
+@NgModule({
+  declarations: [SearchFormComponent],
+  imports: [
+    MatAutocompleteModule,
+    MatIconModule,
+    MatButtonModule,
+    RouterModule,
+    ReactiveFormsModule,
+    CommonModule,
+    SharedModule,
+  ],
+  exports: [SearchFormComponent],
+})
+export class SearchFormModule {}
+*/

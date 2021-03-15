@@ -7,7 +7,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { RouterModule } from '@angular/router';
 import { TimeAgoPipe } from './pipes/time-ago.pipe';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { HighlightSearchPipe } from '../search-form/pipes/highlight-search.pipe';
+import { HighlightSearchPipe } from '../main/top-bar/components/search-form/pipes/highlight-search.pipe';
 import { MatIconModule } from '@angular/material/icon';
 import { ImgShadowComponent } from './components/img-shadow/img-shadow.component';
 import { MarkedPipe } from '@shared/pipes/marked.pipe';
@@ -37,6 +37,12 @@ import { MatButtonModule } from '@angular/material/button';
     MatInputModule,
     MatButtonModule,
   ],
-  exports: [LazyImgDirective, HomeQuestionListItemComponent, HighlightSearchPipe, TimeAgoPipe],
+  exports: [
+    LazyImgDirective,
+    HomeQuestionListItemComponent,
+    HighlightSearchPipe,
+    TimeAgoPipe,
+    ImgShadowComponent,
+  ],
 })
 export class SharedModule {}

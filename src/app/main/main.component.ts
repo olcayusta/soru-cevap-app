@@ -3,11 +3,29 @@ import {
   OnInit,
   ChangeDetectionStrategy,
   Inject,
+  Type,
+  ViewChild,
+  Injector,
+  Injectable,
+  EventEmitter,
+  ViewContainerRef,
+  ComponentFactoryResolver,
+  Output,
+  ɵmarkDirty as markDirty,
 } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { MatDrawerMode } from '@angular/material/sidenav';
+import { MatDrawer, MatDrawerMode } from '@angular/material/sidenav';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { DOCUMENT } from '@angular/common';
+import { NavDrawerComponent } from './nav-drawer/nav-drawer.component';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class Info {
+  @Output() close = new EventEmitter<any>();
+  opened?: boolean = true;
+}
 
 @Component({
   selector: 'app-main',
@@ -20,11 +38,33 @@ export class MainComponent implements OnInit {
 
   isSmallScreen!: boolean;
 
+  comp?: Type<NavDrawerComponent>;
+
+  @ViewChild('drawer') drawer!: MatDrawer;
+  myInjector: Injector;
+
+  @ViewChild('compRef', { read: ViewContainerRef }) compRef!: ViewContainerRef;
+
+  isDrawerCreated = false;
+
   constructor(
     private snackBar: MatSnackBar,
     private breakpointObserver: BreakpointObserver,
-    @Inject(DOCUMENT) private document: Document
-  ) {}
+    @Inject(DOCUMENT) private document: Document,
+    private injector: Injector,
+    private cfr: ComponentFactoryResolver,
+    private info: Info
+  ) {
+    let title = 'my dynamic title works!';
+    this.myInjector = Injector.create({
+      providers: [
+        {
+          provide: Info,
+        },
+      ],
+      parent: injector,
+    });
+  }
 
   /**
    * Mobil tasarimda, scroll kaydirilinca, asagi veya yukari durumuna gore,
@@ -71,5 +111,33 @@ export class MainComponent implements OnInit {
 
   drawerClosedStart(): void {
     this.document.body.style.overflow = '';
+  }
+
+  async openDrawer(): Promise<void> {
+    /*    const { NavDrawerComponent: comp } = await import(
+      './nav-drawer/nav-drawer.component'
+    );
+
+    this.comp = comp;
+    markDirty(this);
+    await this.drawer.open();*/
+    // await this.drawer.open();
+  }
+
+  async openDrawer2(): Promise<void> {
+    if (!this.isDrawerCreated) {
+      const { NavDrawerComponent: comp } = await import(
+        './nav-drawer/nav-drawer.component'
+      );
+      const factory = this.cfr.resolveComponentFactory(comp);
+      const vcr = this.compRef.createComponent(factory);
+      vcr.instance.closeDrawer.subscribe(() => {
+        this.drawer.close();
+      });
+      markDirty(this);
+      this.isDrawerCreated = true;
+    }
+
+    await this.drawer.open();
   }
 }

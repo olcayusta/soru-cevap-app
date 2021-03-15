@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MainComponent } from './main/main.component';
 import { AuthGuard } from './auth/auth.guard';
-import { MobileAppInfoComponent } from './mobile-app-info/mobile-app-info.component';
 
 const routes: Routes = [
   {
@@ -42,8 +41,8 @@ const routes: Routes = [
       },
       {
         path: 'list',
-        loadChildren: async () =>
-          (await import('./modules/list/list.module')).ListModule,
+        loadChildren: () =>
+          import('@modules/list/list.module').then((value) => value.ListModule),
       },
       {
         path: 'user/:userId',
@@ -64,7 +63,7 @@ const routes: Routes = [
       {
         path: 'edit',
         loadChildren: async () =>
-          (await import('./edit/edit.module')).EditModule,
+          (await import('./modules/edit/edit.module')).EditModule,
       },
       {
         path: 'favorites',
@@ -90,10 +89,6 @@ const routes: Routes = [
       (await import('./auth/register/register.module')).RegisterModule,
   },
   {
-    path: 'app',
-    component: MobileAppInfoComponent,
-  },
-  {
     path: '404',
     loadChildren: async () =>
       (await import('./page-not-found/page-not-found.module'))
@@ -112,6 +107,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes, {
       urlUpdateStrategy: 'eager',
       enableTracing: false,
+      scrollPositionRestoration: 'enabled',
       // scrollOffset: [0, 0]
     }),
   ],

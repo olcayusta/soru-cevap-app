@@ -1,12 +1,8 @@
 import {
   ChangeDetectionStrategy,
-  ChangeDetectorRef,
   Component,
-  ComponentFactoryResolver,
   OnInit,
   Type,
-  ViewContainerRef,
-  ɵdetectChanges as detectChanges,
   ɵmarkDirty as markDirty,
 } from '@angular/core';
 import { ScrollStrategy, ScrollStrategyOptions } from '@angular/cdk/overlay';
@@ -28,18 +24,15 @@ export class AvatarButtonComponent implements OnInit {
 
   loaded = false;
 
-  compRef?: Type<any>;
+  // compRef?: Type<any>;
 
   ironDropdownOutlet?: Type<IronDropdownComponent>;
 
   constructor(
     private sso: ScrollStrategyOptions,
-    private authService: AuthService,
-    private cfr: ComponentFactoryResolver,
-    private vcr: ViewContainerRef,
-    private cdr: ChangeDetectorRef
+    private authService: AuthService
   ) {
-    this.blockScrollStrategy = this.sso.block();
+    this.blockScrollStrategy = this.sso.close();
   }
 
   ngOnInit(): void {
@@ -47,20 +40,12 @@ export class AvatarButtonComponent implements OnInit {
   }
 
   async openUserProfilePopup(): Promise<void> {
-    await this.loadIronDropdownComponent();
-    this.popupOpened = !this.popupOpened;
-    markDirty(this);
-
-    /*    import(
-      '../../../../experimental/iron-dropdown/iron-dropdown.component'
-    ).then((value) => {
-      const comp = value.IronDropdownComponent;
-      const factory = this.cfr.resolveComponentFactory(comp);
-      const vcr = this.vcr.createComponent(factory);
-      // @ts-ignore
-      this.compRef = vcr;
-      this.cdr.detectChanges();
-    });*/
+    if (this.popupOpened) {
+      this.popupOpened = false;
+    } else {
+      await this.loadIronDropdownComponent();
+      this.popupOpened = true;
+    }
   }
 
   async loadIronDropdownComponent(): Promise<void> {
@@ -69,10 +54,14 @@ export class AvatarButtonComponent implements OnInit {
     );
 
     this.ironDropdownOutlet = comp;
+    markDirty(this);
   }
 
   outsideClick(): void {
     this.popupOpened = false;
-    detectChanges(this);
+  }
+
+  onDetach() {
+    this.popupOpened = false;
   }
 }

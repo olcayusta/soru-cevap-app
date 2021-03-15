@@ -7,7 +7,7 @@
   align-items: center;
 }
 
-button[aria-expanded=true] {
+button[aria-expanded='true'] {
   background-color: rgba(0, 0, 0, 0.12);
   // color: #6200EE;
 
@@ -17,7 +17,7 @@ button[aria-expanded=true] {
 }
 
 mat-icon {
-  color: rgba(0, 0, 0, .6);
+  color: rgba(0, 0, 0, 0.6);
   margin-right: -4px;
 }
 
@@ -32,7 +32,8 @@ mat-icon {
 
 ::ng-deep .sort-menu {
   margin-top: 8px;
-  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.14), 0 3px 14px rgba(0, 0, 0, 0.12), 0 5px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.14), 0 3px 14px rgba(0, 0, 0, 0.12),
+    0 5px 5px rgba(0, 0, 0, 0.2);
 
   .mat-menu-item {
     height: 32px;

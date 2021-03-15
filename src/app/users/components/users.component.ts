@@ -1,8 +1,8 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { User } from '@shared/models/user.model';
+import { User } from '../../shared/models/user.model';
 import { ActivatedRoute } from '@angular/router';
 import { Title } from '@angular/platform-browser';
-import { environment } from '../../environments/environment';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-users',
@@ -16,7 +16,7 @@ export class UsersComponent implements OnInit {
   constructor(private route: ActivatedRoute, private titleService: Title) {}
 
   ngOnInit(): void {
-    const { users } = <{ users: User[] }>this.route.snapshot.data;
+    const { users } = this.route.snapshot.data as { users: User[] };
     this.users = users;
     this.titleService.setTitle(`Kullanıcılar - ${environment.appTitle}`);
   }

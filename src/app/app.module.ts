@@ -12,7 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { OverlayModule } from '@angular/cdk/overlay';
 
-import { registerLocaleData } from '@angular/common';
+import { registerLocaleData, ViewportScroller } from '@angular/common';
 import localeTr from '@angular/common/locales/tr';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatTooltipModule } from '@angular/material/tooltip';
@@ -27,25 +27,21 @@ import {
   MatSnackBarModule,
 } from '@angular/material/snack-bar';
 import { StickyDirective } from './main/top-bar/directives/sticky.directive';
-import { BottomBarComponent } from './components/bottom-bar/bottom-bar.component';
+import { BottomBarComponent } from '@components/bottom-bar/bottom-bar.component';
 import { MatRippleModule } from '@angular/material/core';
 import { JwtInterceptor } from './auth/interceptors/jwt.interceptor';
-import { MatInputModule } from '@angular/material/input';
 import { SharedModule } from '@shared/shared.module';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
-import { NotificationListPopupComponent } from './main/top-bar/components/notification-list-popup/notification-list-popup.component';
-import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
-import { NavDrawerComponent } from './main/nav-drawer/nav-drawer.component';
-import { SearchFormComponent } from './search-form/search-form.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { UserMenuPopupComponent } from './main/top-bar/components/user-menu-popup/user-menu-popup.component';
+import { ReactiveFormsModule } from '@angular/forms';
 import { MatChipsModule } from '@angular/material/chips';
 import { NotificationButtonComponent } from './main/top-bar/components/notification-button/notification-button.component';
 import { AvatarButtonComponent } from './main/top-bar/components/avatar-button/avatar-button.component';
 import { SettingsDialogComponent } from './settings-dialog/settings-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
-import { MobileAppInfoComponent } from './mobile-app-info/mobile-app-info.component';
+import { Router, Scroll } from '@angular/router';
+import { filter } from 'rxjs/operators';
+import { SearchFormComponent } from './main/top-bar/components/search-form/search-form.component';
 
 registerLocaleData(localeTr);
 
@@ -57,14 +53,10 @@ registerLocaleData(localeTr);
     SideSheetComponent,
     StickyDirective,
     BottomBarComponent,
-    NotificationListPopupComponent,
-    NavDrawerComponent,
-    SearchFormComponent,
-    UserMenuPopupComponent,
     NotificationButtonComponent,
     AvatarButtonComponent,
     SettingsDialogComponent,
-    MobileAppInfoComponent,
+    SearchFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -84,16 +76,13 @@ registerLocaleData(localeTr);
     MatMenuModule,
     MatRadioModule,
     MatSnackBarModule,
-    MatAutocompleteModule,
     MatRippleModule,
-    MatInputModule,
-    MatListModule,
     SharedModule,
     MatIconModule,
-    ReactiveFormsModule,
     MatChipsModule,
     MatDialogModule,
-    FormsModule,
+    MatAutocompleteModule,
+    ReactiveFormsModule,
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'tr-TR' },

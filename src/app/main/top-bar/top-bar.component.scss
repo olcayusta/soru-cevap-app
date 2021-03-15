@@ -48,8 +48,10 @@ mat-toolbar {
   width: 100%;
   z-index: 4;
   // width: calc(100vw - 17px);
- /* box-shadow: none !important;
-  border-bottom: 2px solid rgba(0, 0, 0, .12);*/
+  /* box-shadow: none !important;
+   border-bottom: 2px solid rgba(0, 0, 0, .12);*/
+  // box-shadow: none !important;
+  // border-bottom: 1px solid rgba(0, 0, 0, .12);
 }
 
 .search-icon {

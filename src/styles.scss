@@ -10,26 +10,33 @@ $custom-typography: mat-typography-config(
   $font-family: 'Archivo, sans-serif',
 );
 
+$body-and-captions-typography: mat-typography-config(
+  $font-family: 'Roboto, sans-serif',
+);
+
 @include mat-base-typography($custom-typography);
-@include mat-snack-bar-typography($custom-typography);
 @include mat-tabs-typography($custom-typography);
 @include mat-list-typography($custom-typography);
 @include mat-dialog-typography($custom-typography);
-@include mat-button-typography($custom-typography);
 @include mat-form-field-typography($custom-typography);
 @include mat-radio-typography($custom-typography);
 @include mat-option-typography($custom-typography);
-@include mat-optgroup-typography($custom-typography);
 @include mat-toolbar-typography($custom-typography);
-@include mat-tooltip-typography($custom-typography);
-@include mat-badge-typography($custom-typography);
-@include mat-menu-typography($custom-typography);
-@include mat-checkbox-typography($custom-typography);
+
 @include mat-radio-typography($custom-typography);
 
+@include mat-badge-typography($body-and-captions-typography);
+@include mat-tooltip-typography($body-and-captions-typography);
+@include mat-checkbox-typography($body-and-captions-typography);
+@include mat-snack-bar-typography($body-and-captions-typography);
+@include mat-menu-typography($body-and-captions-typography);
+@include mat-button-typography($body-and-captions-typography);
+@include mat-optgroup-typography($body-and-captions-typography);
+@include mat-autocomplete-typography($body-and-captions-typography);
+
 $chip-typography: mat-typography-config(
-  $font-family: 'Archivo, sans-serif',
-  $body-2: mat-typography-level(14px, 16px, 400)
+  $font-family: 'Roboto, sans-serif',
+  $body-2: mat-typography-level(14px, 20px, 400)
 );
 
 @include mat-chips-typography($chip-typography);
@@ -237,8 +244,8 @@ svg {
 }
 
 pre {
-  scrollbar-color: #80868b rgba(0, 0, 0, 0);
-  scrollbar-width: thin;
+  /*scrollbar-color: #80868b rgba(0, 0, 0, 0);
+  scrollbar-width: thin;*/
 }
 
 /*
@@ -300,7 +307,7 @@ pre {
 */
 .filter-info-text {
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 20px;
   margin-right: 8px;
   white-space: nowrap;

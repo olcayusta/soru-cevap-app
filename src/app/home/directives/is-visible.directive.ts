@@ -1,19 +1,30 @@
-import { AfterViewInit, Directive, ElementRef, EventEmitter, Output } from '@angular/core';
+import {
+  AfterViewInit,
+  Directive,
+  ElementRef,
+  EventEmitter,
+  OnDestroy,
+  Output,
+} from '@angular/core';
 
 @Directive({
   selector: '[appIsVisible]',
 })
-export class IsVisibleDirective implements AfterViewInit {
-  @Output() isVisible = new EventEmitter();
+export class IsVisibleDirective implements AfterViewInit, OnDestroy {
+  @Output() scrolled = new EventEmitter();
 
-  constructor(private elementRef: ElementRef<HTMLElement>) {}
+  observer!: IntersectionObserver;
+
+  constructor(private elementRef: ElementRef<HTMLDivElement>) {}
 
   ngAfterViewInit(): void {
-    const obs = new IntersectionObserver((entries, observer) => {
-      if (entries[0].isIntersecting) {
-        this.isVisible.emit();
-      }
+    this.observer = new IntersectionObserver(([entry]) => {
+      entry.isIntersecting && this.scrolled.emit();
     });
-    obs.observe(this.elementRef.nativeElement);
+    this.observer.observe(this.elementRef.nativeElement);
+  }
+
+  ngOnDestroy() {
+    this.observer.disconnect();
   }
 }

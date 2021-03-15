@@ -9,6 +9,7 @@ import { AuthService } from '../../auth/auth.service';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
+import { SocketService } from '@shared/services/socket.service';
 
 @Component({
   selector: 'app-iron-dropdown',
@@ -19,13 +20,19 @@ import { RouterModule } from '@angular/router';
 export class IronDropdownComponent implements OnInit {
   user!: User;
 
-  constructor(private authService: AuthService) {}
+  constructor(
+    private authService: AuthService,
+    private socketService: SocketService
+  ) {}
 
   ngOnInit(): void {
     this.user = this.authService.userValue;
   }
 
-  logout() {}
+  logout(): void {
+    this.authService.logout();
+    this.socketService.disconnect();
+  }
 }
 
 @NgModule({

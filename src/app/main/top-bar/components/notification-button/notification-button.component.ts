@@ -2,12 +2,14 @@ import {
   Component,
   OnInit,
   ChangeDetectionStrategy,
-  ɵmarkDirty as markDirty
+  ɵmarkDirty as markDirty,
+  Type,
 } from '@angular/core';
 import { shareReplay } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { NotificationService } from '@shared/services/notification.service';
 import { ScrollStrategy, ScrollStrategyOptions } from '@angular/cdk/overlay';
+import { NotificationListPopupComponent } from '../notification-list-popup/notification-list-popup.component';
 
 @Component({
   selector: 'app-notification-button',
@@ -21,27 +23,32 @@ export class NotificationButtonComponent implements OnInit {
   popupOpened = false;
   blockScrollStrategy: ScrollStrategy;
 
+  comp?: Type<NotificationListPopupComponent>;
+
   constructor(
     private notificationService: NotificationService,
     private sso: ScrollStrategyOptions
   ) {
-    this.blockScrollStrategy = this.sso.block();
+    this.blockScrollStrategy = this.sso.close();
   }
 
   ngOnInit(): void {
-    this.notificationCount$ = this.notificationService.getUnseenCount().pipe(shareReplay());
+    this.notificationCount$ = this.notificationService
+      .getUnseenCount()
+      .pipe(shareReplay());
   }
 
   async openNotifications(): Promise<void> {
-    this.popupOpened = !this.popupOpened;
-/*
-    import(
-      '../notification-list-popup/notification-list-popup.component'
-    ).then(value => {
-      this.foo = value.NotificationListPopupComponent;
-      this.popupOpened = !this.popupOpened;
-    })
-*/
+    if (this.popupOpened) {
+      this.popupOpened = false;
+    } else {
+      const { NotificationListPopupComponent: comp } = await import(
+        '../notification-list-popup/notification-list-popup.component'
+      );
+      this.comp = comp;
+      markDirty(this);
+      this.popupOpened = true;
+    }
 
     /* const { NotificationListPopupComponent } = await import(
       '../notification-list-popup/notification-list-popup.component'
@@ -53,5 +60,9 @@ export class NotificationButtonComponent implements OnInit {
   outsideClick(): void {
     this.popupOpened = false;
     markDirty(this);
+  }
+
+  onDetach() {
+    this.popupOpened = false;
   }
 }

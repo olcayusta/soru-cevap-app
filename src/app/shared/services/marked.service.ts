@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { parse } from 'marked';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class MarkedService {
   constructor() {}

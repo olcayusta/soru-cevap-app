@@ -7,7 +7,10 @@ import { RecentQuestionsComponent } from './recent-questions/recent-questions.co
 import { SharedModule } from '../shared/shared.module';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { FilterComponent } from './filter/filter.component';
-import { MAT_MENU_SCROLL_STRATEGY, MatMenuModule } from '@angular/material/menu';
+import {
+  MAT_MENU_SCROLL_STRATEGY,
+  MatMenuModule,
+} from '@angular/material/menu';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { IsVisibleDirective } from './directives/is-visible.directive';
 import { MatButtonModule } from '@angular/material/button';

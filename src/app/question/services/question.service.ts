@@ -5,7 +5,7 @@ import { Question } from '../../shared/models/question.model';
 import { environment } from '../../../environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class QuestionService {
   constructor(private http: HttpClient) {}
@@ -19,22 +19,32 @@ export class QuestionService {
   }
 
   getUnansweredQuestions(): Observable<Question[]> {
-    return this.http.get<Question[]>(`${environment.apiUrl}/questions/unanswered`);
+    return this.http.get<Question[]>(
+      `${environment.apiUrl}/questions/unanswered`
+    );
   }
 
   getQuestion(questionId: number): Observable<Question> {
-    return this.http.get<Question>(`${environment.apiUrl}/questions/${questionId}`);
+    return this.http.get<Question>(
+      `${environment.apiUrl}/questions/${questionId}`
+    );
   }
 
   getMoreQuestions(offset: number = 0): Observable<Question[]> {
-    return this.http.get<Question[]>(`${environment.apiUrl}/questions/loadmore/${offset}`);
+    return this.http.get<Question[]>(
+      `${environment.apiUrl}/questions/loadmore/${offset}`
+    );
   }
 
-  saveQuestion(title: string, content: string, tags: number[]): Observable<Question> {
+  saveQuestion(
+    title: string,
+    content: string,
+    tags: number[]
+  ): Observable<Question> {
     return this.http.post<Question>(`${environment.apiUrl}/questions`, {
       title,
       content,
-      tags
+      tags,
     });
   }
 }

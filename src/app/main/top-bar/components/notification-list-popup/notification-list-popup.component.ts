@@ -1,7 +1,15 @@
-import { Component, OnInit, ChangeDetectionStrategy, NgModule } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ChangeDetectionStrategy,
+  NgModule,
+} from '@angular/core';
 import { NotificationService } from '@shared/services/notification.service';
 import { Notification } from '@shared/models/notification.model';
 import { Observable } from 'rxjs';
+import { CommonModule } from '@angular/common';
+import { MatListModule } from '@angular/material/list';
+import { SharedModule } from '@shared/shared.module';
 
 @Component({
   selector: 'app-notification-list-popup',
@@ -12,26 +20,15 @@ import { Observable } from 'rxjs';
 export class NotificationListPopupComponent implements OnInit {
   notifications$!: Observable<Notification[]>;
 
-  hero = {
-    firstName: 'Dana',
-    lastName: 'Scully',
-    age: 24,
-    no: 10,
-    test: 1000,
-  };
-
   constructor(private notificationService: NotificationService) {}
 
   ngOnInit(): void {
-    this.notifications$ = this.notificationService.getNotifications();
+    this.notifications$ = this.notificationService.getAllNotifications();
   }
 }
-/*
 
 @NgModule({
-  imports: [MatListModule, CommonModule, SharedModule],
   declarations: [NotificationListPopupComponent],
-  exports: [NotificationListPopupComponent],
+  imports: [CommonModule, MatListModule, SharedModule],
 })
 class NotificationListModule {}
-*/
