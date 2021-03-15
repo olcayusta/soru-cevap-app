@@ -31,7 +31,7 @@ const routes: Routes = [
       {
         path: 'search',
         loadChildren: async () =>
-          (await import('./search/search.module')).SearchModule,
+          (await import('@modules/search/search.module')).SearchModule,
       },
       {
         path: 'settings',
