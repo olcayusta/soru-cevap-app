@@ -59,12 +59,12 @@
               "src/styles.scss",
               {
                 "inject": false,
-                "input": "src/dark.scss",
+                "input": "src/styles/themes/dark.scss",
                 "bundleName": "dark"
               },
               {
                 "inject": false,
-                "input": "src/light.scss",
+                "input": "src/styles/themes/light.scss",
                 "bundleName": "light"
               }
             ],
