@@ -37,7 +37,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatChipsModule } from '@angular/material/chips';
 import { NotificationButtonComponent } from './main/top-bar/components/notification-button/notification-button.component';
 import { AvatarButtonComponent } from './main/top-bar/components/avatar-button/avatar-button.component';
-import { SettingsDialogComponent } from './settings-dialog/settings-dialog.component';
+import { SettingsDialogComponent } from './dialogs/settings-dialog/settings-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { Router, Scroll } from '@angular/router';
 import { filter } from 'rxjs/operators';

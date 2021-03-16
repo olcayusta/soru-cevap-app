@@ -32,7 +32,7 @@ export class AvatarButtonComponent implements OnInit {
     private sso: ScrollStrategyOptions,
     private authService: AuthService
   ) {
-    this.blockScrollStrategy = this.sso.close();
+    this.blockScrollStrategy = this.sso.block();
   }
 
   ngOnInit(): void {

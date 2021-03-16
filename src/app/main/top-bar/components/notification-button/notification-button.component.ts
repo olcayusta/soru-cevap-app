@@ -20,8 +20,8 @@ import { NotificationListPopupComponent } from '../notification-list-popup/notif
 export class NotificationButtonComponent implements OnInit {
   notificationCount$!: Observable<number>;
 
-  popupOpened = false;
-  blockScrollStrategy: ScrollStrategy;
+  popupOpened: boolean = false;
+  blockScrollStrategy: ScrollStrategy = this.sso.block();
 
   comp?: Type<NotificationListPopupComponent>;
 
@@ -29,7 +29,7 @@ export class NotificationButtonComponent implements OnInit {
     private notificationService: NotificationService,
     private sso: ScrollStrategyOptions
   ) {
-    this.blockScrollStrategy = this.sso.close();
+    // this.blockScrollStrategy = this.sso.block();
   }
 
   ngOnInit(): void {

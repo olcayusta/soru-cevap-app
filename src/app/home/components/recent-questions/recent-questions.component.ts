@@ -68,7 +68,7 @@ export class RecentQuestionsComponent implements OnInit, OnDestroy {
       this.loader = true;
       this.questionService
         .getMoreQuestions(this.offset)
-        .pipe(delay(100))
+        .pipe(delay(400))
         .subscribe((value) => {
           this.loader = false;
           markDirty(this);

@@ -7,7 +7,7 @@ import {
   NgModule,
 } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { SettingsDialogComponent } from '../../settings-dialog/settings-dialog.component';
+import { SettingsDialogComponent } from '../../dialogs/settings-dialog/settings-dialog.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
 import { MatDividerModule } from '@angular/material/divider';

@@ -10,7 +10,7 @@ export class LazyImgDirective implements OnInit {
   constructor(private elementRef: ElementRef<HTMLImageElement>) {}
 
   ngOnInit(): void {
-    const nativeElement = this.elementRef.nativeElement;
+    const { nativeElement } = this.elementRef;
     this.imgSrc = nativeElement.src;
 
     const intersectionObserver = new IntersectionObserver(([entry]) => {
