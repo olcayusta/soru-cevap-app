@@ -133,8 +133,5 @@
       }
     }
   },
-  "defaultProject": "soru-cevap-app",
-  "cli": {
-    "analytics": "12cd1238-6813-4537-9873-7a57dc8bbf97"
-  }
+  "defaultProject": "soru-cevap-app"
 }
