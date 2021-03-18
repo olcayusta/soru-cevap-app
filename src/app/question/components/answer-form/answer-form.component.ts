@@ -7,7 +7,7 @@ import {
 } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { AnswerService } from '../../../shared/services/answer.service';
+import { AnswerService } from '@shared/services/answer.service';
 
 @Component({
   selector: 'app-answer-form',
@@ -20,7 +20,10 @@ export class AnswerFormComponent implements OnInit, AfterViewInit {
     validators: [Validators.required, Validators.minLength(24)],
   });
 
-  constructor(private route: ActivatedRoute, private answerService: AnswerService) {}
+  constructor(
+    private route: ActivatedRoute,
+    private answerService: AnswerService
+  ) {}
 
   ngOnInit(): void {}
 
@@ -33,8 +36,10 @@ export class AnswerFormComponent implements OnInit, AfterViewInit {
    */
   formSubmit(): void {
     const questionId = Number(this.route.snapshot.paramMap.get('questionId'));
-    this.answerService.create(questionId, this.answerControl.value).subscribe((value) => {
-      console.log(value);
-    });
+    this.answerService
+      .create(questionId, this.answerControl.value)
+      .subscribe((value) => {
+        console.log(value);
+      });
   }
 }

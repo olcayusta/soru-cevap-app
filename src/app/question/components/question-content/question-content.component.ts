@@ -20,11 +20,15 @@ import {
 })
 export class QuestionContentComponent implements OnInit, AfterViewInit {
   @Input() content!: string;
-  @ViewChild('divElement2', { read: ElementRef }) divElement2!: ElementRef<HTMLDivElement>;
+  @ViewChild('divElement2', { read: ElementRef })
+  divElement2!: ElementRef<HTMLDivElement>;
 
   div: HTMLDivElement = document.createElement('div');
 
-  constructor(private resolver: ComponentFactoryResolver, private vcr: ViewContainerRef) {}
+  constructor(
+    private resolver: ComponentFactoryResolver,
+    private vcr: ViewContainerRef
+  ) {}
 
   ngOnInit(): void {}
 

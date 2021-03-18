@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
-import { Answer } from '../../../shared/models/answer.model';
+import { Answer } from '@shared/models/answer.model';
 
 @Component({
   selector: 'app-question-answer-item',

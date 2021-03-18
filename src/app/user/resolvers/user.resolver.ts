@@ -9,7 +9,7 @@ import {
 import { EMPTY, Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { UserService } from '../services/user.service';
-import { User } from '../../shared/models/user.model';
+import { User } from '@shared/models/user.model';
 
 @Injectable({
   providedIn: 'root',

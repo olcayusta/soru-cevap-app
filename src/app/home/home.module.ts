@@ -21,6 +21,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatChipsModule } from '@angular/material/chips';
 import { CloseScrollStrategy, Overlay } from '@angular/cdk/overlay';
 import { FilterByComponent } from './components/filter/filter-by/filter-by.component';
+import { GridListComponent } from './components/grid-list/grid-list.component';
 
 function scrollFactory(overlay: Overlay): () => CloseScrollStrategy {
   return () => overlay.scrollStrategies.close();
@@ -35,6 +36,7 @@ function scrollFactory(overlay: Overlay): () => CloseScrollStrategy {
     IsVisibleDirective,
     SortByComponent,
     FilterByComponent,
+    GridListComponent,
   ],
   imports: [
     CommonModule,

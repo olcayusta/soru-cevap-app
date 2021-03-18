@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { AnswerService } from '../../../shared/services/answer.service';
+import { AnswerService } from '@shared/services/answer.service';
 import { Observable } from 'rxjs';
-import { Answer } from '../../../shared/models/answer.model';
+import { Answer } from '@shared/models/answer.model';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -13,7 +13,10 @@ import { ActivatedRoute } from '@angular/router';
 export class QuestionAnswersComponent implements OnInit {
   answers$!: Observable<Answer[]>;
 
-  constructor(private route: ActivatedRoute, private answerService: AnswerService) {}
+  constructor(
+    private route: ActivatedRoute,
+    private answerService: AnswerService
+  ) {}
 
   ngOnInit(): void {
     const questionId = this.route.snapshot.paramMap.get('questionId');

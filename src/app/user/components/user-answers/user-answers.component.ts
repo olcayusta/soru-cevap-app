@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { Answer } from '../../../shared/models/answer.model';
+import { Answer } from '@shared/models/answer.model';
 import { UserService } from '../../services/user.service';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';

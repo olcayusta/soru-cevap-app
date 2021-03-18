@@ -6,11 +6,11 @@ import { StateService } from '@shared/services/state.service';
 import { Title } from '@angular/platform-browser';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { FavoriteService } from '../shared/services/favorite.service';
+import { FavoriteService } from '@shared/services/favorite.service';
 import { MatDialog } from '@angular/material/dialog';
-import { ShareDialogComponent } from '../shared/components/share-dialog/share-dialog.component';
+import { ShareDialogComponent } from '@shared/components/share-dialog/share-dialog.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { environment } from '../../environments/environment';
+import { environment } from '@environments/environment';
 
 @Component({
   selector: 'app-question',

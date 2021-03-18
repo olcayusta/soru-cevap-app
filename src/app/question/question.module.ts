@@ -10,7 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { QuestionAnswersComponent } from './components/question-answers/question-answers.component';
 import { MatDividerModule } from '@angular/material/divider';
 import { AnswerFormComponent } from './components/answer-form/answer-form.component';
-import { SharedModule } from '../shared/shared.module';
+import { SharedModule } from '@shared/shared.module';
 import { WebCopyCodeComponent } from './components/web-copy-code/web-copy-code.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { QuestionCommentListComponent } from './components/question-comment-list/question-comment-list.component';

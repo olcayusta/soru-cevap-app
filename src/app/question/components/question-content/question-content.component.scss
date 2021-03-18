@@ -6,29 +6,11 @@
   margin: 64px 0 0 0;
 }
 
-@media (prefers-color-scheme: light) {
-  @import "~highlight.js/scss/github";
-}
-
-@media (prefers-color-scheme: dark) {
-  @import "~highlight.js/scss/night-owl";
-}
-
-code, pre {
-  font-family: "Roboto Mono", monospace;
-}
-
-code {
-  // background: rgb(0 0 0 / .02);
-  // border: 1px solid rgb(0 0 0 / .04);
-}
-
 p {
   font-size: 16px;
   line-height: 24px;
   margin-top: 0;
   margin-bottom: 16px;
-  // letter-spacing: .5px;
 }
 
 :host {
@@ -50,10 +32,13 @@ p {
   border-radius: 4px;
 }
 
+code, pre {
+  font-family: 'Roboto Mono', monospace;
+}
+
 pre {
   display: flex !important;
   max-height: 512px;
-  font-family: Roboto Mono, monospace;
   background-color: var(--code-background) !important;
   font-size: 14px;
   line-height: 24px;

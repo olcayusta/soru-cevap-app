@@ -15,7 +15,6 @@ a:hover {
 .item {
   display: flex;
   grid-gap: 16px;
-  // font-family: Archivo, sans-serif;
 }
 
 .item-right-top {
@@ -113,13 +112,6 @@ mat-divider {
   margin: 0 8px;
 }
 
-@media (prefers-color-scheme: dark) {
-  .check-icon {
-    background: #03DAC5;
-    color: black;
-  }
-}
-
 mat-chip-list {
   display: flex;
   flex-direction: row;
@@ -136,15 +128,6 @@ mat-chip-list {
   // margin: 0 !important;
 }
 
-mat-chip {
-  // min-height: 28px;
-  // padding: 7px 10px;
-  // background-color: #fff !important;
-  // border: 1px solid rgba(0, 0, 0, .12);
-  // font-size: 13px;
-  // letter-spacing: 0;
-}
-
 .mat-basic-chip {
   font-size: 12px;
   line-height: 20px;
@@ -158,30 +141,6 @@ mat-chip {
   // text-transform: lowercase;
 }
 
-@media (prefers-color-scheme: light) {
-  /*  .mat-chip-selected {
-      background: #f3ebfe !important;
-      color: #6200ee !important;
-      // border: 1px solid rgba(0, 0, 0, .12) !important;
-    }*/
-
-  .mat-chip-selected {
-    /*    background: #6200ee !important;
-        color: #fff !important;*/
-    background: rgba(0, 0, 0, .12) !important;
-    color: black !important;
-    border: 1px solid rgba(0, 0, 0, .12) !important;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .mat-chip-selected {
-    background: rgba(187, 134, 252, 0.12) !important;
-    color: #fff !important;
-    // border: 1px solid rgba(0, 0, 0, .12) !important;
-  }
-}
-
 @media (max-width: 599px) {
   .list-item {
     padding-left: 24px;
@@ -189,10 +148,6 @@ mat-chip {
 
   .subtitle-1 {
     padding-right: 24px;
-  }
-
-  .item-right {
-
   }
 
   .filter {
@@ -231,10 +186,12 @@ mat-chip {
   mat-chip {
     background-color: #fff !important;
     border: 1px solid rgba(0, 0, 0, .12);
-    /*  font-size: 10px;
-      text-transform: uppercase;
-      min-height: 24px;
-      padding: 7px 8px;*/
+  }
+
+  .mat-chip-selected {
+    background: rgba(0, 0, 0, .12) !important;
+    color: black !important;
+    border: 1px solid rgba(0, 0, 0, .12) !important;
   }
 }
 
@@ -242,9 +199,15 @@ mat-chip {
   mat-chip {
     background-color: #ffffff12 !important;
     border: 1px solid rgba(255, 255, 255, 0.12);
-    /*  font-size: 10px;
-      text-transform: uppercase;
-      min-height: 24px;
-      padding: 7px 8px;*/
+  }
+
+  .mat-chip-selected {
+    background: rgba(187, 134, 252, 0.12) !important;
+    color: #fff !important;
+  }
+
+  .check-icon {
+    background: #03DAC5;
+    color: black;
   }
 }

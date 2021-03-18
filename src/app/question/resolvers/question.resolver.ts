@@ -8,7 +8,7 @@ import {
 } from '@angular/router';
 import { EMPTY, Observable } from 'rxjs';
 import { QuestionService } from '../services/question.service';
-import { Question } from '../../shared/models/question.model';
+import { Question } from '@shared/models/question.model';
 import { catchError } from 'rxjs/operators';
 import { Location } from '@angular/common';
 
