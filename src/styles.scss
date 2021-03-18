@@ -14,6 +14,9 @@ $body-and-captions-typography: mat-typography-config(
   $font-family: 'Roboto, sans-serif',
 );
 
+/*
+  main typo
+*/
 @include mat-base-typography($custom-typography);
 @include mat-tabs-typography($custom-typography);
 @include mat-list-typography($custom-typography);
@@ -22,9 +25,11 @@ $body-and-captions-typography: mat-typography-config(
 @include mat-radio-typography($custom-typography);
 @include mat-option-typography($custom-typography);
 @include mat-toolbar-typography($custom-typography);
-
 @include mat-radio-typography($custom-typography);
 
+/*
+  body and captions typo
+*/
 @include mat-badge-typography($body-and-captions-typography);
 @include mat-tooltip-typography($body-and-captions-typography);
 @include mat-checkbox-typography($body-and-captions-typography);
@@ -48,7 +53,6 @@ $list-typography: mat-typography-config(
 
 @include mat-list-typography($list-typography);
 
-
 html, body {
   height: 100%;
 }
@@ -56,89 +60,12 @@ html, body {
 body {
   margin: 0;
   font-family: Archivo, sans-serif;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeSpeed;
   background-color: var(--surface);
   color: var(--color);
-
-
-  //-webkit-text-size-adjust:100%;
-  //-ms-text-size-adjust:100%;
-  //-webkit-overflow-scrolling:touch;
-  //scroll-behavior:smooth;
-  //font-kerning:normal;
-  //-webkit-font-kerning:normal;
-  //-ms-font-kerning:normal;
-  //-moz-font-kerning:normal;
-  //-o-font-kerning:normal;
-  //font-variant-ligatures:contextual common-ligatures;
-  //-webkit-font-variant-ligatures:contextual common-ligatures;
-  //-ms-font-variant-ligatures:contextual common-ligatures;
-  //-moz-font-variant-ligatures:contextual common-ligatures;
-  //-o-font-variant-ligatures:contextual common-ligatures;
-  //font-feature-settings:'kern' 1, 'liga' 1, 'calt' 1;
-  //font:15px/22px 'Inter', system-ui, sans-serif;
-  //font-smoothing:antialiased;
-  //-webkit-font-smoothing:antialiased;
-  //position:relative
-}
-
-mat-sidenav {
-  width: 304px;
-  min-height: 100vh;
-  // content-visibility: layout;
-  background-color: var(--drawer-background) !important;
-}
-
-mat-sidenav-content {
-  min-height: 100vh;
-}
-
-mat-sidenav-container, mat-sidenav-content, mat-sidenav {
-  // min-height: 100vh;
-  // height: 100%;
-  // min-height: 100vh;
-  // overflow: hidden !important;
-}
-
-mat-sidenav-container {
-  background-color: var(--surface) !important;
-  min-height: 100vh;
-  // min-height: 100vh;
-  // height: auto !important;
-}
-
-mat-sidenav-container {
-  //overflow: unset !important;
-  // height: calc(100vh) !important;
-}
-
-mat-sidenav-content {
-  // overflow: unset !important;
-  // min-height: 100vh;
-}
-
-mat-sidenav-container {
-  // flex: 1;
-  // overflow: unset !important;
-}
-
-mat-sidenav-content {
-  z-index: 2 !important;
-  // overflow: unset !important;
 }
 
 * {
   box-sizing: border-box;
-}
-
-.mat-drawer.mat-drawer-end {
-  background-color: #fff;
-}
-
-.mat-drawer-backdrop.mat-drawer-shown {
-  background-color: rgba(0, 0, 0, .32);
 }
 
 svg {
@@ -147,14 +74,6 @@ svg {
 
 .mat-action-row {
   padding: 16px 16px 16px 24px !important;
-}
-
-.mat-drawer-container {
-  // sbackground-color: #fff;
-}
-
-.mat-drawer-container {
-  // background-color: #fff !important;
 }
 
 .mat-option {
@@ -221,12 +140,6 @@ svg {
     }*/
 }
 
-@media (prefers-color-scheme: light) {
-  .mat-menu-item.active {
-    background-color: #e8f0fe;
-  }
-}
-
 .small-menu-button-item.mat-menu-item {
   color: #3c4043;
   height: 32px;
@@ -234,22 +147,12 @@ svg {
   font-weight: 500;
 }
 
-.my-autocomplete {
-  // margin-top: 8px;
-  // border-radius: 4px !important;
-}
-
 .mat-optgroup .mat-option:not(.mat-option-multiple) {
   padding-left: 48px !important;
 }
 
-pre {
-  /*scrollbar-color: #80868b rgba(0, 0, 0, 0);
-  scrollbar-width: thin;*/
-}
-
 /*
-  Font
+  font
 */
 .subtitle-1 {
   font-size: 16px;
@@ -278,22 +181,6 @@ pre {
   letter-spacing: 0.25px;
 }
 
-//pre::-webkit-scrollbar, pre[class*='language-']::-webkit-scrollbar {
-//  height: 10px;
-//  width: 10px;
-//}
-//
-//pre::-webkit-scrollbar-thumb, pre[class*='language-']::-webkit-scrollbar-thumb {
-//  background: #80868b;
-//  background-clip: padding-box;
-//  border: 2.5px solid rgba(0, 0, 0, 0);
-//  border-radius: 5px;
-//}
-//
-//pre::-webkit-scrollbar-track, pre[class*='language-']::-webkit-scrollbar-track {
-//  background: rgba(0, 0, 0, 0);
-//}
-
 .mat-tooltip {
   // font-size: 12px;
   /* line-height: 16px;
@@ -302,18 +189,15 @@ pre {
    background: rgba(0, 0, 0, 0.6) !important;*/
 }
 
-/*
-  Global CSS
-*/
-.filter-info-text {
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 20px;
-  margin-right: 8px;
-  white-space: nowrap;
-  color: rgba(0, 0, 0, .72);
+@media (prefers-color-scheme: light) {
+  .mat-menu-item.active {
+    background-color: #e8f0fe;
+  }
 }
 
+/*
+  highlight.js
+*/
 @media (prefers-color-scheme: light) {
   @import "~highlight.js/scss/github";
 }

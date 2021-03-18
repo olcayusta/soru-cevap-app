@@ -16,6 +16,15 @@ button[aria-expanded='true'] {
   }
 }
 
+.filter-info-text {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  margin-right: 8px;
+  white-space: nowrap;
+  color: rgba(0, 0, 0, .72);
+}
+
 mat-icon {
   color: rgba(0, 0, 0, 0.6);
   margin-right: -4px;

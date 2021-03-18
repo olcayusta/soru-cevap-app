@@ -7,6 +7,38 @@ main {
   padding-bottom: 64px;
 }
 
+/*
+  mat-sidenav-content
+*/
+mat-sidenav-container {
+  background-color: var(--surface) !important;
+  min-height: 100vh;
+  // min-height: 100vh;
+  // height: auto !important;
+}
+
+mat-sidenav-content {
+  min-height: 100vh;
+  z-index: 2 !important;
+}
+
+::ng-deep .mat-drawer-backdrop.mat-drawer-shown {
+  background-color: rgba(0, 0, 0, .32);
+}
+
+/*
+  mat-sidenav
+*/
+mat-sidenav {
+  width: 304px;
+  min-height: 100vh;
+  background-color: var(--drawer-background) !important;
+}
+
+.mat-drawer.mat-drawer-end {
+  background-color: #fff;
+}
+
 .my-content {
   max-width: 1600px;
   margin: 0 auto;
@@ -16,6 +48,9 @@ main {
   // height: calc(100vh - 64px);
 }
 
+/*
+  app-top-bar fixed solution
+*/
 #content:before {
   content: '';
   display: block;
@@ -25,22 +60,6 @@ main {
   visibility: hidden;
 }
 
-@media (max-width: 599px) {
-  main {
-    margin-top: 56px;
-    padding-bottom: 56px;
-  }
-
-  #content:before {
-    content: '';
-    display: block;
-    height: calc(56px);
-    margin-top: calc(-56px);
-    pointer-events: none;
-    visibility: hidden;
-  }
-}
-
 .content-update-chip {
   position: fixed;
   left: 50%;
@@ -48,6 +67,29 @@ main {
   display: flex;
   justify-content: center;
   transform: translate3d(-50%, 0, 0);
+}
+
+.extended-fab {
+  width: auto;
+  max-width: 200px;
+  height: 48px;
+  padding: 0 20px 0 12px;
+  border-radius: 28px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  transition: max-width 0.5s ease-out;
+  overflow: hidden;
+}
+
+.mini-fab {
+  max-width: 48px;
+  transition: max-width 0.25s ease-in;
+}
+
+#main {
+  display: block;
+  min-height: calc(100% - 64px);
 }
 
 @media (prefers-color-scheme: light) {
@@ -111,36 +153,22 @@ main {
   }
 }
 
-.extended-fab {
-  width: auto;
-  max-width: 200px;
-  height: 48px;
-  padding: 0 20px 0 12px;
-  border-radius: 28px;
-  line-height: 1;
-  display: flex;
-  align-items: center;
-  transition: max-width 0.5s ease-out;
-  overflow: hidden;
-
-  id-create-icon, id-add-icon {
-    margin-right: 12px;
-  }
-}
-
-.mini-fab {
-  max-width: 48px;
-  transition: max-width 0.25s ease-in;
-}
-
-
 @media (max-width: 599px) {
+  main {
+    margin-top: 56px;
+    padding-bottom: 56px;
+  }
+
+  #content:before {
+    content: '';
+    display: block;
+    height: calc(56px);
+    margin-top: calc(-56px);
+    pointer-events: none;
+    visibility: hidden;
+  }
+
   .my-content {
     padding: 0;
   }
-}
-
-#main {
-  display: block;
-  min-height: calc(100% - 64px);
 }
