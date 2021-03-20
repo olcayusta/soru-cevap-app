@@ -19,7 +19,7 @@
     "@angular/platform-browser-dynamic": "^11.2.6",
     "@angular/router": "^11.2.6",
     "@angular/service-worker": "^11.2.6",
-    "highlight.js": "^10.6.0",
+    "highlight.js": "^10.7.0",
     "marked": "^2.0.1",
     "rxjs": "^6.6.6",
     "timeago.js": "^4.0.2",

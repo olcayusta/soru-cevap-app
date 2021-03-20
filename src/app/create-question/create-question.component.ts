@@ -9,7 +9,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { QuestionService } from '../question/services/question.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ChipsAutocompleteComponent } from './chips-autocomplete/chips-autocomplete.component';
-import { Question } from '../shared/models/question.model';
 
 interface IFormValue {
   title: string;
@@ -29,14 +28,15 @@ export class CreateQuestionComponent implements OnInit {
 
   worker!: Worker;
 
-  @ViewChild(ChipsAutocompleteComponent) chipComponent!: ChipsAutocompleteComponent;
+  @ViewChild(ChipsAutocompleteComponent)
+  chipComponent!: ChipsAutocompleteComponent;
 
   constructor(
-    private fb: FormBuilder,
+    private formBuilder: FormBuilder,
     private domSanitizer: DomSanitizer,
     private questionService: QuestionService
   ) {
-    this.form = fb.group({
+    this.form = formBuilder.group({
       title: ['', [Validators.required]],
       description: ['', [Validators.required]],
     });
@@ -48,14 +48,18 @@ export class CreateQuestionComponent implements OnInit {
   submit(): void {
     const { title, description } = <IFormValue>this.form.value;
     const tags = this.chipComponent.tags;
-    this.questionService.saveQuestion(title, description, tags).subscribe((value) => {
-      console.log(value);
-    });
+    this.questionService
+      .saveQuestion(title, description, tags)
+      .subscribe((value) => {
+        console.log(value);
+      });
   }
 
   changeMetaThemeColor(): void {
     // @ts-ignore
-    document.querySelector('meta[name=theme-color]').setAttribute('content', '#6200EE');
+    document
+      .querySelector('meta[name=theme-color]')
+      .setAttribute('content', '#6200EE');
   }
 
   ngOnInit(): void {
@@ -69,9 +73,14 @@ export class CreateQuestionComponent implements OnInit {
   }
 
   onFocus(): void {
-    this.worker = new Worker('../marked.worker', { type: 'module', name: 'marked' });
+    this.worker = new Worker('../marked.worker', {
+      type: 'module',
+      name: 'marked',
+    });
     this.worker.onmessage = ({ data }) => {
-      this.description = this.domSanitizer.bypassSecurityTrustHtml(data) as string;
+      this.description = this.domSanitizer.bypassSecurityTrustHtml(
+        data
+      ) as string;
       markDirty(this);
     };
   }

@@ -76,10 +76,6 @@ svg {
   padding: 16px 16px 16px 24px !important;
 }
 
-.mat-option {
-  font-family: Archivo, sans-serif;
-}
-
 // Fix menu and select panel overflow scroll bar
 .mat-menu-panel::-webkit-scrollbar, .mat-select-panel::-webkit-scrollbar {
   width: 5px;
@@ -92,18 +88,6 @@ svg {
 
 .mat-menu-panel::-webkit-scrollbar-track, .mat-select-panel::-webkit-scrollbar-track {
   border-radius: 10px;
-}
-
-.mat-menu-panel {
-  // margin-top: 8px;
-  // border-radius: 8px !important;
-}
-
-.filtre-menu .checkbox-item {
-  display: flex;
-  align-items: center;
-  height: 32px;
-  padding: 0 16px;
 }
 
 .more-menu {
