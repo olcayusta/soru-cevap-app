@@ -15,7 +15,11 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatDividerModule } from '@angular/material/divider';
 
 @NgModule({
-  declarations: [CreateQuestionComponent, ChipsAutocompleteComponent, QuestionDescriptionComponent],
+  declarations: [
+    CreateQuestionComponent,
+    ChipsAutocompleteComponent,
+    QuestionDescriptionComponent,
+  ],
   imports: [
     CommonModule,
     CreateQuestionRoutingModule,
@@ -26,7 +30,7 @@ import { MatDividerModule } from '@angular/material/divider';
     MatAutocompleteModule,
     MatIconModule,
     MatToolbarModule,
-    MatDividerModule
-  ]
+    MatDividerModule,
+  ],
 })
 export class CreateQuestionModule {}

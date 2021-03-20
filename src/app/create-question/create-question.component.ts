@@ -10,11 +10,6 @@ import { QuestionService } from '../question/services/question.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ChipsAutocompleteComponent } from './chips-autocomplete/chips-autocomplete.component';
 
-interface IFormValue {
-  title: string;
-  description: string;
-}
-
 @Component({
   selector: 'app-create-question',
   templateUrl: './create-question.component.html',
@@ -42,11 +37,11 @@ export class CreateQuestionComponent implements OnInit {
     });
   }
 
-  /**
-   * Save question
-   */
   submit(): void {
-    const { title, description } = <IFormValue>this.form.value;
+    const { title, description } = this.form.value as {
+      title: string;
+      description: string;
+    };
     const tags = this.chipComponent.tags;
     this.questionService
       .saveQuestion(title, description, tags)
